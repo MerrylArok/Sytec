@@ -7,6 +7,8 @@ for (var _i = 0, contentChunks_1 = contentChunks; _i < contentChunks_1.length; _
     chunk.style.height = windowHeight + "px";
 }
 window.addEventListener('resize', updateWindowSize);
+var yearsAlive = document.getElementById('yearsAlive');
+yearsAlive.innerText = (new Date().getFullYear() - 1998).toString();
 function updateWindowSize() {
     windowWidth = window.screen.width;
     windowHeight = window.screen.height;

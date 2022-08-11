@@ -7,6 +7,10 @@
   vertical-align: baseline;
 }
 
+@font-face {
+  font-family: "Bitter";
+  src: url("./Fonts/Bitter/Bitter-VariableFont_wght.ttf");
+}
 #main {
   background-color: aqua;
 }
@@ -21,4 +25,12 @@
 
 #team {
   background-color: black;
-}/*# sourceMappingURL=styles.css.map */
+}
+
+h1 {
+  font-family: "Bitter";
+  font-size: 100px;
+  font-weight: 900;
+}
+
+/*# sourceMappingURL=styles.css.map */
