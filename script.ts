@@ -1,5 +1,5 @@
-let windowWidth: Number = window.screen.width;
-let windowHeight: Number = window.screen.height;
+let windowWidth: Number = window.innerWidth;
+let windowHeight: Number = window.innerHeight;
 
 const contentChunks = document.getElementsByClassName('chunk') as HTMLCollectionOf<HTMLElement>;
 
@@ -11,11 +11,11 @@ for (let chunk of contentChunks) {
 window.addEventListener('resize', updateWindowSize);
 
 let yearsAlive = document.getElementById('yearsAlive') as HTMLElement;
-yearsAlive.innerText = (new Date().getFullYear()- 1998).toString();
+yearsAlive.innerText = (new Date().getFullYear() - 1998).toString();
 
 function updateWindowSize() {
-    windowWidth = window.screen.width;
-    windowHeight = window.screen.height;
+    windowWidth = window.innerWidth;
+    windowHeight = window.innerHeight;
 
     for (let chunk of contentChunks) {
         chunk.style.width = `${windowWidth}px`;

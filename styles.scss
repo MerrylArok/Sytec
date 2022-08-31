@@ -2,24 +2,195 @@
     margin: 0;
     padding: 0;
     border: 0;
-    font-size: 100%;
-    font: inherit;
-    vertical-align: baseline;
-
+    font-family: Manrope, sans-serif;
+    font-size: 16px;
+    color: #1a1a1a;
 }
 
 @font-face {
-    font-family: 'Bitter';
-    src: url('./Fonts/Bitter/Bitter-VariableFont_wght.ttf');
+    font-family: "Gara";
+    src: url("./Fonts/Cormorant_Garamond/CormorantGaramond-Bold.ttf");
 }
 
+
+@font-face {
+    font-family: "Manrope";
+    src: url("./Fonts/Manrope[wght].ttf");
+}
+
+$sytecColor :#04643c;
+$themeColor: #1a1a1a;
+$offWhite: #fbfbfb;
+$offGrey: rgb(243, 237, 237);
+
+
+
+h1 {
+    font-size: 4rem;
+}
+
+h3 {}
+
+h4 {}
+
+p,
+#yearsAlive {
+    font-size: 2rem;
+}
+
+
+
 #main {
-    background-color: aqua;
+    position: relative;
+
+    header {
+        padding: 1.75rem 5rem;
+        border-bottom: 1.25px solid rgb(189, 189, 189);
+        background-color: $offWhite;
+    }
+
+    #headerContainer {
+        display: flex;
+        align-items: baseline;
+
+
+        #headerContact {
+            background-color: $offWhite;
+            color: $themeColor;
+            font-size: 2rem;
+            font-weight: 600;
+            padding: 1rem 2.5rem;
+            border-radius: 0.5rem;
+        }
+
+        #headerContact:hover {
+            background-color: $sytecColor;
+            color: $offWhite;
+            cursor: pointer;
+        }
+
+        #quickMenu {
+            background-color: $offWhite;
+            width: 3.75rem;
+            height: 1.75rem;
+            border-radius: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: flex-end;
+
+
+
+            #longBar,
+            #midBar,
+            #shortBar {
+                height: 0.25rem;
+                width: 100%;
+                background-color: $themeColor;
+                transition: all 0.3s;
+            }
+
+            #midBar {
+                width: 75%;
+            }
+
+            #shortBar {
+                width: 55%;
+            }
+        }
+
+        #quickMenu:hover {
+            cursor: pointer;
+
+            #longBar,
+            #midBar,
+            #shortBar {
+                width: 100%;
+            }
+        }
+
+        .lists {
+            list-style-type: none;
+        }
+
+        #leftAlign,
+        #rightAlign {
+            flex: 1;
+        }
+
+        #rightAlign {
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+        }
+
+        #leftAlign>li {
+            color: $sytecColor;
+            font-family: Gara;
+            font-size: 3.75rem;
+        }
+
+        #rightAlign>li {
+            font-size: 2rem;
+            font-weight: bold;
+            margin: 0 1.5rem;
+        }
+
+
+
+    }
+
+    #mainContent {
+        position: absolute;
+        bottom: 0;
+        margin: 0 15rem 10rem 5rem;
+        background-color: $offWhite;
+    }
+
+    video {
+        object-fit: cover;
+        width: 100vw;
+        height: 100vh;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -1;
+    }
+
 }
 
 #customers {
-    background-color: bisque;
+    position: relative;
+
+    #customerLogos {
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: space-between;
+        align-items: center;
+        padding: 7rem 5rem 0 5rem;
+    }
+
+    #customerLogos>img {
+        object-fit: contain;
+        padding: 0 2rem 4rem 2rem;
+        max-height: 7rem;
+        max-width: 17rem;
+    }
+
+    #custContent {
+        position: absolute;
+        bottom: 0;
+        margin: 0 40rem 15rem 5rem;
+
+    }
 }
+
+
+
+
+
+
 
 #services {
     background-color: orange;
@@ -27,10 +198,4 @@
 
 #team {
     background-color: black;
-}
-
-h1{
-    font-family: 'Bitter';
-    font-size:100px;
-    font-weight:900;
 }

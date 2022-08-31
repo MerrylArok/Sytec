@@ -2,21 +2,144 @@
   margin: 0;
   padding: 0;
   border: 0;
-  font-size: 100%;
-  font: inherit;
-  vertical-align: baseline;
+  font-family: Manrope, sans-serif;
+  font-size: 16px;
+  color: #1a1a1a;
 }
 
 @font-face {
-  font-family: "Bitter";
-  src: url("./Fonts/Bitter/Bitter-VariableFont_wght.ttf");
+  font-family: "Gara";
+  src: url("./Fonts/Cormorant_Garamond/CormorantGaramond-Bold.ttf");
 }
+@font-face {
+  font-family: "Manrope";
+  src: url("./Fonts/Manrope[wght].ttf");
+}
+h1 {
+  font-size: 4rem;
+}
+
+p,
+#yearsAlive {
+  font-size: 2rem;
+}
+
 #main {
-  background-color: aqua;
+  position: relative;
+}
+#main header {
+  padding: 1.75rem 5rem;
+  border-bottom: 1.25px solid #bdbdbd;
+  background-color: #fbfbfb;
+}
+#main #headerContainer {
+  display: flex;
+  align-items: baseline;
+}
+#main #headerContainer #headerContact {
+  background-color: #fbfbfb;
+  color: #1a1a1a;
+  font-size: 2rem;
+  font-weight: 600;
+  padding: 1rem 2.5rem;
+  border-radius: 0.5rem;
+}
+#main #headerContainer #headerContact:hover {
+  background-color: #04643c;
+  color: #fbfbfb;
+  cursor: pointer;
+}
+#main #headerContainer #quickMenu {
+  background-color: #fbfbfb;
+  width: 3.75rem;
+  height: 1.75rem;
+  border-radius: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+#main #headerContainer #quickMenu #longBar,
+#main #headerContainer #quickMenu #midBar,
+#main #headerContainer #quickMenu #shortBar {
+  height: 0.25rem;
+  width: 100%;
+  background-color: #1a1a1a;
+  transition: all 0.3s;
+}
+#main #headerContainer #quickMenu #midBar {
+  width: 75%;
+}
+#main #headerContainer #quickMenu #shortBar {
+  width: 55%;
+}
+#main #headerContainer #quickMenu:hover {
+  cursor: pointer;
+}
+#main #headerContainer #quickMenu:hover #longBar,
+#main #headerContainer #quickMenu:hover #midBar,
+#main #headerContainer #quickMenu:hover #shortBar {
+  width: 100%;
+}
+#main #headerContainer .lists {
+  list-style-type: none;
+}
+#main #headerContainer #leftAlign,
+#main #headerContainer #rightAlign {
+  flex: 1;
+}
+#main #headerContainer #rightAlign {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+#main #headerContainer #leftAlign > li {
+  color: #04643c;
+  font-family: Gara;
+  font-size: 3.75rem;
+}
+#main #headerContainer #rightAlign > li {
+  font-size: 2rem;
+  font-weight: bold;
+  margin: 0 1.5rem;
+}
+#main #mainContent {
+  position: absolute;
+  bottom: 0;
+  margin: 0 15rem 10rem 5rem;
+  background-color: #fbfbfb;
+}
+#main video {
+  object-fit: cover;
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
 }
 
 #customers {
-  background-color: bisque;
+  position: relative;
+}
+#customers #customerLogos {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  align-items: center;
+  padding: 7rem 5rem 0 5rem;
+}
+#customers #customerLogos > img {
+  object-fit: contain;
+  padding: 0 2rem 4rem 2rem;
+  max-height: 7rem;
+  max-width: 17rem;
+}
+#customers #custContent {
+  position: absolute;
+  bottom: 0;
+  margin: 0 40rem 15rem 5rem;
 }
 
 #services {
@@ -25,12 +148,6 @@
 
 #team {
   background-color: black;
-}
-
-h1 {
-  font-family: "Bitter";
-  font-size: 100px;
-  font-weight: 900;
 }
 
 /*# sourceMappingURL=styles.css.map */

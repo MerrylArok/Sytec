@@ -10,14 +10,59 @@
 </head>
 
 <body>
-    <div class="chunk" id="main">
-        <h1>Sytec Manufacturing</h1>
-        <h2>Quality meets Agility</h2>
-        <p>With over <span id="yearsAlive"></span> years of experience in custom metal manufacturing, we provide rapid turnaround from design to scalable manufacturing </p>
-    </div>
-    <div class="chunk" id="customers"></div>
-    <div class="chunk" id="services"></div>
-    <div class="chunk" id="team"></div>
+    <!-- Main page is divided into 4 content chunks -->
+    <article class="chunk" id="main">
+
+        <header>
+            <nav id="headerContainer">
+                <ul id="leftAlign" class="lists">
+                    <li id="companyName">Sytec Manufacturing</li>
+                </ul>
+
+                <ul id="rightAlign" class="lists">
+                    <li><button id="headerContact">Contact Us</button></li>
+                    <li><button id="quickMenu">
+                            <div id="longBar"></div>
+                            <div id="midBar"></div>
+                            <div id="shortBar"></div>
+                        </button></li>
+                </ul>
+            </nav>
+        </header>
+
+
+        <hgroup id="mainContent">
+            <h1>Quality meets Agility</h1>
+            <p>With <span id="yearsAlive"></span> years of custom metal fabrication experience, we provide rapid
+                turnaround from design to scalable manufacturing </p>
+        </hgroup>
+
+        <video autoplay loop muted src="./media/demovideo.mp4"></video>
+    </article>
+
+    <article class="chunk" id="customers">
+
+        <div id="customerLogos">
+            <img src="./logos/AEC.png" alt="AEC">
+            <img src="./logos/Ametek.png" alt="Ametek">
+            <img src="./logos/ATCO.png" alt="ATCO">
+            <img src="./logos/Corrpro.png" alt="Corrpro">
+            <img src="./logos/GE.png" alt="GE">
+            <img src="./logos/IRT.png" alt="IRT">
+            <img src="./logos/PSCL.png" alt="PSCL">
+            <img src="./logos/Ram.png" alt="RAM">
+            <img src="./logos/Rittal.png" alt="Rittal">
+            <img src="./logos/TCPL.png" alt="TCPL">
+        </div>
+
+        <p id="custContent">With state of the art manufacturing, we offer RoHS, CSA, NEMA, IP and UL
+            certified products. From custom enclosures to solar stands to
+            liquid cooled server solutions, our diverse range of products are used in over 20 countries. </p>
+
+    </article>
+
+    <article class="chunk" id="services"></article>
+    <article class="chunk" id="team"></article>
     <script src="script.js"></script>
 </body>
 
