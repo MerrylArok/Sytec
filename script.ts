@@ -11,7 +11,7 @@ for (let chunk of contentChunks) {
 window.addEventListener('resize', updateWindowSize);
 
 let yearsAlive = document.getElementById('yearsAlive') as HTMLElement;
-yearsAlive.innerText = (new Date().getFullYear() - 1998).toString();
+yearsAlive.innerText = (new Date().getFullYear() - 1998).toString()+" years";
 
 function updateWindowSize() {
     windowWidth = window.innerWidth;
