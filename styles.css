@@ -25,19 +25,37 @@ p,
   font-size: 2rem;
 }
 
-#main {
+#mainPage {
   position: relative;
 }
-#main header {
-  padding: 1.25rem 5rem;
+#mainPage header {
+  padding: 0.7rem 5rem;
   border-bottom: 1.25px solid #bdbdbd;
   background-color: #fbfbfb;
 }
-#main #headerContainer {
+#mainPage #headerContainerFlex {
   display: flex;
-  align-items: baseline;
+  justify-content: space-between;
+  align-items: center;
 }
-#main #headerContainer #headerContact {
+#mainPage #headerContainerFlex .lists {
+  list-style-type: none;
+}
+#mainPage #headerContainerFlex #logo {
+  height: 5rem;
+  padding: 1rem 0;
+}
+#mainPage #headerContainerFlex #headerRight {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+#mainPage #headerContainerFlex #headerRight > li {
+  font-size: 2rem;
+  font-weight: bold;
+  margin: 0 1.5rem;
+}
+#mainPage #headerContainerFlex #headerContactButton {
   background-color: #fbfbfb;
   color: #1a1a1a;
   font-size: 2rem;
@@ -45,12 +63,12 @@ p,
   padding: 1rem 2.5rem;
   border-radius: 0.5rem;
 }
-#main #headerContainer #headerContact:hover {
-  background-color: #04643c;
+#mainPage #headerContainerFlex #headerContactButton:hover {
+  background-color: #166353;
   color: #fbfbfb;
   cursor: pointer;
 }
-#main #headerContainer #quickMenu {
+#mainPage #headerContainerFlex #headerMenuButton {
   background-color: transparent;
   width: 3.75rem;
   height: 1.75rem;
@@ -61,59 +79,37 @@ p,
   justify-content: space-between;
   align-items: flex-end;
 }
-#main #headerContainer #quickMenu #longBar,
-#main #headerContainer #quickMenu #midBar,
-#main #headerContainer #quickMenu #shortBar {
+#mainPage #headerContainerFlex #headerMenuButton #longBar,
+#mainPage #headerContainerFlex #headerMenuButton #midBar,
+#mainPage #headerContainerFlex #headerMenuButton #shortBar {
   height: 0.25rem;
   width: 100%;
   background-color: #1a1a1a;
   transition: all 0.3s;
 }
-#main #headerContainer #quickMenu #midBar {
+#mainPage #headerContainerFlex #headerMenuButton #midBar {
   width: 75%;
 }
-#main #headerContainer #quickMenu #shortBar {
+#mainPage #headerContainerFlex #headerMenuButton #shortBar {
   width: 55%;
 }
-#main #headerContainer #quickMenu:hover {
+#mainPage #headerContainerFlex #headerMenuButton:hover {
   cursor: pointer;
 }
-#main #headerContainer #quickMenu:hover #longBar,
-#main #headerContainer #quickMenu:hover #midBar,
-#main #headerContainer #quickMenu:hover #shortBar {
+#mainPage #headerContainerFlex #headerMenuButton:hover #longBar,
+#mainPage #headerContainerFlex #headerMenuButton:hover #midBar,
+#mainPage #headerContainerFlex #headerMenuButton:hover #shortBar {
   width: 100%;
 }
-#main #headerContainer .lists {
-  list-style-type: none;
-}
-#main #headerContainer #leftAlign,
-#main #headerContainer #rightAlign {
-  flex: 1;
-}
-#main #headerContainer #rightAlign {
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-}
-#main #headerContainer #leftAlign > li {
-  color: #04643c;
-  font-family: Gara;
-  font-size: 3.75rem;
-}
-#main #headerContainer #rightAlign > li {
-  font-size: 2rem;
-  font-weight: bold;
-  margin: 0 1.5rem;
-}
-#main #mainContent {
+#mainPage #helloContent {
   position: absolute;
   bottom: 0;
-  margin: 0 19rem 10rem 19rem;
+  margin: 0 19rem 11rem 19rem;
 }
-#main #mainContent * {
+#mainPage #helloContent * {
   color: #fbfbfb;
 }
-#main video {
+#mainPage video {
   object-fit: cover;
   width: 100vw;
   height: 100vh;
@@ -123,32 +119,53 @@ p,
   z-index: -1;
   filter: brightness(55%);
 }
+#mainPage .icon {
+  position: absolute;
+  left: 50%;
+  background: url(./media/line-angle-down-icon.svg) center no-repeat;
+  animation: 1.5s infinite scrollDown;
+}
 
-#customers {
+#customersPage {
   display: flex;
   flex-direction: column;
   padding: 10rem 17rem 0 17rem;
 }
-#customers #customerLogos {
+#customersPage #customerLogos {
   display: flex;
   flex-flow: row wrap;
   justify-content: space-between;
   align-items: center;
   margin: 0 0 10rem 0;
 }
-#customers #customerLogos > img {
+#customersPage #customerLogos > img {
   box-sizing: content-box;
   max-height: 7rem;
   max-width: 12rem;
   padding: 1rem 2rem;
 }
 
-#services {
+#servicesChunk {
   background-color: orange;
 }
 
-#team {
+#teamChunk {
   background-color: black;
+}
+
+@keyframes scrollDown {
+  from {
+    bottom: 7%;
+    opacity: 0;
+    width: 3rem;
+    height: 3rem;
+  }
+  to {
+    bottom: 3.5%;
+    opacity: 0.6;
+    width: 2rem;
+    height: 2rem;
+  }
 }
 
 /*# sourceMappingURL=styles.css.map */

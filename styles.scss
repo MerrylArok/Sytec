@@ -19,43 +19,57 @@
     src: url("./Fonts/Manrope[wght].ttf");
 }
 
-$sytecColor :#04643c;
+$sytecColor :#166353;
 $themeColor: #1a1a1a;
 $offWhite: #fbfbfb;
-$offGrey: rgb(243, 237, 237);
-
-
+$goldColor: #fbf778;
 
 h1 {
     font-size: 4rem;
 }
-
-h3 {}
-
-h4 {}
 
 p,
 #yearsAlive {
     font-size: 2rem;
 }
 
-
-
-#main {
+#mainPage {
     position: relative;
 
     header {
-        padding: 1.25rem 5rem;
+        padding: 0.7rem 5rem;
         border-bottom: 1.25px solid rgb(189, 189, 189);
         background-color: #fbfbfb;
     }
 
-    #headerContainer {
+    #headerContainerFlex {
         display: flex;
-        align-items: baseline;
+        justify-content: space-between;
+        align-items: center;
+
+        .lists {
+            list-style-type: none;
+        }
+
+        #logo {
+            height: 5rem;
+            padding:1rem 0;
+        }
+
+        #headerRight {
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+        }
 
 
-        #headerContact {
+        #headerRight>li {
+            font-size: 2rem;
+            font-weight: bold;
+            margin: 0 1.5rem;
+        }
+
+        #headerContactButton {
             background-color: $offWhite;
             color: $themeColor;
             font-size: 2rem;
@@ -64,13 +78,13 @@ p,
             border-radius: 0.5rem;
         }
 
-        #headerContact:hover {
+        #headerContactButton:hover {
             background-color: $sytecColor;
             color: $offWhite;
             cursor: pointer;
         }
 
-        #quickMenu {
+        #headerMenuButton {
             background-color: transparent;
             width: 3.75rem;
             height: 1.75rem;
@@ -80,8 +94,6 @@ p,
             flex-direction: column;
             justify-content: space-between;
             align-items: flex-end;
-
-
 
             #longBar,
             #midBar,
@@ -101,7 +113,7 @@ p,
             }
         }
 
-        #quickMenu:hover {
+        #headerMenuButton:hover {
             cursor: pointer;
 
             #longBar,
@@ -110,49 +122,17 @@ p,
                 width: 100%;
             }
         }
-
-        .lists {
-            list-style-type: none;
-        }
-
-        #leftAlign,
-        #rightAlign {
-            flex: 1;
-        }
-
-        #rightAlign {
-            display: flex;
-            justify-content: flex-end;
-            align-items: center;
-        }
-
-        #leftAlign>li {
-            color: $sytecColor;
-            font-family: Gara;
-            font-size: 3.75rem;
-        }
-
-        #rightAlign>li {
-            font-size: 2rem;
-            font-weight: bold;
-            margin: 0 1.5rem;
-        }
-
-
-
     }
 
-    #mainContent {
+    #helloContent {
         position: absolute;
         bottom: 0;
-        margin: 0 19rem 10rem 19rem;
+        margin: 0 19rem 11rem 19rem;
     }
 
-    #mainContent * {
+    #helloContent * {
         color: $offWhite;
     }
-
-
 
     video {
         object-fit: cover;
@@ -165,9 +145,19 @@ p,
         filter: brightness(55%)
     }
 
+    .icon {
+        position: absolute;
+        left: 50%;
+        background: url(./media/line-angle-down-icon.svg) center no-repeat;
+
+        animation: 1.5s infinite scrollDown;
+    }
+
+
+
 }
 
-#customers {
+#customersPage {
     display: flex;
     flex-direction: column;
     padding: 10rem 17rem 0 17rem;
@@ -177,17 +167,15 @@ p,
         flex-flow: row wrap;
         justify-content: space-between;
         align-items: center;
-        margin:0 0 10rem 0;
+        margin: 0 0 10rem 0;
     }
 
     #customerLogos>img {
         box-sizing: content-box;
-        max-height:7rem;
+        max-height: 7rem;
         max-width: 12rem;
-        padding:1rem 2rem;
+        padding: 1rem 2rem;
     }
-
-    
 
     // #earthContainer{
     //     width:50rem;
@@ -197,20 +185,29 @@ p,
     //     z-index:-1;
     //     translate: 20rem 10rem;
     // }
-
-
 }
 
-
-
-
-
-
-
-#services {
+#servicesChunk {
     background-color: orange;
 }
 
-#team {
+#teamChunk {
     background-color: black;
+}
+
+@keyframes scrollDown {
+    from {
+        bottom: 7%;
+        opacity: 0;
+        width: 3rem;
+        height: 3rem;
+    }
+
+
+    to {
+        bottom: 3.5%;
+        opacity: 0.6;
+        width: 2rem;
+        height: 2rem;
+    }
 }

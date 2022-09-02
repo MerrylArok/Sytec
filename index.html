@@ -11,17 +11,18 @@
 
 <body>
     <!-- Main page is divided into 4 content chunks -->
-    <article class="chunk" id="main">
 
+    <!-- /////////////////////////// Page 1 /////////////////////////////////////// -->
+
+    <article class="chunk" id="mainPage">
         <header>
-            <nav id="headerContainer">
-                <ul id="leftAlign" class="lists">
-                    <li id="companyName">Sytec Manufacturing</li>
-                </ul>
+            <nav id="headerContainerFlex">
 
-                <ul id="rightAlign" class="lists">
-                    <li><button id="headerContact">Contact Us</button></li>
-                    <li><button id="quickMenu">
+                <img id="logo" src="./media/Sytec_cutup.svg" alt="Sytec Logo">
+
+                <ul id="headerRight" class="lists">
+                    <li><button id="headerContactButton">Contact Us</button></li>
+                    <li><button id="headerMenuButton">
                             <div id="longBar"></div>
                             <div id="midBar"></div>
                             <div id="shortBar"></div>
@@ -29,18 +30,20 @@
                 </ul>
             </nav>
         </header>
-
-
-        <hgroup id="mainContent">
+        <hgroup id="helloContent">
             <h1>Quality meets Agility</h1>
             <p>With <span id="yearsAlive"></span> of custom metal fabrication experience, we provide rapid
                 turnaround from design to scalable manufacturing </p>
         </hgroup>
 
         <video autoplay loop muted src="./media/demovideo.mp4"></video>
+
+        <i class="icon"></i>
     </article>
 
-    <article class="chunk" id="customers">
+    <!-- /////////////////////////// Page 2 /////////////////////////////////////// -->
+
+    <article class="chunk" id="customersPage">
 
         <div id="customerLogos">
             <img src="./logos/AEC.png" alt="AEC logo">
@@ -55,19 +58,19 @@
             <img src="./logos/TCPL.png" alt="TCPL logo">
         </div>
 
-        <p id="custContent"> From custom enclosures to battery boxes to
+        <p id="custContent"> From custom enclosures to
             liquid cooled server solutions, we make CSA, NEMA, IP, UL and RoHS
             certified products used worldwide </p>
 
-        <!-- <div id="earthContainer">
-            <img src="./media/Earth/earthClean.png" alt="Picture of Earth">
-        </div> -->
-
-
     </article>
 
-    <article class="chunk" id="services"></article>
-    <article class="chunk" id="team"></article>
+    <!-- /////////////////////////// Page 3 /////////////////////////////////////// -->
+
+    <article class="chunk" id="servicesChunk"></article>
+
+    <!-- /////////////////////////// Page 4 /////////////////////////////////////// -->
+
+    <article class="chunk" id="teamChunk"></article>
     <script src="script.js"></script>
 </body>
 
