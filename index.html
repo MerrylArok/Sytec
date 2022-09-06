@@ -5,6 +5,10 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Sytec Manufacturing is one of North America's leading custom sheet and pipe metal manufacturing plant offering services in metal design, fabrication and power paint ">
+    <meta name="keywords"
+        content="Sytec, manufacturing, CSA, Canada, Edmonton, engineering, fabrication, manufacturing, powder paint, enclosure, energy">
     <title>Sytec Manufacturing</title>
     <link rel="stylesheet" href="styles.css">
 </head>
@@ -12,24 +16,26 @@
 <body>
     <!-- Main page is divided into 4 content chunks -->
 
+    <header class="header">
+        <nav id="headerFlexContainer">
+
+            <img id="logo" src="./media/Sytec.svg" alt="Sytec Logo">
+
+            <ul id="headerRight" class="lists">
+                <li><button id="headerContactButton">Contact</button></li>
+                <li><button id="headerMenuButton">
+                        <div id="longBar"></div>
+                        <div id="midBar"></div>
+                        <div id="shortBar"></div>
+                    </button></li>
+            </ul>
+        </nav>
+    </header>
+
     <!-- /////////////////////////// Page 1 /////////////////////////////////////// -->
 
     <article class="chunk" id="mainPage">
-        <header>
-            <nav id="headerContainerFlex">
 
-                <img id="logo" src="./media/Sytec_cutup.svg" alt="Sytec Logo">
-
-                <ul id="headerRight" class="lists">
-                    <li><button id="headerContactButton">Contact Us</button></li>
-                    <li><button id="headerMenuButton">
-                            <div id="longBar"></div>
-                            <div id="midBar"></div>
-                            <div id="shortBar"></div>
-                        </button></li>
-                </ul>
-            </nav>
-        </header>
         <hgroup id="helloContent">
             <h1>Quality meets Agility</h1>
             <p>With <span id="yearsAlive"></span> of custom metal fabrication experience, we provide rapid
@@ -43,24 +49,50 @@
 
     <!-- /////////////////////////// Page 2 /////////////////////////////////////// -->
 
-    <article class="chunk" id="customersPage">
+    <article class="chunk" id="customerContainer">
+        <div id="logoFlexContainer">
+            <div class="logosRow1">
+                <div class="logoContainer">
+                    <img src="./logos/Line1/AEC.png">
+                </div>
+                <div class="logoContainer"><img src="./logos/Line1/Ametek.png"></div>
+                <div class="logoContainer"><img src="./logos/Line1/ATCO.png"></div>
+                <div class="logoContainer"><img src="./logos/Line1/Corrpro.png"></div>
+                <div class="logoContainer"><img src="./logos/Line1/GE.png"></div>
+                <div class="logoContainer"><img src="./logos/Line1/PTW.png"></div>
+                <div class="logoContainer"><img src="./logos/Line1/Surepoint.png"></div>
+                <div class="logoContainer"><img src="./logos/Line1/AO.png"></div>
+                <div class="logoContainer"><img src="./logos/Line1/AEC.png"></div>
+                <div class="logoContainer"><img src="./logos/Line1/Ametek.png"></div>
+                <div class="logoContainer"><img src="./logos/Line1/ATCO.png"></div>
+                <div class="logoContainer"><img src="./logos/Line1/Corrpro.png"></div>
+            </div>
 
-        <div id="customerLogos">
-            <img src="./logos/AEC.png" alt="AEC logo">
-            <img src="./logos/Ametek.png" alt="Ametek logo">
-            <img src="./logos/ATCO.png" alt="ATCO logo">
-            <img src="./logos/Corrpro.png" alt="Corrpro logo">
-            <img src="./logos/GE.png" alt="GE logo">
-            <img src="./logos/IRT.png" alt="IRT logo">
-            <img src="./logos/PSCL.png" alt="PSCL logo">
-            <img src="./logos/Ram.png" alt="RAM logo">
-            <img src="./logos/Rittal.png" alt="Rittal logo">
-            <img src="./logos/TCPL.png" alt="TCPL logo">
+
+
+            <div class="logosRow2">
+                <div class="logoContainer"><img src="./logos/Line2/TCPL.png"></div>
+                <div class="logoContainer"><img src="./logos/Line2/IRT.png"></div>
+                <div class="logoContainer"><img src="./logos/Line2/Ram.png"></div>
+                <div class="logoContainer"><img src="./logos/Line2/Rittal.png"></div>
+                <div class="logoContainer"><img src="./logos/Line2/Wesco.png"></div>
+                <div class="logoContainer"><img src="./logos/Line2/Insight.png"></div>
+                <div class="logoContainer"><img src="./logos/Line2/Tycrop.png"></div>
+                <div class="logoContainer"><img src="./logos/Line2/MDT.png"></div>
+                <div class="logoContainer"><img src="./logos/Line2/TCPL.png"></div>
+                <div class="logoContainer"><img src="./logos/Line2/IRT.png"></div>
+                <div class="logoContainer"><img src="./logos/Line2/Ram.png"></div>
+                <div class="logoContainer"><img src="./logos/Line2/Rittal.png"></div>
+            </div>
         </div>
 
-        <p id="custContent"> From custom enclosures to
-            liquid cooled server solutions, we make CSA, NEMA, IP, UL and RoHS
-            certified products used worldwide </p>
+        <hgroup id="customerContent">
+            <h1>World class manufacturing</h1>
+            <p id="custContent"> We make CSA compliant NEMA/ IP/ UL and RoHS certified steel and aluminum products, from
+                custom enclosures to
+                liquid cooled server solutions.</p>
+        </hgroup>
+
 
     </article>
 

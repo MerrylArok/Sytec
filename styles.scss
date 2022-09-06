@@ -6,11 +6,12 @@
     font-size: 16px;
     color: #1a1a1a;
     box-sizing: border-box;
+    text-rendering: optimizeLegibility;
 }
 
 @font-face {
-    font-family: "Gara";
-    src: url("./Fonts/Cormorant_Garamond/CormorantGaramond-Bold.ttf");
+    font-family: "Mont";
+    src: url("./Fonts/Montserrat/Montserrat.ttf");
 }
 
 
@@ -23,26 +24,38 @@ $sytecColor :#166353;
 $themeColor: #1a1a1a;
 $offWhite: #fbfbfb;
 $goldColor: #fbf778;
+$logoWidth: 22rem;
+$contentWidth:17rem;
 
 h1 {
-    font-size: 4rem;
+    font-family: Mont;
+    font-size: 3rem;
+    margin: 1rem 0;
+}
+
+h2 {
+    font-size: 2.25rem;
 }
 
 p,
 #yearsAlive {
-    font-size: 2rem;
+    font-size: 1.75rem;
 }
 
-#mainPage {
-    position: relative;
+.chunk {
+    width: 100%;
+    height: 100vh;
+}
 
-    header {
-        padding: 0.7rem 5rem;
-        border-bottom: 1.25px solid rgb(189, 189, 189);
-        background-color: #fbfbfb;
-    }
+.header {
+    position: fixed;
+    z-index: 1000;
+    width: 100%;
+    padding: 0 3rem;
+    box-shadow: 0px 0px 10px 1px rgba(0,0,0,0.2);
+    background-color: $offWhite;
 
-    #headerContainerFlex {
+    #headerFlexContainer {
         display: flex;
         justify-content: space-between;
         align-items: center;
@@ -52,8 +65,8 @@ p,
         }
 
         #logo {
-            height: 5rem;
-            padding:1rem 0;
+            height: 4rem;
+            padding: 1rem 2rem;
         }
 
         #headerRight {
@@ -72,14 +85,15 @@ p,
         #headerContactButton {
             background-color: $offWhite;
             color: $themeColor;
-            font-size: 2rem;
+            font-size: 1.75rem;
             font-weight: 600;
-            padding: 1rem 2.5rem;
+            padding: .75rem 1.25rem;
+            margin: 0.75rem 0;
             border-radius: 0.5rem;
         }
 
         #headerContactButton:hover {
-            background-color: $sytecColor;
+            background-color: #246e53;
             color: $offWhite;
             cursor: pointer;
         }
@@ -123,11 +137,18 @@ p,
             }
         }
     }
+}
+
+
+
+#mainPage {
+    position: relative;
+
 
     #helloContent {
         position: absolute;
-        bottom: 0;
-        margin: 0 19rem 11rem 19rem;
+        top: 60%;
+        margin: 0 $contentWidth;
     }
 
     #helloContent * {
@@ -136,55 +157,99 @@ p,
 
     video {
         object-fit: cover;
-        width: 100vw;
-        height: 100vh;
+        width: 100%;
+        height: 100%;
         position: absolute;
         top: 0;
         left: 0;
         z-index: -1;
-        filter: brightness(55%)
+        filter: brightness(55%);
     }
 
     .icon {
         position: absolute;
         left: 50%;
         background: url(./media/line-angle-down-icon.svg) center no-repeat;
-
         animation: 1.5s infinite scrollDown;
     }
+}
 
+
+#customerContainer {
+    background-color: #f3f3f3;
+    // background-image: linear-gradient(315deg, #ffcfdf 0%, #b0f3f1 74%);
+    padding: 5rem $contentWidth;
+    position: relative;
+
+    #customerContent {       
+        position: absolute;
+        top: 40%;
+        left:0;
+        margin: 0 $contentWidth;
+        z-index: 100;
+    }
+
+    #logoFlexContainer {        
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        height: 100%;
+        overflow: hidden;
+        position: relative;
+        
+
+        &::after {
+            background: linear-gradient(to right, rgb(243, 243, 243) 0%, rgba(243, 243, 243, 0.7) 20%, rgba(243, 243, 243, 0.7) 80%, rgb(243, 243, 243) 100%);
+            content: " ";
+            height: 100%;
+            width: 100%;
+            position: absolute;
+            z-index: 1;
+            top: 0;
+            Left: 0;
+        }
+
+    }
+
+    .logosRow1,
+    .logosRow2 {
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: space-between;
+
+    }
+
+    .logosRow1 {
+        animation: logoBannerScroll 70s linear infinite;
+    }
+
+    .logosRow2 {
+        animation: logoBannerScrollReverse 80s linear infinite;
+    }
+
+    .logoContainer {
+        flex: 0 0 $logoWidth;
+        height: 7rem;
+        margin: 4rem 0;
+    }
+
+    img {
+        width: 100%;
+        height: 100%;
+        padding: 0 4rem;
+        object-fit: contain;
+        pointer-events: none;
+    }
 
 
 }
 
-#customersPage {
+#helloContent,
+#customerContent {
     display: flex;
     flex-direction: column;
-    padding: 10rem 17rem 0 17rem;
-
-    #customerLogos {
-        display: flex;
-        flex-flow: row wrap;
-        justify-content: space-between;
-        align-items: center;
-        margin: 0 0 10rem 0;
-    }
-
-    #customerLogos>img {
-        box-sizing: content-box;
-        max-height: 7rem;
-        max-width: 12rem;
-        padding: 1rem 2rem;
-    }
-
-    // #earthContainer{
-    //     width:50rem;
-    //     position:absolute;        
-    //     bottom:0;
-    //     right:0;
-    //     z-index:-1;
-    //     translate: 20rem 10rem;
-    // }
+    align-items: center;
+    text-align: center;
 }
 
 #servicesChunk {
@@ -205,9 +270,31 @@ p,
 
 
     to {
-        bottom: 3.5%;
+        bottom: 4.5%;
         opacity: 0.6;
         width: 2rem;
         height: 2rem;
     }
+}
+
+@keyframes logoBannerScroll {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(calc(-#{$logoWidth} * 8))
+    }
+}
+
+@keyframes logoBannerScrollReverse {
+
+    0% {
+        transform: translateX(calc(-#{$logoWidth} * 8))
+    }
+
+    100% {
+        transform: translateX(0);
+    }
+
 }
