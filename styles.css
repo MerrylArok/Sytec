@@ -14,22 +14,32 @@
   src: url("./Fonts/Montserrat/Montserrat.ttf");
 }
 @font-face {
+  font-family: "Playfair";
+  src: url("./Fonts/Raleway/RalewayMain.ttf");
+}
+@font-face {
   font-family: "Manrope";
   src: url("./Fonts/Manrope[wght].ttf");
 }
 h1 {
   font-family: Mont;
-  font-size: 3rem;
+  font-size: 3.5rem;
   margin: 1rem 0;
 }
 
 h2 {
+  font-family: Mont;
   font-size: 2.25rem;
+}
+
+h3 {
+  font-weight: normal;
+  font-size: 1.75rem;
 }
 
 p,
 #yearsAlive {
-  font-size: 1.75rem;
+  font-size: 1.65rem;
 }
 
 .chunk {
@@ -207,7 +217,57 @@ p,
 }
 
 #servicesChunk {
-  background-color: orange;
+  background: linear-gradient(to bottom, #f3f3f3 60%, rgba(0, 0, 0, 0.3) 100%);
+  display: flex;
+  flex-direction: column;
+}
+#servicesChunk #servicesContent {
+  padding: 0 17rem;
+  text-align: center;
+  flex: 1;
+}
+#servicesChunk #cardFlexContainer {
+  flex: 3;
+  padding: 2rem 5rem;
+  display: flex;
+}
+#servicesChunk #cardFlexContainer .servicesCard {
+  position: relative;
+  flex: 1;
+  margin: 0 1rem;
+  padding: 3rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  cursor: pointer;
+  border-radius: 5% 1.5% 5% 1.5%;
+}
+#servicesChunk #cardFlexContainer #engineeringCard {
+  background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.9)), url(./media/pics/Engineering.jpg) center no-repeat;
+  background-size: cover;
+}
+#servicesChunk #cardFlexContainer #manfacturingCard {
+  background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.9)), url(./media/pics/Welding.jpg) center no-repeat;
+  background-size: cover;
+}
+#servicesChunk #cardFlexContainer #paintCard {
+  background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.9)), url(./media/pics/Powder_Coat.jpg) center no-repeat;
+  background-size: cover;
+}
+#servicesChunk #cardFlexContainer .servicesCard * {
+  margin: 0.75rem 0;
+  color: #fbfbfb;
+}
+#servicesChunk #cardFlexContainer .servicesCard p {
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  transition: all 0.5s ease-in-out;
+}
+#servicesChunk #cardFlexContainer .servicesCard:hover p {
+  height: auto;
+  max-height: 500px;
+  opacity: 1;
 }
 
 #teamChunk {
