@@ -18,7 +18,6 @@
 
     <header class="header">
         <nav id="headerFlexContainer">
-
             <img id="logo" src="./media/Sytec.svg" alt="Sytec Logo">
 
             <ul id="headerRight" class="lists">
@@ -34,7 +33,7 @@
 
     <!-- /////////////////////////// Page 1 /////////////////////////////////////// -->
 
-    <article class="chunk" id="mainPage">
+    <section class="chunk" id="mainPage">
 
         <hgroup id="helloContent">
             <h1>Quality meets Agility</h1>
@@ -44,12 +43,12 @@
 
         <video autoplay loop muted src="./media/demovideo.mp4"></video>
 
-        <i class="icon"></i>
-    </article>
+        <i id="iconScrollDown"></i>
+    </section>
 
     <!-- /////////////////////////// Page 2 /////////////////////////////////////// -->
 
-    <article class="chunk" id="customerContainer">
+    <section class="chunk" id="customerContainer">
         <div id="logoFlexContainer">
             <div class="logosRow1">
                 <div class="logoContainer">
@@ -90,43 +89,83 @@
                 custom enclosures to
                 liquid cooled server solutions.</p>
         </hgroup>
-    </article>
+    </section>
 
     <!-- /////////////////////////// Page 3 /////////////////////////////////////// -->
 
-    <article class="chunk" id="servicesChunk">
-        
+    <section class="chunk" id="servicesChunk">
+
+
+        <hgroup id="servicesContent">
+            <!-- <h1>Services</h1> -->
+            <h2>One-stop shop for all your fabrication needs</h2>
+            <!-- through a diverse range of services including Engineering design and prototypes; sheet metal & tube laser cutting, forming,
+                welding; powder coating, assembly and shipping.</p> -->
+        </hgroup>
+
 
         <div id="cardFlexContainer">
             <div class="servicesCard" id="engineeringCard">
                 <h2>Engineering</h2>
-                <p>P.Eng certified custom CAD designs in quick turnaround time</p>
-                <a href="#"><span>Learn more</span></a>
+                <p>Blazing fast P.Eng certified designs</p>
+                <span id="learnMoreContainer">
+                    <h3>Learn more</h3>
+                </span>
             </div>
             <div class="servicesCard" id="manfacturingCard">
                 <h2>Manufacturing</h2>
-                <p>We fabricate stainless steel, mild and galvanized steel, aluminum and copper products in sheet, plate
-                    and tubing to desired finish</p>
-                <a href="#"><span>Learn more</span></a>
+                <p>Stainless, CRS and galvanized steel, aluminum & copper fabrication in sheet, plate
+                    & tubing to desired finish</p>
+                <span id="learnMoreContainer">
+                    <h3>Learn more</h3>
+                </span>
             </div>
             <div class="servicesCard" id="paintCard">
                 <h2>Powder Coating</h2>
-                <p>Brilliant colors in textured or smooth finish, with silk screened custom branding</p>
-                <a href="#"><span>Learn more</span></a>
+                <p>Brilliant colors with silk screened custom branding</p>
+                <span id="learnMoreContainer">
+                    <h3>Learn more</h3>
+                </span>
             </div>
         </div>
-
-        <hgroup id="servicesContent">
-            <h3> Our services include engineering drafting and design, sheet metal and pipe laser cutting, forming,
-                welding, powder coating and assembly.</h3>
-        </hgroup>
-
-
-    </article>
+    </section>
 
     <!-- /////////////////////////// Page 4 /////////////////////////////////////// -->
 
-    <article class="chunk" id="teamChunk"></article>
+    <section class="chunk" id="teamChunk">
+
+        <hgroup id="aboutUsContent">
+            <h1>About Us</h1>
+            <p>Our strive to excellence is driven by our philosophy to empower customers through
+                experience-backed design solutions, with tightly-integrated and cost-effective
+                manufacturing.<br><br>
+                Collaborating with clients in IT, telecommunications, electrical grid/power distribution,
+                oil and
+                gas, solar & agricultural industries has made us versatile in accomplishing unique and challenging
+                projects.
+            </p>
+        </hgroup>
+
+        <ul id="aboutUsContentLinks">
+            <li><h2>Environmental</h2></li>
+            <li><h2>Products</h2></li>
+            <li><h2>Careers</h2></li>
+        </ul>       
+    </section>
+
+    <!-- /////////////////////////// Footer /////////////////////////////////////// -->
+
+    <!-- <hgroup id="siteMap">
+        <hgroup id="siteMapContent">
+
+            <ul id="aboutLinks"></ul>
+            <ul id="businessLinks"></ul>
+            <ul id="contactLinks"></ul>
+
+        </hgroup>
+
+    </hgroup> -->
+
     <script src="script.js"></script>
 </body>
 

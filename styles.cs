@@ -68,6 +68,9 @@ body {
   justify-content: space-between;
   align-items: center;
 }
+.header #headerFlexContainer .lists {
+  list-style-type: none;
+}
 .header #headerFlexContainer #logo {
   height: 4rem;
   padding: 1rem 2rem;
@@ -76,7 +79,6 @@ body {
   display: flex;
   justify-content: flex-end;
   align-items: center;
-  list-style-type: none;
 }
 .header #headerFlexContainer #headerRight > li {
   font-size: 1.5rem;
@@ -156,7 +158,7 @@ body {
   position: absolute;
   left: 50%;
   background: url(./media/line-angle-down-icon.svg) center no-repeat;
-  animation: 2s infinite scrollDown ease-out;
+  animation: 1.5s infinite scrollDown ease-in-out;
 }
 
 #customerContainer {
@@ -166,10 +168,6 @@ body {
   position: relative;
 }
 #customerContainer #customerContent {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
   position: absolute;
   top: 40%;
   left: 0;
@@ -219,9 +217,14 @@ body {
   pointer-events: none;
 }
 
+#customerContent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
 #servicesChunk {
-  background-image: url("./media/waveBackgroundLine.svg");
-  background-size: cover;
   background: rbg(243, 243, 243);
   display: flex;
   padding: 10rem 3rem;
@@ -249,51 +252,22 @@ body {
   border-radius: 0.25rem;
 }
 #servicesChunk #cardFlexContainer .servicesCard #learnMoreContainer {
-  display: inline-flex;
+  display: flex;
   flex-direction: row;
-  justify-content: flex-start;
-  align-items: center;
-  height: 1.5rem;
-}
-#servicesChunk #cardFlexContainer .servicesCard #learnMoreContainer::after {
-  content: "";
-  background: url("./media/arrow-thin-right-icon.svg") no-repeat center;
-  transform: rotate(-45deg) scale(1.5);
-  height: 1.5rem;
-  width: 1.5rem;
-  transition: all 0.25s ease-in-out;
-}
-#servicesChunk #cardFlexContainer .servicesCard #learnMoreContainer h3 {
-  max-width: 0;
-  opacity: 0;
-  overflow: hidden;
-  white-space: nowrap;
-  transition: all 0.75s ease-in-out;
-}
-#servicesChunk #cardFlexContainer .servicesCard * {
-  margin: 1rem 0;
-  color: #fbfbfb;
-}
-#servicesChunk #cardFlexContainer .servicesCard p {
-  max-height: 0;
-  opacity: 0;
-  overflow: hidden;
+  align-items: flex-start;
   transition: all 0.5s ease-in-out;
 }
-#servicesChunk #cardFlexContainer .servicesCard:hover p {
-  height: auto;
-  max-height: 500px;
-  opacity: 1;
+#servicesChunk #cardFlexContainer .servicesCard #learnMoreContainer h3 {
+  flex: 0;
+  max-width: 0;
+  opacity: 0;
 }
-#servicesChunk #cardFlexContainer .servicesCard:hover #learnMoreContainer h3 {
-  max-width: 15rem;
-  margin-right: 3rem;
-  width: auto;
-  overflow: hidden;
-  opacity: 1;
-}
-#servicesChunk #cardFlexContainer .servicesCard:hover #learnMoreContainer::after {
-  transform: rotate(0);
+#servicesChunk #cardFlexContainer .servicesCard #learnMoreContainer i {
+  flex: 1;
+  content: "";
+  display: inline-block;
+  background: url("./media/arrow-thin-right-icon.svg") center no-repeat;
+  height: 1rem;
 }
 #servicesChunk #cardFlexContainer #engineeringCard {
   background: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.9)), url(./media/pics/Engineering.jpg) center no-repeat;
@@ -309,57 +283,36 @@ body {
   background-size: cover;
   transform: translateY(2rem);
 }
+#servicesChunk #cardFlexContainer .servicesCard {
+  margin: 0.5rem 0;
+  color: #fbfbfb;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+}
+#servicesChunk #cardFlexContainer #learnMoreContainer h3 {
+  max-width: 0;
+  opacity: 0;
+  overflow: hidden;
+  transition: all 3s ease-in-out;
+}
+#servicesChunk #cardFlexContainer #learnMoreContainer:hover h3 {
+  max-width: 15rem;
+  width: auto;
+  overflow: hidden;
+  opacity: 1;
+}
+#servicesChunk #cardFlexContainer #learnMoreContainer::after {
+  content: "";
+  background: url(./media/arrow-thin-right-icon.svg) no-repeat;
+  height: 16px;
+  width: 16px;
+  display: inline-flex;
+}
 
 #teamChunk {
-  position: relative;
-  display: flex;
-  background: linear-gradient(#f3f3f3 20%, rgba(243, 243, 243, 0) 100%), linear-gradient(to right, #f3f3f3 0%, rgba(243, 243, 243, 0.9) 30%, rgba(243, 243, 243, 0)), url("./media/pics/Edmonton.jpg");
-  background-size: cover;
-  background-repeat: no-repeat;
-  flex-direction: column;
-  justify-content: center;
-  box-sizing: border-box;
-  padding: 13rem 2rem 7rem 7rem;
-}
-#teamChunk #aboutUsContent {
-  width: 65%;
-  margin-bottom: 3rem;
-}
-#teamChunk #aboutUsContent h1 {
-  margin-bottom: 2rem;
-}
-#teamChunk #aboutUsContentLinks {
-  list-style-type: none;
-  display: flex;
-  flex-direction: column;
-  width: 40%;
-  margin-left: 2rem;
-}
-#teamChunk #aboutUsContentLinks li {
-  box-sizing: border-box;
-  display: inline-flex;
-  justify-content: space-between;
-  border-bottom: 0.19rem solid #06645f;
-  padding: 2rem 0;
-}
-#teamChunk #aboutUsContentLinks li h2 {
-  color: #06645f;
-  margin-left: 1rem;
-}
-#teamChunk #aboutUsContentLinks li:after {
-  content: "";
-  background: url("./media/arrow-green.svg") no-repeat;
-  height: 1.5rem;
-  width: 1.5rem;
-  padding: 0 1rem;
-  transform: rotate(-45deg);
-}
-#teamChunk #aboutUsContentLinks li:hover {
-  cursor: pointer;
-  background-color: #06645f;
-}
-#teamChunk #aboutUsContentLinks li:hover h2 {
-  color: #fbfbfb;
+  background-color: orange;
 }
 
 @keyframes scrollDown {
@@ -393,4 +346,4 @@ body {
   }
 }
 
-/*# sourceMappingURL=styles.css.map */
+/*# sourceMappingURL=styles.cs.map */

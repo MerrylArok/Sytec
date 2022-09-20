@@ -10,12 +10,13 @@
 }
 
 @font-face {
-    font-family: "Mont";
-    src: url("./Fonts/Montserrat/Montserrat.ttf");
+    font-family: "Inter";
+    src: url("./Fonts/Inter.ttf");
 }
 
+
 @font-face {
-    font-family: "Playfair";
+    font-family: "Raleway";
     src: url("./Fonts/Raleway/RalewayMain.ttf");
 }
 
@@ -24,32 +25,41 @@
     src: url("./Fonts/Manrope[wght].ttf");
 }
 
-$sytecColor :hsl(168, 64%, 24%);
+// $sytecColor :hsl(168, 64%, 24%);
+// $sytecColor :#00cba0;
+$darkGreen: #06645f;
+$deepDarkGreen: #011c1a;
+$lightGreen: #29403f;
 $themeColor: #1a1a1a;
 $offWhite: #fbfbfb;
-$goldColor: #fbf778;
+$dirtyWhite: rgb(243, 243, 243);
 $logoWidth: 22rem;
 $contentWidth: 17rem;
+$h3Size: 1.5rem;
+$h2size: 2.5rem;
 
 h1 {
-    font-family: Mont;
-    font-size: 3.5rem;
+    font-family: Raleway;
+    font-size: 5rem;
     margin: 1rem 0;
+    color: $darkGreen;
 }
 
 h2 {
-    font-family: Mont;
-    font-size: 2.25rem;
+    font-family: Raleway;
+    font-size: $h2size;
+    font-weight: regular;
 }
 
 h3 {
+    font-family: Inter;
     font-weight: normal;
-    font-size: 1.75rem;
+    font-size: $h3Size;
 }
 
 p,
 #yearsAlive {
-    font-size: 1.65rem;
+    font-size: 1.75rem;
 }
 
 .chunk {
@@ -57,22 +67,27 @@ p,
     height: 100vh;
 }
 
+body {
+    background-color: $dirtyWhite;
+}
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
 .header {
     position: fixed;
     z-index: 1000;
     width: 100%;
     padding: 0 3rem;
     box-shadow: 0px 0px 10px 1px rgba(0, 0, 0, 0.2);
-    background-color: $offWhite;
+    background-color: rgb($offWhite, 0.8);
+    backdrop-filter: blur(0.7rem);
+
 
     #headerFlexContainer {
         display: flex;
         justify-content: space-between;
         align-items: center;
 
-        .lists {
-            list-style-type: none;
-        }
 
         #logo {
             height: 4rem;
@@ -83,27 +98,28 @@ p,
             display: flex;
             justify-content: flex-end;
             align-items: center;
+            list-style-type: none;
         }
 
 
         #headerRight>li {
-            font-size: 2rem;
+            font-size: 1.5rem;
             font-weight: bold;
             margin: 0 1.5rem;
         }
 
         #headerContactButton {
-            background-color: $offWhite;
+            background-color: transparent;
             color: $themeColor;
-            font-size: 1.75rem;
+            font-size: 1.65rem;
             font-weight: 600;
-            padding: .75rem 1.25rem;
+            padding: .5rem 1.25rem;
             margin: 0.75rem 0;
             border-radius: 0.5rem;
         }
 
         #headerContactButton:hover {
-            background-color: #246e53;
+            background-color: $darkGreen;
             color: $offWhite;
             cursor: pointer;
         }
@@ -111,7 +127,7 @@ p,
         #headerMenuButton {
             background-color: transparent;
             width: 3.75rem;
-            height: 1.75rem;
+            height: 1.5rem;
             border-radius: 0;
             padding: 0;
             display: flex;
@@ -149,7 +165,7 @@ p,
     }
 }
 
-
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 #mainPage {
     position: relative;
@@ -176,22 +192,27 @@ p,
         filter: brightness(55%);
     }
 
-    .icon {
+    #iconScrollDown {
         position: absolute;
         left: 50%;
         background: url(./media/line-angle-down-icon.svg) center no-repeat;
-        animation: 1.5s infinite scrollDown;
+        animation: 2s infinite scrollDown ease-out;
     }
 }
 
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// 
 
 #customerContainer {
     background-color: #f3f3f3;
-    // background-image: linear-gradient(315deg, #ffcfdf 0%, #b0f3f1 74%);
-    padding: 5rem $contentWidth;
+    padding: 4rem $contentWidth;
+    margin: 5rem 0;
     position: relative;
 
     #customerContent {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
         position: absolute;
         top: 40%;
         left: 0;
@@ -250,32 +271,33 @@ p,
         object-fit: contain;
         pointer-events: none;
     }
-
-
 }
 
-#helloContent,
-#customerContent {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-}
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 #servicesChunk {
-    background: linear-gradient(to bottom, rgb(243, 243, 243) 60%, rgba(0, 0, 0, 0.3) 100%);
+    background-image: url('./media/waveBackgroundLine.svg');
+    background-size: cover;
+    background: rbg(243, 243, 243);
     display: flex;
-    flex-direction: column;
+    padding: 10rem 3rem;
+    // flex-direction: column;
 
     #servicesContent {
-        padding: 0 17rem;
-        text-align: center;
+        text-align: left;
+        // background: $lightGreen;        
         flex: 1;
+        display: flex;
+        align-items: center;
+        padding: 0 3rem 0 3rem;
+    }
+
+    #servicesContent h2 {
+        // color: $offWhite;
     }
 
     #cardFlexContainer {
-        flex: 3;
-        padding: 2rem 5rem;
+        flex: 4;
         display: flex;
 
         .servicesCard {
@@ -287,26 +309,38 @@ p,
             flex-direction: column;
             justify-content: flex-end;
             cursor: pointer;
-            border-radius: 5% 1.5% 5% 1.5%;
-        }
+            border-radius: .25rem;
 
-        #engineeringCard {
-            background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.9)), url(./media/pics/Engineering.jpg) center no-repeat;
-            background-size: cover;
-        }
+            #learnMoreContainer {
+                display: inline-flex;
+                flex-direction: row;
+                // align-items: flex-end;
+                justify-content: flex-start;
+                align-items: center;
+                height: $h3Size;
+            }
 
-        #manfacturingCard {
-            background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.9)), url(./media/pics/Welding.jpg) center no-repeat;
-            background-size: cover;
-        }
+            #learnMoreContainer::after {
+                content: "";
+                background: url('./media/arrow-thin-right-icon.svg') no-repeat center;
+                transform: rotate(-45deg) scale(1.5);
+                // transform: scale(2);
+                height: $h3Size;
+                width: $h3Size;
+                transition: all 0.25s ease-in-out;
+            }
 
-        #paintCard {
-            background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.9)), url(./media/pics/Powder_Coat.jpg) center no-repeat;
-            background-size: cover;
+            #learnMoreContainer h3 {
+                max-width: 0;
+                opacity: 0;
+                overflow: hidden;
+                white-space: nowrap;
+                transition: all .75s ease-in-out;
+            }
         }
 
         .servicesCard * {
-            margin: .75rem 0;
+            margin: 1rem 0;
             color: $offWhite;
         }
 
@@ -317,19 +351,121 @@ p,
             transition: all .5s ease-in-out;
         }
 
+
         .servicesCard:hover p {
             height: auto;
             max-height: 500px;
             opacity: 1;
         }
+
+        .servicesCard:hover #learnMoreContainer h3 {
+            max-width: 15rem;
+            margin-right: 3rem;
+            width: auto;
+            overflow: hidden;
+            opacity: 1;
+        }
+
+        .servicesCard:hover #learnMoreContainer::after {
+            transform: rotate(0);
+        }
+
+        #engineeringCard {
+            background: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.9)), url(./media/pics/Engineering.jpg) center no-repeat;
+            background-size: cover;
+            transform: translateY(-2rem);
+        }
+
+        #manfacturingCard {
+            background: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.9)), url(./media/pics/Welding.jpg) center no-repeat;
+            background-size: cover;
+        }
+
+        #paintCard {
+            background: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.9)), url(./media/pics/Powder_Coat.jpg) center no-repeat;
+            background-size: cover;
+            transform: translateY(2rem);
+        }
     }
-
-
 }
+
+
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 #teamChunk {
-    background-color: black;
+    position: relative;
+    display: flex;
+    background: linear-gradient(rgba(243, 243, 243, 1)20%, rgba(243, 243, 243, 0)100%), linear-gradient(to right, rgba(243, 243, 243, 1)0%, rgba(243, 243, 243, .9)30%, rgba(243, 243, 243, 0)), url('./media/pics/Edmonton.jpg');
+    // background: $darkGreen;
+    background-size: cover;
+    background-repeat: no-repeat;
+    flex-direction: column;
+    justify-content: center;
+    box-sizing: border-box;
+    padding: 13rem 2rem 7rem 7rem;
+
+    #aboutUsContent {
+        width: 65%;
+        margin-bottom: 3rem;
+
+        h1 {
+            margin-bottom: 2rem;
+        }
+
+    }
+
+    #aboutUsContentLinks {
+        list-style-type: none;
+        display: flex;
+        flex-direction: column;
+        width: 40%;
+        margin-left: 2rem;
+
+        li {
+            box-sizing: border-box;
+            display: inline-flex;
+            justify-content: space-between;
+            // flex-direction: row;
+            // background-color: rgba(243,243,243,.8);
+            // backdrop-filter: blur(0.3rem) brightness(120%);
+            border-bottom: 0.19rem solid $darkGreen;            
+            padding: 2rem 0;
+
+            h2 {
+                color: $darkGreen;
+                margin-left:1rem;
+            }
+
+        }
+
+        li:after {
+            content: "";
+            background: url('./media/arrow-green.svg') no-repeat;
+            height: $h3Size;
+            width: $h3Size;  
+            padding:0 1rem;
+            transform: rotate(-45deg);          
+        }
+
+        li:hover {
+            cursor: pointer;
+            background-color: $darkGreen;
+            
+            h2{
+                color:$offWhite;
+            }
+        }
+
+        
+    }
+
 }
+
+
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+///KEYFRAME ANIMATIONS GO HERE//////
 
 @keyframes scrollDown {
     from {
