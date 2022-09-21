@@ -3,10 +3,9 @@
   padding: 0;
   border: 0;
   font-family: Manrope, sans-serif;
-  font-size: 16px;
-  color: #1a1a1a;
+  color: #3d3d3e;
   box-sizing: border-box;
-  text-rendering: optimizeLegibility;
+  font-size: 13px;
 }
 
 @font-face {
@@ -22,27 +21,27 @@
   src: url("./Fonts/Manrope[wght].ttf");
 }
 h1 {
-  font-family: Raleway;
-  font-size: 5rem;
+  font-family: Manrope;
+  font-size: 4.5rem;
   margin: 1rem 0;
   color: #06645f;
 }
 
 h2 {
-  font-family: Raleway;
-  font-size: 2.5rem;
+  font-family: Manrope;
+  font-size: 2.25rem;
   font-weight: regular;
 }
 
 h3 {
-  font-family: Inter;
+  font-family: Manrope;
   font-weight: normal;
   font-size: 1.5rem;
 }
 
 p,
 #yearsAlive {
-  font-size: 1.75rem;
+  font-size: 1.55rem;
 }
 
 .chunk {
@@ -69,7 +68,7 @@ body {
   align-items: center;
 }
 .header #headerFlexContainer #logo {
-  height: 4rem;
+  height: 3.6rem;
   padding: 1rem 2rem;
 }
 .header #headerFlexContainer #headerRight {
@@ -79,21 +78,21 @@ body {
   list-style-type: none;
 }
 .header #headerFlexContainer #headerRight > li {
-  font-size: 1.5rem;
+  font-size: 1.35rem;
   font-weight: bold;
-  margin: 0 1.5rem;
+  margin: 0 2.25rem;
 }
 .header #headerFlexContainer #headerContactButton {
-  background-color: transparent;
-  color: #1a1a1a;
-  font-size: 1.65rem;
+  background-color: #B03C00;
+  color: #fbfbfb;
+  font-size: 1.5rem;
   font-weight: 600;
   padding: 0.5rem 1.25rem;
   margin: 0.75rem 0;
   border-radius: 0.5rem;
 }
 .header #headerFlexContainer #headerContactButton:hover {
-  background-color: #06645f;
+  background-color: #632606;
   color: #fbfbfb;
   cursor: pointer;
 }
@@ -111,9 +110,9 @@ body {
 .header #headerFlexContainer #headerMenuButton #longBar,
 .header #headerFlexContainer #headerMenuButton #midBar,
 .header #headerFlexContainer #headerMenuButton #shortBar {
-  height: 0.25rem;
+  height: 0.2rem;
   width: 100%;
-  background-color: #1a1a1a;
+  background-color: #3d3d3e;
   transition: all 0.3s;
 }
 .header #headerFlexContainer #headerMenuButton #midBar {
@@ -138,6 +137,7 @@ body {
   position: absolute;
   top: 60%;
   margin: 0 17rem;
+  text-align: center;
 }
 #mainPage #helloContent * {
   color: #fbfbfb;
@@ -301,7 +301,7 @@ body {
   transform: translateY(-2rem);
 }
 #servicesChunk #cardFlexContainer #manfacturingCard {
-  background: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.9)), url(./media/pics/Welding.jpg) center no-repeat;
+  background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.9)), url(./media/pics/Welding.jpg) center no-repeat;
   background-size: cover;
 }
 #servicesChunk #cardFlexContainer #paintCard {
@@ -340,7 +340,7 @@ body {
   display: inline-flex;
   justify-content: space-between;
   border-bottom: 0.19rem solid #06645f;
-  padding: 2rem 0;
+  padding: 1.5rem 0;
 }
 #teamChunk #aboutUsContentLinks li h2 {
   color: #06645f;

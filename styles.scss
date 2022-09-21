@@ -3,11 +3,11 @@
     padding: 0;
     border: 0;
     font-family: Manrope, sans-serif;
-    font-size: 16px;
-    color: #1a1a1a;
+    color: #3d3d3e;
     box-sizing: border-box;
-    text-rendering: optimizeLegibility;
+    font-size: 13px;
 }
+
 
 @font-face {
     font-family: "Inter";
@@ -27,39 +27,41 @@
 
 // $sytecColor :hsl(168, 64%, 24%);
 // $sytecColor :#00cba0;
-$darkGreen: #06645f;
+$lightGreen: #06645f;
 $deepDarkGreen: #011c1a;
-$lightGreen: #29403f;
-$themeColor: #1a1a1a;
+$darkGreen: #29403f;
+$complimentaryColor:#B03C00;
+$themeColor: #3d3d3e;
 $offWhite: #fbfbfb;
 $dirtyWhite: rgb(243, 243, 243);
+
 $logoWidth: 22rem;
 $contentWidth: 17rem;
 $h3Size: 1.5rem;
-$h2size: 2.5rem;
+$h2size: 2.25rem;
 
 h1 {
-    font-family: Raleway;
-    font-size: 5rem;
+    font-family: Manrope;
+    font-size: 4.5rem;
     margin: 1rem 0;
-    color: $darkGreen;
+    color: $lightGreen;
 }
 
 h2 {
-    font-family: Raleway;
+    font-family: Manrope;
     font-size: $h2size;
     font-weight: regular;
 }
 
 h3 {
-    font-family: Inter;
+    font-family: Manrope;
     font-weight: normal;
     font-size: $h3Size;
 }
 
 p,
 #yearsAlive {
-    font-size: 1.75rem;
+    font-size: 1.55rem;
 }
 
 .chunk {
@@ -90,7 +92,7 @@ body {
 
 
         #logo {
-            height: 4rem;
+            height: 3.6rem;
             padding: 1rem 2rem;
         }
 
@@ -103,15 +105,15 @@ body {
 
 
         #headerRight>li {
-            font-size: 1.5rem;
+            font-size: 1.35rem;
             font-weight: bold;
-            margin: 0 1.5rem;
+            margin: 0 2.25rem;
         }
 
         #headerContactButton {
-            background-color: transparent;
-            color: $themeColor;
-            font-size: 1.65rem;
+            background-color: $complimentaryColor;
+            color: $offWhite;
+            font-size: 1.5rem;
             font-weight: 600;
             padding: .5rem 1.25rem;
             margin: 0.75rem 0;
@@ -119,7 +121,7 @@ body {
         }
 
         #headerContactButton:hover {
-            background-color: $darkGreen;
+            background-color: #632606;
             color: $offWhite;
             cursor: pointer;
         }
@@ -138,7 +140,7 @@ body {
             #longBar,
             #midBar,
             #shortBar {
-                height: 0.25rem;
+                height: 0.2rem;
                 width: 100%;
                 background-color: $themeColor;
                 transition: all 0.3s;
@@ -175,6 +177,7 @@ body {
         position: absolute;
         top: 60%;
         margin: 0 $contentWidth;
+        text-align: center;
     }
 
     #helloContent * {
@@ -285,7 +288,6 @@ body {
 
     #servicesContent {
         text-align: left;
-        // background: $lightGreen;        
         flex: 1;
         display: flex;
         align-items: center;
@@ -377,7 +379,7 @@ body {
         }
 
         #manfacturingCard {
-            background: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.9)), url(./media/pics/Welding.jpg) center no-repeat;
+            background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.9)), url(./media/pics/Welding.jpg) center no-repeat;
             background-size: cover;
         }
 
@@ -397,7 +399,7 @@ body {
     position: relative;
     display: flex;
     background: linear-gradient(rgba(243, 243, 243, 1)20%, rgba(243, 243, 243, 0)100%), linear-gradient(to right, rgba(243, 243, 243, 1)0%, rgba(243, 243, 243, .9)30%, rgba(243, 243, 243, 0)), url('./media/pics/Edmonton.jpg');
-    // background: $darkGreen;
+    // background: $lightGreen;
     background-size: cover;
     background-repeat: no-repeat;
     flex-direction: column;
@@ -429,13 +431,15 @@ body {
             // flex-direction: row;
             // background-color: rgba(243,243,243,.8);
             // backdrop-filter: blur(0.3rem) brightness(120%);
-            border-bottom: 0.19rem solid $darkGreen;            
-            padding: 2rem 0;
+            border-bottom: 0.19rem solid $lightGreen;
+            padding: 1.5rem 0;
 
             h2 {
-                color: $darkGreen;
-                margin-left:1rem;
+                color: $lightGreen;
+                margin-left: 1rem;
             }
+
+            // transition: all 0.25s ease-in-out;
 
         }
 
@@ -443,21 +447,21 @@ body {
             content: "";
             background: url('./media/arrow-green.svg') no-repeat;
             height: $h3Size;
-            width: $h3Size;  
-            padding:0 1rem;
-            transform: rotate(-45deg);          
+            width: $h3Size;
+            padding: 0 1rem;
+            transform: rotate(-45deg);
         }
 
         li:hover {
             cursor: pointer;
-            background-color: $darkGreen;
-            
-            h2{
-                color:$offWhite;
+            background-color: $lightGreen;
+
+            h2 {
+                color: $offWhite;
             }
         }
 
-        
+
     }
 
 }
