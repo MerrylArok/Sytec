@@ -49,6 +49,11 @@ p,
   height: 100vh;
 }
 
+html,
+body {
+  height: 100%;
+}
+
 body {
   background-color: #f3f3f3;
 }
@@ -137,7 +142,9 @@ body {
   position: absolute;
   top: 60%;
   margin: 0 17rem;
-  text-align: center;
+  left: 0;
+  right: 0;
+  text-align: left;
 }
 #mainPage #helloContent * {
   color: #fbfbfb;
@@ -173,6 +180,7 @@ body {
   position: absolute;
   top: 40%;
   left: 0;
+  right: 0;
   margin: 0 17rem;
   z-index: 100;
 }
