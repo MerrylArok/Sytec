@@ -1,7 +1,8 @@
-// // let windowWidth: Number = window.innerWidth;
-// // Using 100% width in CSS to prevent overflow due to vertical scrollbar 
 // Wrote this function to ensure 100% vh in mobile, realized that I could do it easier
 //using 100vh combined with 100% height for body and html
+
+// // let windowWidth: Number = window.innerWidth;
+// // Using 100% width in CSS to prevent overflow due to vertical scrollbar 
 // let windowHeight: Number = window.innerHeight;
 
 // const contentChunks = document.getElementsByClassName('chunk') as HTMLCollectionOf<HTMLElement>;
@@ -25,33 +26,122 @@
 
 // }
 
+/////////////////////////////////////////////////////////////////////////////////////////////
+
+// This function updates the number of years Sytec has been operational since its inception in 1998
+
 let yearsAlive = document.getElementById('yearsAlive') as HTMLElement;
-yearsAlive.innerText = (new Date().getFullYear() - 1998).toString() + " years";
+try {
+    yearsAlive.innerText = (new Date().getFullYear() - 1998).toString() + " years";
+} catch (error) {
+    console.log(error + " and not necessary. Variable only defined and needed in homepage.")
+}
 
 
+/////////////////////////////////////////////////////////////////////////////////////////////
+
+// Header class is a reusable WebComponent injected as a custom html element called header-component
+//Adding <header-component></header-component> to any html file will inject the following html through addAdjacentHTML method. Initially injected via innerHTML, updated to remove cross site scripting vulnerabilities
 class Header extends HTMLElement {
 
-    constructor(){
+    constructor() {
         super();
     }
 
+    connectedCallback() {
+        let htmlHeader = `<header class="header">
+    <nav id="headerFlexContainer">
+    <a href="./index.html"><img id="logo" src="./media/Sytec.svg" alt="Sytec Logo"></a>
+
+        <ul id="headerRight" class="lists">
+            <li><a id="headerContactButton" href="./contact.html">Contact</a></li>
+            <li><button id="headerMenuButton">
+                    <div id="longBar"></div>
+                    <div id="midBar"></div>
+                    <div id="shortBar"></div>
+                </button></li>
+        </ul>
+    </nav>
+</header>`;
+
+        this.insertAdjacentHTML('afterbegin', htmlHeader);
+    }
+}
+
+//Reusable Footer web-component
+class Footer extends HTMLElement {
+    constructor() {
+        super();
+    }
 
     connectedCallback() {
-        this.innerHTML = `<header class="header">
-        <nav id="headerFlexContainer">
-            <img id="logo" src="./media/Sytec.svg" alt="Sytec Logo">
+        let htmlFooter = `
+        <footer id="footer">
+        <ul>
+            <li>
+                <h3>Sytec Manufacturing</h3>
+            </li>
+            <li>
+                <h4>7815- 127th Ave</h4>
+            </li>
+            <li>
+                <h4>Edmonton, AB T5B 1R9</h4>
+            </li>
+            <li>
+                <h4>780-484-9898</h4>
+            </li>
+            <li>
+                <h4>sales@sytec-mfg.com</h4>
+            </li>
+        </ul>
 
-            <ul id="headerRight" class="lists">
-                <li><button id="headerContactButton">Contact</button></li>
-                <li><button id="headerMenuButton">
-                        <div id="longBar"></div>
-                        <div id="midBar"></div>
-                        <div id="shortBar"></div>
-                    </button></li>
-            </ul>
-        </nav>
-    </header>`;
+
+        <ul>
+            <li>
+                <h3>About Us</h3>
+            </li>
+            <li>
+                <a href="./contact.html"><h4>Contact</h4></a>
+            </li>
+            <li>
+                <h4>Products</h4>
+            </li>
+            <li>
+                <h4>Team</h4>
+            </li>
+            <li>
+                <h4>Careers</h4>
+            </li>
+        </ul>
+
+        <ul>
+            <li>
+                <h3>Our Business</h3>
+            </li>
+            <li>
+                <h4>Engineering</h4>
+            </li>
+            <li>
+                <h4>Manufacturing</h4>
+            </li>
+            <li>
+                <h4>Powder Coating</h4>
+            </li>
+        </ul>
+
+        <ul id="externalLinks">
+            <li><a href="https://ca.linkedin.com/company/sytec-manufacturing-ltd" target="_blank"><img
+                        src="./media/linkedin.png" alt="linkedinIcon"></a></li>
+            <li><a href="https://g.page/Sytec-mfg?share" target="_blank"><img src="./media/maps.png" alt="mapsIcon"></a>
+            </li>
+        </ul>
+    </footer>
+        `;
+
+        this.insertAdjacentHTML("afterbegin", htmlFooter);
+
     }
 }
 
 customElements.define('header-component', Header);
+customElements.define('footer-component', Footer);
