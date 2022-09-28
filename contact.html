@@ -12,24 +12,37 @@
     <title>Sytec Manufacturing</title>
     <link rel="icon" type="image/x-icon" href="./media/android-chrome-512x512.png">
     <link rel="stylesheet" href="styles.css">
+
+    <script type="module" src="./map.js"></script>
 </head>
 
 <body>
     <header-component></header-component>
+
     <main class="forceFooterDown" id="contactMain">
 
-        <h1>Made in Canada. Present globally. </h1>
-        <a href="tel:+17804849898"><h2>(780) 484-9898</h2></a>
-        <a href="mailto:sales@sytec-mfg.com"><h2>sales@sytec-mfg.com</h2></a>
-        <h2>Office hours:<span id="hoursFlex">
-                <h2>Monday to Friday</h2>
-                <h2>7:00AM - 4:30PM</h2>
-            </span></h2>
-        
+        <hgroup>
+            <h1>Made in Canada. Present globally. </h1>
+            <h2><a href="tel:+17804849898">(780) 484-9898</a></h2>
+            <h2><a href="mailto:sales@sytec-mfg.com">sales@sytec-mfg.com</a></h2>
+            <h2>Office hours:<span id="hoursFlex">
+                    <h2>Monday to Friday</h2>
+                    <h2>7:00AM - 4:30PM</h2>
+                </span></h2>
+        </hgroup>
 
+
+        <div id="map"></div>
     </main>
+
     <footer-component></footer-component>
+
     <script src="./script.js"></script>
+    <script async
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCI9dyzAwN2PzKQ0RaCv9mpAW8vrPOTs4M&callback=initMap">
+        </script>
+
+
 </body>
 
 </html>

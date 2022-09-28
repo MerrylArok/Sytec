@@ -43,8 +43,11 @@ $pSize: 1.9rem;
     color: $matteBlack;
     box-sizing: border-box;
     font-size: 13px;
-    a{
+
+    a {
         text-decoration: none;
+        font-size: inherit;
+        font-weight: inherit;
     }
 }
 
@@ -138,7 +141,7 @@ body {
 
                 #headerContactButton {
                     background-color: $complimentaryColor;
-                    color: $offWhite;                   
+                    color: $offWhite;
                     font-size: 1.5rem;
                     font-weight: 600;
                     padding: .5rem 1.25rem;
@@ -157,7 +160,7 @@ body {
                     width: 3.75rem;
                     height: 1.6rem;
                     border-radius: 0;
-                    padding: 0;
+                    padding: 0.01rem 0;
                     display: flex;
                     flex-direction: column;
                     justify-content: space-between;
@@ -475,7 +478,7 @@ body {
             border-bottom: 0.19rem solid $lightGreen;
             padding: 1.5rem 0;
 
-            
+
 
             h2 {
                 color: $lightGreen;
@@ -513,11 +516,26 @@ body {
 /// END OF INDEX.HTML MAIN STYLES///////////////////////////////@at-root
 
 #contactMain {
-    padding: 10rem $contentWidth;
+    padding: 10rem 5rem;
+    position: relative;
+
+    hgroup{
+        position: relative;
+        z-index: 100;
+        background-color: $offWhite;
+        width:fit-content;
+        padding:3rem;
+    }   
+
+    #map {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
 
 }
-
-
 
 #hoursFlex {
     display: inline-flex;
@@ -527,7 +545,7 @@ body {
 }
 
 #hoursFlex * {
-    display: inline;
+    display: inline-block;
     text-align: left;
 }
 
@@ -547,7 +565,7 @@ body {
 
     }
 
-    
+
 
     h3 {
         font-weight: bold;

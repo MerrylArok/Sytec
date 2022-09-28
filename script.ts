@@ -101,7 +101,7 @@ class Footer extends HTMLElement {
                 <h3>About Us</h3>
             </li>
             <li>
-                <a href="./contact.html"><h4>Contact</h4></a>
+            <h4><a href="./contact.html">Contact</a></h4>
             </li>
             <li>
                 <h4>Products</h4>
@@ -142,6 +142,10 @@ class Footer extends HTMLElement {
 
     }
 }
+
+
+
+
 
 customElements.define('header-component', Header);
 customElements.define('footer-component', Footer);
