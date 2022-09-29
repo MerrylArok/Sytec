@@ -17,7 +17,7 @@ function initMap() {
     const marker = new google.maps.Marker({
         position: sytec,
         map: map,
-        title: "We are here!",
+        title: "7815 127 Ave, Edmonton",
         
     });
 
