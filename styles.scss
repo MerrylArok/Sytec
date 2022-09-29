@@ -250,7 +250,7 @@ body {
 
 #customerContainer {
     background-color: #f3f3f3;
-    padding: 5rem $contentWidth;
+    padding: 7rem $contentWidth;
     margin: 3rem 0;
     position: relative;
 
@@ -267,9 +267,9 @@ body {
         margin: 0 $contentWidth;
         z-index: 100;
 
-        p {
-            text-align: left;
-        }
+        // p {
+        //     text-align: left;
+        // }
     }
 
     #logoFlexContainer {
@@ -332,7 +332,7 @@ body {
     background-size: cover;
     background: rbg(243, 243, 243);
     display: flex;
-    padding: 7rem 10rem 5rem 10rem;
+    padding: 7rem 13rem;
     flex-direction: column;
     align-items: center;
 
@@ -348,14 +348,14 @@ body {
         .servicesCard {
             position: relative;
             flex: 1;
-            margin: 0 1.25rem;
+            margin: 0 2rem;
             padding: 3rem;
             display: flex;
             flex-direction: column;
             justify-content: flex-end;
             cursor: pointer;
-            box-shadow: rgba(100, 100, 111, 0.7) 0rem 0.3rem 2rem 0rem;
-            // border-radius: .25rem;
+            box-shadow: rgba(100, 100, 111, 0.7) 0rem 0.4rem 1rem 0rem;
+            border-radius: .5rem;
 
             #learnMoreContainer {
                 display: inline-flex;
@@ -522,10 +522,19 @@ body {
     hgroup{
         position: relative;
         z-index: 100;
-        background-color: $offWhite;
+        background-color: $lightGreen;
         width:fit-content;
-        padding:3rem;
+        padding:3rem;  
+        
+        a{
+            text-decoration: dotted underline;
+        }
+        
     }   
+
+    hgroup *{
+        color:$offWhite;
+    }
 
     #map {
         width: 100%;
@@ -547,6 +556,7 @@ body {
 #hoursFlex * {
     display: inline-block;
     text-align: left;
+    color:$offWhite;
 }
 
 ////////////////////////////////////////////////////////@at-root

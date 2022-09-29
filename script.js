@@ -114,7 +114,7 @@ class Footer extends HTMLElement {
         <ul id="externalLinks">
             <li><a href="https://ca.linkedin.com/company/sytec-manufacturing-ltd" target="_blank"><img
                         src="./media/linkedin.png" alt="linkedinIcon"></a></li>
-            <li><a href="https://g.page/Sytec-mfg?share" target="_blank"><img src="./media/maps.png" alt="mapsIcon"></a>
+            <li><a href="https://www.google.com/maps/dir/Current+Location/53.584650741527945,-113.46097094106376" target="_blank"><img src="./media/maps.png" alt="mapsIcon"></a>
             </li>
         </ul>
     </footer>

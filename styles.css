@@ -183,7 +183,7 @@ body {
 
 #customerContainer {
   background-color: #f3f3f3;
-  padding: 5rem 17rem;
+  padding: 7rem 17rem;
   margin: 3rem 0;
   position: relative;
 }
@@ -199,9 +199,6 @@ body {
   right: 0;
   margin: 0 17rem;
   z-index: 100;
-}
-#customerContainer #customerContent p {
-  text-align: left;
 }
 #customerContainer #logoFlexContainer {
   display: flex;
@@ -251,7 +248,7 @@ body {
   background-size: cover;
   background: rbg(243, 243, 243);
   display: flex;
-  padding: 7rem 10rem 5rem 10rem;
+  padding: 7rem 13rem;
   flex-direction: column;
   align-items: center;
 }
@@ -265,13 +262,14 @@ body {
 #servicesChunk #cardFlexContainer .servicesCard {
   position: relative;
   flex: 1;
-  margin: 0 1.25rem;
+  margin: 0 2rem;
   padding: 3rem;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
   cursor: pointer;
-  box-shadow: rgba(100, 100, 111, 0.7) 0rem 0.3rem 2rem 0rem;
+  box-shadow: rgba(100, 100, 111, 0.7) 0rem 0.4rem 1rem 0rem;
+  border-radius: 0.5rem;
 }
 #servicesChunk #cardFlexContainer .servicesCard #learnMoreContainer {
   display: inline-flex;
@@ -384,9 +382,15 @@ body {
 #contactMain hgroup {
   position: relative;
   z-index: 100;
-  background-color: #fbfbfb;
+  background-color: #06645f;
   width: fit-content;
   padding: 3rem;
+}
+#contactMain hgroup a {
+  text-decoration: dotted underline;
+}
+#contactMain hgroup * {
+  color: #fbfbfb;
 }
 #contactMain #map {
   width: 100%;
@@ -405,6 +409,7 @@ body {
 #hoursFlex * {
   display: inline-block;
   text-align: left;
+  color: #fbfbfb;
 }
 
 #footer {
