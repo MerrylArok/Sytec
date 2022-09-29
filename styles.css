@@ -270,6 +270,7 @@ body {
   cursor: pointer;
   box-shadow: rgba(100, 100, 111, 0.7) 0rem 0.4rem 1rem 0rem;
   border-radius: 0.5rem;
+  transition: transform 0.25s ease-in-out;
 }
 #servicesChunk #cardFlexContainer .servicesCard #learnMoreContainer {
   display: inline-flex;
@@ -292,6 +293,9 @@ body {
   overflow: hidden;
   white-space: nowrap;
   transition: all 0.75s ease-in-out;
+}
+#servicesChunk #cardFlexContainer .servicesCard:hover {
+  transform: scale(1.05);
 }
 #servicesChunk #cardFlexContainer .servicesCard * {
   margin: 1rem 0;

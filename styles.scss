@@ -356,6 +356,7 @@ body {
             cursor: pointer;
             box-shadow: rgba(100, 100, 111, 0.7) 0rem 0.4rem 1rem 0rem;
             border-radius: .5rem;
+            transition: transform 0.25s ease-in-out;
 
             #learnMoreContainer {
                 display: inline-flex;
@@ -365,6 +366,8 @@ body {
                 align-items: center;
                 height: $h3Size;
             }
+
+
 
             #learnMoreContainer::after {
                 content: "";
@@ -385,10 +388,15 @@ body {
             }
         }
 
+        .servicesCard:hover {
+            transform: scale(1.05);
+        }
+
         .servicesCard * {
             margin: 1rem 0;
             color: $offWhite;
         }
+
 
         .servicesCard p {
             max-height: 0;
@@ -519,21 +527,21 @@ body {
     padding: 10rem 5rem;
     position: relative;
 
-    hgroup{
+    hgroup {
         position: relative;
         z-index: 100;
         background-color: $lightGreen;
-        width:fit-content;
-        padding:3rem;  
-        
-        a{
+        width: fit-content;
+        padding: 3rem;
+
+        a {
             text-decoration: dotted underline;
         }
-        
-    }   
 
-    hgroup *{
-        color:$offWhite;
+    }
+
+    hgroup * {
+        color: $offWhite;
     }
 
     #map {
@@ -556,7 +564,7 @@ body {
 #hoursFlex * {
     display: inline-block;
     text-align: left;
-    color:$offWhite;
+    color: $offWhite;
 }
 
 ////////////////////////////////////////////////////////@at-root
