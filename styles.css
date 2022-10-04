@@ -2,6 +2,16 @@
   font-family: "Manrope";
   src: url("./Fonts/Manrope[wght].ttf");
 }
+:root {
+  --h1size: 4.5rem;
+  --h2size: 2.5rem;
+  --h3size: 1.5rem;
+  --h4size: 1.3rem;
+  --psize: 1.9rem;
+  --contentWidth: 17rem;
+  --customerLogoWidth: 22rem;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -18,39 +28,36 @@
 }
 
 h1 {
-  font-size: 4.5rem;
+  font-size: var(--h1size);
   margin-bottom: 1.5rem;
   color: #06645f;
 }
 
 h2 {
-  font-size: 2.5rem;
+  font-size: var(--h2size);
   font-weight: regular;
 }
 
 h3 {
   font-weight: normal;
-  font-size: 1.5rem;
-}
-
-h3 {
-  font-weight: normal;
-  font-size: 1.5rem;
+  font-size: var(--h3size);
 }
 
 h4 {
   font-weight: normal;
-  font-size: 1.3rem;
+  font-size: var(--h4size);
 }
 
 p,
 #yearsAlive {
-  font-size: 1.9rem;
+  font-size: var(--psize);
 }
 
 .chunk {
   width: 100%;
+  min-height: calc((100vw)*8/16);
   height: 100vh;
+  max-height: 100vw;
 }
 
 html,
@@ -72,6 +79,7 @@ body {
   position: fixed;
   z-index: 101;
   width: 100%;
+  max-width: 100%;
   padding: 0 3rem;
   box-shadow: 0px 0px 10px 1px rgba(0, 0, 0, 0.2);
   background-color: rgba(251, 251, 251, 0.8);
@@ -152,14 +160,10 @@ body {
   position: absolute;
   bottom: 0%;
   padding-bottom: 15rem;
-  margin: 0 17rem;
+  margin: 0 var(--contentWidth);
   left: 0;
   right: 0;
   text-align: left;
-}
-#mainPage #helloContent p,
-#mainPage #helloContent #yearsAlive {
-  font-size: 2.2rem;
 }
 #mainPage #helloContent * {
   color: #fbfbfb;
@@ -167,6 +171,7 @@ body {
 #mainPage video {
   object-fit: cover;
   width: 100%;
+  max-width: 100%;
   height: 100%;
   position: absolute;
   top: 0;
@@ -183,7 +188,7 @@ body {
 
 #customerContainer {
   background-color: #f3f3f3;
-  padding: 7rem 17rem;
+  padding: 7rem var(--contentWidth);
   margin: 3rem 0;
   position: relative;
 }
@@ -197,7 +202,7 @@ body {
   transform: translate(0, -50%);
   left: 0;
   right: 0;
-  margin: 0 17rem;
+  margin: 0 var(--contentWidth);
   z-index: 100;
 }
 #customerContainer #logoFlexContainer {
@@ -231,7 +236,7 @@ body {
   animation: logoBannerScrollReverse 77s linear infinite;
 }
 #customerContainer .logoContainer {
-  flex: 0 0 22rem;
+  flex: 0 0 var(--customerLogoWidth);
   height: 7rem;
   margin: 4rem 0;
 }
@@ -248,7 +253,7 @@ body {
   background-size: cover;
   background: rbg(243, 243, 243);
   display: flex;
-  padding: 7rem 13rem;
+  padding: 10rem;
   flex-direction: column;
   align-items: center;
 }
@@ -268,23 +273,23 @@ body {
   flex-direction: column;
   justify-content: flex-end;
   cursor: pointer;
-  box-shadow: rgba(100, 100, 111, 0.7) 0rem 0.4rem 1rem 0rem;
+  box-shadow: rgba(100, 100, 111, 0.8) 0rem 0.4rem 1rem 0rem;
   border-radius: 0.5rem;
-  transition: transform 0.25s ease-in-out;
+  transition: all 0.25s ease-in-out;
 }
 #servicesChunk #cardFlexContainer .servicesCard #learnMoreContainer {
   display: inline-flex;
   flex-direction: row;
   justify-content: flex-start;
   align-items: center;
-  height: 1.5rem;
+  height: var(--h3size);
 }
 #servicesChunk #cardFlexContainer .servicesCard #learnMoreContainer::after {
   content: "";
   background: url("./media/arrow-thin-right-icon.svg") no-repeat center;
   transform: rotate(-45deg) scale(1.5);
-  height: 1.5rem;
-  width: 1.5rem;
+  height: var(--h3size);
+  width: var(--h3size);
   transition: all 0.25s ease-in-out;
 }
 #servicesChunk #cardFlexContainer .servicesCard #learnMoreContainer h3 {
@@ -296,6 +301,7 @@ body {
 }
 #servicesChunk #cardFlexContainer .servicesCard:hover {
   transform: scale(1.05);
+  box-shadow: rgba(100, 100, 111, 0.4) 0rem 0.4rem 2rem 0rem;
 }
 #servicesChunk #cardFlexContainer .servicesCard * {
   margin: 1rem 0;
@@ -344,7 +350,7 @@ body {
   flex-direction: column;
   justify-content: center;
   box-sizing: border-box;
-  padding: 5rem 13rem;
+  padding: 0rem var(--contentWidth);
 }
 #teamChunk #aboutUsContent {
   width: 75%;
@@ -380,7 +386,7 @@ body {
 }
 
 #contactMain {
-  padding: 10rem 5rem;
+  padding: 10rem 0 0 5rem;
   position: relative;
 }
 #contactMain hgroup {
@@ -431,9 +437,6 @@ body {
 #footer h3 {
   font-weight: bold;
 }
-#footer h4 {
-  font-size: 1.3rem;
-}
 #footer img {
   height: 3rem;
 }
@@ -465,15 +468,181 @@ body {
     transform: translateX(0);
   }
   100% {
-    transform: translateX(calc(-22rem * 8));
+    transform: translateX(calc((var(--customerLogoWidth))* -8));
   }
 }
 @keyframes logoBannerScrollReverse {
   0% {
-    transform: translateX(calc(-22rem * 8));
+    transform: translateX(calc((var(--customerLogoWidth))* -8));
   }
   100% {
     transform: translateX(0);
+  }
+}
+@media (min-width: 1367px) and (max-width: 1540px) {
+  :root {
+    --contentWidth: 13rem;
+    --customerLogoWidth: 18rem;
+    --h1size: 3.75rem;
+    --h2size: 2rem;
+    --h3size: 1.2rem;
+    --h4size: 1rem;
+    --psize: 1.75rem;
+  }
+
+  #mainPage #helloContent {
+    padding-bottom: 11rem;
+  }
+
+  #customerContainer {
+    margin: 2rem 0;
+  }
+  #customerContainer .logoContainer {
+    height: 6.5rem;
+    margin: 1rem 0;
+  }
+
+  #servicesChunk {
+    padding: 7rem 5rem;
+  }
+  #servicesChunk #cardFlexContainer .servicesCard {
+    margin: 0 1.25rem;
+  }
+  #servicesChunk #cardFlexContainer .servicesCard * {
+    margin: 0.8rem 0;
+  }
+
+  #footer {
+    padding: 2rem 27rem;
+  }
+  #footer img {
+    height: 2.25rem;
+  }
+  #footer #externalLinks li {
+    display: inline;
+    padding: 0 0.75rem;
+  }
+}
+@media (min-width: 1024px) and (max-width: 1366px) {
+  :root {
+    --contentWidth: 9rem;
+    --customerLogoWidth: 22rem;
+    --h1size: 3rem;
+    --h2size: 1.75rem;
+    --h3size: 1.1rem;
+    --h4size: 1rem;
+    --psize: 1.5rem;
+  }
+
+  #mainPage #helloContent {
+    padding-bottom: 9rem;
+  }
+
+  #customerContainer {
+    margin: 1rem 0;
+  }
+  #customerContainer .logoContainer {
+    height: 4.75rem;
+    margin: 1rem 0;
+  }
+
+  #servicesChunk {
+    padding: 7rem 4rem;
+  }
+  #servicesChunk #cardFlexContainer .servicesCard {
+    margin: 0 1.125rem;
+  }
+  #servicesChunk #cardFlexContainer .servicesCard * {
+    margin: 0.7rem 0;
+  }
+
+  @keyframes scrollDown {
+    from {
+      bottom: 7%;
+      opacity: 0;
+      width: 2rem;
+      height: 2rem;
+    }
+    to {
+      bottom: 4.5%;
+      opacity: 0.6;
+      width: 1.5rem;
+      height: 1.5rem;
+    }
+  }
+  #footer {
+    padding: 2rem 22rem;
+  }
+  #footer img {
+    height: 2.25rem;
+  }
+  #footer #externalLinks li {
+    display: inline;
+    padding: 0 0.75rem;
+  }
+}
+@media (min-width: 768px) and (max-width: 1023px) {
+  :root {
+    --contentWidth: 7rem;
+    --customerLogoWidth: 16.5rem;
+    --h1size: 2.5rem;
+    --h2size: 1.5rem;
+    --h3size: .85rem;
+    --h4size: .7rem;
+    --psize: 1.25rem;
+  }
+
+  #mainPage #helloContent {
+    padding-bottom: 7.5rem;
+  }
+
+  @keyframes scrollDown {
+    from {
+      bottom: 7%;
+      opacity: 0;
+      width: 1.5rem;
+      height: 1.5rem;
+    }
+    to {
+      bottom: 4.5%;
+      opacity: 0.6;
+      width: 1.25rem;
+      height: 1.25rem;
+    }
+  }
+  #customerContainer {
+    margin: 1.5rem 0;
+    padding: 4rem var(--contentWidth);
+  }
+  #customerContainer .logoContainer {
+    height: 3.5rem;
+    margin: 1rem 0;
+  }
+
+  #servicesChunk {
+    padding: 5rem 3rem;
+  }
+  #servicesChunk #cardFlexContainer .servicesCard {
+    margin: 0 1.125rem;
+    padding: 2rem;
+  }
+  #servicesChunk #cardFlexContainer .servicesCard * {
+    margin: 0.7rem 0;
+  }
+
+  #contactMain {
+    padding: 7rem 0 0 3rem;
+  }
+
+  #footer {
+    padding: 1rem 20rem;
+  }
+  #footer img {
+    height: 2rem;
+  }
+  #footer #externalLinks li {
+    display: inline;
+    padding: 0 0.75rem;
   }
 }
 

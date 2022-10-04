@@ -2,10 +2,10 @@
 function initMap() {
     // The location of Uluru
     const sytec = { lat: 53.584650741527945, lng: -113.46097094106376 };
-    const mapOffset = {lat:53.58, lng:-113.54};
+    const mapOffset = {lat:53.58, lng:-113.5};
     // The map, centered at Uluru
     const map = new google.maps.Map(document.getElementById("map"), {
-        zoom: 13,
+        zoom: 13.6,
         center: mapOffset,
         mapId:'d334291c60aa81ef',
         disableDefaultUI:true,
@@ -26,8 +26,8 @@ function initMap() {
         // marker.
         window.setTimeout(() => {
           map.panTo(mapOffset);
-          map.setZoom(13);
-        }, 15000);
+          map.setZoom(13.6);
+        }, 30000);
       });    
       
     marker.addListener("click",()=>{
