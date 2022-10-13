@@ -119,7 +119,7 @@ class Footer extends HTMLElement {
                 <h3>Our Business</h3>
             </li>
             <li>
-                <h4>Engineering</h4>
+                <h4><a href="./engineering.html">Engineering</a></h4>
             </li>
             <li>
                 <h4>Manufacturing</h4>

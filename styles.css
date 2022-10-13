@@ -82,17 +82,17 @@ body {
   max-width: 100%;
   padding: 0 3rem;
   box-shadow: 0px 0px 10px 1px rgba(0, 0, 0, 0.2);
-  background-color: rgba(251, 251, 251, 0.8);
+  background-color: rgba(251, 251, 251, 0.5);
   backdrop-filter: blur(0.7rem);
 }
 .header #headerFlexContainer {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding: 0.75rem 2rem;
 }
 .header #headerFlexContainer #logo {
-  height: 3.6rem;
-  padding: 1rem 2rem;
+  height: calc(var(--h2size)*0.8);
 }
 .header #headerFlexContainer #headerRight {
   display: flex;
@@ -108,7 +108,7 @@ body {
 .header #headerFlexContainer #headerRight li #headerContactButton {
   background-color: #B03C00;
   color: #fbfbfb;
-  font-size: 1.5rem;
+  font-size: var(--h3size);
   font-weight: 600;
   padding: 0.5rem 1.25rem;
   margin: 0.75rem 0;
@@ -422,6 +422,32 @@ body {
   color: #fbfbfb;
 }
 
+.pageHeader {
+  position: relative;
+  height: 40%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  background-size: cover;
+}
+.pageHeader h1 {
+  color: #fbfbfb;
+  font-size: calc(var(--h1size)*1.5);
+  padding-bottom: 2rem;
+}
+
+.pageSection {
+  padding: 5rem calc((var(--contentWidth))* 1.75);
+}
+.pageSection h2 {
+  border-left: solid 1.5rem #06645f;
+  padding-left: 3.75rem;
+}
+
+#engineeringHeader {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.6)), url(./media/Engineering.jpg);
+}
+
 #footer {
   width: 100%;
   flex-shrink: 0;
@@ -479,15 +505,85 @@ body {
     transform: translateX(0);
   }
 }
+@media (hover) {
+  #cardFlexContainer {
+    flex: 4;
+    display: flex;
+  }
+  #cardFlexContainer .servicesCard {
+    position: relative;
+    flex: 1;
+    margin: 0 2rem;
+    padding: 3rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    cursor: pointer;
+    box-shadow: rgba(100, 100, 111, 0.8) 0rem 0.4rem 1rem 0rem;
+    border-radius: 0.5rem;
+    transition: all 0.25s ease-in-out;
+  }
+  #cardFlexContainer .servicesCard #learnMoreContainer {
+    display: inline-flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    height: var(--h3size);
+  }
+  #cardFlexContainer .servicesCard #learnMoreContainer::after {
+    content: "";
+    background: url("./media/arrow-thin-right-icon.svg") no-repeat center;
+    transform: rotate(-45deg) scale(1.5);
+    height: var(--h3size);
+    width: var(--h3size);
+    transition: all 0.25s ease-in-out;
+  }
+  #cardFlexContainer .servicesCard #learnMoreContainer h3 {
+    max-width: 0;
+    opacity: 0;
+    overflow: hidden;
+    white-space: nowrap;
+    transition: all 0.75s ease-in-out;
+  }
+  #cardFlexContainer .servicesCard:hover {
+    transform: scale(1.05);
+    box-shadow: rgba(100, 100, 111, 0.4) 0rem 0.4rem 2rem 0rem;
+  }
+  #cardFlexContainer .servicesCard * {
+    margin: 1rem 0;
+    color: #fbfbfb;
+  }
+  #cardFlexContainer .servicesCard p {
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    transition: all 0.5s ease-in-out;
+  }
+  #cardFlexContainer .servicesCard:hover p {
+    height: auto;
+    max-height: 500px;
+    opacity: 1;
+  }
+  #cardFlexContainer .servicesCard:hover #learnMoreContainer h3 {
+    max-width: 15rem;
+    margin-right: 3rem;
+    width: auto;
+    overflow: hidden;
+    opacity: 1;
+  }
+  #cardFlexContainer .servicesCard:hover #learnMoreContainer::after {
+    transform: rotate(0);
+  }
+}
 @media (min-width: 1367px) and (max-width: 1540px) {
   :root {
-    --contentWidth: 13rem;
-    --customerLogoWidth: 18rem;
-    --h1size: 3.75rem;
-    --h2size: 2rem;
-    --h3size: 1.2rem;
-    --h4size: 1rem;
-    --psize: 1.75rem;
+    --h1size: 4rem;
+    --h2size: 2.25rem;
+    --h3size: 1.25rem;
+    --h4size: 1.3rem;
+    --psize: 1.7rem;
+    --contentWidth: 17rem;
+    --customerLogoWidth: 22rem;
   }
 
   #mainPage #helloContent {
@@ -513,7 +609,7 @@ body {
   }
 
   #footer {
-    padding: 2rem 27rem;
+    padding: 2rem 25rem;
   }
   #footer img {
     height: 2.25rem;
@@ -525,13 +621,13 @@ body {
 }
 @media (min-width: 1024px) and (max-width: 1366px) {
   :root {
-    --contentWidth: 9rem;
+    --h1size: 3.8rem;
+    --h2size: 2rem;
+    --h3size: 1.25rem;
+    --h4size: 1.2rem;
+    --psize: 1.7rem;
+    --contentWidth: 15rem;
     --customerLogoWidth: 22rem;
-    --h1size: 3rem;
-    --h2size: 1.75rem;
-    --h3size: 1.1rem;
-    --h4size: 1rem;
-    --psize: 1.5rem;
   }
 
   #mainPage #helloContent {
@@ -571,7 +667,7 @@ body {
     }
   }
   #footer {
-    padding: 2rem 22rem;
+    padding: 2rem 18rem;
   }
   #footer img {
     height: 2.25rem;
@@ -583,13 +679,13 @@ body {
 }
 @media (min-width: 768px) and (max-width: 1023px) {
   :root {
-    --contentWidth: 7rem;
-    --customerLogoWidth: 16.5rem;
-    --h1size: 2.5rem;
-    --h2size: 1.5rem;
-    --h3size: .85rem;
-    --h4size: .7rem;
-    --psize: 1.25rem;
+    --contentWidth: 11rem;
+    --customerLogoWidth: 16rem;
+    --h1size: 3.25rem;
+    --h2size: 2rem;
+    --h3size: 1.2rem;
+    --h4size: 1.1rem;
+    --psize: 1.6rem;
   }
 
   #mainPage #helloContent {
@@ -620,22 +716,81 @@ body {
   }
 
   #servicesChunk {
-    padding: 5rem 3rem;
+    background-image: url("./media/waveBackgroundLine.svg");
+    background-size: cover;
+    background: rbg(243, 243, 243);
+    display: flex;
+    padding: 5rem;
+    flex-direction: column;
+    align-items: center;
+  }
+  #servicesChunk #servicesContent {
+    margin-bottom: 1rem;
+  }
+  #servicesChunk #cardFlexContainer {
+    flex: 4;
+    display: flex;
+    flex-direction: column;
   }
   #servicesChunk #cardFlexContainer .servicesCard {
-    margin: 0 1.125rem;
-    padding: 2rem;
+    position: relative;
+    flex: 1;
+    margin: 0.25rem 1rem;
+    padding: 3rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    cursor: pointer;
+    box-shadow: none;
+    border-radius: 0.15rem;
+    transition: none;
+  }
+  #servicesChunk #cardFlexContainer .servicesCard #learnMoreContainer {
+    display: inline-flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    height: var(--h3size);
+  }
+  #servicesChunk #cardFlexContainer .servicesCard #learnMoreContainer::after {
+    content: "";
+    background: url("./media/arrow-thin-right-icon.svg") no-repeat center;
+    transform: rotate(0deg) scale(1);
+    height: var(--h3size);
+    width: var(--h3size);
+  }
+  #servicesChunk #cardFlexContainer .servicesCard #learnMoreContainer h3 {
+    max-width: 15rem;
+    margin-right: 1rem;
+    width: auto;
+    overflow: hidden;
+    opacity: 1;
+  }
+  #servicesChunk #cardFlexContainer .servicesCard:hover {
+    transform: none;
+    box-shadow: none;
   }
   #servicesChunk #cardFlexContainer .servicesCard * {
-    margin: 0.7rem 0;
+    margin: 0.5rem 0;
+  }
+  #servicesChunk #cardFlexContainer .servicesCard p {
+    height: auto;
+    max-height: 500px;
+    opacity: 1;
+  }
+  #servicesChunk #cardFlexContainer .servicesCard:hover #learnMoreContainer h3 {
+    margin-right: 1rem;
+  }
+  #servicesChunk #cardFlexContainer .servicesCard:hover #learnMoreContainer::after {
+    transform: rotate(0);
   }
 
   #contactMain {
-    padding: 7rem 0 0 3rem;
+    padding: 1rem 0 0 3rem;
   }
 
   #footer {
-    padding: 1rem 20rem;
+    padding: 1rem 10rem;
   }
   #footer img {
     height: 2rem;
