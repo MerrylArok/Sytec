@@ -4,10 +4,10 @@
 // }
 
 
-// @font-face {
-//     font-family: "Raleway";
-//     src: url("./Fonts/Raleway/RalewayMain.ttf");
-// }
+@font-face {
+    font-family: "DMSans";
+    src: url("./Fonts/DMSans-Regular.ttf");
+}
 
 @font-face {
     font-family: "Manrope";
@@ -353,14 +353,14 @@ body {
         .servicesCard {
             position: relative;
             flex: 1;
-            margin: 0 2rem;
+            margin: 0 1.5rem;
             padding: 3rem;
             display: flex;
             flex-direction: column;
             justify-content: flex-end;
             cursor: pointer;
-            box-shadow: rgba(100, 100, 111, 0.8) 0rem 0.4rem 1rem 0rem;
-            border-radius: .5rem;
+            // box-shadow: rgba(100, 100, 111, 0.8) 0rem 0.4rem 1rem 0rem;
+            // border-radius: .5rem;
             transition: all 0.25s ease-in-out;
 
             #learnMoreContainer {
@@ -394,8 +394,9 @@ body {
         }
 
         .servicesCard:hover {
-            transform: scale(1.05);
-            box-shadow: rgba(100, 100, 111, 0.4) 0rem 0.4rem 2rem 0rem;
+            transform: scale(1.02);
+            // box-shadow: rgba(100, 100, 111, 0.4) 0rem 0.4rem 2rem 0rem;
+            // background: #011c1a;
         }
 
         .servicesCard * {
@@ -575,36 +576,99 @@ body {
 
 ////////////////////////////////////////////////////////@at-root
 
-.pageHeader{
+.pageHeader {
     position: relative;
-    height: 40%;
+    height: 35vh;
     display: flex;
     justify-content: center;
-    align-items: flex-end;   
+    align-items: flex-end;
     background-size: cover;
-    
 
-    h1{
+
+    h1 {
+        font-family: DMSans;
         color: $offWhite;
-        font-size: calc(var(--h1size)*1.5); 
-        padding-bottom:2rem;            
+        font-size: calc(var(--h1size)*1.5);
+        padding-bottom: 3rem;
+        // font-weight: bold;
+        letter-spacing: 0.1rem;
     }
 
+
+}
+
+#engineeringHeader {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.6)), url(./media/Engineering.jpg);
+}
+
+.pageSection {
+    // background-color: #ebebeb;
+    padding: 8.5rem calc((var(--contentWidth))* 1.75);
     
-}
 
-.pageSection{
-    padding: 5rem calc((var(--contentWidth))* 1.75);
-
-    h2{        
-        border-left: solid 1.5rem $lightGreen;
-        padding-left:3.75rem;
+    h2 {
+        border-left: solid 1.2rem $lightGreen;
+        padding-left: 2rem;
+        font-weight: 400;
+        margin-bottom:2rem;
     }
 }
 
-#engineeringHeader{
-    background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.6)),url(./media/Engineering.jpg);
+.contentList {
+    width: 100%;
+
+    .contentContainer {
+        display: flex;
+        padding-left: calc((var(--contentWidth))* 1.75);
+        height: 600px;
+        margin-bottom: 2rem;
+        width:100%;
+
+        hgroup {
+            width: calc(((100% - ((var(--contentWidth))* 1.75))/2));
+            padding: 0 5rem;
+            border-right:1rem solid $dirtyWhite;
+
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+
+            background-color: #dfe9e5;
+
+            h2 {
+                font-size: calc(var(--h2size)*1.3);
+                font-weight: 550;
+                color: $lightGreen;
+                margin-bottom: 1rem;
+            }
+        }
+
+        img {
+            flex:1;
+            border-left:1rem solid $dirtyWhite;
+            object-fit: cover;
+        }
+
+
+    }
+
+    .contentContainer:nth-child(even) {
+        flex-direction: row-reverse;
+        padding-right: calc((var(--contentWidth))* 1.75);
+        padding-left: 0;
+
+        hgroup {
+            border-left:1rem solid $dirtyWhite;
+            border-right:none;
+        }
+
+        img{
+            border-right:1rem solid $dirtyWhite;
+            border-left:none;
+        }
+    }
 }
+
 
 /// 
 
@@ -689,94 +753,6 @@ body {
 
 ////////////////////////////////////////////////////////////////////////////
 
-@media (hover){
-    #cardFlexContainer {
-        flex: 4;
-        display: flex;
-
-        .servicesCard {
-            position: relative;
-            flex: 1;
-            margin: 0 2rem;
-            padding: 3rem;
-            display: flex;
-            flex-direction: column;
-            justify-content: flex-end;
-            cursor: pointer;
-            box-shadow: rgba(100, 100, 111, 0.8) 0rem 0.4rem 1rem 0rem;
-            border-radius: .5rem;
-            transition: all 0.25s ease-in-out;
-
-            #learnMoreContainer {
-                display: inline-flex;
-                flex-direction: row;
-                // align-items: flex-end;
-                justify-content: flex-start;
-                align-items: center;
-                height: var(--h3size);
-            }
-
-
-
-            #learnMoreContainer::after {
-                content: "";
-                background: url('./media/arrow-thin-right-icon.svg') no-repeat center;
-                transform: rotate(-45deg) scale(1.5);
-                // transform: scale(2);
-                height: var(--h3size);
-                width: var(--h3size);
-                transition: all 0.25s ease-in-out;
-            }
-
-            #learnMoreContainer h3 {
-                max-width: 0;
-                opacity: 0;
-                overflow: hidden;
-                white-space: nowrap;
-                transition: all .75s ease-in-out;
-            }
-        }
-
-        .servicesCard:hover {
-            transform: scale(1.05);
-            box-shadow: rgba(100, 100, 111, 0.4) 0rem 0.4rem 2rem 0rem;
-        }
-
-        .servicesCard * {
-            margin: 1rem 0;
-            color: $offWhite;
-        }
-
-
-        .servicesCard p {
-            max-height: 0;
-            opacity: 0;
-            overflow: hidden;
-            transition: all .5s ease-in-out;
-        }
-
-
-        .servicesCard:hover p {
-            height: auto;
-            max-height: 500px;
-            opacity: 1;
-        }
-
-        .servicesCard:hover #learnMoreContainer h3 {
-            max-width: 15rem;
-            margin-right: 3rem;
-            width: auto;
-            overflow: hidden;
-            opacity: 1;
-        }
-
-        .servicesCard:hover #learnMoreContainer::after {
-            transform: rotate(0);
-        }
-        
-    }
-}
-
 @media (min-width: 1367px) and (max-width:1540px) {
 
     :root {
@@ -785,7 +761,7 @@ body {
         --h3size: 1.25rem;
         --h4size: 1.3rem;
         --psize: 1.7rem;
-    
+
         --contentWidth: 17rem;
         --customerLogoWidth: 22rem;
     }
@@ -843,11 +819,11 @@ body {
         --h3size: 1.25rem;
         --h4size: 1.2rem;
         --psize: 1.7rem;
-    
+
         --contentWidth: 15rem;
         --customerLogoWidth: 22rem;
     }
-   
+
 
     #mainPage {
         #helloContent {
@@ -915,7 +891,7 @@ body {
 @media (min-width: 768px) and (max-width:1023px) {
 
 
-       :root {
+    :root {
         --contentWidth: 11rem;
         --customerLogoWidth: 16rem;
         --h1size: 3.25rem;
