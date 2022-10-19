@@ -11,7 +11,7 @@
   --h2size: 2.5rem;
   --h3size: 1.5rem;
   --h4size: 1.3rem;
-  --psize: 1.9rem;
+  --psize: 1.65rem;
   --contentWidth: 17rem;
   --customerLogoWidth: 22rem;
 }
@@ -33,7 +33,7 @@
 
 h1 {
   font-size: var(--h1size);
-  margin-bottom: 1.5rem;
+  margin-bottom: 1.4rem;
   color: #06645f;
 }
 
@@ -86,7 +86,7 @@ body {
   max-width: 100%;
   padding: 0 3rem;
   box-shadow: 0px 0px 10px 1px rgba(0, 0, 0, 0.2);
-  background-color: rgba(251, 251, 251, 0.5);
+  background-color: rgba(251, 251, 251, 0.7);
   backdrop-filter: blur(0.7rem);
 }
 .header #headerFlexContainer {
@@ -96,7 +96,8 @@ body {
   padding: 0.75rem 2rem;
 }
 .header #headerFlexContainer #logo {
-  height: calc(var(--h2size)*0.8);
+  height: var(--h2size);
+  padding: 0.25rem 0;
 }
 .header #headerFlexContainer #headerRight {
   display: flex;
@@ -168,6 +169,11 @@ body {
   left: 0;
   right: 0;
   text-align: left;
+}
+#mainPage #helloContent p,
+#mainPage #helloContent #yearsAlive {
+  font-size: calc(var(--h2size)*.8);
+  font-weight: lighter;
 }
 #mainPage #helloContent * {
   color: #fbfbfb;
@@ -255,9 +261,9 @@ body {
 #servicesChunk {
   background-image: url("./media/waveBackgroundLine.svg");
   background-size: cover;
-  background: rbg(243, 243, 243);
+  background-color: #edeeef;
   display: flex;
-  padding: 10rem;
+  padding: 8rem 10rem;
   flex-direction: column;
   align-items: center;
 }
@@ -271,12 +277,13 @@ body {
 #servicesChunk #cardFlexContainer .servicesCard {
   position: relative;
   flex: 1;
-  margin: 0 1.5rem;
+  margin: 0 1rem;
   padding: 3rem;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
   cursor: pointer;
+  border-radius: 0.75rem;
   transition: all 0.25s ease-in-out;
 }
 #servicesChunk #cardFlexContainer .servicesCard #learnMoreContainer {
@@ -300,9 +307,6 @@ body {
   overflow: hidden;
   white-space: nowrap;
   transition: all 0.75s ease-in-out;
-}
-#servicesChunk #cardFlexContainer .servicesCard:hover {
-  transform: scale(1.02);
 }
 #servicesChunk #cardFlexContainer .servicesCard * {
   margin: 1rem 0;
@@ -371,16 +375,16 @@ body {
   box-sizing: border-box;
   display: inline-flex;
   justify-content: space-between;
-  border-bottom: 0.19rem solid #06645f;
+  border-bottom: 0.19rem solid #008c15;
   padding: 1.5rem 0;
 }
 #teamChunk #aboutUsContentLinks li h2 {
-  color: #06645f;
+  color: #008c15;
   margin-left: 1rem;
 }
 #teamChunk #aboutUsContentLinks li:hover {
   cursor: pointer;
-  background-color: #06645f;
+  background-color: #008c15;
 }
 #teamChunk #aboutUsContentLinks li:hover h2 {
   color: #fbfbfb;
@@ -425,7 +429,7 @@ body {
 
 .pageHeader {
   position: relative;
-  height: 35vh;
+  height: 40vh;
   display: flex;
   justify-content: center;
   align-items: flex-end;
@@ -433,28 +437,34 @@ body {
 }
 .pageHeader h1 {
   font-family: DMSans;
-  color: #fbfbfb;
-  font-size: calc(var(--h1size)*1.5);
-  padding-bottom: 3rem;
-  letter-spacing: 0.1rem;
+  color: white;
+  font-size: calc(var(--h1size)*1.25);
+  padding-bottom: 2.5rem;
+  letter-spacing: 0.13rem;
 }
 
 #engineeringHeader {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.6)), url(./media/Engineering.jpg);
+  background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.5)), url(./media/pics/EngineeringHeader.jpg);
+}
+
+#manufacturingHeader {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.5)), url(./media/pics/ManufacturingHeader.jpg);
+  background-position: bottom;
 }
 
 .pageSection {
   padding: 8.5rem calc((var(--contentWidth))* 1.75);
 }
 .pageSection h2 {
-  border-left: solid 1.2rem #06645f;
+  border-left: solid 1.2rem #008c15;
   padding-left: 2rem;
-  font-weight: 400;
+  font-weight: 500;
   margin-bottom: 2rem;
 }
 
 .contentList {
   width: 100%;
+  padding-bottom: 5rem;
 }
 .contentList .contentContainer {
   display: flex;
@@ -473,8 +483,7 @@ body {
   background-color: #dfe9e5;
 }
 .contentList .contentContainer hgroup h2 {
-  font-size: calc(var(--h2size)*1.3);
-  font-weight: 550;
+  font-weight: 700;
   color: #06645f;
   margin-bottom: 1rem;
 }
