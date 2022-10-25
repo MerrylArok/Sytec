@@ -107,7 +107,7 @@ class Footer extends HTMLElement {
                 <h4><a href="./manufacturing.html">Manufacturing</a></h4>
             </li>
             <li>
-                <h4>Powder Coating</h4>
+                <h4><a href="./powdercoating.html">Powder Coating</a></h4>
             </li>
         </ul>
 

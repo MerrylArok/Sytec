@@ -5,13 +5,13 @@
 
 
 @font-face {
-    font-family: "DMSans";
-    src: url("./Fonts/DMSans-Regular.ttf");
+    font-family: "NHD";
+    src: url("./Fonts/NHGD/NeueHaasDisplayMediu.ttf");
 }
 
 @font-face {
     font-family: "Manrope";
-    src: url("./Fonts/Manrope[wght].ttf");
+    src: url("./Fonts/Manrope.ttf");
 }
 
 // $sytecColor :hsl(168, 64%, 24%);
@@ -22,20 +22,21 @@ $lightGreen: #008c15;
 $deepDarkGreen: #011c1a;
 // $darkGreen: #29403f;
 $complimentaryColor: #B03C00;
-$matteBlack: #3d3d3e;
+$matteBlack: #3c3c3d;
+$darkBlack: #18191b;
 $offWhite: #fbfbfb;
 $dirtyWhite: rgb(243, 243, 243);
 
 
 
 :root {
-    --h1size: 4.5rem;
-    --h2size: 2.5rem;
-    --h3size: 1.5rem;
-    --h4size: 1.3rem;
-    --psize: 1.65rem;
+    --h1size: 3.75rem;
+    --h2size: 2rem;
+    --h3size: 1.3rem;
+    --h4size: 1.1rem;
+    --psize: 1.3rem;
 
-    --contentWidth: 17rem;
+    --contentWidth: 35rem;
     --customerLogoWidth: 22rem;
 }
 
@@ -45,9 +46,11 @@ $dirtyWhite: rgb(243, 243, 243);
     padding: 0;
     border: 0;
     font-family: Manrope, sans-serif;
-    color: $matteBlack;
+    color: $darkBlack;
     box-sizing: border-box;
     font-size: 13px;
+    scroll-behavior: smooth;
+    text-rendering: optimizeLegibility;
 
     a {
         text-decoration: none;
@@ -73,7 +76,6 @@ h3 {
 }
 
 
-
 h4 {
     font-weight: normal;
     font-size: var(--h4size);
@@ -83,6 +85,7 @@ h4 {
 p,
 #yearsAlive {
     font-size: var(--psize);
+    color: $matteBlack;
 }
 
 .chunk {
@@ -98,7 +101,7 @@ p,
 
 html,
 body {
-    height: 100%
+    height: 100%;
 }
 
 //to make chunk's vh units consistent across mobile
@@ -119,23 +122,26 @@ body {
     position: fixed;
     z-index: 101;
     width: 100%;
+    padding-left:calc(100vw - 100%);
     max-width: 100%;
-    padding: 0 3rem;
+    height: 3.75rem;
     box-shadow: 0px 0px 10px 1px rgba(0, 0, 0, 0.2);
-    background-color: rgb($offWhite, 0.7);
+    background-color: rgb($offWhite, 0.75);
     backdrop-filter: blur(0.7rem);
+    
 
 
     #headerFlexContainer {
+        height: 100%;
+        width: 100%;
         display: flex;
         justify-content: space-between;
         align-items: center;
-        padding: 0.75rem 2rem;
+        padding: 0rem calc(5rem - calc((100vw - 100%)/2));
 
 
         #logo {
-            height: var(--h2size);
-            padding:.25rem 0;
+            height: var(--h3size);
         }
 
         #headerRight {
@@ -145,32 +151,30 @@ body {
             list-style-type: none;
 
             li {
-                font-size: 1.35rem;
-                font-weight: bold;
-                margin: 0 2.25rem;
+                height: 100%;
 
                 #headerContactButton {
-                    background-color: $complimentaryColor;
-                    color: $offWhite;
-                    font-size: var(--h3size);
+                    border: 2.65px $complimentaryColor solid;
+                    color: $complimentaryColor;
+                    font-size: var(--psize);
                     font-weight: 600;
-                    padding: .5rem 1.25rem;
-                    margin: 0.75rem 0;
-                    border-radius: 3rem;
+                    // letter-spacing: .2rem;
+                    padding: .25rem 2rem;
+                    border-radius: .3rem;
+                    margin-right: 5rem;
+                    transition: all 0.2s;
                 }
 
                 #headerContactButton:hover {
-                    background-color: #632606;
+                    background-color: $complimentaryColor;
                     color: $offWhite;
                     cursor: pointer;
                 }
 
                 #headerMenuButton {
                     background-color: transparent;
-                    width: 3.75rem;
-                    height: 1.6rem;
-                    border-radius: 0;
-                    padding: 0.01rem 0;
+                    width: 3.5rem;
+                    height: 14.5px;
                     display: flex;
                     flex-direction: column;
                     justify-content: space-between;
@@ -179,18 +183,19 @@ body {
                     #longBar,
                     #midBar,
                     #shortBar {
-                        height: 0.2rem;
+                        height: 2px;
+                        flex: 0 0 auto;
                         width: 100%;
                         background-color: $matteBlack;
                         transition: all 0.3s;
                     }
 
                     #midBar {
-                        width: 75%;
+                        width: 66%;
                     }
 
                     #shortBar {
-                        width: 55%;
+                        width: 45%;
                     }
                 }
 
@@ -227,7 +232,7 @@ body {
         right: 0;
         text-align: left;
 
-        
+
         p,
         #yearsAlive {
             font-size: calc(var(--h2size)*.8);
@@ -461,7 +466,7 @@ body {
 #teamChunk {
     position: relative;
     display: flex;
-    background: linear-gradient(rgba(243, 243, 243, 1)20%, rgba(243, 243, 243, 0)100%), linear-gradient(to right, rgba(243, 243, 243, 1)0%, rgba(243, 243, 243, .9)30%, rgba(243, 243, 243, 0)), url('./media/pics/Edmonton.jpg');
+    // background: linear-gradient(rgba(243, 243, 243, 1)20%, rgba(243, 243, 243, 0)100%), linear-gradient(to right, rgba(243, 243, 243, 1)0%, rgba(243, 243, 243, .9)30%, rgba(243, 243, 243, 0)), url('./media/pics/Edmonton.jpg');
     // background: $lightGreen;
     background-size: cover;
     background-repeat: no-repeat;
@@ -582,19 +587,20 @@ body {
 
 .pageHeader {
     position: relative;
-    height: 40vh;
+    height: 420px;
     display: flex;
     justify-content: center;
-    align-items: flex-end;
+    align-items: center;
     background-size: cover;
 
 
     h1 {
-        font-family: DMSans;
+        font-family: NHD;
         color: rgb(255, 255, 255);
-        font-size: calc(var(--h1size)*1.25);
-        padding-bottom: 2.5rem;
-        // font-weight: bold;
+        font-size: calc(var(--h1size)*1.5);
+        margin-bottom: 0rem;
+        padding-top: 3rem;
+        font-weight: bold;
         letter-spacing: .13rem;
     }
 
@@ -605,39 +611,39 @@ body {
     background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.5)), url(./media/pics/EngineeringHeader.jpg);
     // background-position: left;
 }
+
 #manufacturingHeader {
     background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.5)), url(./media/pics/ManufacturingHeader.jpg);
     background-position: bottom;
 }
 
 .pageSection {
-    // background-color: #ebebeb;
-    padding: 8.5rem calc((var(--contentWidth))* 1.75);
-    
+    padding: 9rem calc((var(--contentWidth)));
+
 
     h2 {
-        border-left: solid 1.2rem $lightGreen;
-        padding-left: 2rem;
+        border-left: solid 1rem $lightGreen;
+        padding-left: 1.5rem;
         font-weight: 500;
-        margin-bottom:2rem;
+        margin-bottom: 1.75rem;
     }
 }
 
 .contentList {
     width: 100%;
-    padding-bottom:5rem;
+    padding-bottom: 5rem;
 
     .contentContainer {
         display: flex;
-        padding-left: calc((var(--contentWidth))* 1.75);
-        height: 600px;
+        padding-left: calc((var(--contentWidth)));
+        height: 500px;
         margin-bottom: 2rem;
-        width:100%;
+        width: 100%;
 
         hgroup {
-            width: calc(((100% - ((var(--contentWidth))* 1.75))/2));
+            width: calc(((100% - ((var(--contentWidth))))/2));
             padding: 0 5rem;
-            border-right:1rem solid $dirtyWhite;
+            border-right: 1rem solid $dirtyWhite;
 
             display: flex;
             flex-direction: column;
@@ -647,14 +653,20 @@ body {
 
             h2 {
                 font-weight: 700;
-                color: $darkGreen;
+                color: $lightGreen;
                 margin-bottom: 1rem;
+            }
+
+            p {
+                em {
+                    font-size: var(--psize);
+                }
             }
         }
 
         img {
-            flex:1;
-            border-left:1rem solid $dirtyWhite;
+            flex: 1;
+            border-left: 1rem solid $dirtyWhite;
             object-fit: cover;
         }
 
@@ -663,17 +675,17 @@ body {
 
     .contentContainer:nth-child(even) {
         flex-direction: row-reverse;
-        padding-right: calc((var(--contentWidth))* 1.75);
+        padding-right: calc((var(--contentWidth)));
         padding-left: 0;
 
         hgroup {
-            border-left:1rem solid $dirtyWhite;
-            border-right:none;
+            border-left: 1rem solid $dirtyWhite;
+            border-right: none;
         }
 
-        img{
-            border-right:1rem solid $dirtyWhite;
-            border-left:none;
+        img {
+            border-right: 1rem solid $dirtyWhite;
+            border-left: none;
         }
     }
 }
@@ -683,37 +695,43 @@ body {
 
 #footer {
     width: 100%;
+    // box-sizing: border-box;
     flex-shrink: 0;
     display: flex;
     flex-direction: row;
-    padding: 2rem 35rem;
-    background-color: $deepDarkGreen;
-    justify-content: space-around;
+    // margin: 0 3rem;
+    padding: 3rem 35rem;
+    // border-top: 1px #e0dfdf solid;
+    background-color: #edeeef;
+    justify-content: center;
 
     ul {
         list-style: none;
+        margin: 0 2rem;
     }
 
 
 
     h3 {
         font-weight: bold;
+        color: $darkBlack;
     }
 
 
 
     img {
-        height: 3rem;
+        height: 2.75rem;
     }
 
+   
     #externalLinks li {
         display: inline;
-        padding: 0 0.75rem;
+        padding: 0 0.8rem;
     }
 }
 
 #footer * {
-    color: $offWhite;
+    color: $matteBlack;
 }
 
 

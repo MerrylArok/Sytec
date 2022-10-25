@@ -1,18 +1,18 @@
 @font-face {
-  font-family: "DMSans";
-  src: url("./Fonts/DMSans-Regular.ttf");
+  font-family: "NHD";
+  src: url("./Fonts/NHGD/NeueHaasDisplayMediu.ttf");
 }
 @font-face {
   font-family: "Manrope";
-  src: url("./Fonts/Manrope[wght].ttf");
+  src: url("./Fonts/Manrope.ttf");
 }
 :root {
-  --h1size: 4.5rem;
-  --h2size: 2.5rem;
-  --h3size: 1.5rem;
-  --h4size: 1.3rem;
-  --psize: 1.65rem;
-  --contentWidth: 17rem;
+  --h1size: 3.75rem;
+  --h2size: 2rem;
+  --h3size: 1.3rem;
+  --h4size: 1.1rem;
+  --psize: 1.3rem;
+  --contentWidth: 35rem;
   --customerLogoWidth: 22rem;
 }
 
@@ -21,9 +21,11 @@
   padding: 0;
   border: 0;
   font-family: Manrope, sans-serif;
-  color: #3d3d3e;
+  color: #18191b;
   box-sizing: border-box;
   font-size: 13px;
+  scroll-behavior: smooth;
+  text-rendering: optimizeLegibility;
 }
 * a {
   text-decoration: none;
@@ -55,6 +57,7 @@ h4 {
 p,
 #yearsAlive {
   font-size: var(--psize);
+  color: #3c3c3d;
 }
 
 .chunk {
@@ -83,21 +86,23 @@ body {
   position: fixed;
   z-index: 101;
   width: 100%;
+  padding-left: calc(100vw - 100%);
   max-width: 100%;
-  padding: 0 3rem;
+  height: 3.75rem;
   box-shadow: 0px 0px 10px 1px rgba(0, 0, 0, 0.2);
-  background-color: rgba(251, 251, 251, 0.7);
+  background-color: rgba(251, 251, 251, 0.75);
   backdrop-filter: blur(0.7rem);
 }
 .header #headerFlexContainer {
+  height: 100%;
+  width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0.75rem 2rem;
+  padding: 0rem calc(5rem - calc((100vw - 100%)/2));
 }
 .header #headerFlexContainer #logo {
-  height: var(--h2size);
-  padding: 0.25rem 0;
+  height: var(--h3size);
 }
 .header #headerFlexContainer #headerRight {
   display: flex;
@@ -106,30 +111,27 @@ body {
   list-style-type: none;
 }
 .header #headerFlexContainer #headerRight li {
-  font-size: 1.35rem;
-  font-weight: bold;
-  margin: 0 2.25rem;
+  height: 100%;
 }
 .header #headerFlexContainer #headerRight li #headerContactButton {
-  background-color: #B03C00;
-  color: #fbfbfb;
-  font-size: var(--h3size);
+  border: 2.65px #B03C00 solid;
+  color: #B03C00;
+  font-size: var(--psize);
   font-weight: 600;
-  padding: 0.5rem 1.25rem;
-  margin: 0.75rem 0;
-  border-radius: 3rem;
+  padding: 0.25rem 2rem;
+  border-radius: 0.3rem;
+  margin-right: 5rem;
+  transition: all 0.2s;
 }
 .header #headerFlexContainer #headerRight li #headerContactButton:hover {
-  background-color: #632606;
+  background-color: #B03C00;
   color: #fbfbfb;
   cursor: pointer;
 }
 .header #headerFlexContainer #headerRight li #headerMenuButton {
   background-color: transparent;
-  width: 3.75rem;
-  height: 1.6rem;
-  border-radius: 0;
-  padding: 0.01rem 0;
+  width: 3.5rem;
+  height: 14.5px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -138,16 +140,17 @@ body {
 .header #headerFlexContainer #headerRight li #headerMenuButton #longBar,
 .header #headerFlexContainer #headerRight li #headerMenuButton #midBar,
 .header #headerFlexContainer #headerRight li #headerMenuButton #shortBar {
-  height: 0.2rem;
+  height: 2px;
+  flex: 0 0 auto;
   width: 100%;
-  background-color: #3d3d3e;
+  background-color: #3c3c3d;
   transition: all 0.3s;
 }
 .header #headerFlexContainer #headerRight li #headerMenuButton #midBar {
-  width: 75%;
+  width: 66%;
 }
 .header #headerFlexContainer #headerRight li #headerMenuButton #shortBar {
-  width: 55%;
+  width: 45%;
 }
 .header #headerFlexContainer #headerRight li #headerMenuButton:hover {
   cursor: pointer;
@@ -349,7 +352,6 @@ body {
 #teamChunk {
   position: relative;
   display: flex;
-  background: linear-gradient(#f3f3f3 20%, rgba(243, 243, 243, 0) 100%), linear-gradient(to right, #f3f3f3 0%, rgba(243, 243, 243, 0.9) 30%, rgba(243, 243, 243, 0)), url("./media/pics/Edmonton.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   flex-direction: column;
@@ -429,17 +431,19 @@ body {
 
 .pageHeader {
   position: relative;
-  height: 40vh;
+  height: 420px;
   display: flex;
   justify-content: center;
-  align-items: flex-end;
+  align-items: center;
   background-size: cover;
 }
 .pageHeader h1 {
-  font-family: DMSans;
+  font-family: NHD;
   color: white;
-  font-size: calc(var(--h1size)*1.25);
-  padding-bottom: 2.5rem;
+  font-size: calc(var(--h1size)*1.5);
+  margin-bottom: 0rem;
+  padding-top: 3rem;
+  font-weight: bold;
   letter-spacing: 0.13rem;
 }
 
@@ -453,13 +457,13 @@ body {
 }
 
 .pageSection {
-  padding: 8.5rem calc((var(--contentWidth))* 1.75);
+  padding: 9rem calc((var(--contentWidth)));
 }
 .pageSection h2 {
-  border-left: solid 1.2rem #008c15;
-  padding-left: 2rem;
+  border-left: solid 1rem #008c15;
+  padding-left: 1.5rem;
   font-weight: 500;
-  margin-bottom: 2rem;
+  margin-bottom: 1.75rem;
 }
 
 .contentList {
@@ -468,13 +472,13 @@ body {
 }
 .contentList .contentContainer {
   display: flex;
-  padding-left: calc((var(--contentWidth))* 1.75);
-  height: 600px;
+  padding-left: calc((var(--contentWidth)));
+  height: 500px;
   margin-bottom: 2rem;
   width: 100%;
 }
 .contentList .contentContainer hgroup {
-  width: calc(((100% - ((var(--contentWidth))* 1.75))/2));
+  width: calc(((100% - ((var(--contentWidth))))/2));
   padding: 0 5rem;
   border-right: 1rem solid #f3f3f3;
   display: flex;
@@ -484,8 +488,11 @@ body {
 }
 .contentList .contentContainer hgroup h2 {
   font-weight: 700;
-  color: #06645f;
+  color: #008c15;
   margin-bottom: 1rem;
+}
+.contentList .contentContainer hgroup p em {
+  font-size: var(--psize);
 }
 .contentList .contentContainer img {
   flex: 1;
@@ -494,7 +501,7 @@ body {
 }
 .contentList .contentContainer:nth-child(even) {
   flex-direction: row-reverse;
-  padding-right: calc((var(--contentWidth))* 1.75);
+  padding-right: calc((var(--contentWidth)));
   padding-left: 0;
 }
 .contentList .contentContainer:nth-child(even) hgroup {
@@ -511,26 +518,28 @@ body {
   flex-shrink: 0;
   display: flex;
   flex-direction: row;
-  padding: 2rem 35rem;
-  background-color: #011c1a;
-  justify-content: space-around;
+  padding: 3rem 35rem;
+  background-color: #edeeef;
+  justify-content: center;
 }
 #footer ul {
   list-style: none;
+  margin: 0 2rem;
 }
 #footer h3 {
   font-weight: bold;
+  color: #18191b;
 }
 #footer img {
-  height: 3rem;
+  height: 2.75rem;
 }
 #footer #externalLinks li {
   display: inline;
-  padding: 0 0.75rem;
+  padding: 0 0.8rem;
 }
 
 #footer * {
-  color: #fbfbfb;
+  color: #3c3c3d;
 }
 
 @keyframes scrollDown {
