@@ -20,12 +20,13 @@
 $darkGreen: #06645f;
 $lightGreen: #008c15;
 $deepDarkGreen: #011c1a;
-// $darkGreen: #29403f;
+
 $complimentaryColor: #B03C00;
+
 $matteBlack: #3c3c3d;
 $darkBlack: #18191b;
-$offWhite: #fbfbfb;
-$dirtyWhite: rgb(243, 243, 243);
+
+$white: #fff;
 
 
 
@@ -36,7 +37,8 @@ $dirtyWhite: rgb(243, 243, 243);
     --h4size: 1.1rem;
     --psize: 1.3rem;
 
-    --contentWidth: 35rem;
+    --contentWidth: 10rem;
+    --textContainerMax: 900px;
     --customerLogoWidth: 22rem;
 }
 
@@ -62,7 +64,7 @@ $dirtyWhite: rgb(243, 243, 243);
 h1 {
     font-size: var(--h1size);
     margin-bottom: 1.4rem;
-    color: $darkGreen;
+    color: $lightGreen;
 }
 
 h2 {
@@ -107,7 +109,7 @@ body {
 //to make chunk's vh units consistent across mobile
 
 body {
-    background-color: $dirtyWhite;
+    background-color: $white;
     display: flex;
     flex-direction: column;
 }
@@ -122,13 +124,13 @@ body {
     position: fixed;
     z-index: 101;
     width: 100%;
-    padding-left:calc(100vw - 100%);
+    padding-left: calc(100vw - 100%);
     max-width: 100%;
     height: 3.75rem;
     box-shadow: 0px 0px 10px 1px rgba(0, 0, 0, 0.2);
-    background-color: rgb($offWhite, 0.75);
+    background-color: rgb($white, 0.7);
     backdrop-filter: blur(0.7rem);
-    
+
 
 
     #headerFlexContainer {
@@ -158,7 +160,6 @@ body {
                     color: $complimentaryColor;
                     font-size: var(--psize);
                     font-weight: 600;
-                    // letter-spacing: .2rem;
                     padding: .25rem 2rem;
                     border-radius: .3rem;
                     margin-right: 5rem;
@@ -167,7 +168,7 @@ body {
 
                 #headerContactButton:hover {
                     background-color: $complimentaryColor;
-                    color: $offWhite;
+                    color: $white;
                     cursor: pointer;
                 }
 
@@ -221,15 +222,16 @@ body {
 
 #mainPage {
     position: relative;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
 
 
     #helloContent {
-        position: absolute;
-        bottom: 0%;
-        padding-bottom: 15rem;
-        margin: 0 var(--contentWidth);
-        left: 0;
-        right: 0;
+
+        max-width: var(--textContainerMax);
+        margin: 0 5rem;
+        padding-bottom: 20rem;
         text-align: left;
 
 
@@ -241,7 +243,7 @@ body {
     }
 
     #helloContent * {
-        color: $offWhite;
+        color: $white;
     }
 
     video {
@@ -260,30 +262,36 @@ body {
         position: absolute;
         left: 50%;
         background: url(./media/line-angle-down-icon.svg) center no-repeat;
-        animation: 2s infinite scrollDown ease-out;
+        animation: 1.25s infinite scrollDown ease-in-out;
     }
 }
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// 
 
-#customerContainer {
-    background-color: #f3f3f3;
-    padding: 7rem var(--contentWidth);
-    margin: 3rem 0;
+#customerContainer {    
+    padding: 7rem var(--contentWidth);    
     position: relative;
 
-    #customerContent {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-        position: absolute;
+    #customerContent {        
+        position: absolute;  
         top: 50%;
+        left:0;
+        right:0;
+        text-align: center;      
         transform: translate(0, -50%);
-        left: 0;
-        right: 0;
-        margin: 0 var(--contentWidth);
+        width: 100%;
+        max-width: var(--textContainerMax);
+        margin: 0 auto;
         z-index: 100;
+
+        *{
+            margin:0 5rem;            
+        }
+
+        h1 {
+            margin-bottom: 1.4rem;
+        }
+
     }
 
     #logoFlexContainer {
@@ -296,7 +304,7 @@ body {
 
 
         &::after {
-            background: linear-gradient(to right, rgb(243, 243, 243) 0%, rgba(243, 243, 243, 0.7) 20%, rgba(243, 243, 243, 0.7) 80%, rgb(243, 243, 243) 100%);
+            background: linear-gradient(to right, rgb(255, 255, 255) 0%, rgba(255, 255, 255, 0.7) 20%, rgba(255, 255, 255, 0.7) 80%, rgb(255, 255, 255) 100%);
             content: " ";
             height: 100%;
             width: 100%;
@@ -410,7 +418,7 @@ body {
 
         .servicesCard * {
             margin: 1rem 0;
-            color: $offWhite;
+            color: $white;
         }
 
 
@@ -527,7 +535,7 @@ body {
             background-color: $lightGreen;
 
             h2 {
-                color: $offWhite;
+                color: $white;
             }
         }
 
@@ -557,7 +565,7 @@ body {
     }
 
     hgroup * {
-        color: $offWhite;
+        color: $white;
     }
 
     #map {
@@ -580,7 +588,7 @@ body {
 #hoursFlex * {
     display: inline-block;
     text-align: left;
-    color: $offWhite;
+    color: $white;
 }
 
 ////////////////////////////////////////////////////////@at-root
@@ -643,13 +651,13 @@ body {
         hgroup {
             width: calc(((100% - ((var(--contentWidth))))/2));
             padding: 0 5rem;
-            border-right: 1rem solid $dirtyWhite;
+            border-right: 1rem solid $white;
 
             display: flex;
             flex-direction: column;
             justify-content: center;
 
-            background-color: #dfe9e5;
+            background-color: #eef5f2;
 
             h2 {
                 font-weight: 700;
@@ -666,7 +674,7 @@ body {
 
         img {
             flex: 1;
-            border-left: 1rem solid $dirtyWhite;
+            border-left: 1rem solid $white;
             object-fit: cover;
         }
 
@@ -679,12 +687,12 @@ body {
         padding-left: 0;
 
         hgroup {
-            border-left: 1rem solid $dirtyWhite;
+            border-left: 1rem solid $white;
             border-right: none;
         }
 
         img {
-            border-right: 1rem solid $dirtyWhite;
+            border-right: 1rem solid $white;
             border-left: none;
         }
     }
@@ -723,7 +731,7 @@ body {
         height: 2.75rem;
     }
 
-   
+
     #externalLinks li {
         display: inline;
         padding: 0 0.8rem;
@@ -780,295 +788,295 @@ body {
 
 ////////////////////////////////////////////////////////////////////////////
 
-@media (min-width: 1367px) and (max-width:1540px) {
-
-    :root {
-        --h1size: 4rem;
-        --h2size: 2.25rem;
-        --h3size: 1.25rem;
-        --h4size: 1.3rem;
-        --psize: 1.7rem;
-
-        --contentWidth: 17rem;
-        --customerLogoWidth: 22rem;
-    }
+// @media (min-width: 1367px) and (max-width:1540px) {
+
+//     :root {
+//         --h1size: 4rem;
+//         --h2size: 2.25rem;
+//         --h3size: 1.25rem;
+//         --h4size: 1.3rem;
+//         --psize: 1.7rem;
+
+//         --contentWidth: 17rem;
+//         --customerLogoWidth: 22rem;
+//     }
 
-    #mainPage {
-        #helloContent {
-            padding-bottom: 11rem;
-        }
-    }
-
-    #customerContainer {
-        margin: 2rem 0;
-
-        .logoContainer {
-            height: 6.5rem;
-            margin: 1rem 0;
-        }
-
-    }
-
-    #servicesChunk {
-        padding: 7rem 5rem;
-
-        #cardFlexContainer {
-            .servicesCard {
-                margin: 0 1.25rem;
-            }
-
-            .servicesCard * {
-                margin: .8rem 0;
-            }
-        }
-    }
-
-    #footer {
-        padding: 2rem 25rem;
-
-        img {
-            height: 2.25rem;
-        }
-
-        #externalLinks li {
-            display: inline;
-            padding: 0 0.75rem;
-        }
-    }
-}
-
-@media (min-width: 1024px) and (max-width:1366px) {
-
-
-    :root {
-        --h1size: 3.8rem;
-        --h2size: 2rem;
-        --h3size: 1.25rem;
-        --h4size: 1.2rem;
-        --psize: 1.7rem;
-
-        --contentWidth: 15rem;
-        --customerLogoWidth: 22rem;
-    }
-
-
-    #mainPage {
-        #helloContent {
-            padding-bottom: 9rem;
-        }
-    }
-
-    #customerContainer {
-        margin: 1rem 0;
-
-        .logoContainer {
-            height: 4.75rem;
-            margin: 1rem 0;
-        }
-
-    }
-
-    #servicesChunk {
-        padding: 7rem 4rem;
-
-        #cardFlexContainer {
-
-            .servicesCard {
-                margin: 0 1.125rem;
-            }
-
-            .servicesCard * {
-                margin: .7rem 0;
-            }
-        }
-    }
-
-    @keyframes scrollDown {
-        from {
-            bottom: 7%;
-            opacity: 0;
-            width: 2rem;
-            height: 2rem;
-        }
-
-
-        to {
-            bottom: 4.5%;
-            opacity: 0.6;
-            width: 1.5rem;
-            height: 1.5rem;
-        }
-    }
-
-    #footer {
-        padding: 2rem 18rem;
-
-        img {
-            height: 2.25rem;
-        }
-
-        #externalLinks li {
-            display: inline;
-            padding: 0 0.75rem;
-        }
-    }
-
-}
-
-@media (min-width: 768px) and (max-width:1023px) {
-
-
-    :root {
-        --contentWidth: 11rem;
-        --customerLogoWidth: 16rem;
-        --h1size: 3.25rem;
-        --h2size: 2rem;
-        --h3size: 1.2rem;
-        --h4size: 1.1rem;
-        --psize: 1.6rem;
-    }
-
-    #mainPage {
-        #helloContent {
-            padding-bottom: 7.5rem;
-        }
-    }
-
-    @keyframes scrollDown {
-        from {
-            bottom: 7%;
-            opacity: 0;
-            width: 1.5rem;
-            height: 1.5rem;
-        }
-
-
-        to {
-            bottom: 4.5%;
-            opacity: 0.6;
-            width: 1.25rem;
-            height: 1.25rem;
-        }
-    }
-
-
-    #customerContainer {
-        margin: 1.5rem 0;
-        padding: 4rem var(--contentWidth);
-
-        .logoContainer {
-            height: 3.5rem;
-            margin: 1rem 0;
-        }
-
-    }
-
-    #servicesChunk {
-        background-image: url('./media/waveBackgroundLine.svg');
-        background-size: cover;
-        background: rbg(243, 243, 243);
-        display: flex;
-        padding: 5rem;
-        flex-direction: column;
-        align-items: center;
-
-        #servicesContent {
-            margin-bottom: 1rem;
-        }
-
-
-        #cardFlexContainer {
-            flex: 4;
-            display: flex;
-            flex-direction: column;
-
-            .servicesCard {
-                position: relative;
-                flex: 1;
-                margin: 0.25rem 1rem;
-                padding: 3rem;
-                display: flex;
-                flex-direction: column;
-                justify-content: flex-end;
-                cursor: pointer;
-                box-shadow: none;
-                border-radius: .15rem;
-                transition: none;
-
-                #learnMoreContainer {
-                    display: inline-flex;
-                    flex-direction: row;
-                    // align-items: flex-end;
-                    justify-content: flex-start;
-                    align-items: center;
-                    height: var(--h3size);
-                }
-
-
-
-                #learnMoreContainer::after {
-                    content: "";
-                    background: url('./media/arrow-thin-right-icon.svg') no-repeat center;
-                    transform: rotate(0deg) scale(1);
-                    // transform: scale(2);
-                    height: var(--h3size);
-                    width: var(--h3size);
-                }
-
-                #learnMoreContainer h3 {
-                    max-width: 15rem;
-                    margin-right: 1rem;
-                    width: auto;
-                    overflow: hidden;
-                    opacity: 1;
-                }
-            }
-
-            .servicesCard:hover {
-                transform: none;
-                box-shadow: none;
-            }
-
-            .servicesCard * {
-                margin: .5rem 0;
-            }
-
-
-            .servicesCard p {
-                height: auto;
-                max-height: 500px;
-                opacity: 1;
-            }
-
-
-            .servicesCard:hover #learnMoreContainer h3 {
-                margin-right: 1rem;
-            }
-
-            .servicesCard:hover #learnMoreContainer::after {
-                transform: rotate(0);
-            }
-
-        }
-    }
-
-
-    #contactMain {
-        padding: 1rem 0 0 3rem;
-    }
-
-
-    #footer {
-        padding: 1rem 10rem;
-
-        img {
-            height: 2rem;
-        }
-
-        #externalLinks li {
-            display: inline;
-            padding: 0 0.75rem;
-        }
-    }
-
-}
+//     #mainPage {
+//         #helloContent {
+//             padding-bottom: 11rem;
+//         }
+//     }
+
+//     #customerContainer {
+//         margin: 2rem 0;
+
+//         .logoContainer {
+//             height: 6.5rem;
+//             margin: 1rem 0;
+//         }
+
+//     }
+
+//     #servicesChunk {
+//         padding: 7rem 5rem;
+
+//         #cardFlexContainer {
+//             .servicesCard {
+//                 margin: 0 1.25rem;
+//             }
+
+//             .servicesCard * {
+//                 margin: .8rem 0;
+//             }
+//         }
+//     }
+
+//     #footer {
+//         padding: 2rem 25rem;
+
+//         img {
+//             height: 2.25rem;
+//         }
+
+//         #externalLinks li {
+//             display: inline;
+//             padding: 0 0.75rem;
+//         }
+//     }
+// }
+
+// @media (min-width: 1024px) and (max-width:1366px) {
+
+
+//     :root {
+//         --h1size: 3.8rem;
+//         --h2size: 2rem;
+//         --h3size: 1.25rem;
+//         --h4size: 1.2rem;
+//         --psize: 1.7rem;
+
+//         --contentWidth: 15rem;
+//         --customerLogoWidth: 22rem;
+//     }
+
+
+//     #mainPage {
+//         #helloContent {
+//             padding-bottom: 9rem;
+//         }
+//     }
+
+//     #customerContainer {
+//         margin: 1rem 0;
+
+//         .logoContainer {
+//             height: 4.75rem;
+//             margin: 1rem 0;
+//         }
+
+//     }
+
+//     #servicesChunk {
+//         padding: 7rem 4rem;
+
+//         #cardFlexContainer {
+
+//             .servicesCard {
+//                 margin: 0 1.125rem;
+//             }
+
+//             .servicesCard * {
+//                 margin: .7rem 0;
+//             }
+//         }
+//     }
+
+//     @keyframes scrollDown {
+//         from {
+//             bottom: 7%;
+//             opacity: 0;
+//             width: 2rem;
+//             height: 2rem;
+//         }
+
+
+//         to {
+//             bottom: 4.5%;
+//             opacity: 0.6;
+//             width: 1.5rem;
+//             height: 1.5rem;
+//         }
+//     }
+
+//     #footer {
+//         padding: 2rem 18rem;
+
+//         img {
+//             height: 2.25rem;
+//         }
+
+//         #externalLinks li {
+//             display: inline;
+//             padding: 0 0.75rem;
+//         }
+//     }
+
+// }
+
+// @media (min-width: 768px) and (max-width:1023px) {
+
+
+//     :root {
+//         --contentWidth: 11rem;
+//         --customerLogoWidth: 16rem;
+//         --h1size: 3.25rem;
+//         --h2size: 2rem;
+//         --h3size: 1.2rem;
+//         --h4size: 1.1rem;
+//         --psize: 1.6rem;
+//     }
+
+//     #mainPage {
+//         #helloContent {
+//             padding-bottom: 7.5rem;
+//         }
+//     }
+
+//     @keyframes scrollDown {
+//         from {
+//             bottom: 7%;
+//             opacity: 0;
+//             width: 1.5rem;
+//             height: 1.5rem;
+//         }
+
+
+//         to {
+//             bottom: 4.5%;
+//             opacity: 0.6;
+//             width: 1.25rem;
+//             height: 1.25rem;
+//         }
+//     }
+
+
+//     #customerContainer {
+//         margin: 1.5rem 0;
+//         padding: 4rem var(--contentWidth);
+
+//         .logoContainer {
+//             height: 3.5rem;
+//             margin: 1rem 0;
+//         }
+
+//     }
+
+//     #servicesChunk {
+//         background-image: url('./media/waveBackgroundLine.svg');
+//         background-size: cover;
+//         background: rbg(243, 243, 243);
+//         display: flex;
+//         padding: 5rem;
+//         flex-direction: column;
+//         align-items: center;
+
+//         #servicesContent {
+//             margin-bottom: 1rem;
+//         }
+
+
+//         #cardFlexContainer {
+//             flex: 4;
+//             display: flex;
+//             flex-direction: column;
+
+//             .servicesCard {
+//                 position: relative;
+//                 flex: 1;
+//                 margin: 0.25rem 1rem;
+//                 padding: 3rem;
+//                 display: flex;
+//                 flex-direction: column;
+//                 justify-content: flex-end;
+//                 cursor: pointer;
+//                 box-shadow: none;
+//                 border-radius: .15rem;
+//                 transition: none;
+
+//                 #learnMoreContainer {
+//                     display: inline-flex;
+//                     flex-direction: row;
+//                     // align-items: flex-end;
+//                     justify-content: flex-start;
+//                     align-items: center;
+//                     height: var(--h3size);
+//                 }
+
+
+
+//                 #learnMoreContainer::after {
+//                     content: "";
+//                     background: url('./media/arrow-thin-right-icon.svg') no-repeat center;
+//                     transform: rotate(0deg) scale(1);
+//                     // transform: scale(2);
+//                     height: var(--h3size);
+//                     width: var(--h3size);
+//                 }
+
+//                 #learnMoreContainer h3 {
+//                     max-width: 15rem;
+//                     margin-right: 1rem;
+//                     width: auto;
+//                     overflow: hidden;
+//                     opacity: 1;
+//                 }
+//             }
+
+//             .servicesCard:hover {
+//                 transform: none;
+//                 box-shadow: none;
+//             }
+
+//             .servicesCard * {
+//                 margin: .5rem 0;
+//             }
+
+
+//             .servicesCard p {
+//                 height: auto;
+//                 max-height: 500px;
+//                 opacity: 1;
+//             }
+
+
+//             .servicesCard:hover #learnMoreContainer h3 {
+//                 margin-right: 1rem;
+//             }
+
+//             .servicesCard:hover #learnMoreContainer::after {
+//                 transform: rotate(0);
+//             }
+
+//         }
+//     }
+
+
+//     #contactMain {
+//         padding: 1rem 0 0 3rem;
+//     }
+
+
+//     #footer {
+//         padding: 1rem 10rem;
+
+//         img {
+//             height: 2rem;
+//         }
+
+//         #externalLinks li {
+//             display: inline;
+//             padding: 0 0.75rem;
+//         }
+//     }
+
+// }

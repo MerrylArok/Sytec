@@ -68,28 +68,29 @@
      transform="translate(-8,-85)">
     <g
        id="g833"
-       clip-path="url(#clipPath964)">
+       clip-path="url(#clipPath964)"
+       style="stroke:#008c15;stroke-opacity:1;fill:#008c15;fill-opacity:1">
       <path
-         style="fill:#166353;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         style="fill:#008c15;fill-opacity:1;stroke:#008c15;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
          d="m 45,85 h 183 l 24,26 v 2 H 133 v 22 l 111,65 v 21 l -26,25 H 8 v -3 l 32,-31 h 85 V 200 L 21,143 v -33 z"
          id="path1874" />
       <path
-         style="fill:#166353;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         style="fill:#008c15;fill-opacity:1;stroke:#008c15;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
          d="m 250,85 h 90 l 58,65 63,-65 h 26 v 4 l -74,81 v 76 H 327 V 170 L 250,88 Z"
          id="path2096"
          sodipodi:nodetypes="ccccccccc" />
       <path
-         style="fill:#166353;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         style="fill:#008c15;fill-opacity:1;stroke:#008c15;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
          d="m 507,85 -41,41 v 3 h 74 v 117 h 89 V 129 h 68 V 85 Z"
          id="path3013"
          sodipodi:nodetypes="cccccccccc" />
       <path
-         style="fill:#166353;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         style="fill:#008c15;fill-opacity:1;stroke:#008c15;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
          d="m 718,85 v 161 h 233 v -4 l -22,-22 v -3 -1 H 806 v -45 h 122 1 V 143 H 806 v -30 h 123 v -3 l 22,-20 v -5 z"
          id="path3375"
          sodipodi:nodetypes="ccccccccccccccccccc" />
       <path
-         style="fill:#166353;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         style="fill:#008c15;fill-opacity:1;stroke:#008c15;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
          d="m 975,85 -28,30 v 101 l 27,30 h 209 v -6 l -23,-24 H 1035 V 113 h 148 v -3 l -21,-25 z"
          id="path3863"
          sodipodi:nodetypes="ccccccccccccc" />
