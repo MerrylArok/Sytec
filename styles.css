@@ -461,7 +461,11 @@ body {
 }
 
 .pageSection {
-  padding: 9rem calc((var(--contentWidth)));
+  padding: 9rem var(--contentWidth);
+}
+.pageSection * {
+  width: var(--textContainerMax);
+  margin: 0 auto;
 }
 .pageSection h2 {
   border-left: solid 1rem #008c15;

@@ -626,7 +626,12 @@ body {
 }
 
 .pageSection {
-    padding: 9rem calc((var(--contentWidth)));
+    padding: 9rem var(--contentWidth);
+    
+    *{
+        width: var(--textContainerMax);
+        margin: 0 auto;
+    }
 
 
     h2 {
