@@ -16,12 +16,13 @@
 
 // $sytecColor :hsl(168, 64%, 24%);
 
-
+$backgroundGreen: #eef5f2;
 $darkGreen: #06645f;
 $lightGreen: #008c15;
 $deepDarkGreen: #011c1a;
 
 $complimentaryColor: #B03C00;
+$brightBlue: #0053d6;
 
 $matteBlack: #3c3c3d;
 $darkBlack: #18191b;
@@ -38,6 +39,7 @@ $white: #fff;
     --psize: 1.3rem;
 
     --contentWidth: 10rem;
+    --minPadding: 5rem;
     --textContainerMax: 900px;
     --customerLogoWidth: 22rem;
 }
@@ -51,8 +53,10 @@ $white: #fff;
     color: $darkBlack;
     box-sizing: border-box;
     font-size: 13px;
+    // letter-spacing: normal;
     scroll-behavior: smooth;
     text-rendering: optimizeLegibility;
+
 
     a {
         text-decoration: none;
@@ -63,7 +67,8 @@ $white: #fff;
 
 h1 {
     font-size: var(--h1size);
-    margin-bottom: 1.4rem;
+    margin-bottom: 1.75rem;
+    // font-weight: normal;
     color: $lightGreen;
 }
 
@@ -139,7 +144,7 @@ body {
         display: flex;
         justify-content: space-between;
         align-items: center;
-        padding: 0rem calc(5rem - calc((100vw - 100%)/2));
+        padding: 0rem calc(var(--minPadding) - calc((100vw - 100%)/2));
 
 
         #logo {
@@ -162,7 +167,7 @@ body {
                     font-weight: 600;
                     padding: .25rem 2rem;
                     border-radius: .3rem;
-                    margin-right: 5rem;
+                    margin-right: var(--minPadding);
                     transition: all 0.2s;
                 }
 
@@ -230,7 +235,7 @@ body {
     #helloContent {
 
         max-width: var(--textContainerMax);
-        margin: 0 5rem;
+        margin: 0 var(--minPadding);
         padding-bottom: 20rem;
         text-align: left;
 
@@ -268,24 +273,24 @@ body {
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// 
 
-#customerContainer {    
-    padding: 7rem var(--contentWidth);    
+#customerContainer {
+    padding: 7rem var(--contentWidth);
     position: relative;
 
-    #customerContent {        
-        position: absolute;  
+    #customerContent {
+        position: absolute;
         top: 50%;
-        left:0;
-        right:0;
-        text-align: center;      
+        left: 0;
+        right: 0;
+        text-align: center;
         transform: translate(0, -50%);
         width: 100%;
         max-width: var(--textContainerMax);
         margin: 0 auto;
         z-index: 100;
 
-        *{
-            margin:0 5rem;            
+        * {
+            margin: 0 var(--minPadding);
         }
 
         h1 {
@@ -350,121 +355,149 @@ body {
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 #servicesChunk {
-    background-image: url('./media/waveBackgroundLine.svg');
-    background-size: cover;
-    background-color: #edeeef;
-    display: flex;
-    padding: 8rem 10rem;
-    flex-direction: column;
-    align-items: center;
 
-    #servicesContent {
-        margin-bottom: 2.5rem;
-    }
+    padding: 5.5rem calc(var(--contentWidth)/2);
 
-
-    #cardFlexContainer {
-        flex: 4;
+    #servicesChunkCard {
+        height: 100%;
+        width: 100%;
+        padding: 5rem calc(var(--contentWidth)/2);
+        border-radius: 1rem;
+        // background-color: #edeeef;
         display: flex;
+        flex-direction: row;
+        align-items: center;
 
-        .servicesCard {
-            position: relative;
+        box-shadow: 0 .5rem 2rem rgba(17, 17, 26, 0.05);
+
+        // box-shadow: rgba(17, 17, 26, 0.05) 0px 4px 16px, rgba(17, 17, 26, 0.05) 0px 8px 32px;
+
+        #servicesContent {
             flex: 1;
-            margin: 0 1rem;
-            padding: 3rem;
+            margin-right: var(--minPadding);
+
+            h1 {
+                color: $brightBlue;
+
+            }
+        }
+
+
+        #cardFlexContainer {
+            height: 100%;
+            width: 100%;
+            flex: 2.5;
+
             display: flex;
-            flex-direction: column;
-            justify-content: flex-end;
-            cursor: pointer;
-            // box-shadow: rgba(100, 100, 111, 0.8) 0rem 0.4rem 1rem 0rem;
-            border-radius: .75rem;
-            transition: all 0.25s ease-in-out;
+            flex-wrap: wrap;
 
-            #learnMoreContainer {
-                display: inline-flex;
-                flex-direction: row;
-                // align-items: flex-end;
-                justify-content: flex-start;
-                align-items: center;
-                height: var(--h3size);
-            }
+            .servicesCard {
+                // position: relative;
+                margin: auto;
+                padding: 2.5rem;
+                height: calc(50% - 2rem);
+                width: calc(50% - 2rem);
 
-
-
-            #learnMoreContainer::after {
-                content: "";
-                background: url('./media/arrow-thin-right-icon.svg') no-repeat center;
-                transform: rotate(-45deg) scale(1.5);
-                // transform: scale(2);
-                height: var(--h3size);
-                width: var(--h3size);
+                display: flex;
+                flex-direction: column;
+                justify-content: flex-end;
+                cursor: pointer;
+                border-radius: .25rem;
                 transition: all 0.25s ease-in-out;
+
+                #learnMoreContainer {
+                    display: inline-flex;
+                    flex-direction: row;
+                    // align-items: flex-end;
+                    justify-content: flex-start;
+                    align-items: center;
+                    height: var(--h3size);
+                }
+
+
+
+                #learnMoreContainer::after {
+                    content: "";
+                    background: url('./media/arrow-thin-right-icon.svg') no-repeat center;
+                    transform: rotate(-45deg) scale(1.5);
+                    // transform: scale(2);
+                    height: var(--h3size);
+                    width: var(--h3size);
+                    transition: all 0.25s ease-in-out;
+                }
+
+                #learnMoreContainer h3 {
+                    max-width: 0;
+                    opacity: 0;
+                    overflow: hidden;
+                    white-space: nowrap;
+                    transition: all .75s ease-in-out;
+                    // color:$lightGreen;
+                }
             }
 
-            #learnMoreContainer h3 {
-                max-width: 0;
+            // .servicesCard:hover {
+            //     transform: scale(1.02);
+            //     // box-shadow: rgba(100, 100, 111, 0.4) 0rem 0.4rem 2rem 0rem;
+            //     // background: #011c1a;
+            // }
+
+            .servicesCard * {
+                margin: .5rem 0;
+                color: $white;
+            }
+
+
+            .servicesCard p {
+                max-height: 0;
                 opacity: 0;
                 overflow: hidden;
-                white-space: nowrap;
-                transition: all .75s ease-in-out;
+                transition: all .5s ease-in-out;
+            }
+
+
+            .servicesCard:hover p {
+                height: auto;
+                max-height: 500px;
+                opacity: 1;
+            }
+
+            .servicesCard:hover #learnMoreContainer h3 {
+                max-width: 15rem;
+                margin-right: 3rem;
+                width: auto;
+                overflow: hidden;
+                opacity: 1;
+            }
+
+            .servicesCard:hover #learnMoreContainer::after {
+                transform: rotate(0);
+            }
+
+            #engineeringCard {
+                background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, .8)), url(./media/pics/Engineering.jpg) center no-repeat;
+                background-size: cover;
+            }
+
+            #manfacturingCard {
+                background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, .7)), url(./media/pics/welding.jpg) center no-repeat;
+                background-size: cover;
+            }
+
+            #productCard {
+                background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.8)), url(./media/pics/warehouse.jpg) center no-repeat;
+                background-size: cover;
+            }
+
+            #paintCard {
+                background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.8)), url(./media/pics/Powder_Coat.jpg) center no-repeat;
+                background-size: cover;
+                // transform: translateY(2rem);
             }
         }
-
-        // .servicesCard:hover {
-        //     transform: scale(1.02);
-        //     // box-shadow: rgba(100, 100, 111, 0.4) 0rem 0.4rem 2rem 0rem;
-        //     // background: #011c1a;
-        // }
-
-        .servicesCard * {
-            margin: 1rem 0;
-            color: $white;
-        }
-
-
-        .servicesCard p {
-            max-height: 0;
-            opacity: 0;
-            overflow: hidden;
-            transition: all .5s ease-in-out;
-        }
-
-
-        .servicesCard:hover p {
-            height: auto;
-            max-height: 500px;
-            opacity: 1;
-        }
-
-        .servicesCard:hover #learnMoreContainer h3 {
-            max-width: 15rem;
-            margin-right: 3rem;
-            width: auto;
-            overflow: hidden;
-            opacity: 1;
-        }
-
-        .servicesCard:hover #learnMoreContainer::after {
-            transform: rotate(0);
-        }
-
-        #engineeringCard {
-            background: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.9)), url(./media/pics/Engineering.jpg) center no-repeat;
-            background-size: cover;
-            // transform: translateY(-2rem);
-        }
-
-        #manfacturingCard {
-            background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.9)), url(./media/pics/Welding.jpg) center no-repeat;
-            background-size: cover;
-        }
-
-        #paintCard {
-            background: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.9)), url(./media/pics/Powder_Coat.jpg) center no-repeat;
-            background-size: cover;
-            // transform: translateY(2rem);
-        }
     }
+
+
 }
 
 
@@ -472,75 +505,86 @@ body {
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 #teamChunk {
-    position: relative;
     display: flex;
-    // background: linear-gradient(rgba(243, 243, 243, 1)20%, rgba(243, 243, 243, 0)100%), linear-gradient(to right, rgba(243, 243, 243, 1)0%, rgba(243, 243, 243, .9)30%, rgba(243, 243, 243, 0)), url('./media/pics/Edmonton.jpg');
-    // background: $lightGreen;
-    background-size: cover;
-    background-repeat: no-repeat;
     flex-direction: column;
+    flex-wrap: wrap-reverse;
     justify-content: center;
-    box-sizing: border-box;
-    padding: 0rem var(--contentWidth);
+    padding: 5.5rem var(--contentWidth);
+    overflow: hidden;
+    margin-bottom: var(--minPadding);
+
+    >* {
+        height: calc(50% - 4rem);
+        width: calc(40% - 2rem);
+        margin: auto;
+        flex: 1;
+    }
+
+    >*:last-child {
+        width: calc(60% - 2rem);
+    }
+
+
+    picture {
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: .5rem;
+        }
+    }
+
 
     #aboutUsContent {
-        width: 75%;
-        margin-bottom: 3rem;
+        max-width: var(--textContainerMax);
+        padding: 0 3rem;
 
-        h1 {
-            margin-bottom: 2rem;
-        }
-
-    }
-
-    #aboutUsContentLinks {
-        list-style-type: none;
-        display: flex;
-        flex-direction: column;
-        width: 40%;
-        margin-left: 2rem;
-
-        li {
-            box-sizing: border-box;
-            display: inline-flex;
-            justify-content: space-between;
-            // flex-direction: row;
-            // background-color: rgba(243,243,243,.8);
-            // backdrop-filter: blur(0.3rem) brightness(120%);
-            border-bottom: 0.19rem solid $lightGreen;
-            padding: 1.5rem 0;
+        #aboutUsContentLinks {
+            padding-top: 2.5rem;
+            list-style-type: none;
+            display: flex;
+            flex-direction: row;
 
 
 
-            h2 {
-                color: $lightGreen;
-                margin-left: 1rem;
+            li {
+                width: 50%;
+                // box-sizing: border-box;
+                // display: inline-flex;
+                // justify-content: space-between;
+                // flex-direction: row;
+                // background-color: rgba(243,243,243,.8);
+                // backdrop-filter: blur(0.3rem) brightness(120%);
+                border: 0.19rem solid $lightGreen;
+                border-radius: .25rem;
+                margin: 0 1rem;
+                padding: 1rem;
+                text-align: center;
+
+
+
+                h2 {
+                    color: $lightGreen;
+                    // margin-left: 1rem;
+                }
+
             }
 
-            // transition: all 0.25s ease-in-out;
+            li:hover {
+                cursor: pointer;
+                background-color: $lightGreen;
 
-        }
-
-        // li:after {
-        //     content: "";
-        //     background: url('./media/arrow-green.svg') no-repeat;
-        //     height: $h3Size;
-        //     width: $h3Size;
-        //     padding: 0 1rem;
-        //     transform: rotate(-45deg);
-        // }
-
-        li:hover {
-            cursor: pointer;
-            background-color: $lightGreen;
-
-            h2 {
-                color: $white;
+                h2 {
+                    color: $white;
+                }
             }
+
+
         }
-
-
     }
+
+
 
 }
 
@@ -602,6 +646,7 @@ body {
     background-size: cover;
 
 
+
     h1 {
         font-family: NHD;
         color: rgb(255, 255, 255);
@@ -626,9 +671,10 @@ body {
 }
 
 .pageSection {
+    background-color: white;
     padding: 9rem var(--contentWidth);
-    
-    *{
+
+    * {
         width: var(--textContainerMax);
         margin: 0 auto;
     }
@@ -643,19 +689,20 @@ body {
 }
 
 .contentList {
+    background-color: white;
     width: 100%;
     padding-bottom: 5rem;
 
     .contentContainer {
         display: flex;
-        padding-left: calc((var(--contentWidth)));
+        padding-left: calc((100% - (var(--textContainerMax)))/2);
         height: 500px;
         margin-bottom: 2rem;
         width: 100%;
 
         hgroup {
-            width: calc(((100% - ((var(--contentWidth))))/2));
-            padding: 0 5rem;
+            width: calc(var(--textContainerMax)/2);
+            padding: 0 var(--minPadding);
             border-right: 1rem solid $white;
 
             display: flex;
@@ -688,7 +735,7 @@ body {
 
     .contentContainer:nth-child(even) {
         flex-direction: row-reverse;
-        padding-right: calc((var(--contentWidth)));
+        padding-right: calc((100% - (var(--textContainerMax)))/2);
         padding-left: 0;
 
         hgroup {

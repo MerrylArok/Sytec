@@ -13,6 +13,7 @@
   --h4size: 1.1rem;
   --psize: 1.3rem;
   --contentWidth: 10rem;
+  --minPadding: 5rem;
   --textContainerMax: 900px;
   --customerLogoWidth: 22rem;
 }
@@ -36,7 +37,7 @@
 
 h1 {
   font-size: var(--h1size);
-  margin-bottom: 1.4rem;
+  margin-bottom: 1.75rem;
   color: #008c15;
 }
 
@@ -100,7 +101,7 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0rem calc(5rem - calc((100vw - 100%)/2));
+  padding: 0rem calc(var(--minPadding) - calc((100vw - 100%)/2));
 }
 .header #headerFlexContainer #logo {
   height: var(--h3size);
@@ -121,7 +122,7 @@ body {
   font-weight: 600;
   padding: 0.25rem 2rem;
   border-radius: 0.3rem;
-  margin-right: 5rem;
+  margin-right: var(--minPadding);
   transition: all 0.2s;
 }
 .header #headerFlexContainer #headerRight li #headerContactButton:hover {
@@ -170,7 +171,7 @@ body {
 }
 #mainPage #helloContent {
   max-width: var(--textContainerMax);
-  margin: 0 5rem;
+  margin: 0 var(--minPadding);
   padding-bottom: 20rem;
   text-align: left;
 }
@@ -217,7 +218,7 @@ body {
   z-index: 100;
 }
 #customerContainer #customerContent * {
-  margin: 0 5rem;
+  margin: 0 var(--minPadding);
 }
 #customerContainer #customerContent h1 {
   margin-bottom: 1.4rem;
@@ -266,41 +267,52 @@ body {
 }
 
 #servicesChunk {
-  background-image: url("./media/waveBackgroundLine.svg");
-  background-size: cover;
-  background-color: #edeeef;
+  padding: 5.5rem calc(var(--contentWidth)/2);
+}
+#servicesChunk #servicesChunkCard {
+  height: 100%;
+  width: 100%;
+  padding: 5rem calc(var(--contentWidth)/2);
+  border-radius: 1rem;
   display: flex;
-  padding: 8rem 10rem;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
+  box-shadow: 0 0.5rem 2rem rgba(17, 17, 26, 0.05);
 }
-#servicesChunk #servicesContent {
-  margin-bottom: 2.5rem;
-}
-#servicesChunk #cardFlexContainer {
-  flex: 4;
-  display: flex;
-}
-#servicesChunk #cardFlexContainer .servicesCard {
-  position: relative;
+#servicesChunk #servicesChunkCard #servicesContent {
   flex: 1;
-  margin: 0 1rem;
-  padding: 3rem;
+  margin-right: var(--minPadding);
+}
+#servicesChunk #servicesChunkCard #servicesContent h1 {
+  color: #0053d6;
+}
+#servicesChunk #servicesChunkCard #cardFlexContainer {
+  height: 100%;
+  width: 100%;
+  flex: 2.5;
+  display: flex;
+  flex-wrap: wrap;
+}
+#servicesChunk #servicesChunkCard #cardFlexContainer .servicesCard {
+  margin: auto;
+  padding: 2.5rem;
+  height: calc(50% - 2rem);
+  width: calc(50% - 2rem);
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
   cursor: pointer;
-  border-radius: 0.75rem;
+  border-radius: 0.25rem;
   transition: all 0.25s ease-in-out;
 }
-#servicesChunk #cardFlexContainer .servicesCard #learnMoreContainer {
+#servicesChunk #servicesChunkCard #cardFlexContainer .servicesCard #learnMoreContainer {
   display: inline-flex;
   flex-direction: row;
   justify-content: flex-start;
   align-items: center;
   height: var(--h3size);
 }
-#servicesChunk #cardFlexContainer .servicesCard #learnMoreContainer::after {
+#servicesChunk #servicesChunkCard #cardFlexContainer .servicesCard #learnMoreContainer::after {
   content: "";
   background: url("./media/arrow-thin-right-icon.svg") no-repeat center;
   transform: rotate(-45deg) scale(1.5);
@@ -308,91 +320,105 @@ body {
   width: var(--h3size);
   transition: all 0.25s ease-in-out;
 }
-#servicesChunk #cardFlexContainer .servicesCard #learnMoreContainer h3 {
+#servicesChunk #servicesChunkCard #cardFlexContainer .servicesCard #learnMoreContainer h3 {
   max-width: 0;
   opacity: 0;
   overflow: hidden;
   white-space: nowrap;
   transition: all 0.75s ease-in-out;
 }
-#servicesChunk #cardFlexContainer .servicesCard * {
-  margin: 1rem 0;
+#servicesChunk #servicesChunkCard #cardFlexContainer .servicesCard * {
+  margin: 0.5rem 0;
   color: #fff;
 }
-#servicesChunk #cardFlexContainer .servicesCard p {
+#servicesChunk #servicesChunkCard #cardFlexContainer .servicesCard p {
   max-height: 0;
   opacity: 0;
   overflow: hidden;
   transition: all 0.5s ease-in-out;
 }
-#servicesChunk #cardFlexContainer .servicesCard:hover p {
+#servicesChunk #servicesChunkCard #cardFlexContainer .servicesCard:hover p {
   height: auto;
   max-height: 500px;
   opacity: 1;
 }
-#servicesChunk #cardFlexContainer .servicesCard:hover #learnMoreContainer h3 {
+#servicesChunk #servicesChunkCard #cardFlexContainer .servicesCard:hover #learnMoreContainer h3 {
   max-width: 15rem;
   margin-right: 3rem;
   width: auto;
   overflow: hidden;
   opacity: 1;
 }
-#servicesChunk #cardFlexContainer .servicesCard:hover #learnMoreContainer::after {
+#servicesChunk #servicesChunkCard #cardFlexContainer .servicesCard:hover #learnMoreContainer::after {
   transform: rotate(0);
 }
-#servicesChunk #cardFlexContainer #engineeringCard {
-  background: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.9)), url(./media/pics/Engineering.jpg) center no-repeat;
+#servicesChunk #servicesChunkCard #cardFlexContainer #engineeringCard {
+  background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.8)), url(./media/pics/Engineering.jpg) center no-repeat;
   background-size: cover;
 }
-#servicesChunk #cardFlexContainer #manfacturingCard {
-  background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.9)), url(./media/pics/Welding.jpg) center no-repeat;
+#servicesChunk #servicesChunkCard #cardFlexContainer #manfacturingCard {
+  background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.7)), url(./media/pics/welding.jpg) center no-repeat;
   background-size: cover;
 }
-#servicesChunk #cardFlexContainer #paintCard {
-  background: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.9)), url(./media/pics/Powder_Coat.jpg) center no-repeat;
+#servicesChunk #servicesChunkCard #cardFlexContainer #productCard {
+  background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.8)), url(./media/pics/warehouse.jpg) center no-repeat;
+  background-size: cover;
+}
+#servicesChunk #servicesChunkCard #cardFlexContainer #paintCard {
+  background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.8)), url(./media/pics/Powder_Coat.jpg) center no-repeat;
   background-size: cover;
 }
 
 #teamChunk {
-  position: relative;
   display: flex;
-  background-size: cover;
-  background-repeat: no-repeat;
   flex-direction: column;
+  flex-wrap: wrap-reverse;
   justify-content: center;
-  box-sizing: border-box;
-  padding: 0rem var(--contentWidth);
+  padding: 5.5rem var(--contentWidth);
+  overflow: hidden;
+  margin-bottom: var(--minPadding);
+}
+#teamChunk > * {
+  height: calc(50% - 4rem);
+  width: calc(40% - 2rem);
+  margin: auto;
+  flex: 1;
+}
+#teamChunk > *:last-child {
+  width: calc(60% - 2rem);
+}
+#teamChunk picture img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 0.5rem;
 }
 #teamChunk #aboutUsContent {
-  width: 75%;
-  margin-bottom: 3rem;
+  max-width: var(--textContainerMax);
+  padding: 0 3rem;
 }
-#teamChunk #aboutUsContent h1 {
-  margin-bottom: 2rem;
-}
-#teamChunk #aboutUsContentLinks {
+#teamChunk #aboutUsContent #aboutUsContentLinks {
+  padding-top: 2.5rem;
   list-style-type: none;
   display: flex;
-  flex-direction: column;
-  width: 40%;
-  margin-left: 2rem;
+  flex-direction: row;
 }
-#teamChunk #aboutUsContentLinks li {
-  box-sizing: border-box;
-  display: inline-flex;
-  justify-content: space-between;
-  border-bottom: 0.19rem solid #008c15;
-  padding: 1.5rem 0;
+#teamChunk #aboutUsContent #aboutUsContentLinks li {
+  width: 50%;
+  border: 0.19rem solid #008c15;
+  border-radius: 0.25rem;
+  margin: 0 1rem;
+  padding: 1rem;
+  text-align: center;
 }
-#teamChunk #aboutUsContentLinks li h2 {
+#teamChunk #aboutUsContent #aboutUsContentLinks li h2 {
   color: #008c15;
-  margin-left: 1rem;
 }
-#teamChunk #aboutUsContentLinks li:hover {
+#teamChunk #aboutUsContent #aboutUsContentLinks li:hover {
   cursor: pointer;
   background-color: #008c15;
 }
-#teamChunk #aboutUsContentLinks li:hover h2 {
+#teamChunk #aboutUsContent #aboutUsContentLinks li:hover h2 {
   color: #fff;
 }
 
@@ -461,6 +487,7 @@ body {
 }
 
 .pageSection {
+  background-color: white;
   padding: 9rem var(--contentWidth);
 }
 .pageSection * {
@@ -475,19 +502,20 @@ body {
 }
 
 .contentList {
+  background-color: white;
   width: 100%;
   padding-bottom: 5rem;
 }
 .contentList .contentContainer {
   display: flex;
-  padding-left: calc((var(--contentWidth)));
+  padding-left: calc((100% - (var(--textContainerMax)))/2);
   height: 500px;
   margin-bottom: 2rem;
   width: 100%;
 }
 .contentList .contentContainer hgroup {
-  width: calc(((100% - ((var(--contentWidth))))/2));
-  padding: 0 5rem;
+  width: calc(var(--textContainerMax)/2);
+  padding: 0 var(--minPadding);
   border-right: 1rem solid #fff;
   display: flex;
   flex-direction: column;
@@ -509,7 +537,7 @@ body {
 }
 .contentList .contentContainer:nth-child(even) {
   flex-direction: row-reverse;
-  padding-right: calc((var(--contentWidth)));
+  padding-right: calc((100% - (var(--textContainerMax)))/2);
   padding-left: 0;
 }
 .contentList .contentContainer:nth-child(even) hgroup {
