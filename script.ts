@@ -30,11 +30,11 @@
 
 // This function updates the number of years Sytec has been operational since its inception in 1998
 
-let yearsAlive = document.getElementById('yearsAlive') as HTMLElement;
+const yearsAlive = document.getElementById('yearsAlive') as HTMLElement;
 try {
     yearsAlive.innerText = (new Date().getFullYear() - 1998).toString() + " years";
 } catch (error) {
-    console.log(error + " and not necessary. Variable only defined and needed in homepage.")
+    console.log("yearsAlive is defined and needed on the homepage only")
 }
 
 
@@ -51,10 +51,10 @@ class Header extends HTMLElement {
     connectedCallback() {
         let htmlHeader = `<header class="header">
     <nav id="headerFlexContainer">
-    <a href="./index.html"><img id="logo" src="./media/Sytec.svg" alt="Sytec Logo"></a>
+    <a title="Homepage" href="./index.html"><img id="logo" src="./media/Sytec.svg" alt="Sytec Logo"></a>
 
         <ul id="headerRight" class="lists">
-            <li><a id="headerContactButton" href="./contact.html">Contact</a></li>
+            <li><a id="headerContactButton" class="buttonTransition" href="./contact.html">Contact</a></li>
             <li><button id="headerMenuButton">
                     <div id="longBar"></div>
                     <div id="midBar"></div>
@@ -110,7 +110,7 @@ class Footer extends HTMLElement {
                 <h4>Team</h4>
             </li>
             <li>
-                <h4>Careers</h4>
+                <h4><a target="_blank" href="https://ca.indeed.com/cmp/Sytec-Manufacturing-1/jobs">Careers</a></h4>
             </li>
         </ul>
 
@@ -143,9 +143,56 @@ class Footer extends HTMLElement {
     }
 }
 
-
-
-
-
 customElements.define('header-component', Header);
 customElements.define('footer-component', Footer);
+
+
+///////////////////////////////////////////////////////////////////////////////////////
+
+//Using Intersection observer API to animate page elements
+
+const animatedElementsLeft = document.querySelectorAll('.animateLeft');
+const animatedElementsRight = document.querySelectorAll('.animateRight');
+
+const options = {
+    root: null,
+    rootMargin: '0px',
+    threshold: .25,
+}
+
+//Observer injects animation to left 
+const observerLeft = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.style.animation = '.25s animateLeft ease-in';
+            entry.target.style.opacity = '1';
+            observerLeft.unobserve(entry.target);
+        }
+    })
+    console.log(entries);
+}, options)
+
+//Observer injects animation to right 
+const observerRight = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.style.animation = '.35s animateRight ease-in';
+            entry.target.style.opacity = '1';
+        }
+    })
+    console.log(entries);
+}, options)
+
+//Setting left Observer on left animation seeking elements and viceversa
+animatedElementsLeft.forEach (element => {
+    observerLeft.observe(element);
+})
+
+animatedElementsRight.forEach (element => {
+    observerRight.observe(element);
+})
+
+
+
+
+

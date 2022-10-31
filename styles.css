@@ -12,7 +12,7 @@
   --h3size: 1.3rem;
   --h4size: 1.1rem;
   --psize: 1.3rem;
-  --contentWidth: 10rem;
+  --contentWidth: 7rem;
   --minPadding: 5rem;
   --textContainerMax: 900px;
   --customerLogoWidth: 22rem;
@@ -64,9 +64,12 @@ p,
 
 .chunk {
   width: 100%;
-  min-height: calc((100vw)*8/16);
   height: 100vh;
   max-height: 100vw;
+}
+
+.chunkMinHeight {
+  min-height: calc((100vw)*8/16);
 }
 
 html,
@@ -123,7 +126,6 @@ body {
   padding: 0.25rem 2rem;
   border-radius: 0.3rem;
   margin-right: var(--minPadding);
-  transition: all 0.2s;
 }
 .header #headerFlexContainer #headerRight li #headerContactButton:hover {
   background-color: #B03C00;
@@ -146,7 +148,7 @@ body {
   flex: 0 0 auto;
   width: 100%;
   background-color: #3c3c3d;
-  transition: all 0.3s;
+  transition: width 0.2s ease-in;
 }
 .header #headerFlexContainer #headerRight li #headerMenuButton #midBar {
   width: 66%;
@@ -172,7 +174,7 @@ body {
 #mainPage #helloContent {
   max-width: var(--textContainerMax);
   margin: 0 var(--minPadding);
-  padding-bottom: 20rem;
+  padding-bottom: 17rem;
   text-align: left;
 }
 #mainPage #helloContent p,
@@ -202,7 +204,7 @@ body {
 }
 
 #customerContainer {
-  padding: 7rem var(--contentWidth);
+  padding: 8rem var(--contentWidth);
   position: relative;
 }
 #customerContainer #customerContent {
@@ -211,11 +213,12 @@ body {
   left: 0;
   right: 0;
   text-align: center;
-  transform: translate(0, -50%);
+  transform: translateY(-50%);
   width: 100%;
   max-width: var(--textContainerMax);
   margin: 0 auto;
   z-index: 100;
+  overflow: clip;
 }
 #customerContainer #customerContent * {
   margin: 0 var(--minPadding);
@@ -277,11 +280,11 @@ body {
   display: flex;
   flex-direction: row;
   align-items: center;
-  box-shadow: 0 0.5rem 2rem rgba(17, 17, 26, 0.05);
+  box-shadow: 0 0.5rem 2rem rgba(17, 17, 26, 0.06);
 }
 #servicesChunk #servicesChunkCard #servicesContent {
   flex: 1;
-  margin-right: var(--minPadding);
+  margin-right: 2rem;
 }
 #servicesChunk #servicesChunkCard #servicesContent h1 {
   color: #0053d6;
@@ -297,13 +300,13 @@ body {
   margin: auto;
   padding: 2.5rem;
   height: calc(50% - 2rem);
+  min-height: 230px;
   width: calc(50% - 2rem);
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
   cursor: pointer;
   border-radius: 0.25rem;
-  transition: all 0.25s ease-in-out;
 }
 #servicesChunk #servicesChunkCard #cardFlexContainer .servicesCard #learnMoreContainer {
   display: inline-flex;
@@ -318,14 +321,16 @@ body {
   transform: rotate(-45deg) scale(1.5);
   height: var(--h3size);
   width: var(--h3size);
-  transition: all 0.25s ease-in-out;
+  transition: transform 0.25s ease-in-out;
 }
 #servicesChunk #servicesChunkCard #cardFlexContainer .servicesCard #learnMoreContainer h3 {
   max-width: 0;
   opacity: 0;
   overflow: hidden;
   white-space: nowrap;
-  transition: all 0.75s ease-in-out;
+  transition-property: max-width, opacity, margin-right;
+  transition-duration: 0.75s;
+  transition-timing-function: ease-in-out;
 }
 #servicesChunk #servicesChunkCard #cardFlexContainer .servicesCard * {
   margin: 0.5rem 0;
@@ -335,7 +340,9 @@ body {
   max-height: 0;
   opacity: 0;
   overflow: hidden;
-  transition: all 0.5s ease-in-out;
+  transition-property: max-height, opacity;
+  transition-duration: 0.5s;
+  transition-timing-function: ease-in-out;
 }
 #servicesChunk #servicesChunkCard #cardFlexContainer .servicesCard:hover p {
   height: auto;
@@ -371,23 +378,31 @@ body {
 
 #teamChunk {
   display: flex;
-  flex-direction: column;
-  flex-wrap: wrap-reverse;
+  flex-direction: row-reverse;
   justify-content: center;
-  padding: 5.5rem var(--contentWidth);
-  overflow: hidden;
-  margin-bottom: var(--minPadding);
+  padding: 7.5rem var(--contentWidth);
 }
 #teamChunk > * {
-  height: calc(50% - 4rem);
-  width: calc(40% - 2rem);
-  margin: auto;
   flex: 1;
 }
 #teamChunk > *:last-child {
-  width: calc(60% - 2rem);
+  flex: 1.5;
+  margin-right: 2rem;
 }
-#teamChunk picture img {
+#teamChunk #teamContainer1 {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  height: 100%;
+  margin: auto;
+}
+#teamChunk #teamContainer1 > * {
+  flex: 1;
+}
+#teamChunk .teamChunkContainer picture {
+  min-height: 0;
+}
+#teamChunk .teamChunkContainer picture img {
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -395,7 +410,11 @@ body {
 }
 #teamChunk #aboutUsContent {
   max-width: var(--textContainerMax);
-  padding: 0 3rem;
+  padding: 0 2rem;
+  margin-bottom: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 #teamChunk #aboutUsContent #aboutUsContentLinks {
   padding-top: 2.5rem;
@@ -408,7 +427,7 @@ body {
   border: 0.19rem solid #008c15;
   border-radius: 0.25rem;
   margin: 0 1rem;
-  padding: 1rem;
+  padding: 0.6rem;
   text-align: center;
 }
 #teamChunk #aboutUsContent #aboutUsContentLinks li h2 {
@@ -429,7 +448,7 @@ body {
 #contactMain hgroup {
   position: relative;
   z-index: 100;
-  background-color: #06645f;
+  background-color: #008c15;
   width: fit-content;
   padding: 3rem;
 }
@@ -473,8 +492,6 @@ body {
   font-size: calc(var(--h1size)*1.5);
   margin-bottom: 0rem;
   padding-top: 3rem;
-  font-weight: bold;
-  letter-spacing: 0.13rem;
 }
 
 #engineeringHeader {
@@ -488,10 +505,10 @@ body {
 
 .pageSection {
   background-color: white;
-  padding: 9rem var(--contentWidth);
+  padding: 9rem var(--minPadding);
 }
 .pageSection * {
-  width: var(--textContainerMax);
+  max-width: var(--textContainerMax);
   margin: 0 auto;
 }
 .pageSection h2 {
@@ -514,9 +531,10 @@ body {
   width: 100%;
 }
 .contentList .contentContainer hgroup {
-  width: calc(var(--textContainerMax)/2);
+  width: calc((var(--textContainerMax)/2) - 1rem);
   padding: 0 var(--minPadding);
-  border-right: 1rem solid #fff;
+  margin-right: 1rem;
+  border-radius: 0.5rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -532,8 +550,9 @@ body {
 }
 .contentList .contentContainer img {
   flex: 1;
-  border-left: 1rem solid #fff;
+  margin-left: 1rem;
   object-fit: cover;
+  border-radius: 0.5rem;
 }
 .contentList .contentContainer:nth-child(even) {
   flex-direction: row-reverse;
@@ -541,12 +560,12 @@ body {
   padding-left: 0;
 }
 .contentList .contentContainer:nth-child(even) hgroup {
-  border-left: 1rem solid #fff;
-  border-right: none;
+  margin-left: 1rem;
+  margin-right: 0;
 }
 .contentList .contentContainer:nth-child(even) img {
-  border-right: 1rem solid #fff;
-  border-left: none;
+  margin-right: 1rem;
+  margin-left: 0;
 }
 
 #footer {
@@ -554,7 +573,7 @@ body {
   flex-shrink: 0;
   display: flex;
   flex-direction: row;
-  padding: 3rem 35rem;
+  padding: 3rem var(--minPadding);
   background-color: #edeeef;
   justify-content: center;
 }
@@ -578,6 +597,37 @@ body {
   color: #3c3c3d;
 }
 
+.animateLeft,
+.animateRight {
+  opacity: 0;
+}
+
+.buttonTransition {
+  transition-property: background-color, color;
+  transition-duration: 0.2s;
+  transition-timing-function: ease-in-out;
+}
+
+@keyframes animateLeft {
+  0% {
+    opacity: 0;
+    transform: translate(3%, 0);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0, 0);
+  }
+}
+@keyframes animateRight {
+  0% {
+    opacity: 0;
+    transform: translate(-3%, 0);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0, 0);
+  }
+}
 @keyframes scrollDown {
   from {
     bottom: 7%;
@@ -606,6 +656,38 @@ body {
   }
   100% {
     transform: translateX(0);
+  }
+}
+@media (max-width: 1150px) {
+  #servicesChunk {
+    height: auto;
+  }
+  #servicesChunk #servicesChunkCard {
+    flex-direction: column;
+  }
+  #servicesChunk #servicesChunkCard #servicesContent {
+    flex: 1;
+    margin-bottom: 2rem;
+  }
+  #servicesChunk #servicesChunkCard #cardFlexContainer {
+    height: 100%;
+    width: 100%;
+    flex: 2.5;
+  }
+  #servicesChunk #servicesChunkCard #cardFlexContainer .servicesCard {
+    margin: 1rem auto;
+  }
+
+  #teamContainer1 picture {
+    display: none;
+  }
+
+  #teamChunk #aboutUsContent #aboutUsContentLinks {
+    flex-direction: column;
+  }
+  #teamChunk #aboutUsContent #aboutUsContentLinks li {
+    width: 100%;
+    margin: 0.5rem auto;
   }
 }
 

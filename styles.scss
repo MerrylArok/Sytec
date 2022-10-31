@@ -38,7 +38,7 @@ $white: #fff;
     --h4size: 1.1rem;
     --psize: 1.3rem;
 
-    --contentWidth: 10rem;
+    --contentWidth: 7rem;
     --minPadding: 5rem;
     --textContainerMax: 900px;
     --customerLogoWidth: 22rem;
@@ -97,13 +97,16 @@ p,
 
 .chunk {
     width: 100%;
-
-    //If browser is resized, this ensures that each chunk has a min height to avoid scrambling content
-    min-height: calc((100vw)*8/16);
     //This ensures that each "chunk" of the main page is contained in the viewport in landscape
     height: 100vh;
     //This ensures that each "chunk" of the main page is contained in the viewport in potrait
     max-height: 100vw;
+}
+
+.chunkMinHeight {
+    //If browser is resized, this ensures that each chunk has a min height to maintain aspect ratio
+    min-height: calc((100vw)*8/16);
+
 }
 
 html,
@@ -168,7 +171,6 @@ body {
                     padding: .25rem 2rem;
                     border-radius: .3rem;
                     margin-right: var(--minPadding);
-                    transition: all 0.2s;
                 }
 
                 #headerContactButton:hover {
@@ -193,7 +195,7 @@ body {
                         flex: 0 0 auto;
                         width: 100%;
                         background-color: $matteBlack;
-                        transition: all 0.3s;
+                        transition: width 0.2s ease-in;
                     }
 
                     #midBar {
@@ -236,7 +238,7 @@ body {
 
         max-width: var(--textContainerMax);
         margin: 0 var(--minPadding);
-        padding-bottom: 20rem;
+        padding-bottom: 17rem;
         text-align: left;
 
 
@@ -274,7 +276,7 @@ body {
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// 
 
 #customerContainer {
-    padding: 7rem var(--contentWidth);
+    padding: 8rem var(--contentWidth);
     position: relative;
 
     #customerContent {
@@ -283,11 +285,12 @@ body {
         left: 0;
         right: 0;
         text-align: center;
-        transform: translate(0, -50%);
+        transform: translateY(-50%);
         width: 100%;
         max-width: var(--textContainerMax);
         margin: 0 auto;
         z-index: 100;
+        overflow: clip;
 
         * {
             margin: 0 var(--minPadding);
@@ -368,13 +371,13 @@ body {
         flex-direction: row;
         align-items: center;
 
-        box-shadow: 0 .5rem 2rem rgba(17, 17, 26, 0.05);
+        box-shadow: 0 .5rem 2rem rgba(17, 17, 26, 0.06);
 
         // box-shadow: rgba(17, 17, 26, 0.05) 0px 4px 16px, rgba(17, 17, 26, 0.05) 0px 8px 32px;
 
         #servicesContent {
             flex: 1;
-            margin-right: var(--minPadding);
+            margin-right: 2rem;
 
             h1 {
                 color: $brightBlue;
@@ -396,6 +399,7 @@ body {
                 margin: auto;
                 padding: 2.5rem;
                 height: calc(50% - 2rem);
+                min-height: 230px;
                 width: calc(50% - 2rem);
 
                 display: flex;
@@ -403,7 +407,7 @@ body {
                 justify-content: flex-end;
                 cursor: pointer;
                 border-radius: .25rem;
-                transition: all 0.25s ease-in-out;
+                // transition: all 0.25s ease-in-out;
 
                 #learnMoreContainer {
                     display: inline-flex;
@@ -423,7 +427,7 @@ body {
                     // transform: scale(2);
                     height: var(--h3size);
                     width: var(--h3size);
-                    transition: all 0.25s ease-in-out;
+                    transition: transform 0.25s ease-in-out;
                 }
 
                 #learnMoreContainer h3 {
@@ -431,8 +435,10 @@ body {
                     opacity: 0;
                     overflow: hidden;
                     white-space: nowrap;
-                    transition: all .75s ease-in-out;
-                    // color:$lightGreen;
+                    // transition: all .75s ease-in-out;
+                    transition-property: max-width, opacity, margin-right;
+                    transition-duration: 0.75s;
+                    transition-timing-function: ease-in-out;
                 }
             }
 
@@ -452,7 +458,10 @@ body {
                 max-height: 0;
                 opacity: 0;
                 overflow: hidden;
-                transition: all .5s ease-in-out;
+                // transition: all .5s ease-in-out;
+                transition-property: max-height, opacity;
+                transition-duration: 0.5s;
+                transition-timing-function: ease-in-out;
             }
 
 
@@ -506,47 +515,65 @@ body {
 
 #teamChunk {
     display: flex;
-    flex-direction: column;
-    flex-wrap: wrap-reverse;
+    flex-direction: row-reverse;
     justify-content: center;
-    padding: 5.5rem var(--contentWidth);
-    overflow: hidden;
-    margin-bottom: var(--minPadding);
+    padding: 7.5rem var(--contentWidth);
+    // overflow: hidden;
 
     >* {
-        height: calc(50% - 4rem);
-        width: calc(40% - 2rem);
-        margin: auto;
         flex: 1;
     }
 
     >*:last-child {
-        width: calc(60% - 2rem);
+        flex: 1.5;
+        margin-right: 2rem;
     }
 
+    #teamContainer1 {
+        display: flex;
+        flex-direction: column;
+        // justify-content: center;
+        overflow: hidden;
+        height: 100%;
+        margin: auto;
 
-    picture {
+        >* {
+            flex: 1;
+        }
 
-        img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            border-radius: .5rem;
+
+    }
+
+    .teamChunkContainer {
+        picture {
+
+            min-height: 0;
+
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                border-radius: .5rem;
+            }
         }
     }
 
 
+
+
     #aboutUsContent {
         max-width: var(--textContainerMax);
-        padding: 0 3rem;
+        padding: 0 2rem;
+        margin-bottom: 2rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
 
         #aboutUsContentLinks {
             padding-top: 2.5rem;
             list-style-type: none;
             display: flex;
             flex-direction: row;
-
-
 
             li {
                 width: 50%;
@@ -559,7 +586,7 @@ body {
                 border: 0.19rem solid $lightGreen;
                 border-radius: .25rem;
                 margin: 0 1rem;
-                padding: 1rem;
+                padding: .6rem;
                 text-align: center;
 
 
@@ -598,7 +625,7 @@ body {
     hgroup {
         position: relative;
         z-index: 100;
-        background-color: $darkGreen;
+        background-color: $lightGreen;
         width: fit-content;
         padding: 3rem;
 
@@ -644,6 +671,8 @@ body {
     justify-content: center;
     align-items: center;
     background-size: cover;
+    // margin:0 5rem;
+    // box-shadow: 0 .5rem 2rem rgba(17, 17, 26, 0.08);
 
 
 
@@ -653,8 +682,6 @@ body {
         font-size: calc(var(--h1size)*1.5);
         margin-bottom: 0rem;
         padding-top: 3rem;
-        font-weight: bold;
-        letter-spacing: .13rem;
     }
 
 
@@ -672,10 +699,11 @@ body {
 
 .pageSection {
     background-color: white;
-    padding: 9rem var(--contentWidth);
+    padding: 9rem var(--minPadding);
+
 
     * {
-        width: var(--textContainerMax);
+        max-width: var(--textContainerMax);
         margin: 0 auto;
     }
 
@@ -701,15 +729,18 @@ body {
         width: 100%;
 
         hgroup {
-            width: calc(var(--textContainerMax)/2);
+            width: calc((var(--textContainerMax)/2) - 1rem);
             padding: 0 var(--minPadding);
-            border-right: 1rem solid $white;
+            margin-right: 1rem;
+            border-radius: 0.5rem;
+            // box-shadow: 0 .5rem 1.5rem rgba(17, 17, 26, 0.05);
 
             display: flex;
             flex-direction: column;
             justify-content: center;
 
             background-color: #eef5f2;
+            // box-shadow: 0 .5rem 2rem rgba(17, 17, 26, 0.5);
 
             h2 {
                 font-weight: 700;
@@ -726,8 +757,9 @@ body {
 
         img {
             flex: 1;
-            border-left: 1rem solid $white;
+            margin-left: 1rem;
             object-fit: cover;
+            border-radius: 0.5rem;
         }
 
 
@@ -739,29 +771,26 @@ body {
         padding-left: 0;
 
         hgroup {
-            border-left: 1rem solid $white;
-            border-right: none;
+            margin-left: 1rem;
+            margin-right: 0;
         }
 
         img {
-            border-right: 1rem solid $white;
-            border-left: none;
+            margin-right: 1rem;
+            margin-left: 0;
         }
     }
 }
 
 
-/// 
+/////////////////////////////////////////////////////////////////////////////////////// 
 
 #footer {
     width: 100%;
-    // box-sizing: border-box;
     flex-shrink: 0;
     display: flex;
     flex-direction: row;
-    // margin: 0 3rem;
-    padding: 3rem 35rem;
-    // border-top: 1px #e0dfdf solid;
+    padding: 3rem var(--minPadding);
     background-color: #edeeef;
     justify-content: center;
 
@@ -794,9 +823,47 @@ body {
     color: $matteBlack;
 }
 
+/////////////////////////////////////////////////////////////////////////////////////////////
+//Shared Classes
+
+.animateLeft,
+.animateRight {
+    opacity: 0;
+}
+
+.buttonTransition {
+    transition-property: background-color, color;
+    transition-duration: .2s;
+    transition-timing-function: ease-in-out;
+}
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 ///KEYFRAME ANIMATIONS GO HERE//////
+/// 
+@keyframes animateLeft {
+    0% {
+        opacity: 0;
+        transform: translate(3%, 0);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translate(0, 0);
+    }
+}
+
+@keyframes animateRight {
+    0% {
+        opacity: 0;
+        transform: translate(-3%, 0);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translate(0, 0);
+    }
+}
+
 
 @keyframes scrollDown {
     from {
@@ -839,6 +906,62 @@ body {
 
 
 ////////////////////////////////////////////////////////////////////////////
+
+
+@media(max-width:1150px) {
+
+    #servicesChunk {
+
+        height: auto;
+
+        #servicesChunkCard {
+
+            // display: inline-flex;
+            flex-direction: column;
+
+            #servicesContent {
+                flex: 1;
+                margin-bottom: 2rem;
+            }
+
+
+            #cardFlexContainer {
+                height: 100%;
+                width: 100%;
+                flex: 2.5;
+
+                .servicesCard {
+                    margin: 1rem auto;
+                }
+
+
+            }
+        }
+    }
+
+
+    #teamContainer1 {
+        picture {
+            display: none;
+        }
+    }
+
+    #teamChunk {
+        #aboutUsContent {
+            #aboutUsContentLinks {
+                flex-direction: column;
+
+                li{
+                    width:100%;
+                    margin:.5rem auto;
+                }
+            }
+        }
+    }
+
+
+
+}
 
 // @media (min-width: 1367px) and (max-width:1540px) {
 
