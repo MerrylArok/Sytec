@@ -147,6 +147,7 @@ customElements.define('header-component', Header);
 customElements.define('footer-component', Footer);
 
 
+
 ///////////////////////////////////////////////////////////////////////////////////////
 
 //Using Intersection observer API to animate page elements
@@ -184,11 +185,11 @@ const observerRight = new IntersectionObserver(entries => {
 }, options)
 
 //Setting left Observer on left animation seeking elements and viceversa
-animatedElementsLeft.forEach (element => {
+animatedElementsLeft.forEach(element => {
     observerLeft.observe(element);
 })
 
-animatedElementsRight.forEach (element => {
+animatedElementsRight.forEach(element => {
     observerRight.observe(element);
 })
 

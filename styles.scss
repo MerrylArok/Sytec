@@ -3,6 +3,7 @@
 //     src: url("./Fonts/Inter.ttf");
 // }
 
+@use 'sass:math';
 
 @font-face {
     font-family: "NHD";
@@ -37,6 +38,22 @@ $white: #fff;
     --h3size: 1.3rem;
     --h4size: 1.1rem;
     --psize: 1.3rem;
+
+    --headerHeight: 3.75rem;
+
+    --helloContentPosition: 17rem;
+
+    --customerPaddingTopBot: 8rem;
+
+    --servicesPaddingTopBot: 5.5rem;
+    --logoContainerHeight: 8rem;
+    --logoContainerMargin: 4rem;
+
+    --serviceCardPadding: 2.5rem;
+
+    --teamPaddingTopBot: 7.5rem;
+    --largePicMargin: 2rem;
+    --largePicFlex: 1.5;
 
     --contentWidth: 7rem;
     --minPadding: 5rem;
@@ -105,8 +122,10 @@ p,
 
 .chunkMinHeight {
     //If browser is resized, this ensures that each chunk has a min height to maintain aspect ratio
-    min-height: calc((100vw)*8/16);
-
+   
+    min-height: calc(100vw*9/16);   
+    
+    
 }
 
 html,
@@ -134,7 +153,7 @@ body {
     width: 100%;
     padding-left: calc(100vw - 100%);
     max-width: 100%;
-    height: 3.75rem;
+    height: var(--headerHeight);
     box-shadow: 0px 0px 10px 1px rgba(0, 0, 0, 0.2);
     background-color: rgb($white, 0.7);
     backdrop-filter: blur(0.7rem);
@@ -238,7 +257,7 @@ body {
 
         max-width: var(--textContainerMax);
         margin: 0 var(--minPadding);
-        padding-bottom: 17rem;
+        padding-bottom: var(--helloContentPosition);
         text-align: left;
 
 
@@ -276,7 +295,7 @@ body {
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// 
 
 #customerContainer {
-    padding: 8rem var(--contentWidth);
+    padding: var(--customerPaddingTopBot) var(--contentWidth);
     position: relative;
 
     #customerContent {
@@ -290,7 +309,7 @@ body {
         max-width: var(--textContainerMax);
         margin: 0 auto;
         z-index: 100;
-        overflow: clip;
+        // overflow: clip;
 
         * {
             margin: 0 var(--minPadding);
@@ -342,8 +361,8 @@ body {
 
     .logoContainer {
         flex: 0 0 var(--customerLogoWidth);
-        height: 7rem;
-        margin: 4rem 0;
+        height: var(--logoContainerHeight);
+        margin: var(--logoContainerMargin) 0;
     }
 
     img {
@@ -359,12 +378,12 @@ body {
 
 #servicesChunk {
 
-    padding: 5.5rem calc(var(--contentWidth)/2);
+    padding: var(--servicesPaddingTopBot) calc(var(--contentWidth)/2);
 
     #servicesChunkCard {
         height: 100%;
         width: 100%;
-        padding: 5rem calc(var(--contentWidth)/2);
+        padding: var(--minPadding) calc(var(--contentWidth)/2);
         border-radius: 1rem;
         // background-color: #edeeef;
         display: flex;
@@ -397,7 +416,7 @@ body {
             .servicesCard {
                 // position: relative;
                 margin: auto;
-                padding: 2.5rem;
+                padding: var(--serviceCardPadding);
                 height: calc(50% - 2rem);
                 min-height: 230px;
                 width: calc(50% - 2rem);
@@ -517,16 +536,16 @@ body {
     display: flex;
     flex-direction: row-reverse;
     justify-content: center;
-    padding: 7.5rem var(--contentWidth);
-    // overflow: hidden;
+    padding: var(--teamPaddingTopBot) var(--minPadding);
+
 
     >* {
         flex: 1;
     }
 
     >*:last-child {
-        flex: 1.5;
-        margin-right: 2rem;
+        flex: var(--largePicFlex);
+        margin-right: var(--largePicMargin);
     }
 
     #teamContainer1 {
@@ -908,7 +927,29 @@ body {
 ////////////////////////////////////////////////////////////////////////////
 
 
+@media (max-width:1420px){
+    .chunkMinHeight {
+    //If browser is resized, this ensures that each chunk has a min height to maintain aspect ratio
+       min-height: 850px;  
+    
+}}
+
+@media (max-width:1280px){
+    .chunkMinHeight {
+    //If browser is resized, this ensures that each chunk has a min height to maintain aspect ratio
+       min-height: 800px;  
+    
+}
+}
+
 @media(max-width:1150px) {
+
+    :root {
+        --minPadding: 2.5rem;
+        --contentWidth: 5rem;
+        --serviceCardPadding: 1.7rem;
+        --largePicMargin: 1rem;
+    }
 
     #servicesChunk {
 
@@ -931,7 +972,8 @@ body {
                 flex: 2.5;
 
                 .servicesCard {
-                    margin: 1rem auto;
+                    margin: .5rem auto;
+                    width: calc(50% - 1rem);
                 }
 
 
@@ -947,17 +989,75 @@ body {
     }
 
     #teamChunk {
+        height: auto;
+
         #aboutUsContent {
+
+            margin-bottom: 0;
+
             #aboutUsContentLinks {
                 flex-direction: column;
 
-                li{
-                    width:100%;
-                    margin:.5rem auto;
+                li {
+                    width: 100%;
+                    margin: .5rem auto;
                 }
             }
         }
     }
+
+}
+
+@media (max-width:900px) {
+
+    * {
+        font-size: 10px;
+        --logoContainerHeight: 6rem;
+
+        --servicesPaddingTopBot: 3rem;
+    }
+
+    :root {
+        --largePicFlex: 1;
+    }
+
+}
+
+@media (max-width:750px) {
+
+    :root {
+        --customerPaddingTopBot: 12rem;
+        --servicesPaddingTopBot: 2rem;
+        --teamPaddingTopBot: 7.5rem;
+    }
+
+    // #servicesChunk {
+
+    //     min-height: 750px;
+    // }
+    .chunk {
+        max-height: none;
+    }
+
+
+}
+
+@media (max-width:600px) {
+
+    :root {}
+
+    .chunk {
+        max-height: none;
+    }
+
+    // .chunkMinHeight {
+    //     //If browser is resized, this ensures that each chunk has a min height to maintain aspect ratio
+    //     // min-height: calc((100vw)*8/16);
+
+    //     min-height:720px;
+
+    // }
+
 
 
 
