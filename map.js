@@ -1,11 +1,11 @@
 // Initialize and add the map
 function initMap() {
-    // The location of Uluru
+    
     const sytec = { lat: 53.584650741527945, lng: -113.46097094106376 };
-    const mapOffset = {lat:53.58, lng:-113.5};
-    // The map, centered at Uluru
+    const mapOffset = {lat:53.58, lng:-113.46};
+  
     const map = new google.maps.Map(document.getElementById("map"), {
-        zoom: 13.6,
+        zoom: 13,
         center: mapOffset,
         mapId:'d334291c60aa81ef',
         disableDefaultUI:true,
@@ -13,7 +13,7 @@ function initMap() {
 
 
 
-    // The marker, positioned at Uluru
+//  Marker
     const marker = new google.maps.Marker({
         position: sytec,
         map: map,
