@@ -1,6 +1,6 @@
 @font-face {
   font-family: "NHD";
-  src: url("./Fonts/NHGD/NeueHaasDisplayMediu.ttf");
+  src: url("./Fonts/NHGD/NeueHaasDisplayMediumItalic.ttf");
 }
 @font-face {
   font-family: "Manrope";
@@ -26,7 +26,7 @@
   --minPadding: 5rem;
   --textContainerMax: 900px;
   --customerLogoWidth: 22rem;
-  --commonPageHeaderHeight: 420px;
+  --commonPageHeaderHeight: 600px;
 }
 
 * {
@@ -117,7 +117,8 @@ body {
   padding: 0rem calc(var(--minPadding) - calc((100vw - 100%)/2));
 }
 .header #headerFlexContainer #logo {
-  height: var(--h3size);
+  height: calc(var(--h3size)*.8);
+  margin: 0 auto;
 }
 .header #headerFlexContainer #headerRight {
   display: flex;
@@ -129,13 +130,13 @@ body {
   height: 100%;
 }
 .header #headerFlexContainer #headerRight li #headerContactButton {
-  border: 2.65px #B03C00 solid;
+  border: 2px #B03C00 solid;
   color: #B03C00;
-  font-size: var(--psize);
+  font-size: var(--h3size);
   font-weight: 600;
-  padding: 0.25rem 2rem;
+  padding: 0.2rem 2rem;
   border-radius: 0.3rem;
-  margin-right: var(--minPadding);
+  margin-right: calc(var(--minPadding)*.8);
 }
 .header #headerFlexContainer #headerRight li #headerContactButton:hover {
   background-color: #B03C00;
@@ -144,8 +145,8 @@ body {
 }
 .header #headerFlexContainer #headerRight li #headerMenuButton {
   background-color: transparent;
-  width: 3.5rem;
-  height: 14.5px;
+  width: calc(var(--h3size)*2.8);
+  height: calc(var(--h3size)*.9);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -155,16 +156,16 @@ body {
 .header #headerFlexContainer #headerRight li #headerMenuButton #midBar,
 .header #headerFlexContainer #headerRight li #headerMenuButton #shortBar {
   height: 2px;
-  flex: 0 0 auto;
+  flex: 0 0 2px;
   width: 100%;
   background-color: #3c3c3d;
   transition: width 0.2s ease-in;
 }
 .header #headerFlexContainer #headerRight li #headerMenuButton #midBar {
-  width: 66%;
+  width: 70%;
 }
 .header #headerFlexContainer #headerRight li #headerMenuButton #shortBar {
-  width: 45%;
+  width: 50%;
 }
 .header #headerFlexContainer #headerRight li #headerMenuButton:hover {
   cursor: pointer;
@@ -488,17 +489,16 @@ body {
   position: relative;
   height: var(--commonPageHeaderHeight);
   display: flex;
-  justify-content: center;
-  align-items: center;
+  justify-content: flex-start;
+  align-items: flex-end;
   background-size: cover;
+  padding: 0 0 calc(var(--minPadding)/2) calc(var(--minPadding)*1.75);
 }
 .pageHeader h1 {
   font-family: NHD;
-  color: white;
-  font-size: calc(var(--h1size)*1.5);
+  color: rgba(255, 255, 255, 0.7);
+  font-size: calc(var(--h1size)*2.5);
   margin-bottom: 0rem;
-  padding-top: 3rem;
-  text-shadow: 1px 1px 2px #000;
 }
 
 #engineeringHeader {
@@ -512,7 +512,7 @@ body {
 
 .pageSection {
   background-color: white;
-  padding: calc(var(--minPadding)*1.75) var(--minPadding);
+  padding: var(--minPadding);
 }
 .pageSection * {
   max-width: var(--textContainerMax);
@@ -791,7 +791,6 @@ body {
 }
 @media (max-width: 600px) {
   * {
-    font-size: 8px;
     --contentPadding: 3.7rem;
     --commonPageHeaderHeight: 250px;
   }

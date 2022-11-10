@@ -131,7 +131,7 @@ const animatedElementsRight = document.querySelectorAll('.animateRight');
 const options = {
     root: null,
     rootMargin: '0px',
-    threshold: .25,
+    threshold: .1,
 };
 //Observer injects animation to left 
 const observerLeft = new IntersectionObserver(entries => {

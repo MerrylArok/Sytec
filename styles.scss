@@ -7,7 +7,7 @@
 
 @font-face {
     font-family: "NHD";
-    src: url("./Fonts/NHGD/NeueHaasDisplayMediu.ttf");
+    src: url("./Fonts/NHGD/NeueHaasDisplayMediumItalic.ttf");
 }
 
 @font-face {
@@ -61,7 +61,7 @@ $lightGrey: #f7f7f7;
     --textContainerMax: 900px;
     --customerLogoWidth: 22rem;
 
-    --commonPageHeaderHeight: 420px;
+    --commonPageHeaderHeight: 600px;
 }
 
 
@@ -173,7 +173,8 @@ body {
 
 
         #logo {
-            height: var(--h3size);
+            height: calc(var(--h3size)*.8);
+            margin:0 auto;
         }
 
         #headerRight {
@@ -186,13 +187,13 @@ body {
                 height: 100%;
 
                 #headerContactButton {
-                    border: 2.65px $complimentaryColor solid;
+                    border: 2px $complimentaryColor solid;
                     color: $complimentaryColor;
-                    font-size: var(--psize);
+                    font-size: var(--h3size);
                     font-weight: 600;
-                    padding: .25rem 2rem;
+                    padding: .2rem 2rem;
                     border-radius: .3rem;
-                    margin-right: var(--minPadding);
+                    margin-right: calc(var(--minPadding)*.8);
                 }
 
                 #headerContactButton:hover {
@@ -203,8 +204,9 @@ body {
 
                 #headerMenuButton {
                     background-color: transparent;
-                    width: 3.5rem;
-                    height: 14.5px;
+                    width: calc(var(--h3size)*2.8);
+                    height: calc(var(--h3size)*.9);
+                    // padding:0.07rem;
                     display: flex;
                     flex-direction: column;
                     justify-content: space-between;
@@ -214,18 +216,18 @@ body {
                     #midBar,
                     #shortBar {
                         height: 2px;
-                        flex: 0 0 auto;
+                        flex: 0 0 2px;
                         width: 100%;
                         background-color: $matteBlack;
                         transition: width 0.2s ease-in;
                     }
 
                     #midBar {
-                        width: 66%;
+                        width: 70%;
                     }
 
                     #shortBar {
-                        width: 45%;
+                        width: 50%;
                     }
                 }
 
@@ -687,9 +689,10 @@ body {
     position: relative;
     height: var(--commonPageHeaderHeight);
     display: flex;
-    justify-content: center;
-    align-items: center;
+    justify-content: flex-start;
+    align-items: flex-end;
     background-size: cover;
+    padding:0 0 calc(var(--minPadding)/2) calc(var(--minPadding)*1.75);
     // margin:0 5rem;
     // box-shadow: 0 .5rem 2rem rgba(17, 17, 26, 0.08);
 
@@ -697,11 +700,11 @@ body {
 
     h1 {
         font-family: NHD;
-        color: rgb(255, 255, 255);
-        font-size: calc(var(--h1size)*1.5);
-        margin-bottom: 0rem;
-        padding-top: 3rem;
-        text-shadow: 1px 1px 2px #000 // mix-blend-mode: difference;
+        color: rgba(255, 255, 255,0.7);
+        font-size: calc(var(--h1size)*2.5);
+        // font-weight:normal;
+        margin-bottom: 0rem;        
+        // text-shadow: 1px 1px 2px #000 // mix-blend-mode: difference;
     }
 
 
@@ -719,7 +722,7 @@ body {
 
 .pageSection {
     background-color: white;
-    padding: calc(var(--minPadding)*1.75) var(--minPadding);
+    padding:  var(--minPadding);
 
 
     * {
@@ -1133,7 +1136,7 @@ body {
 @media (max-width:600px) {
 
     * {
-        font-size: 8px;
+        // font-size: 8px;
 
         --contentPadding: 3.7rem;
         
