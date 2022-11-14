@@ -12,9 +12,9 @@
   --h3size: 1.3rem;
   --h4size: 1.1rem;
   --psize: 1.3rem;
-  --headerHeight: 3.75rem;
+  --headerHeight: 3.5rem;
   --helloContentPosition: 17rem;
-  --customerPaddingTopBot: 8rem;
+  --customerPaddingTopBot: 4.5rem;
   --servicesPaddingTopBot: 5.5rem;
   --logoContainerHeight: 8rem;
   --logoContainerMargin: 4rem;
@@ -36,7 +36,7 @@
   font-family: Manrope, sans-serif;
   color: #18191b;
   box-sizing: border-box;
-  font-size: 13px;
+  font-size: 12px;
   scroll-behavior: smooth;
   text-rendering: optimizeLegibility;
 }
@@ -117,7 +117,7 @@ body {
   padding: 0rem calc(var(--minPadding) - calc((100vw - 100%)/2));
 }
 .header #headerFlexContainer #logo {
-  height: calc(var(--h3size)*.8);
+  height: calc(var(--h3size));
   margin: 0 auto;
 }
 .header #headerFlexContainer #headerRight {
@@ -772,7 +772,7 @@ body {
 }
 @media (max-width: 750px) {
   :root {
-    --customerPaddingTopBot: 12rem;
+    --customerPaddingTopBot: 6rem;
     --servicesPaddingTopBot: 2rem;
     --teamPaddingTopBot: 7.5rem;
     --serviceCardPadding: 3rem;
