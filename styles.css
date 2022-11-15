@@ -12,7 +12,7 @@
   --h3size: 1.3rem;
   --h4size: 1.1rem;
   --psize: 1.3rem;
-  --headerHeight: 3.5rem;
+  --headerHeight: 4.5rem;
   --contentPadding: 7rem;
   --minPadding: 5rem;
   --textContainerMax: 900px;
@@ -115,7 +115,7 @@ body {
   padding: 0rem calc(var(--minPadding) - calc((100vw - 100%)/2));
 }
 .header #headerFlexContainer #logo {
-  height: calc(var(--h3size));
+  height: var(--h3size);
   margin: 0 auto;
 }
 .header #headerFlexContainer #headerRight {
@@ -132,9 +132,9 @@ body {
   color: #B03C00;
   font-size: var(--h3size);
   font-weight: 600;
-  padding: 0.2rem 2rem;
+  padding: 0.3rem 2rem;
   border-radius: 0.3rem;
-  margin-right: calc(var(--minPadding)*.8);
+  margin-right: calc(var(--minPadding)*.75);
 }
 .header #headerFlexContainer #headerRight li #headerContactButton:hover {
   background-color: #B03C00;
@@ -142,28 +142,34 @@ body {
   cursor: pointer;
 }
 .header #headerFlexContainer #headerRight li #headerMenuButton {
+  position: relative;
   background-color: transparent;
-  width: calc(var(--h3size)*2.8);
-  height: calc(var(--h3size)*.9);
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: flex-end;
+  width: calc(var(--h3size)*3.75);
+  height: calc(var(--h3size)*1.25);
 }
 .header #headerFlexContainer #headerRight li #headerMenuButton #longBar,
 .header #headerFlexContainer #headerRight li #headerMenuButton #midBar,
 .header #headerFlexContainer #headerRight li #headerMenuButton #shortBar {
-  height: 1.5px;
-  flex: 0 0 2px;
-  width: 100%;
+  height: 2px;
   background-color: #3c3c3d;
   transition: width 0.2s ease-in;
+  right: 0;
+}
+.header #headerFlexContainer #headerRight li #headerMenuButton #longBar {
+  position: absolute;
+  width: 100%;
+  top: 0;
 }
 .header #headerFlexContainer #headerRight li #headerMenuButton #midBar {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
   width: 70%;
 }
 .header #headerFlexContainer #headerRight li #headerMenuButton #shortBar {
+  position: absolute;
   width: 50%;
+  bottom: 0;
 }
 .header #headerFlexContainer #headerRight li #headerMenuButton:hover {
   cursor: pointer;
@@ -737,13 +743,13 @@ body {
 @media (max-width: 900px) {
   * {
     font-size: 10px;
-    --logoContainerHeight: 6rem;
-    --textContainerMax: 90vw;
-    --commonPageHeaderHeight: 360px;
   }
 
   :root {
     --largePicFlex: 1;
+    --logoContainerHeight: 6rem;
+    --textContainerMax: 90vw;
+    --commonPageHeaderHeight: 360px;
   }
 
   .contentList .contentContainer {
@@ -807,8 +813,7 @@ body {
   }
 }
 @media (max-width: 600px) {
-  * {
-    font-size: 8px;
+  :root {
     --logoContainerHeight: 9rem;
     --customerLogoWidth: 27rem;
     --commonPageHeaderHeight: 250px;
@@ -851,7 +856,7 @@ body {
 }
 @media (max-width: 450px) {
   * {
-    --minPadding: 2rem;
+    --chunkPaddingTopBot: 10rem;
   }
 
   .chunkMinHeight {
