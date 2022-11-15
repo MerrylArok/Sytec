@@ -13,19 +13,17 @@
   --h4size: 1.1rem;
   --psize: 1.3rem;
   --headerHeight: 3.5rem;
-  --helloContentPosition: 17rem;
-  --customerPaddingTopBot: 4.5rem;
-  --servicesPaddingTopBot: 5.5rem;
-  --logoContainerHeight: 8rem;
-  --logoContainerMargin: 4rem;
-  --serviceCardPadding: 2.5rem;
-  --teamPaddingTopBot: 7.5rem;
-  --largePicMargin: 2rem;
-  --largePicFlex: 1.5;
   --contentPadding: 7rem;
   --minPadding: 5rem;
   --textContainerMax: 900px;
+  --helloContentPosition: 17rem;
+  --chunkPaddingTopBot: 6rem;
+  --logoContainerHeight: 8rem;
+  --logoContainerMargin: 4rem;
   --customerLogoWidth: 22rem;
+  --serviceCardPadding: 2.5rem;
+  --largePicMargin: 2rem;
+  --largePicFlex: 1.5;
   --commonPageHeaderHeight: 600px;
 }
 
@@ -155,7 +153,7 @@ body {
 .header #headerFlexContainer #headerRight li #headerMenuButton #longBar,
 .header #headerFlexContainer #headerRight li #headerMenuButton #midBar,
 .header #headerFlexContainer #headerRight li #headerMenuButton #shortBar {
-  height: 2px;
+  height: 1.5px;
   flex: 0 0 2px;
   width: 100%;
   background-color: #3c3c3d;
@@ -241,7 +239,7 @@ body {
   flex-direction: column;
   justify-content: space-between;
   height: 100%;
-  padding: var(--customerPaddingTopBot) 0;
+  padding: var(--chunkPaddingTopBot) 0;
   overflow: hidden;
   position: relative;
 }
@@ -281,7 +279,7 @@ body {
 }
 
 #servicesChunk {
-  padding: var(--servicesPaddingTopBot) calc(var(--contentPadding)/2);
+  padding: var(--chunkPaddingTopBot) calc(var(--contentPadding)/2);
 }
 #servicesChunk #servicesChunkCard {
   height: 100%;
@@ -391,35 +389,28 @@ body {
   display: flex;
   flex-direction: row-reverse;
   justify-content: center;
-  padding: var(--teamPaddingTopBot) var(--minPadding);
+  padding: var(--chunkPaddingTopBot) var(--minPadding);
 }
 #teamChunk > * {
   flex: 1;
 }
-#teamChunk > *:last-child {
-  flex: var(--largePicFlex);
-  margin-right: var(--largePicMargin);
+#teamChunk img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 0.5rem;
 }
-#teamChunk #teamContainer1 {
+#teamChunk #teamContentContainer {
   display: flex;
   flex-direction: column;
   overflow: hidden;
   height: 100%;
   margin: auto;
 }
-#teamChunk #teamContainer1 > * {
+#teamChunk #teamContentContainer > * {
   flex: 1;
 }
-#teamChunk .teamChunkContainer picture {
-  min-height: 0;
-}
-#teamChunk .teamChunkContainer picture img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  border-radius: 0.5rem;
-}
-#teamChunk #aboutUsContent {
+#teamChunk #teamContentContainer #aboutUsContent {
   max-width: var(--textContainerMax);
   padding: 0 2rem;
   margin-bottom: 2rem;
@@ -427,13 +418,13 @@ body {
   flex-direction: column;
   justify-content: center;
 }
-#teamChunk #aboutUsContent #aboutUsContentLinks {
+#teamChunk #teamContentContainer #aboutUsContent #aboutUsContentLinks {
   padding-top: 2.5rem;
   list-style-type: none;
   display: flex;
   flex-direction: row;
 }
-#teamChunk #aboutUsContent #aboutUsContentLinks li {
+#teamChunk #teamContentContainer #aboutUsContent #aboutUsContentLinks li {
   width: 50%;
   border: 0.19rem solid #008c15;
   border-radius: 0.25rem;
@@ -441,15 +432,19 @@ body {
   padding: 0.6rem;
   text-align: center;
 }
-#teamChunk #aboutUsContent #aboutUsContentLinks li h2 {
+#teamChunk #teamContentContainer #aboutUsContent #aboutUsContentLinks li h2 {
   color: #008c15;
 }
-#teamChunk #aboutUsContent #aboutUsContentLinks li:hover {
+#teamChunk #teamContentContainer #aboutUsContent #aboutUsContentLinks li:hover {
   cursor: pointer;
   background-color: #008c15;
 }
-#teamChunk #aboutUsContent #aboutUsContentLinks li:hover h2 {
+#teamChunk #teamContentContainer #aboutUsContent #aboutUsContentLinks li:hover h2 {
   color: #fff;
+}
+#teamChunk #teamPicContainer {
+  flex: var(--largePicFlex);
+  margin-right: var(--largePicMargin);
 }
 
 #contactMain {
@@ -713,20 +708,20 @@ body {
     width: calc(50% - 1.25rem);
   }
 
-  #teamContainer1 picture {
+  #teamContentContainer picture {
     display: none;
   }
 
   #teamChunk {
     height: auto;
   }
-  #teamChunk #aboutUsContent {
+  #teamChunk #teamContentContainer #aboutUsContent {
     margin-bottom: 0;
   }
-  #teamChunk #aboutUsContent #aboutUsContentLinks {
+  #teamChunk #teamContentContainer #aboutUsContent #aboutUsContentLinks {
     flex-direction: column;
   }
-  #teamChunk #aboutUsContent #aboutUsContentLinks li {
+  #teamChunk #teamContentContainer #aboutUsContent #aboutUsContentLinks li {
     width: 100%;
     margin: 0.5rem auto;
   }
@@ -743,7 +738,6 @@ body {
   * {
     font-size: 10px;
     --logoContainerHeight: 6rem;
-    --servicesPaddingTopBot: 3rem;
     --textContainerMax: 90vw;
     --commonPageHeaderHeight: 360px;
   }
@@ -772,9 +766,6 @@ body {
 }
 @media (max-width: 750px) {
   :root {
-    --customerPaddingTopBot: 6rem;
-    --servicesPaddingTopBot: 2rem;
-    --teamPaddingTopBot: 7.5rem;
     --serviceCardPadding: 3rem;
   }
 
@@ -788,10 +779,38 @@ body {
     margin: 1rem auto;
     min-height: calc(100vw/2.2);
   }
+
+  #teamChunk {
+    flex-direction: column;
+  }
+  #teamChunk #teamContentContainer {
+    flex: 0 0 auto;
+    margin-bottom: var(--minPadding);
+  }
+  #teamChunk #teamContentContainer #aboutUsContent {
+    padding: 0;
+  }
+  #teamChunk #teamContentContainer #aboutUsContent #aboutUsContentLinks {
+    flex-direction: row;
+  }
+  #teamChunk #teamContentContainer #aboutUsContent #aboutUsContentLinks li {
+    width: 48%;
+  }
+  #teamChunk #teamPicContainer {
+    flex: 1 1 auto;
+    margin: 0;
+    overflow: hidden;
+  }
+  #teamChunk #teamPicContainer img {
+    max-height: 500px;
+    width: auto;
+  }
 }
 @media (max-width: 600px) {
   * {
-    --contentPadding: 3.7rem;
+    font-size: 8px;
+    --logoContainerHeight: 9rem;
+    --customerLogoWidth: 27rem;
     --commonPageHeaderHeight: 250px;
   }
 
@@ -804,8 +823,49 @@ body {
     background-color: #f7f7f7;
   }
   #servicesChunk #servicesChunkCard {
-    padding: var(--contentPadding);
+    padding: var(--chunkPaddingTopBot) var(--minPadding);
     box-shadow: none;
+  }
+
+  #teamChunk #teamContentContainer #aboutUsContent #aboutUsContentLinks li {
+    background-color: #008c15;
+  }
+  #teamChunk #teamContentContainer #aboutUsContent #aboutUsContentLinks li h2 {
+    color: #fff;
+  }
+
+  #footer ul:first-child {
+    display: none;
+  }
+  #footer img {
+    height: 3rem;
+  }
+  #footer #externalLinks {
+    display: flex;
+    flex-direction: column;
+  }
+  #footer #externalLinks li {
+    padding: 0;
+    margin-bottom: 0.5rem;
+  }
+}
+@media (max-width: 450px) {
+  * {
+    --minPadding: 2rem;
+  }
+
+  .chunkMinHeight {
+    min-height: 650px;
+  }
+
+  #headerContactButton {
+    display: none;
+  }
+}
+@media (max-width: 390px) {
+  #teamChunk #teamPicContainer img {
+    max-height: 375px;
+    transform: translateX(-30%);
   }
 }
 
