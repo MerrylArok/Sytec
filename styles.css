@@ -24,7 +24,7 @@
   --serviceCardPadding: 2.5rem;
   --largePicMargin: 2rem;
   --largePicFlex: 1.5;
-  --commonPageHeaderHeight: 600px;
+  --commonPageHeaderHeight: 400px;
 }
 
 * {
@@ -487,7 +487,6 @@ body {
 }
 
 .pageHeader {
-  position: relative;
   height: var(--commonPageHeaderHeight);
   display: flex;
   justify-content: flex-start;
@@ -498,7 +497,7 @@ body {
 .pageHeader h1 {
   font-family: NHD;
   color: rgba(255, 255, 255, 0.7);
-  font-size: calc(var(--h1size)*2.5);
+  font-size: 7vw;
   margin-bottom: 0rem;
 }
 
@@ -513,7 +512,7 @@ body {
 
 .pageSection {
   background-color: white;
-  padding: var(--minPadding);
+  padding: calc(var(--minPadding)*1.75) var(--minPadding);
 }
 .pageSection * {
   max-width: var(--textContainerMax);
@@ -528,11 +527,9 @@ body {
 
 .contentList {
   background-color: white;
-  width: inherit;
   padding-bottom: 5rem;
 }
 .contentList .contentContainer {
-  width: inherit;
   display: flex;
   padding-left: calc((100% - (var(--textContainerMax)))/2);
   height: 475px;
@@ -644,13 +641,13 @@ body {
 }
 @keyframes scrollDown {
   from {
-    bottom: 7%;
+    bottom: 15%;
     opacity: 0;
     width: 3rem;
     height: 3rem;
   }
   to {
-    bottom: 4.5%;
+    bottom: 10%;
     opacity: 0.6;
     width: 2rem;
     height: 2rem;
@@ -735,10 +732,6 @@ body {
   .pageSection {
     padding: calc(var(--minPadding)*2.25) var(--minPadding);
   }
-
-  .pageHeader h1 {
-    font-size: calc(var(--h1size)*1.25);
-  }
 }
 @media (max-width: 900px) {
   * {
@@ -749,25 +742,7 @@ body {
     --largePicFlex: 1;
     --logoContainerHeight: 6rem;
     --textContainerMax: 90vw;
-    --commonPageHeaderHeight: 360px;
-  }
-
-  .contentList .contentContainer {
-    height: 375px;
-  }
-  .contentList .contentContainer hgroup {
-    padding: 0 calc(var(--minPadding)*2);
-  }
-  .contentList .contentContainer:nth-child(even) {
-    flex-direction: row-reverse;
-  }
-  .contentList .contentContainer:nth-child(even) hgroup {
-    margin-left: 1rem;
-    margin-right: 0;
-  }
-  .contentList .contentContainer:nth-child(even) img {
-    margin-right: 1rem;
-    margin-left: 0;
+    --commonPageHeaderHeight: 300px;
   }
 }
 @media (max-width: 750px) {
@@ -814,9 +789,7 @@ body {
 }
 @media (max-width: 600px) {
   :root {
-    --logoContainerHeight: 9rem;
-    --customerLogoWidth: 27rem;
-    --commonPageHeaderHeight: 250px;
+    --commonPageHeaderHeight: 275px;
   }
 
   #mainPage #helloContent {
@@ -839,6 +812,36 @@ body {
     color: #fff;
   }
 
+  .pageHeader {
+    display: none;
+  }
+
+  .pageSection {
+    padding: calc(var(--minPadding)*3) calc(var(--minPadding)) calc(var(--minPadding)*2) calc(var(--minPadding));
+  }
+
+  .contentList .contentContainer, .contentList .contentContainer:nth-of-type(even) {
+    flex-direction: column;
+    margin: 0 var(--minPadding) 2rem var(--minPadding);
+    padding: 0;
+    height: auto;
+    border: 1px solid #f5f4f4;
+    border-radius: 0.5rem;
+  }
+  .contentList .contentContainer hgroup, .contentList .contentContainer:nth-of-type(even) hgroup {
+    padding: calc(var(--minPadding)*1.25);
+    border-radius: none;
+    border: none;
+    margin: 0;
+    border-radius: 0;
+    max-height: 300px;
+  }
+  .contentList .contentContainer img, .contentList .contentContainer:nth-of-type(even) img {
+    margin: 0;
+    border-radius: 0 0 0.5rem 0.5rem;
+    max-height: 300px;
+  }
+
   #footer ul:first-child {
     display: none;
   }
@@ -855,8 +858,9 @@ body {
   }
 }
 @media (max-width: 450px) {
-  * {
+  :root {
     --chunkPaddingTopBot: 10rem;
+    --helloContentPosition: 25rem;
   }
 
   .chunkMinHeight {
@@ -871,6 +875,29 @@ body {
   #teamChunk #teamPicContainer img {
     max-height: 375px;
     transform: translateX(-30%);
+  }
+}
+@media (hover: none) {
+  #servicesChunk #servicesChunkCard #cardFlexContainer .servicesCard > * {
+    transition: none;
+  }
+  #servicesChunk #servicesChunkCard #cardFlexContainer .servicesCard p {
+    height: auto;
+    max-height: 500px;
+    opacity: 1;
+    transition: none;
+  }
+  #servicesChunk #servicesChunkCard #cardFlexContainer .servicesCard #learnMoreContainer h3 {
+    max-width: 15rem;
+    margin-right: 1rem;
+    width: auto;
+    overflow: hidden;
+    opacity: 1;
+    transition: none;
+  }
+  #servicesChunk #servicesChunkCard #cardFlexContainer .servicesCard #learnMoreContainer::after {
+    transform: rotate(0);
+    transition: none;
   }
 }
 

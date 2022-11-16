@@ -58,7 +58,7 @@ $lightGrey: #f7f7f7;
     --largePicMargin: 2rem;
     --largePicFlex: 1.5;
 
-    --commonPageHeaderHeight: 600px;
+    --commonPageHeaderHeight: 400px;
 }
 
 
@@ -674,7 +674,7 @@ body {
 ////////////////////////////////////////////////////////@at-root
 
 .pageHeader {
-    position: relative;
+    // position: relative;
     height: var(--commonPageHeaderHeight);
     display: flex;
     justify-content: flex-start;
@@ -689,7 +689,8 @@ body {
     h1 {
         font-family: NHD;
         color: rgba(255, 255, 255, 0.7);
-        font-size: calc(var(--h1size)*2.5);
+        // font-size: calc(var(--h1size)*2.5);
+        font-size: 7vw;
         // font-weight:normal;
         margin-bottom: 0rem;
         // text-shadow: 1px 1px 2px #000 // mix-blend-mode: difference;
@@ -710,7 +711,7 @@ body {
 
 .pageSection {
     background-color: white;
-    padding: var(--minPadding);
+    padding: calc(var(--minPadding)*1.75) var(--minPadding);
 
 
     * {
@@ -729,12 +730,12 @@ body {
 
 .contentList {
     background-color: white;
-    width: inherit;
+    // width: inherit;
     padding-bottom: 5rem;
     // box-sizing:border-box;
 
     .contentContainer {
-        width: inherit;
+        // width: inherit;
         display: flex;
         padding-left: calc((100% - (var(--textContainerMax)))/2);
         height: 475px;
@@ -881,7 +882,7 @@ body {
 
 @keyframes scrollDown {
     from {
-        bottom: 7%;
+        bottom: 15%;
         opacity: 0;
         width: 3rem;
         height: 3rem;
@@ -889,7 +890,7 @@ body {
 
 
     to {
-        bottom: 4.5%;
+        bottom: 10%;
         opacity: 0.6;
         width: 2rem;
         height: 2rem;
@@ -1014,63 +1015,24 @@ body {
         padding: calc(var(--minPadding)*2.25) var(--minPadding);
     }
 
-    .pageHeader {
 
-        h1 {
-            font-size: calc(var(--h1size)*1.25);
-        }
-
-
-    }
 
 }
 
 @media (max-width:900px) {
 
     * {
-        font-size: 10px;        
+        font-size: 10px;
     }
 
     :root {
         --largePicFlex: 1;
         --logoContainerHeight: 6rem;
         --textContainerMax: 90vw;
-        --commonPageHeaderHeight: 360px;
+        --commonPageHeaderHeight: 300px;
     }
 
-    .contentList {
-
-        // box-sizing:border-box;
-
-        .contentContainer {
-            // padding-left: var(--minPadding);
-            height: 375px;
-
-            hgroup {
-                // flex: 0 0 calc(50%);
-                padding: 0 calc(var(--minPadding)*2);
-            }
-
-
-
-
-        }
-
-        .contentContainer:nth-child(even) {
-            flex-direction: row-reverse;
-            // padding-right: var(--minPadding);
-
-            hgroup {
-                margin-left: 1rem;
-                margin-right: 0;
-            }
-
-            img {
-                margin-right: 1rem;
-                margin-left: 0;
-            }
-        }
-    }
+    
 
 
 }
@@ -1148,9 +1110,8 @@ body {
 @media (max-width:600px) {
 
     :root {
-        --logoContainerHeight: 9rem;
-        --customerLogoWidth: 27rem;
-        --commonPageHeaderHeight: 250px;
+
+        --commonPageHeaderHeight: 275px;
     }
 
 
@@ -1189,6 +1150,52 @@ body {
         }
     }
 
+    .pageHeader {
+        display: none;
+    }
+
+    .pageSection {
+        
+        padding: calc(var(--minPadding)*3) calc(var(--minPadding)) calc(var(--minPadding)*2) calc(var(--minPadding));
+    }
+
+
+    .contentList {
+
+        // box-sizing:border-box;
+
+        .contentContainer, .contentContainer:nth-of-type(even) {
+            flex-direction: column;
+            margin:0 var(--minPadding) 2rem var(--minPadding);
+            padding:0;
+            height:auto;            
+            border:1px solid #f5f4f4;
+            border-radius:.5rem;
+
+            hgroup {
+                // flex: 0 0 calc(50%);
+                padding: calc(var(--minPadding)*1.25);
+                border-radius: none;
+                border:none;
+                margin:0;
+                border-radius:0;
+                max-height:300px;
+            }
+
+            img{
+                margin:0;
+                border-radius: 0 0 0.5rem 0.5rem;
+                max-height:300px;
+            }
+
+
+
+
+        }
+
+       
+    }
+
 
     #footer {
         ul:first-child {
@@ -1214,9 +1221,10 @@ body {
 }
 
 @media (max-width:450px) {
-    * {
+    :root {
         // --minPadding: 2rem;
         --chunkPaddingTopBot: 10rem;
+        --helloContentPosition: 25rem;
     }
 
     .chunkMinHeight {
@@ -1238,4 +1246,42 @@ body {
             }
         }
     }
+}
+
+@media (hover: none) {
+    #servicesChunk {
+        #servicesChunkCard {
+            #cardFlexContainer {
+                .servicesCard {
+                    >* {
+                        transition: none;
+                    }
+
+                    p {
+                        height: auto;
+                        max-height: 500px;
+                        opacity: 1;
+                        transition: none;
+                    }
+
+                    #learnMoreContainer h3 {
+                        max-width: 15rem;
+                        margin-right: 1rem;
+                        width: auto;
+                        overflow: hidden;
+                        opacity: 1;
+                        transition: none;
+                    }
+
+                    #learnMoreContainer::after {
+                        transform: rotate(0);
+                        transition: none;
+                    }
+                }
+            }
+        }
+    }
+
+
+
 }
