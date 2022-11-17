@@ -137,12 +137,12 @@ const options = {
 const observerLeft = new IntersectionObserver(entries => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
-            entry.target.style.animation = '.25s animateLeft ease-in';
+            entry.target.style.animation = '.35s animateLeft ease-in';
             entry.target.style.opacity = '1';
             observerLeft.unobserve(entry.target);
         }
     });
-    console.log(entries);
+    // console.log(entries);
 }, options);
 //Observer injects animation to right 
 const observerRight = new IntersectionObserver(entries => {
@@ -152,7 +152,7 @@ const observerRight = new IntersectionObserver(entries => {
             entry.target.style.opacity = '1';
         }
     });
-    console.log(entries);
+    // console.log(entries);
 }, options);
 //Setting left Observer on left animation seeking elements and viceversa
 animatedElementsLeft.forEach(element => {

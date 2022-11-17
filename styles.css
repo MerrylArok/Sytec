@@ -12,7 +12,7 @@
   --h3size: 1.3rem;
   --h4size: 1.1rem;
   --psize: 1.3rem;
-  --headerHeight: 4.5rem;
+  --headerHeight: 4rem;
   --contentPadding: 7rem;
   --minPadding: 5rem;
   --textContainerMax: 900px;
@@ -84,6 +84,7 @@ p,
 html,
 body {
   height: 100%;
+  position: relative;
 }
 
 body {
@@ -144,13 +145,13 @@ body {
 .header #headerFlexContainer #headerRight li #headerMenuButton {
   position: relative;
   background-color: transparent;
-  width: calc(var(--h3size)*3.75);
+  width: calc(var(--h3size)*3.25);
   height: calc(var(--h3size)*1.25);
 }
 .header #headerFlexContainer #headerRight li #headerMenuButton #longBar,
 .header #headerFlexContainer #headerRight li #headerMenuButton #midBar,
 .header #headerFlexContainer #headerRight li #headerMenuButton #shortBar {
-  height: 2px;
+  height: 2.5px;
   background-color: #3c3c3d;
   transition: width 0.2s ease-in;
   right: 0;
@@ -395,7 +396,7 @@ body {
   display: flex;
   flex-direction: row-reverse;
   justify-content: center;
-  padding: var(--chunkPaddingTopBot) var(--minPadding);
+  padding: var(--chunkPaddingTopBot) calc(var(--contentPadding)*2);
 }
 #teamChunk > * {
   flex: 1;
@@ -497,7 +498,7 @@ body {
 .pageHeader h1 {
   font-family: NHD;
   color: rgba(255, 255, 255, 0.7);
-  font-size: 7vw;
+  font-size: 6vw;
   margin-bottom: 0rem;
 }
 
@@ -539,15 +540,13 @@ body {
   flex: 0 0 calc((var(--textContainerMax)/2) - 1rem);
   padding: 0 var(--minPadding);
   margin-right: 1rem;
-  border-radius: 0.5rem;
-  border: 1px solid #f0eeee;
   display: flex;
   flex-direction: column;
   justify-content: center;
   background-color: #eef5f2;
 }
 .contentList .contentContainer hgroup h2 {
-  font-weight: 700;
+  font-weight: 800;
   color: #008c15;
   margin-bottom: 1rem;
 }
@@ -560,7 +559,6 @@ body {
   height: 100%;
   margin-left: 1rem;
   object-fit: cover;
-  border-radius: 0.5rem 0 0 0.5rem;
   min-width: 0;
 }
 .contentList .contentContainer:nth-child(even) {
@@ -575,7 +573,6 @@ body {
 .contentList .contentContainer:nth-child(even) img {
   margin-right: 1rem;
   margin-left: 0;
-  border-radius: 0 0.5rem 0.5rem 0;
 }
 
 #footer {
@@ -763,6 +760,7 @@ body {
 
   #teamChunk {
     flex-direction: column;
+    padding: var(--chunkPaddingTopBot) var(--minPadding);
   }
   #teamChunk #teamContentContainer {
     flex: 0 0 auto;
@@ -789,6 +787,7 @@ body {
 }
 @media (max-width: 600px) {
   :root {
+    --headerHeight: 4.5rem;
     --commonPageHeaderHeight: 275px;
   }
 
@@ -817,18 +816,23 @@ body {
   }
 
   .pageSection {
-    padding: calc(var(--minPadding)*3) calc(var(--minPadding)) calc(var(--minPadding)*2) calc(var(--minPadding));
+    padding: calc(var(--minPadding)*3) calc(var(--minPadding)) 0 calc(var(--minPadding));
   }
 
-  .contentList .contentContainer, .contentList .contentContainer:nth-of-type(even) {
+  .contentList {
+    padding: 0;
+  }
+  .contentList .contentContainer,
+.contentList .contentContainer:nth-of-type(even) {
     flex-direction: column;
-    margin: 0 var(--minPadding) 2rem var(--minPadding);
+    margin: calc(var(--minPadding)*2) var(--minPadding);
     padding: 0;
     height: auto;
     border: 1px solid #f5f4f4;
     border-radius: 0.5rem;
   }
-  .contentList .contentContainer hgroup, .contentList .contentContainer:nth-of-type(even) hgroup {
+  .contentList .contentContainer hgroup,
+.contentList .contentContainer:nth-of-type(even) hgroup {
     padding: calc(var(--minPadding)*1.25);
     border-radius: none;
     border: none;
@@ -836,7 +840,8 @@ body {
     border-radius: 0;
     max-height: 300px;
   }
-  .contentList .contentContainer img, .contentList .contentContainer:nth-of-type(even) img {
+  .contentList .contentContainer img,
+.contentList .contentContainer:nth-of-type(even) img {
     margin: 0;
     border-radius: 0 0 0.5rem 0.5rem;
     max-height: 300px;
@@ -870,34 +875,15 @@ body {
   #headerContactButton {
     display: none;
   }
+
+  #teamChunk #teamPicContainer img {
+    transform: translateX(-30%);
+  }
 }
 @media (max-width: 390px) {
   #teamChunk #teamPicContainer img {
     max-height: 375px;
     transform: translateX(-30%);
-  }
-}
-@media (hover: none) {
-  #servicesChunk #servicesChunkCard #cardFlexContainer .servicesCard > * {
-    transition: none;
-  }
-  #servicesChunk #servicesChunkCard #cardFlexContainer .servicesCard p {
-    height: auto;
-    max-height: 500px;
-    opacity: 1;
-    transition: none;
-  }
-  #servicesChunk #servicesChunkCard #cardFlexContainer .servicesCard #learnMoreContainer h3 {
-    max-width: 15rem;
-    margin-right: 1rem;
-    width: auto;
-    overflow: hidden;
-    opacity: 1;
-    transition: none;
-  }
-  #servicesChunk #servicesChunkCard #cardFlexContainer .servicesCard #learnMoreContainer::after {
-    transform: rotate(0);
-    transition: none;
   }
 }
 
