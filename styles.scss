@@ -25,7 +25,7 @@ $deepDarkGreen: #011c1a;
 $complimentaryColor: #B03C00;
 $brightBlue: #0053d6;
 
-$matteBlack: #3c3c3d;
+$matteBlack: #646464;
 $darkBlack: #18191b;
 
 $white: #fff;
@@ -404,7 +404,7 @@ body {
         flex-direction: row;
         align-items: center;
 
-        box-shadow: 0 .5rem 2rem rgba(17, 17, 26, 0.06);
+        box-shadow: 0 .5rem 2rem rgba(17, 17, 26, 0.15);
 
         // box-shadow: rgba(17, 17, 26, 0.05) 0px 4px 16px, rgba(17, 17, 26, 0.05) 0px 8px 32px;
 
@@ -638,18 +638,76 @@ body {
     display: flex;
     flex-direction: row;
 
-    hgroup {
+    section {
         background-color: $lightGreen;
-        padding: 3rem;
-        width: 40vw;
+        padding: var(--minPadding);
+        flex: 1;
+        max-width: 40%;
 
         a {
             text-decoration: dotted underline;
         }
 
+        form {
+            display: flex;
+            width: 100%;
+            flex-direction: row;
+            flex-wrap: wrap;
+            padding-top: calc(var(--minPadding)/2);
+
+            .inputField {
+                flex: 1 1 200px;
+                min-height: var(--h1size);
+                position: relative;
+                margin: 0 calc(var(--minPadding)/3) calc(var(--minPadding)/3) 0;
+
+
+                input {
+                    width: 100%;
+                    height: 100%;
+                    padding: var(--h2size) 1rem 1rem 1rem;
+                    font-size: var(--psize);
+                    border-radius: 0.35rem;
+                }
+
+                label {
+                    position: absolute;
+                    left: 0;
+                    top: 50%;
+                    padding: 0.25rem 0 0 1rem;
+                    transform: translateY(-50%);
+                    font-size: var(--psize);
+                    pointer-events: none;
+                    transition: ease-out 0.15s;
+                }
+
+
+                input:focus+label {
+                    top: 0;
+                    transform: scale(0.8) translateX(-4%);
+                    // transform-origin: top left;
+                    color: $matteBlack;
+                }
+
+                input:not(:placeholder-shown)+label {
+                    top: 0;
+                    transform: scale(0.8) translateX(-4%);
+                    // transform-origin: top left;
+                    color: $matteBlack;
+                }
+
+                
+
+            }
+        }
+
+
+
     }
 
-    hgroup * {
+    section h1,
+    h2,
+    a {
         color: $white;
         padding: 0.15rem;
     }

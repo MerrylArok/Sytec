@@ -1,5 +1,6 @@
 // Wrote this function to ensure 100% vh in mobile, realized that I could do it easier
 //using 100vh combined with 100% height for body and html
+var _a;
 // // let windowWidth: Number = window.innerWidth;
 // // Using 100% width in CSS to prevent overflow due to vertical scrollbar 
 // let windowHeight: Number = window.innerHeight;
@@ -124,6 +125,26 @@ class Footer extends HTMLElement {
 }
 customElements.define('header-component', Header);
 customElements.define('footer-component', Footer);
+//////////////////////////////////////////////////////////////////////////////////////
+const phoneNumberInput = (_a = document.getElementById('phoneNumberInput')) === null || _a === void 0 ? void 0 : _a.children[0];
+phoneNumberInput.addEventListener('input', updateFormatting);
+function updateFormatting() {
+    let phoneNumberInputValue = phoneNumberInput.value;
+    console.log(phoneNumberInputValue);
+    let strippedValue = phoneNumberInputValue.replace(/\D/g, '');
+    let totalLength = strippedValue.length;
+    let newValue = "";
+    if (totalLength > 0) {
+        newValue = "(" + strippedValue;
+    }
+    if (totalLength > 3) {
+        newValue = newValue.slice(0, 4) + ") " + newValue.slice(4, 11);
+    }
+    if (totalLength > 6) {
+        newValue = newValue.slice(0, 9) + "-" + newValue.slice(9);
+    }
+    phoneNumberInput.value = newValue;
+}
 ///////////////////////////////////////////////////////////////////////////////////////
 //Using Intersection observer API to animate page elements
 const animatedElementsLeft = document.querySelectorAll('.animateLeft');

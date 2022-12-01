@@ -146,6 +146,38 @@ class Footer extends HTMLElement {
 customElements.define('header-component', Header);
 customElements.define('footer-component', Footer);
 
+//////////////////////////////////////////////////////////////////////////////////////
+
+const phoneNumberInput = (<HTMLInputElement>document.getElementById('phoneNumberInput')?.children[0]);
+phoneNumberInput.addEventListener('input', updateFormatting);
+
+function updateFormatting() {
+
+
+    let phoneNumberInputValue = phoneNumberInput.value;
+    console.log(phoneNumberInputValue);
+
+    let strippedValue = phoneNumberInputValue.replace(/\D/g, '');
+    let totalLength = strippedValue.length;
+
+    let newValue = "";
+
+    if (totalLength > 0) {
+        newValue = "(" + strippedValue;
+    }
+    if (totalLength > 3) {
+        newValue = newValue.slice(0, 4) + ") " + newValue.slice(4, 11);
+    }
+    if (totalLength > 6) {
+        newValue = newValue.slice(0, 9) + "-" + newValue.slice(9);
+    }
+
+
+    phoneNumberInput.value = newValue;
+}
+
+
+
 
 
 ///////////////////////////////////////////////////////////////////////////////////////
