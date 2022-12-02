@@ -125,26 +125,6 @@ class Footer extends HTMLElement {
 }
 customElements.define('header-component', Header);
 customElements.define('footer-component', Footer);
-//////////////////////////////////////////////////////////////////////////////////////
-const phoneNumberInput = (_a = document.getElementById('phoneNumberInput')) === null || _a === void 0 ? void 0 : _a.children[0];
-phoneNumberInput.addEventListener('input', updateFormatting);
-function updateFormatting() {
-    let phoneNumberInputValue = phoneNumberInput.value;
-    console.log(phoneNumberInputValue);
-    let strippedValue = phoneNumberInputValue.replace(/\D/g, '');
-    let totalLength = strippedValue.length;
-    let newValue = "";
-    if (totalLength > 0) {
-        newValue = "(" + strippedValue;
-    }
-    if (totalLength > 3) {
-        newValue = newValue.slice(0, 4) + ") " + newValue.slice(4, 11);
-    }
-    if (totalLength > 6) {
-        newValue = newValue.slice(0, 9) + "-" + newValue.slice(9);
-    }
-    phoneNumberInput.value = newValue;
-}
 ///////////////////////////////////////////////////////////////////////////////////////
 //Using Intersection observer API to animate page elements
 const animatedElementsLeft = document.querySelectorAll('.animateLeft');
@@ -182,3 +162,28 @@ animatedElementsLeft.forEach(element => {
 animatedElementsRight.forEach(element => {
     observerRight.observe(element);
 });
+/////////////////////////////////////////////////////////////////////////////////////
+const phoneNumberInput = (_a = document.getElementById('phoneNumberInput')) === null || _a === void 0 ? void 0 : _a.children[0];
+try {
+    phoneNumberInput.addEventListener('input', updateFormatting);
+}
+catch (e) {
+    console.log("phoneNumberInput is accessible only through contact page");
+}
+function updateFormatting() {
+    let phoneNumberInputValue = phoneNumberInput.value;
+    console.log(phoneNumberInputValue);
+    let strippedValue = phoneNumberInputValue.replace(/\D/g, '');
+    let totalLength = strippedValue.length;
+    let newValue = "";
+    if (totalLength > 0) {
+        newValue = "(" + strippedValue;
+    }
+    if (totalLength > 3) {
+        newValue = newValue.slice(0, 4) + ") " + newValue.slice(4, 11);
+    }
+    if (totalLength > 6) {
+        newValue = newValue.slice(0, 9) + "-" + newValue.slice(9);
+    }
+    phoneNumberInput.value = newValue;
+}
