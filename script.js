@@ -72,10 +72,7 @@ class Footer extends HTMLElement {
             </li>
             <li>
                 <h4>780-484-9898</h4>
-            </li>
-            <li>
-                <h4>sales@sytec-mfg.com</h4>
-            </li>
+            </li>           
         </ul>
 
 

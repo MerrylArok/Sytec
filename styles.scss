@@ -20,6 +20,8 @@
 $backgroundGreen: #eef5f2;
 $darkGreen: #06645f;
 $lightGreen: #008c15;
+$yellow: #ffe066;
+$yellowHover:#F1DB4B;
 $deepDarkGreen: #011c1a;
 
 $complimentaryColor: #B03C00;
@@ -189,9 +191,9 @@ body {
                     color: $complimentaryColor;
                     font-size: var(--h3size);
                     font-weight: 600;
-                    padding: .3rem 2rem;
+                    padding: .25rem 2rem;
                     border-radius: .3rem;
-                    margin-right: calc(var(--minPadding)*.75);
+                    margin-right: calc(var(--minPadding)*.8);
                 }
 
                 #headerContactButton:hover {
@@ -203,38 +205,29 @@ body {
                 #headerMenuButton {
                     position: relative;
                     background-color: transparent;
-                    width: calc(var(--h3size)*3.25);
-                    height: calc(var(--h3size)*1.25);
+                    width: calc(var(--h3size)*3.2);
+                    height:100%;
 
                     #longBar,
                     #midBar,
                     #shortBar {
-                        height: 2.5px;
-                        // min-height:1.5px;
-                        // flex: 0 1 1.75px;
-                        // width: 100%;
-                        background-color: $matteBlack;
+                        height: 2.25px;
+                        margin:0.4rem 0;
+                        background-color: black;
                         transition: width 0.2s ease-in;
-                        right: 0;
+                        margin-left:auto;
                     }
 
                     #longBar {
-                        position: absolute;
                         width: 100%;
-                        top: 0;
                     }
 
                     #midBar {
-                        position: absolute;
-                        top: 50%;
-                        transform: translateY(-50%);
                         width: 70%;
                     }
 
                     #shortBar {
-                        position: absolute;
                         width: 50%;
-                        bottom: 0;
                     }
                 }
 
@@ -594,7 +587,7 @@ body {
 
                 li {
                     width: 50%;
-                    border: 0.19rem solid $lightGreen;
+                    border: 0.15rem solid $lightGreen;
                     border-radius: .25rem;
                     margin: 0 1rem;
                     padding: .6rem;
@@ -653,21 +646,31 @@ body {
             width: 100%;
             flex-direction: row;
             flex-wrap: wrap;
-            padding-top: calc(var(--minPadding)/2);
+            margin-top: var(--minPadding);
 
             .inputField {
-                flex: 1 1 200px;
+                flex: 1 1 220px;
                 min-height: var(--h1size);
                 position: relative;
                 margin: 0 calc(var(--minPadding)/3) calc(var(--minPadding)/3) 0;
 
+                .requiredIndicator {
+                    position: absolute;
+                    left: auto;
+                    right: 1rem;
+                    top: 1rem;
+                    color: $complimentaryColor;
+                }
 
-                input {
+                input,
+                textarea,
+                button {
                     width: 100%;
                     height: 100%;
-                    padding: var(--h2size) 1rem 1rem 1rem;
+                    padding: calc(var(--h2size)*1.2) 1rem 1rem 1rem;
                     font-size: var(--psize);
                     border-radius: 0.35rem;
+                    resize: none;
                 }
 
                 label {
@@ -681,23 +684,40 @@ body {
                     transition: ease-out 0.15s;
                 }
 
+                textarea+label {
+                    top: 2rem;
+                }
 
-                input:focus+label {
+
+                input:focus+label,
+                textarea:focus+label {
                     top: 0;
-                    transform: scale(0.8) translateX(-4%);
+                    transform: scale(0.8) translateX(-8%);
+                    color: $matteBlack;
+                }
+
+                input:not(:placeholder-shown)+label,
+                textarea:not(:placeholder-shown)+label {
+                    top: 0;
+                    transform: scale(0.8) translateX(-8%);
                     // transform-origin: top left;
                     color: $matteBlack;
                 }
 
-                input:not(:placeholder-shown)+label {
-                    top: 0;
-                    transform: scale(0.8) translateX(-4%);
-                    // transform-origin: top left;
-                    color: $matteBlack;
+            }
+
+            .fullWidth {
+                flex: 1 1 100%;
+
+                button {
+                    padding: 1.25rem;
+                    background-color: $yellow;
                 }
 
-                
-
+                button:hover{
+                    cursor: pointer;
+                    background-color: $yellowHover;
+                }
             }
         }
 
@@ -990,6 +1010,19 @@ body {
         //If browser is resized, this ensures that each chunk has a min height to maintain aspect ratio
         min-height: 850px;
     }
+
+
+#contactMain {   
+
+    section {flex: 1;
+        max-width: 50%;
+    }    
+
+    #map {
+        flex: 1;
+    }
+
+}
 }
 
 @media (max-width:1280px) {
@@ -1093,6 +1126,25 @@ body {
         --textContainerMax: 90vw;
         --commonPageHeaderHeight: 300px;
     }
+
+
+#contactMain {
+    padding-top: var(--headerHeight);
+    display: flex;
+    flex-direction: column;
+
+    section {
+        max-width: 100%;
+        padding: calc(var(--minPadding)*1.25);
+    }
+
+
+    #map {
+        flex: 1;
+        min-height:100vw;
+    }
+
+}
 
 
 

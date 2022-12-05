@@ -133,9 +133,9 @@ body {
   color: #B03C00;
   font-size: var(--h3size);
   font-weight: 600;
-  padding: 0.3rem 2rem;
+  padding: 0.25rem 2rem;
   border-radius: 0.3rem;
-  margin-right: calc(var(--minPadding)*.75);
+  margin-right: calc(var(--minPadding)*.8);
 }
 .header #headerFlexContainer #headerRight li #headerContactButton:hover {
   background-color: #B03C00;
@@ -145,32 +145,26 @@ body {
 .header #headerFlexContainer #headerRight li #headerMenuButton {
   position: relative;
   background-color: transparent;
-  width: calc(var(--h3size)*3.25);
-  height: calc(var(--h3size)*1.25);
+  width: calc(var(--h3size)*3.2);
+  height: 100%;
 }
 .header #headerFlexContainer #headerRight li #headerMenuButton #longBar,
 .header #headerFlexContainer #headerRight li #headerMenuButton #midBar,
 .header #headerFlexContainer #headerRight li #headerMenuButton #shortBar {
-  height: 2.5px;
-  background-color: #646464;
+  height: 2.25px;
+  margin: 0.4rem 0;
+  background-color: black;
   transition: width 0.2s ease-in;
-  right: 0;
+  margin-left: auto;
 }
 .header #headerFlexContainer #headerRight li #headerMenuButton #longBar {
-  position: absolute;
   width: 100%;
-  top: 0;
 }
 .header #headerFlexContainer #headerRight li #headerMenuButton #midBar {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
   width: 70%;
 }
 .header #headerFlexContainer #headerRight li #headerMenuButton #shortBar {
-  position: absolute;
   width: 50%;
-  bottom: 0;
 }
 .header #headerFlexContainer #headerRight li #headerMenuButton:hover {
   cursor: pointer;
@@ -433,7 +427,7 @@ body {
 }
 #teamChunk #teamContentContainer #aboutUsContent #aboutUsContentLinks li {
   width: 50%;
-  border: 0.19rem solid #008c15;
+  border: 0.15rem solid #008c15;
   border-radius: 0.25rem;
   margin: 0 1rem;
   padding: 0.6rem;
@@ -473,20 +467,30 @@ body {
   width: 100%;
   flex-direction: row;
   flex-wrap: wrap;
-  padding-top: calc(var(--minPadding)/2);
+  margin-top: var(--minPadding);
 }
 #contactMain section form .inputField {
-  flex: 1 1 200px;
+  flex: 1 1 220px;
   min-height: var(--h1size);
   position: relative;
   margin: 0 calc(var(--minPadding)/3) calc(var(--minPadding)/3) 0;
 }
-#contactMain section form .inputField input {
+#contactMain section form .inputField .requiredIndicator {
+  position: absolute;
+  left: auto;
+  right: 1rem;
+  top: 1rem;
+  color: #B03C00;
+}
+#contactMain section form .inputField input,
+#contactMain section form .inputField textarea,
+#contactMain section form .inputField button {
   width: 100%;
   height: 100%;
-  padding: var(--h2size) 1rem 1rem 1rem;
+  padding: calc(var(--h2size)*1.2) 1rem 1rem 1rem;
   font-size: var(--psize);
   border-radius: 0.35rem;
+  resize: none;
 }
 #contactMain section form .inputField label {
   position: absolute;
@@ -498,15 +502,31 @@ body {
   pointer-events: none;
   transition: ease-out 0.15s;
 }
-#contactMain section form .inputField input:focus + label {
+#contactMain section form .inputField textarea + label {
+  top: 2rem;
+}
+#contactMain section form .inputField input:focus + label,
+#contactMain section form .inputField textarea:focus + label {
   top: 0;
-  transform: scale(0.8) translateX(-4%);
+  transform: scale(0.8) translateX(-8%);
   color: #646464;
 }
-#contactMain section form .inputField input:not(:placeholder-shown) + label {
+#contactMain section form .inputField input:not(:placeholder-shown) + label,
+#contactMain section form .inputField textarea:not(:placeholder-shown) + label {
   top: 0;
-  transform: scale(0.8) translateX(-4%);
+  transform: scale(0.8) translateX(-8%);
   color: #646464;
+}
+#contactMain section form .fullWidth {
+  flex: 1 1 100%;
+}
+#contactMain section form .fullWidth button {
+  padding: 1.25rem;
+  background-color: #ffe066;
+}
+#contactMain section form .fullWidth button:hover {
+  cursor: pointer;
+  background-color: #F1DB4B;
 }
 #contactMain section h1,
 #contactMain h2,
@@ -713,6 +733,14 @@ body {
   .chunkMinHeight {
     min-height: 850px;
   }
+
+  #contactMain section {
+    flex: 1;
+    max-width: 50%;
+  }
+  #contactMain #map {
+    flex: 1;
+  }
 }
 @media (max-width: 1280px) {
   :root {
@@ -783,6 +811,20 @@ body {
     --logoContainerHeight: 6rem;
     --textContainerMax: 90vw;
     --commonPageHeaderHeight: 300px;
+  }
+
+  #contactMain {
+    padding-top: var(--headerHeight);
+    display: flex;
+    flex-direction: column;
+  }
+  #contactMain section {
+    max-width: 100%;
+    padding: calc(var(--minPadding)*1.25);
+  }
+  #contactMain #map {
+    flex: 1;
+    min-height: 100vw;
   }
 }
 @media (max-width: 750px) {
