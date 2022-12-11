@@ -99,7 +99,7 @@ body {
 
 .header {
   position: fixed;
-  z-index: 101;
+  z-index: 105;
   width: 100%;
   padding-left: calc(100vw - 100%);
   max-width: 100%;
@@ -142,37 +142,115 @@ body {
   color: #fff;
   cursor: pointer;
 }
-.header #headerFlexContainer #headerRight li #headerMenuButton {
+.header #headerFlexContainer #headerRight li #openSideNav {
   position: relative;
   background-color: transparent;
   width: calc(var(--h3size)*3.2);
   height: 100%;
 }
-.header #headerFlexContainer #headerRight li #headerMenuButton #longBar,
-.header #headerFlexContainer #headerRight li #headerMenuButton #midBar,
-.header #headerFlexContainer #headerRight li #headerMenuButton #shortBar {
-  height: 2.25px;
+.header #headerFlexContainer #headerRight li #openSideNav #longBar,
+.header #headerFlexContainer #headerRight li #openSideNav #midBar,
+.header #headerFlexContainer #headerRight li #openSideNav #shortBar {
+  height: 2.2px;
   margin: 0.4rem 0;
   background-color: black;
   transition: width 0.2s ease-in;
   margin-left: auto;
 }
-.header #headerFlexContainer #headerRight li #headerMenuButton #longBar {
+.header #headerFlexContainer #headerRight li #openSideNav #longBar {
   width: 100%;
 }
-.header #headerFlexContainer #headerRight li #headerMenuButton #midBar {
+.header #headerFlexContainer #headerRight li #openSideNav #midBar {
   width: 70%;
 }
-.header #headerFlexContainer #headerRight li #headerMenuButton #shortBar {
+.header #headerFlexContainer #headerRight li #openSideNav #shortBar {
   width: 50%;
 }
-.header #headerFlexContainer #headerRight li #headerMenuButton:hover {
+.header #headerFlexContainer #headerRight li #openSideNav:hover {
   cursor: pointer;
 }
-.header #headerFlexContainer #headerRight li #headerMenuButton:hover #longBar,
-.header #headerFlexContainer #headerRight li #headerMenuButton:hover #midBar,
-.header #headerFlexContainer #headerRight li #headerMenuButton:hover #shortBar {
+.header #headerFlexContainer #headerRight li #openSideNav:hover #longBar,
+.header #headerFlexContainer #headerRight li #openSideNav:hover #midBar,
+.header #headerFlexContainer #headerRight li #openSideNav:hover #shortBar {
   width: 100%;
+}
+
+dialog {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: auto;
+  width: fit-content;
+  padding: calc(var(--minPadding)*1.5) calc(var(--minPadding)/2);
+  min-height: 100%;
+  z-index: 1000;
+  animation: 0.3s animateLeft ease-in;
+  border-radius: 1rem 0 0 1rem;
+  box-shadow: -0.5rem 0 1rem rgba(17, 17, 26, 0.2);
+}
+dialog ul,
+dialog li {
+  font-size: calc(var(--h2size)*0.75);
+  font-weight: 600;
+  margin: 1.25rem 0;
+}
+dialog ul a,
+dialog li a {
+  display: block;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.25rem;
+  transition: background-color 0.2s ease-in;
+  min-width: 225px;
+}
+dialog ul a:hover,
+dialog li a:hover {
+  background-color: whitesmoke;
+}
+dialog #closeSideNav {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: auto;
+  margin: calc(var(--minPadding)/2) calc(var(--minPadding)/2) 0 0;
+  background-color: transparent;
+  padding: 0.75rem 1rem;
+  border-radius: 0.25rem;
+  transition: background-color 0.2s ease-in;
+}
+dialog #closeSideNav img {
+  height: calc((var(--headerHeight) - var(--h2size)));
+  margin: none;
+}
+dialog #closeSideNav:hover {
+  background-color: #e6e6e6;
+}
+dialog ul {
+  list-style: none;
+}
+dialog #nestedList > li {
+  padding-left: calc(var(--minPadding)/2.25);
+}
+
+dialog.onClose {
+  animation: 0.3s fadeOut ease-in;
+}
+
+#sideNavBackdrop {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: -100%;
+  z-index: 999;
+  background-color: transparent;
+  backdrop-filter: none;
+  transition: background-color 0.3s ease-in, backdrop-filter 0.3s ease-in;
+}
+
+#sideNavBackdrop.isActive {
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(0.3rem);
 }
 
 #mainPage {
@@ -210,7 +288,7 @@ body {
   position: absolute;
   left: 50%;
   background: url(./media/line-angle-down-icon.svg) center no-repeat;
-  animation: 1.25s infinite scrollDown ease-in-out;
+  animation: 1.5s infinite scrollDown ease-in-out;
 }
 
 #customerContainer {
@@ -227,7 +305,7 @@ body {
   width: 100%;
   max-width: var(--textContainerMax);
   margin: 0 auto;
-  z-index: 100;
+  z-index: 99;
 }
 #customerContainer #customerContent * {
   margin: 0 var(--minPadding);
@@ -556,11 +634,11 @@ body {
   justify-content: flex-start;
   align-items: flex-end;
   background-size: cover;
-  padding: 0 0 calc(var(--minPadding)/2) calc(var(--minPadding)*1.75);
+  padding: 0 0 var(--minPadding) calc(var(--minPadding)*1.75);
 }
 .pageHeader h1 {
   font-family: NHD;
-  color: rgba(255, 255, 255, 0.7);
+  color: rgba(255, 255, 255, 0.725);
   font-size: 6vw;
   margin-bottom: 0rem;
 }
@@ -682,7 +760,7 @@ body {
 @keyframes animateLeft {
   0% {
     opacity: 0;
-    transform: translate(3%, 0);
+    transform: translate(5%, 0);
   }
   100% {
     opacity: 1;
@@ -692,16 +770,22 @@ body {
 @keyframes animateRight {
   0% {
     opacity: 0;
-    transform: translate(-3%, 0);
+    transform: translate(-5%, 0);
   }
   100% {
     opacity: 1;
     transform: translate(0, 0);
   }
 }
+@keyframes fadeOut {
+  to {
+    opacity: 0;
+    transform: translate(20%, 0);
+  }
+}
 @keyframes scrollDown {
   from {
-    bottom: 15%;
+    bottom: 12%;
     opacity: 0;
     width: 3rem;
     height: 3rem;
@@ -803,7 +887,7 @@ body {
 }
 @media (max-width: 900px) {
   * {
-    font-size: 10px;
+    font-size: 10.5px;
   }
 
   :root {
@@ -959,6 +1043,10 @@ body {
 
   #headerContactButton {
     display: none;
+  }
+
+  #servicesChunk #servicesChunkCard #cardFlexContainer .servicesCard {
+    height: calc(100vw/1.33);
   }
 
   #teamChunk #teamPicContainer img {

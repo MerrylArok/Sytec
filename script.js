@@ -25,7 +25,7 @@ try {
     yearsAlive.innerText = (new Date().getFullYear() - 1998).toString() + " years";
 }
 catch (error) {
-    console.log("yearsAlive is defined and needed on the homepage only");
+    //console.log("yearsAlive is defined and needed on the homepage only")
 }
 /////////////////////////////////////////////////////////////////////////////////////////////
 // Header class is a reusable WebComponent injected as a custom html element called header-component
@@ -41,7 +41,7 @@ class Header extends HTMLElement {
 
         <ul id="headerRight" class="lists">
             <li><a id="headerContactButton" class="buttonTransition" href="./contact.html">Contact</a></li>
-            <li><button id="headerMenuButton">
+            <li><button id="openSideNav">
                     <div id="longBar"></div>
                     <div id="midBar"></div>
                     <div id="shortBar"></div>
@@ -50,6 +50,34 @@ class Header extends HTMLElement {
     </nav>
 </header>`;
         this.insertAdjacentHTML('afterbegin', htmlHeader);
+    }
+}
+class SideNav extends HTMLElement {
+    constructor() {
+        super();
+    }
+    connectedCallback() {
+        let htmlSideNav = `
+        <dialog id="sideNav">
+            <button id="closeSideNav">
+                <img src="./media/Close.svg" alt="Cancel icon">
+            </button>
+            <ul>
+                <li><a href="./contact.html">Contact Us</a></li>
+                <li><a href="#">Store</a></li>
+                <li>
+                    <ul id="nestedList"><a href="./index.html#servicesChunk">Services</a>
+                        <li><a href="./engineering.html">Engineering</a></li>
+                        <li><a href="./manufacturing.html">Manufacturing</a></li>
+                        <li><a href="./powdercoating.html">Powder Coating</a></li>
+                    </ul>
+                </li>
+                <li><a href="https://ca.linkedin.com/company/sytec-manufacturing-ltd" target="_blank">Careers</a></li>
+            </ul>
+        </dialog>
+        
+        <div id="sideNavBackdrop" class="closeSideNav"></>`;
+        this.insertAdjacentHTML("afterbegin", htmlSideNav);
     }
 }
 //Reusable Footer web-component
@@ -96,7 +124,7 @@ class Footer extends HTMLElement {
 
         <ul>
             <li>
-                <h3>Our Business</h3>
+                <h3>Our Services</h3>
             </li>
             <li>
                 <h4><a href="./engineering.html">Engineering</a></h4>
@@ -122,6 +150,58 @@ class Footer extends HTMLElement {
 }
 customElements.define('header-component', Header);
 customElements.define('footer-component', Footer);
+customElements.define('sidenav-component', SideNav);
+////////////////SIDE NAV code////////////////////////////////////////////////////////////
+const openSideNavButton = document.getElementById('openSideNav');
+const closeSideNav = document.getElementById('closeSideNav');
+const sideNav = document.getElementById('sideNav');
+const sideNavBackdrop = document.getElementById('sideNavBackdrop');
+const scrollbarWidth = (window.innerWidth - document.body.clientWidth) + 'px';
+openSideNavButton === null || openSideNavButton === void 0 ? void 0 : openSideNavButton.addEventListener('click', function () {
+    try {
+        sideNav.showModal();
+        //the following code prevents page reflow due to scrollbar disappearing on overflow restriction.
+        document.body.style.overflowY = 'hidden';
+        document.body.style.paddingRight = scrollbarWidth;
+        //animate backdrop element 
+        sideNavBackdrop.classList.add('isActive');
+    }
+    catch (_a) {
+        console.log('Dialog element is not supported in this browser');
+    }
+});
+//following function is executed when dialog close button or area outside dialog is clicked
+let closeNavCode = function () {
+    try {
+        //this function removes the animation and listener function after the close animation is complete
+        function removeAnimation() {
+            sideNav.classList.remove('onClose');
+            sideNav.close();
+            sideNav.removeEventListener('animationend', removeAnimation);
+            //backdrop code needs to animate before overflow restrictions are lifted. Or youll see the end of backdrop animation which is quite jarring
+            setTimeout(() => {
+                document.body.style.overflowY = 'auto';
+                document.body.style.paddingRight = '0';
+            }, 3);
+        }
+        sideNav.classList.add('onClose');
+        sideNav.addEventListener('animationend', removeAnimation);
+        sideNavBackdrop.classList.remove('isActive');
+    }
+    catch (e) {
+        console.log(e);
+        console.log('Dialog element is not supported in this browser');
+    }
+};
+closeSideNav === null || closeSideNav === void 0 ? void 0 : closeSideNav.addEventListener('click', closeNavCode);
+sideNav.addEventListener('click', function (event) {
+    const boundingArea = sideNav.getBoundingClientRect();
+    console.log(event);
+    console.log(boundingArea);
+    if (event.clientX < boundingArea.left) {
+        closeNavCode();
+    }
+});
 ///////////////////////////////////////////////////////////////////////////////////////
 //Using Intersection observer API to animate page elements
 const animatedElementsLeft = document.querySelectorAll('.animateLeft');
@@ -161,15 +241,16 @@ animatedElementsRight.forEach(element => {
 });
 /////////////////////////////////////////////////////////////////////////////////////
 const phoneNumberInput = (_a = document.getElementById('phoneNumberInput')) === null || _a === void 0 ? void 0 : _a.children[0];
+//any input in the phone# field triggers updateFormatting which formats the string to the likeness of a number
 try {
     phoneNumberInput.addEventListener('input', updateFormatting);
 }
 catch (e) {
-    console.log("phoneNumberInput is accessible only through contact page");
+    //console.log("phoneNumberInput is accessible only through contact page")
 }
 function updateFormatting() {
     let phoneNumberInputValue = phoneNumberInput.value;
-    console.log(phoneNumberInputValue);
+    //strip any character thats not a number
     let strippedValue = phoneNumberInputValue.replace(/\D/g, '');
     let totalLength = strippedValue.length;
     let newValue = "";
