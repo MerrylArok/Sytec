@@ -181,11 +181,10 @@ dialog {
   right: 0;
   left: auto;
   width: fit-content;
-  padding: calc(var(--minPadding)*1.5) calc(var(--minPadding)/2);
+  padding: calc(var(--minPadding)*1.25) calc(var(--minPadding)/2);
   min-height: 100%;
   z-index: 1000;
   animation: 0.3s animateLeft ease-in;
-  border-radius: 1rem 0 0 1rem;
   box-shadow: -0.5rem 0 1rem rgba(17, 17, 26, 0.2);
 }
 dialog ul,
@@ -196,6 +195,7 @@ dialog li {
 }
 dialog ul a,
 dialog li a {
+  color: #4b4b4b;
   display: block;
   padding: 0.75rem 1.5rem;
   border-radius: 0.25rem;
@@ -213,7 +213,7 @@ dialog #closeSideNav {
   left: auto;
   margin: calc(var(--minPadding)/2) calc(var(--minPadding)/2) 0 0;
   background-color: transparent;
-  padding: 0.75rem 1rem;
+  padding: 0.5rem 1rem;
   border-radius: 0.25rem;
   transition: background-color 0.2s ease-in;
 }
@@ -222,7 +222,7 @@ dialog #closeSideNav img {
   margin: none;
 }
 dialog #closeSideNav:hover {
-  background-color: #e6e6e6;
+  background-color: gainsboro;
 }
 dialog ul {
   list-style: none;
@@ -955,8 +955,12 @@ dialog.onClose {
   }
 }
 @media (max-width: 600px) {
+  * {
+    font-size: 9.5px;
+  }
+
   :root {
-    --headerHeight: 4.5rem;
+    --headerHeight: 4rem;
     --commonPageHeaderHeight: 275px;
   }
 
