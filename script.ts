@@ -55,7 +55,7 @@ class Header extends HTMLElement {
 
         <ul id="headerRight" class="lists">
             <li><a id="headerContactButton" class="buttonTransition" href="./contact.html">Contact</a></li>
-            <li><button id="openSideNav">
+            <li><button id="openSideNav" role="navigation" aria-label="Quick Navi Links">
                     <div id="longBar"></div>
                     <div id="midBar"></div>
                     <div id="shortBar"></div>
@@ -131,10 +131,7 @@ class Footer extends HTMLElement {
             </li>
             <li>
             <h4><a href="./contact.html">Contact</a></h4>
-            </li>
-            <li>
-                <h4>Products</h4>
-            </li>
+            </li>            
             <li>
                 <h4>Team</h4>
             </li>
@@ -211,16 +208,16 @@ let closeNavCode = function () {
             sideNav.removeEventListener('animationend', removeAnimation);
 
             //backdrop code needs to animate before overflow restrictions are lifted. Or youll see the end of backdrop animation which is quite jarring
-            setTimeout(() => {                
+            setTimeout(() => {
                 document.body.style.overflowY = 'auto';
-                document.body.style.paddingRight = '0';                
+                document.body.style.paddingRight = '0';
             }, 3);
         }
 
         sideNav.classList.add('onClose');
         sideNav.addEventListener('animationend', removeAnimation);
 
-        
+
         sideNavBackdrop.classList.remove('isActive');
 
 
@@ -232,13 +229,22 @@ let closeNavCode = function () {
 
 closeSideNav?.addEventListener('click', closeNavCode);
 
-
+//This function will close sideNav if you click outside it
 sideNav.addEventListener('click', function (event) {
     const boundingArea = sideNav.getBoundingClientRect();
-    console.log(event);
-    console.log(boundingArea);
+
     if (event.clientX < boundingArea.left) {
         closeNavCode();
+    }
+})
+
+//Pressing esc triggers the dialog cancel event. Extending functionality for a11y compatibility
+sideNav.addEventListener('keydown', function (keydown) {
+   
+    if (keydown.code == 'Escape') {
+        sideNavBackdrop.classList.remove('isActive');
+        document.body.style.overflowY = 'auto';
+        document.body.style.paddingRight = '0';
     }
 })
 ///////////////////////////////////////////////////////////////////////////////////////

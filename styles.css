@@ -24,7 +24,8 @@
   --serviceCardPadding: 2.5rem;
   --largePicMargin: 2rem;
   --largePicFlex: 1.5;
-  --commonPageHeaderHeight: 400px;
+  --commonPageHeaderHeight: 475px;
+  --businessh1Size: 6vw;
 }
 
 * {
@@ -106,6 +107,7 @@ body {
   height: var(--headerHeight);
   background-color: rgba(255, 255, 255, 0.7);
   backdrop-filter: blur(0.7rem);
+  border-bottom: 1px solid #e2e1e1;
 }
 .header #headerFlexContainer {
   height: 100%;
@@ -133,9 +135,9 @@ body {
   color: #B03C00;
   font-size: var(--h3size);
   font-weight: 600;
-  padding: 0.25rem 2rem;
+  padding: 0.2rem 1.75rem;
   border-radius: 0.3rem;
-  margin-right: calc(var(--minPadding)*.8);
+  margin-right: var(--minPadding);
 }
 .header #headerFlexContainer #headerRight li #headerContactButton:hover {
   background-color: #B03C00;
@@ -151,8 +153,8 @@ body {
 .header #headerFlexContainer #headerRight li #openSideNav #longBar,
 .header #headerFlexContainer #headerRight li #openSideNav #midBar,
 .header #headerFlexContainer #headerRight li #openSideNav #shortBar {
-  height: 2.2px;
-  margin: 0.4rem 0;
+  height: 2px;
+  margin: 0.35rem 0;
   background-color: black;
   transition: width 0.2s ease-in;
   margin-left: auto;
@@ -229,6 +231,17 @@ dialog ul {
 }
 dialog #nestedList > li {
   padding-left: calc(var(--minPadding)/2.25);
+}
+dialog #nestedList {
+  position: relative;
+}
+dialog #nestedList:after {
+  position: absolute;
+  bottom: 0;
+  content: "";
+  border-left: 0.35rem solid #008c15;
+  margin-left: 1.5rem;
+  height: 75%;
 }
 
 dialog.onClose {
@@ -604,7 +617,7 @@ dialog.onClose {
 }
 #contactMain section form .fullWidth button:hover {
   cursor: pointer;
-  background-color: #F1DB4B;
+  background-color: #f0d83f;
 }
 #contactMain section h1,
 #contactMain h2,
@@ -639,7 +652,7 @@ dialog.onClose {
 .pageHeader h1 {
   font-family: NHD;
   color: rgba(255, 255, 255, 0.725);
-  font-size: 6vw;
+  font-size: var(--businessh1Size);
   margin-bottom: 0rem;
 }
 
@@ -724,7 +737,6 @@ dialog.onClose {
   padding: 3rem var(--minPadding);
   background-color: #f7f7f7;
   justify-content: center;
-  border-radius: 1.5rem 1.5rem 0 0;
 }
 #footer ul {
   list-style: none;
@@ -760,7 +772,7 @@ dialog.onClose {
 @keyframes animateLeft {
   0% {
     opacity: 0;
-    transform: translate(5%, 0);
+    transform: translate(10%, 0);
   }
   100% {
     opacity: 1;
@@ -770,7 +782,7 @@ dialog.onClose {
 @keyframes animateRight {
   0% {
     opacity: 0;
-    transform: translate(-5%, 0);
+    transform: translate(-10%, 0);
   }
   100% {
     opacity: 1;
@@ -894,7 +906,8 @@ dialog.onClose {
     --largePicFlex: 1;
     --logoContainerHeight: 6rem;
     --textContainerMax: 90vw;
-    --commonPageHeaderHeight: 300px;
+    --commonPageHeaderHeight: 360px;
+    --businessh1Size: 8vw;
   }
 
   #contactMain {
@@ -962,10 +975,15 @@ dialog.onClose {
   :root {
     --headerHeight: 4rem;
     --commonPageHeaderHeight: 275px;
+    --psize: 1.6rem;
   }
 
   #mainPage #helloContent {
     text-align: center;
+  }
+  #mainPage #helloContent p,
+#mainPage #helloContent #yearsAlive {
+    font-size: var(--psize);
   }
 
   #servicesChunk {

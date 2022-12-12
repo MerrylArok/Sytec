@@ -21,7 +21,7 @@ $backgroundGreen: #eef5f2;
 $darkGreen: #06645f;
 $lightGreen: #008c15;
 $yellow: #ffe066;
-$yellowHover: #F1DB4B;
+$yellowHover: #f0d83f;
 $deepDarkGreen: #011c1a;
 
 $complimentaryColor: #B03C00;
@@ -60,7 +60,8 @@ $lightGrey: #f7f7f7;
     --largePicMargin: 2rem;
     --largePicFlex: 1.5;
 
-    --commonPageHeaderHeight: 400px;
+    --commonPageHeaderHeight: 475px;
+    --businessh1Size: 6vw;
 }
 
 
@@ -163,6 +164,7 @@ body {
     // box-shadow: 0px 0px 10px .5px rgba(0, 0, 0, 0.07);
     background-color: rgb($white, 0.7);
     backdrop-filter: blur(0.7rem);
+    border-bottom:1px solid rgb(226, 225, 225);
 
 
 
@@ -194,9 +196,9 @@ body {
                     color: $complimentaryColor;
                     font-size: var(--h3size);
                     font-weight: 600;
-                    padding: .25rem 2rem;
+                    padding: .2rem 1.75rem;
                     border-radius: .3rem;
-                    margin-right: calc(var(--minPadding)*.8);
+                    margin-right: var(--minPadding);
                 }
 
                 #headerContactButton:hover {
@@ -214,8 +216,8 @@ body {
                     #longBar,
                     #midBar,
                     #shortBar {
-                        height: 2.2px;
-                        margin: 0.4rem 0;
+                        height: 2px;
+                        margin: 0.35rem 0;
                         background-color: black;
                         transition: width 0.2s ease-in;
                         margin-left: auto;
@@ -249,7 +251,7 @@ body {
 }
 
 /////////////////////////////////////////////////////////////////////////////////////// 
-/// DIALOG STYLE
+/// Side Nav Styles
 ////////////////////////////////////////////////////////////////@at-root
 
 
@@ -265,23 +267,23 @@ dialog {
     min-height: 100%;
     z-index: 1000;
     animation: .3s animateLeft ease-in;
-    
+
     box-shadow: -0.5rem 0 1rem rgba(17, 17, 26, 0.2);
 
     ul,
     li {
         font-size: calc(var(--h2size)*0.75);
         font-weight: 600;
-        
+
         margin: 1.25rem 0;
 
         a {
-            color:rgb(75, 75, 75);
+            color: rgb(75, 75, 75);
             display: block;
             padding: 0.75rem 1.5rem;
             border-radius: 0.25rem;
             transition: background-color 0.2s ease-in;
-            min-width:225px;
+            min-width: 225px;
         }
 
         a:hover {
@@ -320,6 +322,19 @@ dialog {
         padding-left: calc(var(--minPadding)/2.25);
 
     }
+
+    #nestedList{
+        position:relative;
+    }
+
+    #nestedList:after {
+        position: absolute;
+        bottom:0;
+        content:"";
+        border-left: 0.35rem solid $lightGreen;
+        margin-left:1.5rem;
+        height: 75%;
+    }
 }
 
 //adding class to dialog for animation before trigerring .close()
@@ -346,7 +361,7 @@ dialog.onClose {
 }
 
 #sideNavBackdrop.isActive {
-    left:0;
+    left: 0;
     background-color: rgba(0, 0, 0, 0.4);
     backdrop-filter: blur(0.3rem);
 }
@@ -878,8 +893,7 @@ dialog.onClose {
     h1 {
         font-family: NHD;
         color: rgba(255, 255, 255, 0.725);
-        // font-size: calc(var(--h1size)*2.5);
-        font-size: 6vw;
+        font-size: var(--businessh1Size);
         // font-weight:normal;
         margin-bottom: 0rem;
         // text-shadow: 1px 1px 2px #000 // mix-blend-mode: difference;
@@ -1004,7 +1018,7 @@ dialog.onClose {
     padding: 3rem var(--minPadding);
     background-color: $lightGrey;
     justify-content: center;
-    border-radius: 1.5rem 1.5rem 0 0;
+    // border-radius: 1.5rem 1.5rem 0 0;
 
     ul {
         list-style: none;
@@ -1051,7 +1065,7 @@ dialog.onClose {
 @keyframes animateLeft {
     0% {
         opacity: 0;
-        transform: translate(5%, 0);
+        transform: translate(10%, 0);
     }
 
     100% {
@@ -1063,7 +1077,7 @@ dialog.onClose {
 @keyframes animateRight {
     0% {
         opacity: 0;
-        transform: translate(-5%, 0);
+        transform: translate(-10%, 0);
     }
 
     100% {
@@ -1243,7 +1257,8 @@ dialog.onClose {
         --largePicFlex: 1;
         --logoContainerHeight: 6rem;
         --textContainerMax: 90vw;
-        --commonPageHeaderHeight: 300px;
+        --commonPageHeaderHeight: 360px;
+        --businessh1Size: 8vw;
     }
 
 
@@ -1350,12 +1365,20 @@ dialog.onClose {
     :root {
         --headerHeight: 4rem;
         --commonPageHeaderHeight: 275px;
+
+        --psize: 1.6rem;
     }
+
 
 
     #mainPage {
         #helloContent {
             text-align: center;
+
+            p,
+            #yearsAlive {
+                font-size: var(--psize);
+            }
         }
     }
 
