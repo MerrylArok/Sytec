@@ -147,7 +147,7 @@ body {
 .header #headerFlexContainer #headerRight li #openSideNav {
   position: relative;
   background-color: transparent;
-  width: calc(var(--h3size)*3.2);
+  width: calc(var(--h3size)*2.5);
   height: 100%;
 }
 .header #headerFlexContainer #headerRight li #openSideNav #longBar,
@@ -183,15 +183,16 @@ dialog {
   right: 0;
   left: auto;
   width: fit-content;
-  padding: calc(var(--minPadding)*1.25) calc(var(--minPadding)/2);
-  min-height: 100%;
+  padding: calc(var(--minPadding)*1.25) calc(var(--minPadding)/1.25);
+  margin: 0.75rem 2rem;
+  border-radius: 0.5rem;
   z-index: 1000;
   animation: 0.3s animateLeft ease-in;
   box-shadow: -0.5rem 0 1rem rgba(17, 17, 26, 0.2);
 }
 dialog ul,
 dialog li {
-  font-size: calc(var(--h2size)*0.75);
+  font-size: calc(var(--h2size)*0.8);
   font-weight: 600;
   margin: 1.25rem 0;
 }
@@ -202,10 +203,11 @@ dialog li a {
   padding: 0.75rem 1.5rem;
   border-radius: 0.25rem;
   transition: background-color 0.2s ease-in;
-  min-width: 225px;
+  min-width: 200px;
 }
-dialog ul a:hover,
-dialog li a:hover {
+dialog ul a:hover, dialog ul #closeSideNav:hover,
+dialog li a:hover,
+dialog li #closeSideNav:hover {
   background-color: whitesmoke;
 }
 dialog #closeSideNav {
@@ -215,22 +217,23 @@ dialog #closeSideNav {
   left: auto;
   margin: calc(var(--minPadding)/2) calc(var(--minPadding)/2) 0 0;
   background-color: transparent;
-  padding: 0.5rem 1rem;
+  padding: 0.75rem 1rem;
   border-radius: 0.25rem;
   transition: background-color 0.2s ease-in;
 }
 dialog #closeSideNav img {
-  height: calc((var(--headerHeight) - var(--h2size)));
+  height: calc((var(--headerHeight) - var(--h2size))*.9);
   margin: none;
 }
 dialog #closeSideNav:hover {
-  background-color: gainsboro;
+  background-color: whitesmoke;
+  cursor: pointer;
 }
 dialog ul {
   list-style: none;
 }
 dialog #nestedList > li {
-  padding-left: calc(var(--minPadding)/2.25);
+  padding-left: calc(var(--minPadding)/1.25);
 }
 dialog #nestedList {
   position: relative;
@@ -791,8 +794,8 @@ dialog.onClose {
 }
 @keyframes fadeOut {
   to {
-    opacity: 0;
-    transform: translate(20%, 0);
+    opacity: 0.1;
+    transform: translate(30%, 0);
   }
 }
 @keyframes scrollDown {

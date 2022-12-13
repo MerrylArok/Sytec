@@ -210,7 +210,7 @@ body {
                 #openSideNav {
                     position: relative;
                     background-color: transparent;
-                    width: calc(var(--h3size)*3.2);
+                    width: calc(var(--h3size)*2.5);
                     height: 100%;
 
                     #longBar,
@@ -263,8 +263,10 @@ dialog {
     left: auto;
     // background-color: #B03C00;
     width: fit-content;
-    padding: calc(var(--minPadding)*1.25) calc(var(--minPadding)/2);
-    min-height: 100%;
+    padding: calc(var(--minPadding)*1.25) calc(var(--minPadding)/1.25);
+    // min-height: 100%;
+    margin:0.75rem 2rem;
+    border-radius: 0.5rem;
     z-index: 1000;
     animation: .3s animateLeft ease-in;
 
@@ -272,7 +274,7 @@ dialog {
 
     ul,
     li {
-        font-size: calc(var(--h2size)*0.75);
+        font-size: calc(var(--h2size)*0.8);
         font-weight: 600;
 
         margin: 1.25rem 0;
@@ -283,10 +285,10 @@ dialog {
             padding: 0.75rem 1.5rem;
             border-radius: 0.25rem;
             transition: background-color 0.2s ease-in;
-            min-width: 225px;
+            min-width: 200px;
         }
 
-        a:hover {
+        a:hover, #closeSideNav:hover  {
             background-color: rgb(245, 245, 245);
         }
     }
@@ -299,18 +301,20 @@ dialog {
         left: auto;
         margin: calc(var(--minPadding)/2) calc(var(--minPadding)/2) 0 0;
         background-color: transparent;
-        padding: 0.5rem 1rem;
+        padding: 0.75rem 1rem;
         border-radius: 0.25rem;
         transition: background-color 0.2s ease-in;
+        
 
         img {
-            height: calc((var(--headerHeight) - var(--h2size)));
+            height: calc((var(--headerHeight) - var(--h2size))*.9);
             margin: none;
         }
     }
 
     #closeSideNav:hover {
-        background-color: rgb(220, 220, 220);
+        background-color: rgb(245, 245, 245);
+        cursor: pointer;
     }
 
     ul {
@@ -319,7 +323,7 @@ dialog {
 
     #nestedList>li {
 
-        padding-left: calc(var(--minPadding)/2.25);
+        padding-left: calc(var(--minPadding)/1.25);
 
     }
 
@@ -1088,8 +1092,8 @@ dialog.onClose {
 
 @keyframes fadeOut {
     to {
-        opacity: 0;
-        transform: translate(20%, 0);
+        opacity: 0.1;
+        transform: translate(30%, 0);
     }
 }
 
