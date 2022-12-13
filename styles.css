@@ -938,8 +938,7 @@ dialog.onClose {
 
   #servicesChunk #servicesChunkCard #cardFlexContainer .servicesCard {
     width: calc(100%);
-    border-radius: 0.5rem;
-    margin: 1rem auto;
+    margin: 1.75rem auto;
     min-height: calc(100vw/2.2);
   }
 

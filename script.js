@@ -64,7 +64,7 @@ class SideNav extends HTMLElement {
             </button>
             <ul>
                 <li><a href="./contact.html">Contact Us</a></li>
-                <li><a href="#">Store</a></li>
+                <li><a href=".">Store</a></li>
                 <li>
                     <ul id="nestedList"><a href="./index.html#servicesChunk">Services</a>
                         <li><a href="./engineering.html">Engineering</a></li>
@@ -72,7 +72,7 @@ class SideNav extends HTMLElement {
                         <li><a href="./powdercoating.html">Powder Coating</a></li>
                     </ul>
                 </li>
-                <li><a href="https://ca.linkedin.com/company/sytec-manufacturing-ltd" target="_blank">Careers</a></li>
+                <li><a href="https://ca.indeed.com/cmp/Sytec-Manufacturing-1/jobs" target="_blank">Careers</a></li>
             </ul>
         </dialog>
         
@@ -154,6 +154,7 @@ const closeSideNav = document.getElementById('closeSideNav');
 const sideNav = document.getElementById('sideNav');
 const sideNavBackdrop = document.getElementById('sideNavBackdrop');
 const scrollbarWidth = (window.innerWidth - document.body.clientWidth) + 'px';
+const ourServiceLink = document.getElementById('nestedList');
 openSideNavButton === null || openSideNavButton === void 0 ? void 0 : openSideNavButton.addEventListener('click', function () {
     try {
         sideNav.showModal();
@@ -198,6 +199,7 @@ sideNav.addEventListener('click', function (event) {
         closeNavCode();
     }
 });
+ourServiceLink === null || ourServiceLink === void 0 ? void 0 : ourServiceLink.addEventListener('click', closeNavCode);
 //Pressing esc triggers the dialog cancel event. Extending functionality for a11y compatibility
 sideNav.addEventListener('keydown', function (keydown) {
     if (keydown.code == 'Escape') {
