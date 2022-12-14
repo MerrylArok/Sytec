@@ -54,6 +54,9 @@ class Header extends HTMLElement {
     <a title="Homepage" href="./index.html"><img id="logo" src="./media/Sytec.svg" alt="Sytec Logo"></a>
 
         <ul id="headerRight" class="lists">
+        <li><a class="desktopNav buttonTransition" href="./engineering.html">Engineering</a></li>
+        <li><a class="desktopNav buttonTransition" href="./manufacturing.html">Manufacturing</a></li>
+        <li><a class="desktopNav buttonTransition" href="./powdercoating.html">Powder Coating</a></li>
             <li><a id="headerContactButton" class="buttonTransition" href="./contact.html">Contact</a></li>
             <li><button id="openSideNav" role="navigation" aria-label="Quick Navi Links">
                     <div id="longBar"></div>
@@ -239,11 +242,11 @@ sideNav.addEventListener('click', function (event) {
     }
 })
 
-ourServiceLink?.addEventListener('click',closeNavCode );
+ourServiceLink?.addEventListener('click', closeNavCode);
 
 //Pressing esc triggers the dialog cancel event. Extending functionality for a11y compatibility
 sideNav.addEventListener('keydown', function (keydown) {
-   
+
     if (keydown.code == 'Escape') {
         sideNavBackdrop.classList.remove('isActive');
         document.body.style.overflowY = 'auto';

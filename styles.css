@@ -12,11 +12,11 @@
   --h3size: 1.3rem;
   --h4size: 1.1rem;
   --psize: 1.3rem;
-  --headerHeight: 4rem;
+  --headerHeight: 4.5rem;
   --contentPadding: 7rem;
   --minPadding: 5rem;
   --textContainerMax: 900px;
-  --helloContentPosition: 17rem;
+  --helloContentPosition: 21rem;
   --chunkPaddingTopBot: 6rem;
   --logoContainerHeight: 8rem;
   --logoContainerMargin: 4rem;
@@ -130,32 +130,47 @@ body {
 .header #headerFlexContainer #headerRight li {
   height: 100%;
 }
-.header #headerFlexContainer #headerRight li #headerContactButton {
-  border: 2px #B03C00 solid;
-  color: #B03C00;
+.header #headerFlexContainer #headerRight li #headerContactButton,
+.header #headerFlexContainer #headerRight li .desktopNav {
   font-size: var(--h3size);
   font-weight: 600;
-  padding: 0.2rem 1.75rem;
+  padding: 0.5rem 1.75rem;
   border-radius: 0.3rem;
-  margin-right: var(--minPadding);
+}
+.header #headerFlexContainer #headerRight li #headerContactButton {
+  color: #B03C00;
+  border: 2px #B03C00 solid;
+  border-radius: 0.3rem;
+  margin-left: 4.5rem;
 }
 .header #headerFlexContainer #headerRight li #headerContactButton:hover {
   background-color: #B03C00;
   color: #fff;
   cursor: pointer;
 }
+.header #headerFlexContainer #headerRight li .desktopNav {
+  color: #302e2e;
+}
+.header #headerFlexContainer #headerRight li .desktopNav:hover {
+  background-color: rgba(230, 228, 228, 0.6);
+  color: black;
+  cursor: pointer;
+}
 .header #headerFlexContainer #headerRight li #openSideNav {
   position: relative;
+  cursor: pointer;
+  display: none;
   background-color: transparent;
-  width: calc(var(--h3size)*2.5);
+  width: calc(var(--h3size)*2.7);
   height: 100%;
+  margin-left: var(--minPadding);
 }
 .header #headerFlexContainer #headerRight li #openSideNav #longBar,
 .header #headerFlexContainer #headerRight li #openSideNav #midBar,
 .header #headerFlexContainer #headerRight li #openSideNav #shortBar {
   height: 2px;
-  margin: 0.35rem 0;
-  background-color: black;
+  margin: 0.45rem 0;
+  background-color: #252525;
   transition: width 0.2s ease-in;
   margin-left: auto;
 }
@@ -164,17 +179,11 @@ body {
 }
 .header #headerFlexContainer #headerRight li #openSideNav #midBar {
   width: 70%;
+  animation: 2.5s expandNavBar infinite linear;
 }
 .header #headerFlexContainer #headerRight li #openSideNav #shortBar {
   width: 50%;
-}
-.header #headerFlexContainer #headerRight li #openSideNav:hover {
-  cursor: pointer;
-}
-.header #headerFlexContainer #headerRight li #openSideNav:hover #longBar,
-.header #headerFlexContainer #headerRight li #openSideNav:hover #midBar,
-.header #headerFlexContainer #headerRight li #openSideNav:hover #shortBar {
-  width: 100%;
+  animation: 2.5s expandNavBar infinite linear;
 }
 
 dialog {
@@ -205,7 +214,8 @@ dialog li a {
   transition: background-color 0.2s ease-in;
   min-width: 200px;
 }
-dialog ul a:hover, dialog ul #closeSideNav:hover,
+dialog ul a:hover,
+dialog ul #closeSideNav:hover,
 dialog li a:hover,
 dialog li #closeSideNav:hover {
   background-color: whitesmoke;
@@ -303,8 +313,13 @@ dialog.onClose {
 #mainPage #iconScrollDown {
   position: absolute;
   left: 50%;
-  background: url(./media/line-angle-down-icon.svg) center no-repeat;
+  background: url(./media/line-angle-down-icon.svg) center no-repeat content-box;
   animation: 1.5s infinite scrollDown ease-in-out;
+  width: 3.5rem;
+  height: 3.5rem;
+  padding: 1rem;
+  border: 0.5px solid rgba(255, 255, 255, 0.5);
+  border-radius: 5rem;
 }
 
 #customerContainer {
@@ -549,7 +564,7 @@ dialog.onClose {
 }
 #contactMain section {
   background-color: #008c15;
-  padding: var(--minPadding);
+  padding: var(--minPadding) calc(var(--minPadding)*1.5);
   flex: 1;
   max-width: 40%;
 }
@@ -737,7 +752,7 @@ dialog.onClose {
   flex-shrink: 0;
   display: flex;
   flex-direction: row;
-  padding: 3rem var(--minPadding);
+  padding: var(--minPadding);
   background-color: #f7f7f7;
   justify-content: center;
 }
@@ -802,14 +817,10 @@ dialog.onClose {
   from {
     bottom: 12%;
     opacity: 0;
-    width: 3rem;
-    height: 3rem;
   }
   to {
-    bottom: 10%;
+    bottom: 9%;
     opacity: 0.6;
-    width: 2rem;
-    height: 2rem;
   }
 }
 @keyframes logoBannerScroll {
@@ -826,6 +837,11 @@ dialog.onClose {
   }
   100% {
     transform: translateX(0);
+  }
+}
+@keyframes expandNavBar {
+  30%, 70% {
+    width: 100%;
   }
 }
 @media (max-width: 1420px) {
@@ -936,6 +952,13 @@ dialog.onClose {
     max-height: none;
   }
 
+  .header #headerFlexContainer #headerRight li .desktopNav {
+    display: none;
+  }
+  .header #headerFlexContainer #headerRight li #openSideNav {
+    display: block;
+  }
+
   #servicesChunk #servicesChunkCard #cardFlexContainer .servicesCard {
     width: calc(100%);
     margin: 1.75rem auto;
@@ -975,7 +998,6 @@ dialog.onClose {
   }
 
   :root {
-    --headerHeight: 4rem;
     --commonPageHeaderHeight: 275px;
     --psize: 1.6rem;
   }

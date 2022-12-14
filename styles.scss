@@ -42,12 +42,12 @@ $lightGrey: #f7f7f7;
     --h4size: 1.1rem;
     --psize: 1.3rem;
 
-    --headerHeight: 4rem;
+    --headerHeight: 4.5rem;
     --contentPadding: 7rem;
     --minPadding: 5rem;
     --textContainerMax: 900px;
 
-    --helloContentPosition: 17rem;
+    --helloContentPosition: 21rem;
 
     --chunkPaddingTopBot: 6rem;
 
@@ -164,7 +164,7 @@ body {
     // box-shadow: 0px 0px 10px .5px rgba(0, 0, 0, 0.07);
     background-color: rgb($white, 0.7);
     backdrop-filter: blur(0.7rem);
-    border-bottom:1px solid rgb(226, 225, 225);
+    border-bottom: 1px solid rgb(226, 225, 225);
 
 
 
@@ -191,14 +191,20 @@ body {
             li {
                 height: 100%;
 
-                #headerContactButton {
-                    border: 2px $complimentaryColor solid;
-                    color: $complimentaryColor;
+                #headerContactButton,
+                .desktopNav {
                     font-size: var(--h3size);
                     font-weight: 600;
-                    padding: .2rem 1.75rem;
+                    padding: .5rem 1.75rem;
+                    // margin: 0 0.25rem;
                     border-radius: .3rem;
-                    margin-right: var(--minPadding);
+                }
+
+                #headerContactButton {
+                    color: $complimentaryColor;
+                    border: 2px $complimentaryColor solid;
+                    border-radius: .3rem;
+                    margin-left: 4.5rem;
                 }
 
                 #headerContactButton:hover {
@@ -207,18 +213,31 @@ body {
                     cursor: pointer;
                 }
 
+                .desktopNav {
+                    color: rgb(48, 46, 46);
+                }
+
+                .desktopNav:hover {
+                    background-color: rgba(230, 228, 228, 0.6);
+                    color: black;
+                    cursor: pointer;
+                }
+
                 #openSideNav {
                     position: relative;
+                    cursor: pointer;
+                    display: none;
                     background-color: transparent;
-                    width: calc(var(--h3size)*2.5);
+                    width: calc(var(--h3size)*2.7);
                     height: 100%;
+                    margin-left: var(--minPadding);
 
                     #longBar,
                     #midBar,
                     #shortBar {
                         height: 2px;
-                        margin: 0.35rem 0;
-                        background-color: black;
+                        margin: 0.45rem 0;
+                        background-color: rgb(37, 37, 37);
                         transition: width 0.2s ease-in;
                         margin-left: auto;
                     }
@@ -229,22 +248,24 @@ body {
 
                     #midBar {
                         width: 70%;
+                        animation: 2.5s expandNavBar infinite linear;
                     }
 
                     #shortBar {
                         width: 50%;
+                        animation: 2.5s expandNavBar infinite linear;
                     }
                 }
 
-                #openSideNav:hover {
-                    cursor: pointer;
+                // #openSideNav:hover {
+                //     cursor: pointer;
 
-                    #longBar,
-                    #midBar,
-                    #shortBar {
-                        width: 100%;
-                    }
-                }
+                //     #longBar,
+                //     #midBar,
+                //     #shortBar {
+                //         width: 100%;
+                //     }
+                // }
             }
         }
     }
@@ -265,7 +286,7 @@ dialog {
     width: fit-content;
     padding: calc(var(--minPadding)*1.25) calc(var(--minPadding)/1.25);
     // min-height: 100%;
-    margin:0.75rem 2rem;
+    margin: 0.75rem 2rem;
     border-radius: 0.5rem;
     z-index: 1000;
     animation: .3s animateLeft ease-in;
@@ -288,7 +309,8 @@ dialog {
             min-width: 200px;
         }
 
-        a:hover, #closeSideNav:hover  {
+        a:hover,
+        #closeSideNav:hover {
             background-color: rgb(245, 245, 245);
         }
     }
@@ -304,7 +326,7 @@ dialog {
         padding: 0.75rem 1rem;
         border-radius: 0.25rem;
         transition: background-color 0.2s ease-in;
-        
+
 
         img {
             height: calc((var(--headerHeight) - var(--h2size))*.9);
@@ -327,16 +349,16 @@ dialog {
 
     }
 
-    #nestedList{
-        position:relative;
+    #nestedList {
+        position: relative;
     }
 
     #nestedList:after {
         position: absolute;
-        bottom:0;
-        content:"";
+        bottom: 0;
+        content: "";
         border-left: 0.35rem solid $lightGreen;
-        margin-left:1.5rem;
+        margin-left: 1.5rem;
         height: 75%;
     }
 }
@@ -417,9 +439,16 @@ dialog.onClose {
     #iconScrollDown {
         position: absolute;
         left: 50%;
-        background: url(./media/line-angle-down-icon.svg) center no-repeat;
+        background: url(./media/line-angle-down-icon.svg) center no-repeat content-box;
         animation: 1.5s infinite scrollDown ease-in-out;
+        width: 3.5rem;
+        height: 3.5rem;
+        padding: 1rem;
+        border: 0.5px solid rgba(255, 255, 255, 0.5);
+        border-radius: 5rem;
     }
+
+
 }
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// 
@@ -759,7 +788,7 @@ dialog.onClose {
 
     section {
         background-color: $lightGreen;
-        padding: var(--minPadding);
+        padding: var(--minPadding) calc(var(--minPadding)*1.5);
         flex: 1;
         max-width: 40%;
 
@@ -1019,7 +1048,7 @@ dialog.onClose {
     flex-shrink: 0;
     display: flex;
     flex-direction: row;
-    padding: 3rem var(--minPadding);
+    padding: var(--minPadding);
     background-color: $lightGrey;
     justify-content: center;
     // border-radius: 1.5rem 1.5rem 0 0;
@@ -1102,16 +1131,14 @@ dialog.onClose {
     from {
         bottom: 12%;
         opacity: 0;
-        width: 3rem;
-        height: 3rem;
+
     }
 
 
     to {
-        bottom: 10%;
+        bottom: 9%;
         opacity: 0.6;
-        width: 2rem;
-        height: 2rem;
+
     }
 }
 
@@ -1134,6 +1161,16 @@ dialog.onClose {
     100% {
         transform: translateX(0);
     }
+
+}
+
+@keyframes expandNavBar {
+
+    30%,
+    70% {
+        width: 100%
+    }
+
 
 }
 
@@ -1291,6 +1328,8 @@ dialog.onClose {
 
 @media (max-width:750px) {
 
+
+
     :root {
         // --chunkPaddingTopBot: 6rem;
         --serviceCardPadding: 3rem;
@@ -1299,6 +1338,32 @@ dialog.onClose {
 
     .chunk {
         max-height: none;
+    }
+
+    .header {
+
+
+        #headerFlexContainer {
+
+
+
+            #headerRight {
+
+                li {
+
+
+                    .desktopNav {
+                        display: none;
+                    }
+
+
+                    #openSideNav {
+                        display: block;
+                    }
+
+                }
+            }
+        }
     }
 
 
@@ -1367,7 +1432,7 @@ dialog.onClose {
     }
 
     :root {
-        --headerHeight: 4rem;
+        // --headerHeight: 4rem;
         --commonPageHeaderHeight: 275px;
 
         --psize: 1.6rem;
