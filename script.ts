@@ -191,8 +191,8 @@ openSideNavButton?.addEventListener('click', function () {
         sideNav.showModal();
 
         //the following code prevents page reflow due to scrollbar disappearing on overflow restriction.
-        document.body.style.overflowY = 'hidden';
-        document.body.style.paddingRight = scrollbarWidth;
+        // document.body.style.overflowY = 'hidden';
+        // document.body.style.paddingRight = scrollbarWidth;
 
         //animate backdrop element 
         sideNavBackdrop.classList.add('isActive');
@@ -212,10 +212,10 @@ let closeNavCode = function () {
             sideNav.removeEventListener('animationend', removeAnimation);
 
             //backdrop code needs to animate before overflow restrictions are lifted. Or youll see the end of backdrop animation which is quite jarring
-            setTimeout(() => {
-                document.body.style.overflowY = 'auto';
-                document.body.style.paddingRight = '0';
-            }, 3);
+            // setTimeout(() => {
+            //     document.body.style.overflowY = 'auto';
+            //     document.body.style.paddingRight = '0';
+            // }, 3);
         }
 
         sideNav.classList.add('onClose');
@@ -236,8 +236,8 @@ closeSideNav?.addEventListener('click', closeNavCode);
 //This function will close sideNav if you click outside it
 sideNav.addEventListener('click', function (event) {
     const boundingArea = sideNav.getBoundingClientRect();
-
-    if (event.clientX < boundingArea.left) {
+    
+    if (event.clientX < boundingArea.left || event.clientY > boundingArea.bottom) {
         closeNavCode();
     }
 })
@@ -249,8 +249,8 @@ sideNav.addEventListener('keydown', function (keydown) {
 
     if (keydown.code == 'Escape') {
         sideNavBackdrop.classList.remove('isActive');
-        document.body.style.overflowY = 'auto';
-        document.body.style.paddingRight = '0';
+        // document.body.style.overflowY = 'auto';
+        // document.body.style.paddingRight = '0';
     }
 })
 ///////////////////////////////////////////////////////////////////////////////////////

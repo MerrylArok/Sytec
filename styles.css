@@ -139,9 +139,9 @@ body {
 }
 .header #headerFlexContainer #headerRight li #headerContactButton {
   color: #B03C00;
-  border: 2px #B03C00 solid;
+  border: 1px #B03C00 solid;
   border-radius: 0.3rem;
-  margin-left: 4.5rem;
+  margin-left: 2rem;
 }
 .header #headerFlexContainer #headerRight li #headerContactButton:hover {
   background-color: #B03C00;
@@ -308,13 +308,13 @@ dialog.onClose {
   top: 0;
   left: 0;
   z-index: -1;
-  filter: brightness(55%);
+  filter: brightness(30%);
 }
 #mainPage #iconScrollDown {
   position: absolute;
   left: 50%;
   background: url(./media/line-angle-down-icon.svg) center no-repeat content-box;
-  animation: 1.5s infinite scrollDown ease-in-out;
+  animation: 2s infinite scrollDown ease-in-out;
   width: 3.5rem;
   height: 3.5rem;
   padding: 1rem;
@@ -752,7 +752,7 @@ dialog.onClose {
   flex-shrink: 0;
   display: flex;
   flex-direction: row;
-  padding: var(--minPadding);
+  padding: var(--minPadding) var(--minPadding) calc(var(--minPadding)/1.25) var(--minPadding);
   background-color: #f7f7f7;
   justify-content: center;
 }
@@ -814,12 +814,12 @@ dialog.onClose {
   }
 }
 @keyframes scrollDown {
-  from {
-    bottom: 12%;
+  0% {
+    bottom: 15%;
     opacity: 0;
   }
-  to {
-    bottom: 9%;
+  60%, 100% {
+    bottom: 11%;
     opacity: 0.6;
   }
 }
@@ -1103,6 +1103,16 @@ dialog.onClose {
   #teamChunk #teamPicContainer img {
     max-height: 375px;
     transform: translateX(-30%);
+  }
+
+  #customerContainer #logoFlexContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+    padding: 4rem 0;
+    overflow: hidden;
+    position: relative;
   }
 }
 
