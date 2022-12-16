@@ -444,7 +444,7 @@ dialog.onClose {
         width: 3.5rem;
         height: 3.5rem;
         padding: 1rem;
-        border: 0.5px solid rgba(255, 255, 255, 0.5);
+        border: 1px solid rgba(255, 255, 255, 1);
         border-radius: 5rem;
     }
 
@@ -1137,7 +1137,7 @@ dialog.onClose {
 
     60%,100% {
         bottom: 11%;
-        opacity: 0.6;
+        opacity: 1;
 
     }
 }
