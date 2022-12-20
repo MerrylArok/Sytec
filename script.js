@@ -1,6 +1,7 @@
+"use strict";
+var _a;
 // Wrote this function to ensure 100% vh in mobile, realized that I could do it easier
 //using 100vh combined with 100% height for body and html
-var _a;
 // // let windowWidth: Number = window.innerWidth;
 // // Using 100% width in CSS to prevent overflow due to vertical scrollbar 
 // let windowHeight: Number = window.innerHeight;
@@ -40,10 +41,10 @@ class Header extends HTMLElement {
     <a title="Homepage" href="./index.html"><img id="logo" src="./media/Sytec.svg" alt="Sytec Logo"></a>
 
         <ul id="headerRight" class="lists">
-        <li><a class="desktopNav buttonTransition" href="./engineering.html">Engineering</a></li>
-        <li><a class="desktopNav buttonTransition" href="./manufacturing.html">Manufacturing</a></li>
-        <li><a class="desktopNav buttonTransition" href="./powdercoating.html">Powder Coating</a></li>
-            <li><a id="headerContactButton" class="buttonTransition" href="./contact.html">Contact</a></li>
+        <li><a class="desktopNav buttonTransition" href="./engineering.html">ENGINEERING</a></li>
+        <li><a class="desktopNav buttonTransition" href="./manufacturing.html">MANUFACTURING</a></li>
+        <li><a class="desktopNav buttonTransition" href="./powdercoating.html">POWDER COATING</a></li>
+            <li><a id="headerContactButton" class="buttonTransition" href="./contact.html">CONTACT</a></li>
             <li><button id="openSideNav" role="navigation" aria-label="Quick Navi Links">
                     <div id="longBar"></div>
                     <div id="midBar"></div>
@@ -66,16 +67,16 @@ class SideNav extends HTMLElement {
                 <img src="./media/Close.svg" alt="Cancel icon">
             </button>
             <ul>
-                <li><a href="./contact.html">Contact Us</a></li>
-                <li><a href=".">Store</a></li>
+                <li><a href="./contact.html">CONTACT US</a></li>
+                <li><a href=".">STORE</a></li>
                 <li>
-                    <ul id="nestedList"><a href="./index.html#servicesChunk">Services</a>
-                        <li><a href="./engineering.html">Engineering</a></li>
-                        <li><a href="./manufacturing.html">Manufacturing</a></li>
-                        <li><a href="./powdercoating.html">Powder Coating</a></li>
+                    <ul id="nestedList"><a href="./index.html#servicesChunk">SERVICES</a>
+                        <li><a href="./engineering.html">ENGINEERING</a></li>
+                        <li><a href="./manufacturing.html">MANUFACTURING</a></li>
+                        <li><a href="./powdercoating.html">POWDER COATING</a></li>
                     </ul>
                 </li>
-                <li><a href="https://ca.indeed.com/cmp/Sytec-Manufacturing-1/jobs" target="_blank">Careers</a></li>
+                <li><a href="https://ca.indeed.com/cmp/Sytec-Manufacturing-1/jobs" target="_blank">CAREERS</a></li>
             </ul>
         </dialog>
         

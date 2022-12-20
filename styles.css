@@ -132,7 +132,7 @@ body {
 }
 .header #headerFlexContainer #headerRight li #headerContactButton,
 .header #headerFlexContainer #headerRight li .desktopNav {
-  font-size: var(--h3size);
+  font-size: calc(var(--h3size)*0.95);
   font-weight: 600;
   padding: 0.5rem 1.75rem;
   border-radius: 0.3rem;
@@ -201,7 +201,7 @@ dialog {
 }
 dialog ul,
 dialog li {
-  font-size: calc(var(--h2size)*0.8);
+  font-size: calc(var(--h2size)*0.73);
   font-weight: 600;
   margin: 1.25rem 0;
 }

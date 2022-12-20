@@ -193,7 +193,7 @@ body {
 
                 #headerContactButton,
                 .desktopNav {
-                    font-size: var(--h3size);
+                    font-size: calc(var(--h3size)*0.95);
                     font-weight: 600;
                     padding: .5rem 1.75rem;
                     // margin: 0 0.25rem;
@@ -295,7 +295,7 @@ dialog {
 
     ul,
     li {
-        font-size: calc(var(--h2size)*0.8);
+        font-size: calc(var(--h2size)*0.73);
         font-weight: 600;
 
         margin: 1.25rem 0;
