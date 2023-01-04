@@ -33,7 +33,7 @@
   padding: 0;
   border: 0;
   font-family: Manrope, sans-serif;
-  color: #18191b;
+  color: black;
   box-sizing: border-box;
   font-size: 12px;
   scroll-behavior: smooth;
@@ -1064,6 +1064,7 @@ dialog.onClose {
   :root {
     --chunkPaddingTopBot: 10rem;
     --helloContentPosition: 25rem;
+    --logoContainerMargin: 0rem;
   }
   .chunkMinHeight {
     min-height: 650px;
@@ -1073,6 +1074,9 @@ dialog.onClose {
   }
   #servicesChunk #servicesChunkCard #cardFlexContainer .servicesCard {
     height: 75.1879699248vw;
+  }
+  #customerContainer #customerContent {
+    top: 10%;
   }
   #teamChunk #teamPicContainer img {
     transform: translateX(-30%);

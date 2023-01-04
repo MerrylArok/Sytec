@@ -70,7 +70,9 @@ $lightGrey: #f7f7f7;
     padding: 0;
     border: 0;
     font-family: Manrope, sans-serif;
-    color: $darkBlack;
+    color:black;
+    // color: $darkBlack;
+    
     box-sizing: border-box;
     font-size: 12px;
     // letter-spacing: normal;
@@ -1564,6 +1566,7 @@ dialog.onClose {
         // --minPadding: 2rem;
         --chunkPaddingTopBot: 10rem;
         --helloContentPosition: 25rem;
+        --logoContainerMargin: 0rem;
     }
 
     .chunkMinHeight {
@@ -1589,6 +1592,12 @@ dialog.onClose {
 
 
     }
+
+    
+    #customerContainer {
+    
+        #customerContent {
+            top: 10%;}}
 
     #teamChunk {
 
