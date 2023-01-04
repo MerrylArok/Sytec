@@ -18,9 +18,9 @@
   --textContainerMax: 900px;
   --helloContentPosition: 21rem;
   --chunkPaddingTopBot: 6rem;
-  --logoContainerHeight: 8rem;
-  --logoContainerMargin: 4rem;
-  --customerLogoWidth: 22rem;
+  --logoContainerHeight: 5rem;
+  --logoContainerMargin: 8rem;
+  --customerLogoWidth: 20rem;
   --serviceCardPadding: 2.5rem;
   --largePicMargin: 2rem;
   --largePicFlex: 1.5;
@@ -79,7 +79,7 @@ p,
 }
 
 .chunkMinHeight {
-  min-height: calc(100vw*8/16);
+  min-height: 50vw;
 }
 
 html,
@@ -107,7 +107,7 @@ body {
   height: var(--headerHeight);
   background-color: rgba(255, 255, 255, 0.7);
   backdrop-filter: blur(0.7rem);
-  border-bottom: 1px solid #e2e1e1;
+  border-bottom: 1px solid rgb(226, 225, 225);
 }
 .header #headerFlexContainer {
   height: 100%;
@@ -115,7 +115,7 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0rem calc(var(--minPadding) - calc((100vw - 100%)/2));
+  padding: 0rem calc(var(--minPadding) - (100vw - 100%) / 2);
 }
 .header #headerFlexContainer #logo {
   height: var(--h3size);
@@ -132,7 +132,7 @@ body {
 }
 .header #headerFlexContainer #headerRight li #headerContactButton,
 .header #headerFlexContainer #headerRight li .desktopNav {
-  font-size: calc(var(--h3size)*0.95);
+  font-size: calc(var(--h3size) * 0.95);
   font-weight: 600;
   padding: 0.5rem 1.75rem;
   border-radius: 0.3rem;
@@ -149,7 +149,7 @@ body {
   cursor: pointer;
 }
 .header #headerFlexContainer #headerRight li .desktopNav {
-  color: #302e2e;
+  color: rgb(48, 46, 46);
 }
 .header #headerFlexContainer #headerRight li .desktopNav:hover {
   background-color: rgba(230, 228, 228, 0.6);
@@ -161,7 +161,7 @@ body {
   cursor: pointer;
   display: none;
   background-color: transparent;
-  width: calc(var(--h3size)*2.7);
+  width: calc(var(--h3size) * 2.7);
   height: 100%;
   margin-left: var(--minPadding);
 }
@@ -170,7 +170,7 @@ body {
 .header #headerFlexContainer #headerRight li #openSideNav #shortBar {
   height: 2px;
   margin: 0.45rem 0;
-  background-color: #252525;
+  background-color: rgb(37, 37, 37);
   transition: width 0.2s ease-in;
   margin-left: auto;
 }
@@ -192,7 +192,7 @@ dialog {
   right: 0;
   left: auto;
   width: fit-content;
-  padding: calc(var(--minPadding)*1.25) calc(var(--minPadding)/1.25);
+  padding: calc(var(--minPadding) * 1.25) calc(var(--minPadding) / 1.25);
   margin: 0.75rem 2rem;
   border-radius: 0.5rem;
   z-index: 1000;
@@ -201,13 +201,13 @@ dialog {
 }
 dialog ul,
 dialog li {
-  font-size: calc(var(--h2size)*0.73);
+  font-size: calc(var(--h2size) * 0.73);
   font-weight: 600;
   margin: 1.25rem 0;
 }
 dialog ul a,
 dialog li a {
-  color: #4b4b4b;
+  color: rgb(75, 75, 75);
   display: block;
   padding: 0.75rem 1.5rem;
   border-radius: 0.25rem;
@@ -218,32 +218,32 @@ dialog ul a:hover,
 dialog ul #closeSideNav:hover,
 dialog li a:hover,
 dialog li #closeSideNav:hover {
-  background-color: whitesmoke;
+  background-color: rgb(245, 245, 245);
 }
 dialog #closeSideNav {
   position: absolute;
   top: 0;
   right: 0;
   left: auto;
-  margin: calc(var(--minPadding)/2) calc(var(--minPadding)/2) 0 0;
+  margin: calc(var(--minPadding) / 2) calc(var(--minPadding) / 2) 0 0;
   background-color: transparent;
   padding: 0.75rem 1rem;
   border-radius: 0.25rem;
   transition: background-color 0.2s ease-in;
 }
 dialog #closeSideNav img {
-  height: calc((var(--headerHeight) - var(--h2size))*.9);
+  height: calc((var(--headerHeight) - var(--h2size)) * 0.9);
   margin: none;
 }
 dialog #closeSideNav:hover {
-  background-color: whitesmoke;
+  background-color: rgb(245, 245, 245);
   cursor: pointer;
 }
 dialog ul {
   list-style: none;
 }
 dialog #nestedList > li {
-  padding-left: calc(var(--minPadding)/1.25);
+  padding-left: calc(var(--minPadding) / 1.25);
 }
 dialog #nestedList {
   position: relative;
@@ -293,7 +293,7 @@ dialog.onClose {
 }
 #mainPage #helloContent p,
 #mainPage #helloContent #yearsAlive {
-  font-size: calc(var(--h2size)*.8);
+  font-size: calc(var(--h2size) * 0.8);
   font-weight: lighter;
 }
 #mainPage #helloContent * {
@@ -318,8 +318,12 @@ dialog.onClose {
   width: 3.5rem;
   height: 3.5rem;
   padding: 1rem;
-  border: 1px solid white;
+  border: 1px solid rgb(255, 255, 255);
   border-radius: 5rem;
+}
+
+.custContent:last-child {
+  padding-top: 2rem;
 }
 
 #customerContainer {
@@ -328,11 +332,10 @@ dialog.onClose {
 }
 #customerContainer #customerContent {
   position: absolute;
-  top: 50%;
+  top: 25%;
   left: 0;
   right: 0;
   text-align: center;
-  transform: translateY(-50%);
   width: 100%;
   max-width: var(--textContainerMax);
   margin: 0 auto;
@@ -345,16 +348,13 @@ dialog.onClose {
   margin-bottom: 1.4rem;
 }
 #customerContainer #logoFlexContainer {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
   height: 100%;
   padding: var(--chunkPaddingTopBot) 0;
   overflow: hidden;
   position: relative;
 }
 #customerContainer #logoFlexContainer::after {
-  background: linear-gradient(to right, white 0%, rgba(255, 255, 255, 0.7) 20%, rgba(255, 255, 255, 0.7) 80%, white 100%);
+  background: linear-gradient(to right, rgb(255, 255, 255) 7%, rgba(255, 255, 255, 0.7) 20%, rgba(255, 255, 255, 0.7) 80%, rgb(255, 255, 255) 93%);
   content: " ";
   height: 100%;
   width: 100%;
@@ -370,10 +370,13 @@ dialog.onClose {
   justify-content: space-between;
 }
 #customerContainer .logosRow1 {
+  display: none;
   animation: logoBannerScroll 66s linear infinite;
 }
 #customerContainer .logosRow2 {
-  animation: logoBannerScrollReverse 77s linear infinite;
+  position: absolute;
+  bottom: 10%;
+  animation: logoBannerScroll 77s linear infinite;
 }
 #customerContainer .logoContainer {
   flex: 0 0 var(--customerLogoWidth);
@@ -383,18 +386,18 @@ dialog.onClose {
 #customerContainer img {
   width: 100%;
   height: 100%;
-  padding: 0 4rem;
+  padding: 0 1rem;
   object-fit: contain;
   pointer-events: none;
 }
 
 #servicesChunk {
-  padding: var(--chunkPaddingTopBot) calc(var(--contentPadding)/2);
+  padding: var(--chunkPaddingTopBot) calc(var(--contentPadding) / 2);
 }
 #servicesChunk #servicesChunkCard {
   height: 100%;
   width: 100%;
-  padding: calc(var(--contentPadding)/2);
+  padding: calc(var(--contentPadding) / 2);
   border-radius: 1rem;
   display: flex;
   flex-direction: row;
@@ -499,7 +502,7 @@ dialog.onClose {
   display: flex;
   flex-direction: row-reverse;
   justify-content: center;
-  padding: var(--chunkPaddingTopBot) calc(var(--contentPadding)*2);
+  padding: var(--chunkPaddingTopBot) calc(var(--contentPadding) * 2);
 }
 #teamChunk > * {
   flex: 1;
@@ -564,7 +567,7 @@ dialog.onClose {
 }
 #contactMain section {
   background-color: #008c15;
-  padding: var(--minPadding) calc(var(--minPadding)*1.5);
+  padding: var(--minPadding) calc(var(--minPadding) * 1.5);
   flex: 1;
   max-width: 40%;
 }
@@ -582,7 +585,7 @@ dialog.onClose {
   flex: 1 1 220px;
   min-height: var(--h1size);
   position: relative;
-  margin: 0 calc(var(--minPadding)/3) calc(var(--minPadding)/3) 0;
+  margin: 0 calc(var(--minPadding) / 3) calc(var(--minPadding) / 3) 0;
 }
 #contactMain section form .inputField .requiredIndicator {
   position: absolute;
@@ -596,7 +599,7 @@ dialog.onClose {
 #contactMain section form .inputField button {
   width: 100%;
   height: 100%;
-  padding: calc(var(--h2size)*1.2) 1rem 1rem 1rem;
+  padding: calc(var(--h2size) * 1.2) 1rem 1rem 1rem;
   font-size: var(--psize);
   border-radius: 0.35rem;
   resize: none;
@@ -665,7 +668,7 @@ dialog.onClose {
   justify-content: flex-start;
   align-items: flex-end;
   background-size: cover;
-  padding: 0 0 var(--minPadding) calc(var(--minPadding)*1.75);
+  padding: 0 0 var(--minPadding) calc(var(--minPadding) * 1.75);
 }
 .pageHeader h1 {
   font-family: NHD;
@@ -685,7 +688,7 @@ dialog.onClose {
 
 .pageSection {
   background-color: white;
-  padding: calc(var(--minPadding)*1.75) var(--minPadding);
+  padding: calc(var(--minPadding) * 1.75) var(--minPadding);
 }
 .pageSection * {
   max-width: var(--textContainerMax);
@@ -704,12 +707,12 @@ dialog.onClose {
 }
 .contentList .contentContainer {
   display: flex;
-  padding-left: calc((100% - (var(--textContainerMax)))/2);
+  padding-left: calc((100% - (var(--textContainerMax))) / 2);
   height: 475px;
   margin-bottom: 2rem;
 }
 .contentList .contentContainer hgroup {
-  flex: 0 0 calc((var(--textContainerMax)/2) - 1rem);
+  flex: 0 0 calc(var(--textContainerMax) / 2 - 1rem);
   padding: 0 var(--minPadding);
   margin-right: 1rem;
   display: flex;
@@ -735,7 +738,7 @@ dialog.onClose {
 }
 .contentList .contentContainer:nth-child(even) {
   flex-direction: row-reverse;
-  padding-right: calc((100% - (var(--textContainerMax)))/2);
+  padding-right: calc((100% - (var(--textContainerMax))) / 2);
   padding-left: 0;
 }
 .contentList .contentContainer:nth-child(even) hgroup {
@@ -752,7 +755,7 @@ dialog.onClose {
   flex-shrink: 0;
   display: flex;
   flex-direction: row;
-  padding: var(--minPadding) var(--minPadding) calc(var(--minPadding)/1.25) var(--minPadding);
+  padding: var(--minPadding) var(--minPadding) calc(var(--minPadding) / 1.25) var(--minPadding);
   background-color: #f7f7f7;
   justify-content: center;
 }
@@ -828,12 +831,12 @@ dialog.onClose {
     transform: translateX(0);
   }
   100% {
-    transform: translateX(calc((var(--customerLogoWidth))* -8));
+    transform: translateX(calc((var(--customerLogoWidth)) * -8));
   }
 }
 @keyframes logoBannerScrollReverse {
   0% {
-    transform: translateX(calc((var(--customerLogoWidth))* -8));
+    transform: translateX(calc((var(--customerLogoWidth)) * -8));
   }
   100% {
     transform: translateX(0);
@@ -848,7 +851,6 @@ dialog.onClose {
   .chunkMinHeight {
     min-height: 850px;
   }
-
   #contactMain section {
     flex: 1;
     max-width: 50%;
@@ -861,7 +863,6 @@ dialog.onClose {
   :root {
     --logoContainerHeight: 5rem;
   }
-
   .chunkMinHeight {
     min-height: 800px;
   }
@@ -872,7 +873,6 @@ dialog.onClose {
     --serviceCardPadding: 2rem;
     --largePicMargin: 1rem;
   }
-
   #servicesChunk {
     height: auto;
   }
@@ -893,11 +893,9 @@ dialog.onClose {
     margin: 0.625rem;
     width: calc(50% - 1.25rem);
   }
-
   #teamContentContainer picture {
     display: none;
   }
-
   #teamChunk {
     height: auto;
   }
@@ -911,16 +909,14 @@ dialog.onClose {
     width: 100%;
     margin: 0.5rem auto;
   }
-
   .pageSection {
-    padding: calc(var(--minPadding)*2.25) var(--minPadding);
+    padding: calc(var(--minPadding) * 2.25) var(--minPadding);
   }
 }
 @media (max-width: 900px) {
   * {
     font-size: 10.5px;
   }
-
   :root {
     --largePicFlex: 1;
     --logoContainerHeight: 6rem;
@@ -928,7 +924,6 @@ dialog.onClose {
     --commonPageHeaderHeight: 360px;
     --businessh1Size: 8vw;
   }
-
   #contactMain {
     padding-top: var(--headerHeight);
     display: flex;
@@ -936,7 +931,7 @@ dialog.onClose {
   }
   #contactMain section {
     max-width: 100%;
-    padding: calc(var(--minPadding)*1.25);
+    padding: calc(var(--minPadding) * 1.25);
   }
   #contactMain #map {
     flex: 1;
@@ -947,24 +942,20 @@ dialog.onClose {
   :root {
     --serviceCardPadding: 3rem;
   }
-
   .chunk {
     max-height: none;
   }
-
   .header #headerFlexContainer #headerRight li .desktopNav {
     display: none;
   }
   .header #headerFlexContainer #headerRight li #openSideNav {
     display: block;
   }
-
   #servicesChunk #servicesChunkCard #cardFlexContainer .servicesCard {
-    width: calc(100%);
+    width: 100%;
     margin: 1.75rem auto;
-    min-height: calc(100vw/2.2);
+    min-height: 45.4545454545vw;
   }
-
   #teamChunk {
     flex-direction: column;
     padding: var(--chunkPaddingTopBot) var(--minPadding);
@@ -996,20 +987,17 @@ dialog.onClose {
   * {
     font-size: 9.5px;
   }
-
   :root {
     --commonPageHeaderHeight: 275px;
     --psize: 1.6rem;
   }
-
   #mainPage #helloContent {
     text-align: center;
   }
   #mainPage #helloContent p,
-#mainPage #helloContent #yearsAlive {
+  #mainPage #helloContent #yearsAlive {
     font-size: var(--psize);
   }
-
   #servicesChunk {
     padding: 0 0;
     background-color: #f7f7f7;
@@ -1018,37 +1006,33 @@ dialog.onClose {
     padding: var(--chunkPaddingTopBot) var(--minPadding);
     box-shadow: none;
   }
-
   #teamChunk #teamContentContainer #aboutUsContent #aboutUsContentLinks li {
     background-color: #008c15;
   }
   #teamChunk #teamContentContainer #aboutUsContent #aboutUsContentLinks li h2 {
     color: #fff;
   }
-
   .pageHeader {
     display: none;
   }
-
   .pageSection {
-    padding: calc(var(--minPadding)*3) calc(var(--minPadding)) 0 calc(var(--minPadding));
+    padding: calc(var(--minPadding) * 3) calc(var(--minPadding)) 0 calc(var(--minPadding));
   }
-
   .contentList {
     padding: 0;
   }
   .contentList .contentContainer,
-.contentList .contentContainer:nth-of-type(even) {
+  .contentList .contentContainer:nth-of-type(even) {
     flex-direction: column;
-    margin: calc(var(--minPadding)*2) var(--minPadding);
+    margin: calc(var(--minPadding) * 2) var(--minPadding);
     padding: 0;
     height: auto;
     border: 1px solid #f5f4f4;
     border-radius: 0.5rem;
   }
   .contentList .contentContainer hgroup,
-.contentList .contentContainer:nth-of-type(even) hgroup {
-    padding: calc(var(--minPadding)*1.25);
+  .contentList .contentContainer:nth-of-type(even) hgroup {
+    padding: calc(var(--minPadding) * 1.25);
     border-radius: none;
     border: none;
     margin: 0;
@@ -1056,12 +1040,11 @@ dialog.onClose {
     max-height: 300px;
   }
   .contentList .contentContainer img,
-.contentList .contentContainer:nth-of-type(even) img {
+  .contentList .contentContainer:nth-of-type(even) img {
     margin: 0;
     border-radius: 0 0 0.5rem 0.5rem;
     max-height: 300px;
   }
-
   #footer ul:first-child {
     display: none;
   }
@@ -1082,19 +1065,15 @@ dialog.onClose {
     --chunkPaddingTopBot: 10rem;
     --helloContentPosition: 25rem;
   }
-
   .chunkMinHeight {
     min-height: 650px;
   }
-
   #headerContactButton {
     display: none;
   }
-
   #servicesChunk #servicesChunkCard #cardFlexContainer .servicesCard {
-    height: calc(100vw/1.33);
+    height: 75.1879699248vw;
   }
-
   #teamChunk #teamPicContainer img {
     transform: translateX(-30%);
   }
@@ -1104,7 +1083,6 @@ dialog.onClose {
     max-height: 375px;
     transform: translateX(-30%);
   }
-
   #customerContainer #logoFlexContainer {
     display: flex;
     flex-direction: column;

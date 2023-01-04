@@ -51,9 +51,9 @@ $lightGrey: #f7f7f7;
 
     --chunkPaddingTopBot: 6rem;
 
-    --logoContainerHeight: 8rem;
-    --logoContainerMargin: 4rem;
-    --customerLogoWidth: 22rem;
+    --logoContainerHeight: 5rem;
+    --logoContainerMargin: 8rem;
+    --customerLogoWidth: 20rem;
 
     --serviceCardPadding: 2.5rem;
 
@@ -214,7 +214,7 @@ body {
                 }
 
                 .desktopNav {
-                    color: rgb(48, 46, 46);                   
+                    color: rgb(48, 46, 46);
                 }
 
                 .desktopNav:hover {
@@ -452,6 +452,9 @@ dialog.onClose {
 }
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// 
+.custContent:last-child{
+    padding-top:2rem;
+}
 
 #customerContainer {
     padding: 0 var(--contentWidth);
@@ -459,11 +462,11 @@ dialog.onClose {
 
     #customerContent {
         position: absolute;
-        top: 50%;
+        top: 25%;
         left: 0;
         right: 0;
         text-align: center;
-        transform: translateY(-50%);
+        // transform: translateY(-40%);
         width: 100%;
         max-width: var(--textContainerMax);
         margin: 0 auto;
@@ -481,9 +484,9 @@ dialog.onClose {
     }
 
     #logoFlexContainer {
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
+        // display: flex;
+        // flex-direction: column;
+        // justify-content: space-between;
         height: 100%;
         padding: var(--chunkPaddingTopBot) 0;
         overflow: hidden;
@@ -491,7 +494,7 @@ dialog.onClose {
 
 
         &::after {
-            background: linear-gradient(to right, rgb(255, 255, 255) 0%, rgba(255, 255, 255, 0.7) 20%, rgba(255, 255, 255, 0.7) 80%, rgb(255, 255, 255) 100%);
+            background: linear-gradient(to right, rgb(255, 255, 255) 7%, rgba(255, 255, 255, 0.7) 20%, rgba(255, 255, 255, 0.7) 80%, rgb(255, 255, 255) 93%);
             content: " ";
             height: 100%;
             width: 100%;
@@ -512,23 +515,27 @@ dialog.onClose {
     }
 
     .logosRow1 {
+        display: none;
         animation: logoBannerScroll 66s linear infinite;
     }
 
     .logosRow2 {
-        animation: logoBannerScrollReverse 77s linear infinite;
+        position: absolute;
+        bottom: 10%;
+        animation: logoBannerScroll 77s linear infinite;
     }
 
     .logoContainer {
         flex: 0 0 var(--customerLogoWidth);
         height: var(--logoContainerHeight);
-        margin: var(--logoContainerMargin) 0;
+        // min-width:8rem;      
+        margin: var(--logoContainerMargin)  0;
     }
 
     img {
         width: 100%;
         height: 100%;
-        padding: 0 4rem;
+        padding: 0 1rem;
         object-fit: contain;
         pointer-events: none;
     }
@@ -1135,7 +1142,8 @@ dialog.onClose {
     }
 
 
-    60%,100% {
+    60%,
+    100% {
         bottom: 11%;
         opacity: 1;
 
@@ -1605,7 +1613,7 @@ dialog.onClose {
     }
 
     #customerContainer {
-    
+
         #logoFlexContainer {
             display: flex;
             flex-direction: column;
@@ -1613,9 +1621,10 @@ dialog.onClose {
             height: 100%;
             padding: 4rem 0;
             overflow: hidden;
-            position: relative;}
-        }        
-    
+            position: relative;
+        }
+    }
+
 }
 
 // @media (hover: none) {
