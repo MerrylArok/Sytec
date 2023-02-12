@@ -482,19 +482,19 @@ dialog.onClose {
   transform: rotate(0);
 }
 #servicesChunk #servicesChunkCard #cardFlexContainer #engineeringCard {
-  background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.8)), url(./media/pics/Engineering.jpg) center no-repeat;
+  background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.8)), url(./media/pics/engineering.webp) center no-repeat;
   background-size: cover;
 }
 #servicesChunk #servicesChunkCard #cardFlexContainer #manfacturingCard {
-  background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.7)), url(./media/pics/welding.jpg) center no-repeat;
+  background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.7)), url(./media/pics/welding.webp) center no-repeat;
   background-size: cover;
 }
 #servicesChunk #servicesChunkCard #cardFlexContainer #productCard {
-  background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.8)), url(./media/pics/warehouse.jpg) center no-repeat;
+  background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.8)), url(./media/pics/warehouse.webp) center no-repeat;
   background-size: cover;
 }
 #servicesChunk #servicesChunkCard #cardFlexContainer #paintCard {
-  background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.8)), url(./media/pics/Powder_Coat.jpg) center no-repeat;
+  background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.8)), url(./media/pics/powdercoat.webp) center no-repeat;
   background-size: cover;
 }
 
@@ -678,12 +678,18 @@ dialog.onClose {
 }
 
 #engineeringHeader {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.5)), url(./media/pics/EngineeringHeader.jpg);
+  background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.5)), url(./media/pics/EngineeringHeader.webp);
 }
 
 #manufacturingHeader {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.5)), url(./media/pics/ManufacturingHeader.jpg);
+  background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.5)), url(./media/pics/ManufacturingHeader.webp);
   background-position: bottom;
+}
+
+#powderHeader {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.5)), url(./media/pics/powdercoat.webp);
+  background-position: center;
+  background-size: cover;
 }
 
 .pageSection {

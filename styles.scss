@@ -70,9 +70,9 @@ $lightGrey: #f7f7f7;
     padding: 0;
     border: 0;
     font-family: Manrope, sans-serif;
-    color:black;
+    color: black;
     // color: $darkBlack;
-    
+
     box-sizing: border-box;
     font-size: 12px;
     // letter-spacing: normal;
@@ -454,8 +454,8 @@ dialog.onClose {
 }
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// 
-.custContent:last-child{
-    padding-top:2rem;
+.custContent:last-child {
+    padding-top: 2rem;
 }
 
 #customerContainer {
@@ -531,7 +531,7 @@ dialog.onClose {
         flex: 0 0 var(--customerLogoWidth);
         height: var(--logoContainerHeight);
         // min-width:8rem;      
-        margin: var(--logoContainerMargin)  0;
+        margin: var(--logoContainerMargin) 0;
     }
 
     img {
@@ -672,22 +672,22 @@ dialog.onClose {
             }
 
             #engineeringCard {
-                background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, .8)), url(./media/pics/Engineering.jpg) center no-repeat;
+                background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, .8)), url(./media/pics/engineering.webp) center no-repeat;
                 background-size: cover;
             }
 
             #manfacturingCard {
-                background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, .7)), url(./media/pics/welding.jpg) center no-repeat;
+                background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, .7)), url(./media/pics/welding.webp) center no-repeat;
                 background-size: cover;
             }
 
             #productCard {
-                background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.8)), url(./media/pics/warehouse.jpg) center no-repeat;
+                background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.8)), url(./media/pics/warehouse.webp) center no-repeat;
                 background-size: cover;
             }
 
             #paintCard {
-                background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.8)), url(./media/pics/Powder_Coat.jpg) center no-repeat;
+                background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.8)), url(./media/pics/powdercoat.webp) center no-repeat;
                 background-size: cover;
                 // transform: translateY(2rem);
             }
@@ -945,13 +945,19 @@ dialog.onClose {
 }
 
 #engineeringHeader {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.5)), url(./media/pics/EngineeringHeader.jpg);
+    background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.5)), url(./media/pics/EngineeringHeader.webp);
     // background-position: left;
 }
 
 #manufacturingHeader {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.5)), url(./media/pics/ManufacturingHeader.jpg);
+    background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.5)), url(./media/pics/ManufacturingHeader.webp);
     background-position: bottom;
+}
+
+#powderHeader {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.5)), url(./media/pics/powdercoat.webp);
+    background-position:center;
+    background-size:cover;
 }
 
 .pageSection {
@@ -1593,11 +1599,13 @@ dialog.onClose {
 
     }
 
-    
+
     #customerContainer {
-    
+
         #customerContent {
-            top: 10%;}}
+            top: 10%;
+        }
+    }
 
     #teamChunk {
 
