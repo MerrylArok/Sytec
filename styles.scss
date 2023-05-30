@@ -164,7 +164,7 @@ body {
     max-width: 100%;
     height: var(--headerHeight);
     // box-shadow: 0px 0px 10px .5px rgba(0, 0, 0, 0.07);
-    background-color: rgb($white, 0.7);
+    background-color: rgba($white, 0.7);
     backdrop-filter: blur(0.7rem);
     border-bottom: 1px solid rgb(226, 225, 225);
 
