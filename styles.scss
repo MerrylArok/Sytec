@@ -110,6 +110,11 @@ h4 {
     font-size: var(--h4size);
 }
 
+strong{
+    font-size:var(--psize);
+    font-weight: normal;
+    margin:0;
+}
 
 p,
 #yearsAlive {
@@ -467,7 +472,7 @@ dialog.onClose {
         top: 25%;
         left: 0;
         right: 0;
-        text-align: center;
+        text-align: left;
         // transform: translateY(-40%);
         width: 100%;
         max-width: var(--textContainerMax);
@@ -475,11 +480,12 @@ dialog.onClose {
         z-index: 99;
         // overflow: clip;
 
-        * {
+        * :not(strong){
             margin: 0 var(--minPadding);
         }
 
         h1 {
+            text-align: center;
             margin-bottom: 1.4rem;
         }
 
@@ -524,7 +530,7 @@ dialog.onClose {
     .logosRow2 {
         position: absolute;
         bottom: 10%;
-        animation: logoBannerScroll 77s linear infinite;
+        animation: logoBannerScroll 55s linear infinite;
     }
 
     .logoContainer {
@@ -568,7 +574,7 @@ dialog.onClose {
             margin-right: 2rem;
 
             h1 {
-                color: $brightBlue;
+                color: $lightGreen;
 
             }
         }
@@ -705,7 +711,7 @@ dialog.onClose {
     display: flex;
     flex-direction: row-reverse;
     justify-content: center;
-    padding: var(--chunkPaddingTopBot) calc(var(--contentPadding)*2);
+    padding: var(--chunkPaddingTopBot) calc(var(--contentPadding));
 
 
     >* {
@@ -748,10 +754,10 @@ dialog.onClose {
                 flex-direction: row;
 
                 li {
-                    width: 50%;
+                    width: 100%;
                     border: 0.15rem solid $lightGreen;
                     border-radius: .25rem;
-                    margin: 0 1rem;
+                    // margin: 0 1rem;
                     padding: .6rem;
                     text-align: center;
 
@@ -1164,14 +1170,14 @@ dialog.onClose {
     }
 
     100% {
-        transform: translateX(calc((var(--customerLogoWidth))* -8))
+        transform: translateX(calc((var(--customerLogoWidth))* -7))
     }
 }
 
 @keyframes logoBannerScrollReverse {
 
     0% {
-        transform: translateX(calc((var(--customerLogoWidth))* -8))
+        transform: translateX(calc((var(--customerLogoWidth))* -7))
     }
 
     100% {

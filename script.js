@@ -41,8 +41,8 @@ class Header extends HTMLElement {
     <a title="Homepage" href="./index.html"><img id="logo" src="./media/Sytec.svg" alt="Sytec Logo"></a>
 
         <ul id="headerRight" class="lists">
-        <li><a class="desktopNav buttonTransition" href="./engineering.html">Engineering</a></li>
-        <li><a class="desktopNav buttonTransition" href="./manufacturing.html">Manufacturing</a></li>
+        <li><a class="desktopNav buttonTransition" href="./design.html">Design</a></li>
+        <li><a class="desktopNav buttonTransition" href="./manufacture.html">Manufacture</a></li>
         <li><a class="desktopNav buttonTransition" href="./powdercoating.html">Powder Coating</a></li>
             <li><a id="headerContactButton" class="buttonTransition" href="./contact.html">CONTACT</a></li>
             <li><button id="openSideNav" role="navigation" aria-label="Quick Navi Links">
@@ -71,8 +71,8 @@ class SideNav extends HTMLElement {
                 <li><a href=".">Store</a></li>
                 <li>
                     <ul id="nestedList"><a href="./index.html#servicesChunk">Services</a>
-                        <li><a href="./engineering.html">Engineering</a></li>
-                        <li><a href="./manufacturing.html">Manufacturing</a></li>
+                        <li><a href="./design.html">Design</a></li>
+                        <li><a href="./manufacture.html">Manufacture</a></li>
                         <li><a href="./powdercoating.html">Powder Coating</a></li>
                     </ul>
                 </li>
@@ -128,10 +128,10 @@ class Footer extends HTMLElement {
                 <h3>Our Services</h3>
             </li>
             <li>
-                <h4><a href="./engineering.html">Engineering</a></h4>
+                <h4><a href="./design.html">Design</a></h4>
             </li>
             <li>
-                <h4><a href="./manufacturing.html">Manufacturing</a></h4>
+                <h4><a href="./manufacture.html">Manufacture</a></h4>
             </li>
             <li>
                 <h4><a href="./powdercoating.html">Powder Coating</a></h4>
@@ -223,7 +223,7 @@ const options = {
 };
 //Observer injects animation to left 
 const observerLeft = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
+    entries.forEach((entry) => {
         if (entry.isIntersecting) {
             entry.target.style.animation = '.35s animateLeft ease-in';
             entry.target.style.opacity = '1';
@@ -234,7 +234,7 @@ const observerLeft = new IntersectionObserver(entries => {
 }, options);
 //Observer injects animation to right 
 const observerRight = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
+    entries.forEach((entry) => {
         if (entry.isIntersecting) {
             entry.target.style.animation = '.35s animateRight ease-in';
             entry.target.style.opacity = '1';
