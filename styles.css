@@ -35,7 +35,7 @@
   font-family: Manrope, sans-serif;
   color: black;
   box-sizing: border-box;
-  font-size: 12px;
+  font-size: 13px;
   scroll-behavior: smooth;
   text-rendering: optimizeLegibility;
 }
@@ -75,7 +75,7 @@ strong {
 p,
 #yearsAlive {
   font-size: var(--psize);
-  color: #646464;
+  color: #464545;
 }
 
 .chunk {
@@ -140,7 +140,7 @@ body {
 .header #headerFlexContainer #headerRight li .desktopNav {
   font-size: calc(var(--h3size) * 0.95);
   font-weight: 600;
-  padding: 0.5rem 1.75rem;
+  padding: 0.5rem 1.25rem;
   border-radius: 0.3rem;
 }
 .header #headerFlexContainer #headerRight li #headerContactButton {
@@ -158,7 +158,7 @@ body {
   color: rgb(48, 46, 46);
 }
 .header #headerFlexContainer #headerRight li .desktopNav:hover {
-  background-color: rgba(230, 228, 228, 0.6);
+  background-color: rgba(0, 140, 21, 0.1);
   color: black;
   cursor: pointer;
 }
@@ -577,15 +577,20 @@ dialog.onClose {
   flex: 1;
   max-width: 40%;
 }
-#contactMain section a {
-  text-decoration: dotted underline;
+#contactMain section h1, #contactMain section p {
+  color: #fff;
+  padding: 0.15rem;
 }
 #contactMain section form {
   display: flex;
   width: 100%;
   flex-direction: row;
   flex-wrap: wrap;
-  margin-top: var(--minPadding);
+  margin-top: calc(var(--minPadding) / 2.5);
+}
+#contactMain section form p {
+  margin-bottom: 1rem;
+  font-size: calc(var(--psize) * 1.2);
 }
 #contactMain section form .inputField {
   flex: 1 1 220px;
@@ -627,13 +632,13 @@ dialog.onClose {
 #contactMain section form .inputField textarea:focus + label {
   top: 0;
   transform: scale(0.8) translateX(-8%);
-  color: #646464;
+  color: #464545;
 }
 #contactMain section form .inputField input:not(:placeholder-shown) + label,
 #contactMain section form .inputField textarea:not(:placeholder-shown) + label {
   top: 0;
   transform: scale(0.8) translateX(-8%);
-  color: #646464;
+  color: #464545;
 }
 #contactMain section form .fullWidth {
   flex: 1 1 100%;
@@ -646,26 +651,25 @@ dialog.onClose {
   cursor: pointer;
   background-color: #f0d83f;
 }
-#contactMain section h1,
-#contactMain h2,
-#contactMain a {
-  color: #fff;
-  padding: 0.15rem;
-}
-#contactMain #map {
+#contactMain #mapElements {
   flex: 2;
-}
-
-#hoursFlex {
-  display: inline-flex;
+  display: flex;
   flex-direction: column;
-  padding-left: 1rem;
+  padding: calc(var(--minPadding) / 1.5) var(--minPadding);
 }
-
-#hoursFlex * {
-  display: inline-block;
-  text-align: left;
-  color: #fff;
+#contactMain #mapElements p {
+  color: #18191b;
+  padding: 0.25rem 0;
+}
+#contactMain #mapElements a {
+  text-decoration: dotted underline #464545;
+}
+#contactMain #mapElements #map, #contactMain #mapElements #mapAddress {
+  flex: 1.5;
+}
+#contactMain #mapElements #mapAddress {
+  flex: 1;
+  margin-top: calc(var(--minPadding) / 1.5);
 }
 
 .pageHeader {
@@ -767,7 +771,7 @@ dialog.onClose {
   flex-shrink: 0;
   display: flex;
   flex-direction: row;
-  padding: var(--minPadding) var(--minPadding) calc(var(--minPadding) / 1.25) var(--minPadding);
+  padding: calc(var(--minPadding) / 1.25) var(--minPadding);
   background-color: #f7f7f7;
   justify-content: center;
 }
@@ -788,7 +792,7 @@ dialog.onClose {
 }
 
 #footer * {
-  color: #646464;
+  color: #464545;
 }
 
 .animateLeft,
@@ -867,8 +871,15 @@ dialog.onClose {
     flex: 1;
     max-width: 50%;
   }
-  #contactMain #map {
+  #contactMain #mapElements {
+    padding: 0;
     flex: 1;
+  }
+  #contactMain #mapElements #map {
+    flex: 3;
+  }
+  #contactMain #mapElements #mapAddress {
+    margin: var(--minPadding);
   }
 }
 @media (max-width: 1280px) {
@@ -945,7 +956,7 @@ dialog.onClose {
     max-width: 100%;
     padding: calc(var(--minPadding) * 1.25);
   }
-  #contactMain #map {
+  #contactMain #mapElements {
     flex: 1;
     min-height: 100vw;
   }

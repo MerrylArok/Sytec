@@ -27,7 +27,7 @@ $deepDarkGreen: #011c1a;
 $complimentaryColor: #B03C00;
 $brightBlue: #0053d6;
 
-$matteBlack: #646464;
+$matteBlack: #464545;
 $darkBlack: #18191b;
 
 $white: #fff;
@@ -74,7 +74,7 @@ $lightGrey: #f7f7f7;
     // color: $darkBlack;
 
     box-sizing: border-box;
-    font-size: 12px;
+    font-size: 13px;
     // letter-spacing: normal;
     scroll-behavior: smooth;
     text-rendering: optimizeLegibility;
@@ -202,7 +202,7 @@ body {
                 .desktopNav {
                     font-size: calc(var(--h3size)*0.95);
                     font-weight: 600;
-                    padding: .5rem 1.75rem;
+                    padding: .5rem 1.25rem;
                     // margin: 0 0.25rem;
                     border-radius: .3rem;
                 }
@@ -225,7 +225,7 @@ body {
                 }
 
                 .desktopNav:hover {
-                    background-color: rgba(230, 228, 228, 0.6);
+                    background-color: rgba(0, 140, 21, 0.1);
                     color: black;
                     cursor: pointer;
                 }
@@ -792,7 +792,7 @@ dialog.onClose {
 }
 
 ////////////////////////////////////////////////////////////////@at-root
-/// CONTACT PAGE STYLES///////////////////////////////@at-root
+/// CONTACT PAGE ///////////////////////////////@at-root
 /// ////////////////////////////////////////////////////////////////@at-root
 
 
@@ -801,22 +801,29 @@ dialog.onClose {
     display: flex;
     flex-direction: row;
 
-    section {
+    section {        
         background-color: $lightGreen;
         padding: var(--minPadding) calc(var(--minPadding)*1.5);
         flex: 1;
         max-width: 40%;
 
-        a {
-            text-decoration: dotted underline;
+        h1, p{            
+                color: $white;
+                padding: 0.15rem;            
         }
 
+        
         form {
             display: flex;
             width: 100%;
             flex-direction: row;
             flex-wrap: wrap;
-            margin-top: var(--minPadding);
+            margin-top: calc(var(--minPadding)/2.5);
+
+            p{
+                margin-bottom:1rem;
+                font-size:calc(var(--psize)*1.2);
+            }
 
             .inputField {
                 flex: 1 1 220px;
@@ -895,34 +902,43 @@ dialog.onClose {
 
     }
 
-    section h1,
-    h2,
-    a {
-        color: $white;
-        padding: 0.15rem;
-    }
-
-    #map {
+    
+    #mapElements {
         flex: 2;
+
+        p{
+            color:$darkBlack;
+            padding:0.25rem 0;
+        }
+        
+
+        display: flex;
+        flex-direction:column;
+        padding:calc(var(--minPadding)/1.5) var(--minPadding);
+
+        a {
+            text-decoration: dotted underline $matteBlack;
+        }       
+   
+
+        #map, #mapAddress{
+            flex:1.5;
+        }
+
+        #mapAddress{
+            flex:1;
+            margin-top: calc(var(--minPadding)/1.5);
+        }
+    
+
+
     }
 
 }
 
-#hoursFlex {
-    display: inline-flex;
-    flex-direction: column;
-    padding-left: 1rem;
-    // margin-top: 1rem;
-}
-
-#hoursFlex * {
-    display: inline-block;
-    text-align: left;
-    color: $white;
-}
 
 ////////////////////////////////////////////////////////@at-root
-/// OUR BUSINESS PAGES
+/// BUSINESS PAGES
 /// ////////////////////////////////////////////////////////////////@at-root
 
 .pageHeader {
@@ -1069,7 +1085,7 @@ dialog.onClose {
     flex-shrink: 0;
     display: flex;
     flex-direction: row;
-    padding: var(--minPadding) var(--minPadding) calc(var(--minPadding)/1.25) var(--minPadding);
+    padding:  calc(var(--minPadding)/1.25) var(--minPadding);
     background-color: $lightGrey;
     justify-content: center;
     // border-radius: 1.5rem 1.5rem 0 0;
@@ -1214,8 +1230,17 @@ dialog.onClose {
             max-width: 50%;
         }
 
-        #map {
+        #mapElements {
+            padding:0;
             flex: 1;
+
+            #map{
+                flex:3;
+            }
+
+            #mapAddress{
+                margin:var(--minPadding);
+            }
         }
 
     }
@@ -1336,7 +1361,7 @@ dialog.onClose {
         }
 
 
-        #map {
+        #mapElements {
             flex: 1;
             min-height: 100vw;
         }

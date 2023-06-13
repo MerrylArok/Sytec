@@ -2,10 +2,10 @@
 function initMap() {
 
     const sytec = { lat: 53.584650741527945, lng: -113.46097094106376 };
-    const mapOffset = { lat: 53.58, lng: -113.46 };
+    const mapOffset = { lat: 53.585, lng: -113.46 };
 
     const map = new google.maps.Map(document.getElementById("map"), {
-        zoom: 13,
+        zoom: 15,
         center: mapOffset,
         mapId: 'd334291c60aa81ef',
         disableDefaultUI: true,

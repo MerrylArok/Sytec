@@ -43,7 +43,7 @@ class Header extends HTMLElement {
         <ul id="headerRight" class="lists">
         <li><a class="desktopNav buttonTransition" href="./design.html">Design</a></li>
         <li><a class="desktopNav buttonTransition" href="./manufacture.html">Manufacture</a></li>
-        <li><a class="desktopNav buttonTransition" href="./powdercoating.html">Powder Coating</a></li>
+        <li><a class="desktopNav buttonTransition" href="./deliver.html">Deliver</a></li>
             <li><a id="headerContactButton" class="buttonTransition" href="./contact.html">CONTACT</a></li>
             <li><button id="openSideNav" role="navigation" aria-label="Quick Navi Links">
                     <div id="longBar"></div>
@@ -68,15 +68,14 @@ class SideNav extends HTMLElement {
             </button>
             <ul>
                 <li><a href="./contact.html">Contact Us</a></li>
-                <li><a href=".">Store</a></li>
                 <li>
                     <ul id="nestedList"><a href="./index.html#servicesChunk">Services</a>
                         <li><a href="./design.html">Design</a></li>
                         <li><a href="./manufacture.html">Manufacture</a></li>
-                        <li><a href="./powdercoating.html">Powder Coating</a></li>
+                        <li><a href="./deliver.html">Deliver</a></li>
                     </ul>
                 </li>
-                <li><a href="https://ca.indeed.com/cmp/Sytec-Manufacturing-1/jobs" target="_blank">CAREERS</a></li>
+                <li><a href="https://ca.indeed.com/cmp/Sytec-Manufacturing-1/jobs" target="_blank">Careers</a></li>
             </ul>
         </dialog>
         
@@ -134,7 +133,7 @@ class Footer extends HTMLElement {
                 <h4><a href="./manufacture.html">Manufacture</a></h4>
             </li>
             <li>
-                <h4><a href="./powdercoating.html">Powder Coating</a></h4>
+                <h4><a href="./deliver.html">Deliver</a></h4>
             </li>
         </ul>
 
