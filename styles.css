@@ -672,6 +672,9 @@ dialog.onClose {
   flex: 1;
   margin-top: calc(var(--minPadding) / 1.5);
 }
+#contactMain #mapElements #mapAddress #acknowledgement {
+  margin-top: 1.5rem;
+}
 
 .pageHeader {
   height: var(--commonPageHeaderHeight);

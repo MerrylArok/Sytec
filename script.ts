@@ -59,6 +59,7 @@ class Header extends HTMLElement {
         <li><a class="desktopNav buttonTransition" href="./design.html">Design</a></li>
         <li><a class="desktopNav buttonTransition" href="./manufacture.html">Manufacture</a></li>
         <li><a class="desktopNav buttonTransition" href="./deliver.html">Deliver</a></li>
+        <li><a class="desktopNav buttonTransition" href="./about.html">About Us</a></li>
             <li><a id="headerContactButton" class="buttonTransition" href="./contact.html">CONTACT</a></li>
             <li><button id="openSideNav" role="navigation" aria-label="Quick Navi Links">
                     <div id="longBar"></div>
@@ -93,6 +94,7 @@ class SideNav extends HTMLElement {
                         <li><a href="./deliver.html">Deliver</a></li>
                     </ul>
                 </li>
+                <li><a href="./about.html">About Us</a></li>
                 <li><a href="https://ca.indeed.com/cmp/Sytec-Manufacturing-1/jobs" target="_blank">Careers</a></li>
             </ul>
         </dialog>

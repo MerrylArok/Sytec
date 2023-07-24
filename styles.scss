@@ -929,6 +929,10 @@ dialog.onClose {
         #mapAddress{
             flex:1;
             margin-top: calc(var(--minPadding)/1.5);
+
+            #acknowledgement{
+                margin-top: 1.5rem;
+            }
         }
     
 
@@ -1364,9 +1368,10 @@ dialog.onClose {
 
         #mapElements {
             flex: 1;
-            min-height: 100vw;
+            min-height: 100vw;            
         }
 
+        
     }
 
 
