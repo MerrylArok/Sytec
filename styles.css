@@ -198,9 +198,9 @@ dialog {
   right: 0;
   left: auto;
   width: fit-content;
-  padding: calc(var(--minPadding) * 1.25) calc(var(--minPadding) / 1.25);
+  padding: calc(var(--minPadding) * 1.9) calc(var(--minPadding) / 1.1) calc(var(--minPadding) * 1.1) calc(var(--minPadding));
   margin: 0.75rem 2rem;
-  border-radius: 0.5rem;
+  border-radius: 5rem 1rem;
   z-index: 1000;
   animation: 0.3s animateLeft ease-in;
   box-shadow: -0.5rem 0 1rem rgba(17, 17, 26, 0.2);
@@ -209,11 +209,11 @@ dialog ul,
 dialog li {
   font-size: calc(var(--h2size) * 0.73);
   font-weight: 600;
-  margin: 1.25rem 0;
+  margin: 1.1rem 0;
 }
 dialog ul a,
 dialog li a {
-  color: rgb(75, 75, 75);
+  color: black;
   display: block;
   padding: 0.75rem 1.5rem;
   border-radius: 0.25rem;
@@ -242,29 +242,40 @@ dialog #closeSideNav img {
   margin: none;
 }
 dialog #closeSideNav:hover {
-  background-color: rgb(245, 245, 245);
+  background-color: rgb(251, 226, 226);
   cursor: pointer;
 }
 dialog ul {
   list-style: none;
 }
 dialog #nestedList > li {
-  padding-left: calc(var(--minPadding) / 1.25);
+  padding-left: calc(var(--minPadding) / 1.1);
 }
 dialog #nestedList {
   position: relative;
 }
 dialog #nestedList:after {
   position: absolute;
-  bottom: 0;
+  bottom: 11%;
   content: "";
-  border-left: 0.35rem solid #008c15;
+  border-left: 2px solid #008c15;
   margin-left: 1.5rem;
-  height: 75%;
+  height: 70%;
+}
+dialog #nestedList > li:after {
+  position: absolute;
+  transform: translate(-1.27rem, -2.8rem);
+  content: "";
+  width: 1.1rem;
+  height: 10px;
+  border-width: 0 0 2px 2px;
+  border-color: #008c15;
+  border-style: solid;
+  border-radius: 0 0 0 33%;
 }
 
 dialog.onClose {
-  animation: 0.3s fadeOut ease-in;
+  animation: 0.2s fadeOut ease-in;
 }
 
 #sideNavBackdrop {
@@ -566,14 +577,20 @@ dialog.onClose {
   margin-right: var(--largePicMargin);
 }
 
+#modifiedPageSection {
+  padding-top: var(--minPadding);
+  padding-bottom: calc(var(--minPadding) / 1.25);
+}
+
 #contactMain {
-  padding-top: var(--headerHeight);
+  padding: 0 calc(var(--minPadding) * 2);
+  margin-bottom: var(--minPadding);
   display: flex;
   flex-direction: row;
 }
 #contactMain section {
   background-color: #008c15;
-  padding: var(--minPadding) calc(var(--minPadding) * 1.5);
+  padding: var(--minPadding) calc(var(--minPadding) / 1.25);
   flex: 1;
   max-width: 40%;
 }
@@ -655,7 +672,7 @@ dialog.onClose {
   flex: 2;
   display: flex;
   flex-direction: column;
-  padding: calc(var(--minPadding) / 1.5) var(--minPadding);
+  padding: 0 var(--minPadding);
 }
 #contactMain #mapElements p {
   color: #18191b;
@@ -700,9 +717,9 @@ dialog.onClose {
   background-position: bottom;
 }
 
-#powderHeader {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.5)), url(./media/pics/powdercoat.webp);
-  background-position: center;
+#contactHeader {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.5)), url(./media/pics/sytecBuilding.webp);
+  background-position: top;
   background-size: cover;
 }
 
@@ -952,7 +969,6 @@ dialog.onClose {
     --businessh1Size: 8vw;
   }
   #contactMain {
-    padding-top: var(--headerHeight);
     display: flex;
     flex-direction: column;
   }

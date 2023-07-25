@@ -291,13 +291,12 @@ dialog {
     left: auto;
     // background-color: #B03C00;
     width: fit-content;
-    padding: calc(var(--minPadding)*1.25) calc(var(--minPadding)/1.25);
+    padding: calc(var(--minPadding)*1.9) calc(var(--minPadding)/1.1) calc(var(--minPadding)*1.1) calc(var(--minPadding)) ;
     // min-height: 100%;
     margin: 0.75rem 2rem;
-    border-radius: 0.5rem;
+    border-radius: 5rem 1rem;
     z-index: 1000;
-    animation: .3s animateLeft ease-in;
-
+    animation: .3s animateLeft ease-in;    
     box-shadow: -0.5rem 0 1rem rgba(17, 17, 26, 0.2);
 
     ul,
@@ -305,10 +304,10 @@ dialog {
         font-size: calc(var(--h2size)*0.73);
         font-weight: 600;
 
-        margin: 1.25rem 0;
+        margin: 1.1rem 0;
 
         a {
-            color: rgb(75, 75, 75);
+            color:black;
             display: block;
             padding: 0.75rem 1.5rem;
             border-radius: 0.25rem;
@@ -342,7 +341,7 @@ dialog {
     }
 
     #closeSideNav:hover {
-        background-color: rgb(245, 245, 245);
+        background-color: rgb(251, 226, 226);
         cursor: pointer;
     }
 
@@ -352,7 +351,7 @@ dialog {
 
     #nestedList>li {
 
-        padding-left: calc(var(--minPadding)/1.25);
+        padding-left: calc(var(--minPadding)/1.1);
 
     }
 
@@ -362,17 +361,30 @@ dialog {
 
     #nestedList:after {
         position: absolute;
-        bottom: 0;
+        bottom: 11%;
         content: "";
-        border-left: 0.35rem solid $lightGreen;
+        border-left: 2px solid $lightGreen;
         margin-left: 1.5rem;
-        height: 75%;
+        height: 70%;
+    }
+
+    #nestedList>li:after{
+        position: absolute;
+        transform:translate(-1.27rem, -2.8rem);  
+        content: "";
+        width:1.1rem;
+        height:10px;
+        border-width:0 0 2px 2px;
+        border-color: $lightGreen;
+        border-style:solid;
+        border-radius:0 0 0 33%;
+        
     }
 }
 
 //adding class to dialog for animation before trigerring .close()
 dialog.onClose {
-    animation: .3s fadeOut ease-in;
+    animation: .2s fadeOut ease-in;
 }
 
 
@@ -795,15 +807,20 @@ dialog.onClose {
 /// CONTACT PAGE ///////////////////////////////@at-root
 /// ////////////////////////////////////////////////////////////////@at-root
 
+#modifiedPageSection{
+padding-top:var(--minPadding);
+padding-bottom:calc(var(--minPadding)/1.25);
+}
 
 #contactMain {
-    padding-top: var(--headerHeight);
+    padding: 0 calc(var(--minPadding)*2);
+    margin-bottom: var(--minPadding);
     display: flex;
     flex-direction: row;
 
     section {        
         background-color: $lightGreen;
-        padding: var(--minPadding) calc(var(--minPadding)*1.5);
+        padding: var(--minPadding) calc(var(--minPadding)/1.25);
         flex: 1;
         max-width: 40%;
 
@@ -914,7 +931,7 @@ dialog.onClose {
 
         display: flex;
         flex-direction:column;
-        padding:calc(var(--minPadding)/1.5) var(--minPadding);
+        padding:0 var(--minPadding);
 
         a {
             text-decoration: dotted underline $matteBlack;
@@ -981,9 +998,9 @@ dialog.onClose {
     background-position: bottom;
 }
 
-#powderHeader {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.5)), url(./media/pics/powdercoat.webp);
-    background-position:center;
+#contactHeader {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.5)), url(./media/pics/sytecBuilding.webp);
+    background-position:top;
     background-size:cover;
 }
 
@@ -1356,7 +1373,7 @@ dialog.onClose {
 
 
     #contactMain {
-        padding-top: var(--headerHeight);
+        // padding-top: var(--headerHeight);
         display: flex;
         flex-direction: column;
 

@@ -87,6 +87,7 @@ class SideNav extends HTMLElement {
             </button>
             <ul>
                 <li><a href="./contact.html">Contact Us</a></li>
+                <li><a href="./about.html">About Us</a></li>
                 <li>
                     <ul id="nestedList"><a href="./index.html#servicesChunk">Services</a>
                         <li><a href="./design.html">Design</a></li>
@@ -94,7 +95,6 @@ class SideNav extends HTMLElement {
                         <li><a href="./deliver.html">Deliver</a></li>
                     </ul>
                 </li>
-                <li><a href="./about.html">About Us</a></li>
                 <li><a href="https://ca.indeed.com/cmp/Sytec-Manufacturing-1/jobs" target="_blank">Careers</a></li>
             </ul>
         </dialog>
