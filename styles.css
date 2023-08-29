@@ -35,7 +35,7 @@
   font-family: Manrope, sans-serif;
   color: black;
   box-sizing: border-box;
-  font-size: 13px;
+  font-size: 12px;
   scroll-behavior: smooth;
   text-rendering: optimizeLegibility;
 }
@@ -92,6 +92,7 @@ html,
 body {
   height: 100%;
   position: relative;
+  scroll-behavior: smooth;
 }
 
 body {
@@ -372,7 +373,7 @@ dialog.onClose {
   position: relative;
 }
 #customerContainer #logoFlexContainer::after {
-  background: linear-gradient(to right, rgb(255, 255, 255) 7%, rgba(255, 255, 255, 0.7) 20%, rgba(255, 255, 255, 0.7) 80%, rgb(255, 255, 255) 93%);
+  background: linear-gradient(to right, rgb(255, 255, 255) 15%, rgba(255, 255, 255, 0.7) 40%, rgba(255, 255, 255, 0.7) 60%, rgb(255, 255, 255) 85%);
   content: " ";
   height: 100%;
   width: 100%;
@@ -410,13 +411,13 @@ dialog.onClose {
 }
 
 #servicesChunk {
-  padding: var(--chunkPaddingTopBot) calc(var(--contentPadding) / 2);
+  padding: calc(var(--chunkPaddingTopBot) * 1.5) calc(var(--contentPadding) * 2);
 }
 #servicesChunk #servicesChunkCard {
   height: 100%;
   width: 100%;
-  padding: calc(var(--contentPadding) / 2);
-  border-radius: 1rem;
+  padding: calc(var(--contentPadding) / 1.5);
+  border-radius: 1.75rem 5rem;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -446,7 +447,7 @@ dialog.onClose {
   flex-direction: column;
   justify-content: flex-end;
   cursor: pointer;
-  border-radius: 0.25rem;
+  border-radius: 0.75rem;
 }
 #servicesChunk #servicesChunkCard #cardFlexContainer .servicesCard #learnMoreContainer {
   display: inline-flex;
@@ -520,7 +521,7 @@ dialog.onClose {
   display: flex;
   flex-direction: row-reverse;
   justify-content: center;
-  padding: var(--chunkPaddingTopBot) calc(var(--contentPadding));
+  padding: var(--chunkPaddingTopBot) calc(var(--contentPadding) * 2);
 }
 #teamChunk > * {
   flex: 1;
@@ -594,7 +595,8 @@ dialog.onClose {
   flex: 1;
   max-width: 40%;
 }
-#contactMain section h1, #contactMain section p {
+#contactMain section h1,
+#contactMain section p {
   color: #fff;
   padding: 0.15rem;
 }
