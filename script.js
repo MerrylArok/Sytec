@@ -41,6 +41,7 @@ class Header extends HTMLElement {
     <a title="Homepage" href="./index.html"><img id="logo" src="./media/Sytec.svg" alt="Sytec Logo"></a>
 
         <ul id="headerRight" class="lists">
+        <li><a class="desktopNav buttonTransition" href="./index.html">Homepage</a></li>
         <li><a class="desktopNav buttonTransition" href="./design.html">Design</a></li>
         <li><a class="desktopNav buttonTransition" href="./manufacture.html">Manufacture</a></li>
         <li><a class="desktopNav buttonTransition" href="./deliver.html">Deliver</a></li>
@@ -68,16 +69,17 @@ class SideNav extends HTMLElement {
                 <img src="./media/Close.svg" alt="Cancel icon">
             </button>
             <ul>
-                <li><a href="./contact.html">Contact Us</a></li>
-                <li><a href="./about.html">About Us</a></li>
+            <li><a href="./index.html">Homepage</a></li>               
                 <li>
                     <ul id="nestedList"><a href="./index.html#servicesChunk">Services</a>
-                        <li><a href="./design.html">Design</a></li>
-                        <li><a href="./manufacture.html">Manufacture</a></li>
-                        <li><a href="./deliver.html">Deliver</a></li>
+                        <li><a href="./design.html"> > Design</a></li>
+                        <li><a href="./manufacture.html"> > Manufacture</a></li>
+                        <li><a href="./deliver.html"> > Deliver</a></li>
                     </ul>
                 </li>
                 <li><a href="https://ca.indeed.com/cmp/Sytec-Manufacturing-1/jobs" target="_blank">Careers</a></li>
+                <li><a href="./contact.html">Contact Us</a></li>
+                <li><a href="./about.html">About Us</a></li>
             </ul>
         </dialog>
         

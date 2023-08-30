@@ -35,7 +35,7 @@
   font-family: Manrope, sans-serif;
   color: black;
   box-sizing: border-box;
-  font-size: 12px;
+  font-size: 13px;
   scroll-behavior: smooth;
   text-rendering: optimizeLegibility;
 }
@@ -159,7 +159,7 @@ body {
   color: #464545;
 }
 .header #headerFlexContainer #headerRight li .desktopNav:hover {
-  background-color: rgba(0, 247, 21, 0.168);
+  background-color: rgba(0, 0, 0, 0.1);
   color: black;
   cursor: pointer;
 }
@@ -201,7 +201,7 @@ dialog {
   width: fit-content;
   padding: calc(var(--minPadding) * 1.9) calc(var(--minPadding) / 1.1) calc(var(--minPadding) * 1.1) calc(var(--minPadding));
   margin: 0.75rem 2rem;
-  border-radius: 5rem 1rem;
+  border-radius: 3rem 1rem;
   z-index: 1000;
   animation: 0.3s animateLeft ease-in;
   box-shadow: -0.5rem 0 1rem rgba(17, 17, 26, 0.2);
@@ -250,29 +250,8 @@ dialog ul {
   list-style: none;
 }
 dialog #nestedList > li {
-  padding-left: calc(var(--minPadding) / 1.1);
-}
-dialog #nestedList {
-  position: relative;
-}
-dialog #nestedList:after {
-  position: absolute;
-  bottom: 11%;
-  content: "";
-  border-left: 2px solid #008c15;
-  margin-left: 1.5rem;
-  height: 70%;
-}
-dialog #nestedList > li:after {
-  position: absolute;
-  transform: translate(-1.27rem, -2.8rem);
-  content: "";
-  width: 1.1rem;
-  height: 10px;
-  border-width: 0 0 2px 2px;
-  border-color: #008c15;
-  border-style: solid;
-  border-radius: 0 0 0 33%;
+  padding-left: calc(var(--minPadding) / 2);
+  color: #464545;
 }
 
 dialog.onClose {
@@ -411,12 +390,16 @@ dialog.onClose {
 }
 
 #servicesChunk {
-  padding: calc(var(--chunkPaddingTopBot) * 1.5) calc(var(--contentPadding) * 2);
+  position: relative;
+  padding: calc(var(--chunkPaddingTopBot) * 1) calc(var(--contentPadding) * 2);
 }
 #servicesChunk #servicesChunkCard {
+  position: relative;
+  z-index: 6;
   height: 100%;
   width: 100%;
   padding: calc(var(--contentPadding) / 1.5);
+  background-color: #fff;
   border-radius: 1.75rem 5rem;
   display: flex;
   flex-direction: row;
@@ -515,6 +498,19 @@ dialog.onClose {
 #servicesChunk #servicesChunkCard #cardFlexContainer #paintCard {
   background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.8)), url(./media/pics/powdercoat.webp) center no-repeat;
   background-size: cover;
+}
+
+#servicesChunk::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: -5%;
+  width: 100%;
+  z-index: 5;
+  height: 80%;
+  background: #e5fddf;
+  transform-origin: top left;
+  transform: skewY(10deg);
 }
 
 #teamChunk {
@@ -920,6 +916,7 @@ dialog.onClose {
     --largePicMargin: 1rem;
   }
   #servicesChunk {
+    padding: calc(var(--chunkPaddingTopBot) * 1.5) calc(var(--contentPadding) / 2);
     height: auto;
   }
   #servicesChunk #servicesChunkCard {
@@ -944,6 +941,7 @@ dialog.onClose {
   }
   #teamChunk {
     height: auto;
+    padding: var(--chunkPaddingTopBot) calc(var(--contentPadding) / 2);
   }
   #teamChunk #teamContentContainer #aboutUsContent {
     margin-bottom: 0;
