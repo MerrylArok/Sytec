@@ -483,9 +483,8 @@ dialog.onClose {
     padding: 0 var(--contentWidth);
     position: relative;
     background-image: url(./media/abstractBackground.webp);
-    background-size:contain;
+    background-size:cover;
     background-repeat:no-repeat;
-    background-position: center top;
     
 
     #customerContent {
