@@ -113,7 +113,8 @@ body {
   max-width: 100%;
   height: var(--headerHeight);
   background-color: rgba(255, 255, 255, 0.7);
-  backdrop-filter: blur(0.7rem);
+  -webkit-backdrop-filter: blur(0.7rem);
+          backdrop-filter: blur(0.7rem);
   border-bottom: 1px solid rgb(226, 225, 225);
 }
 .header #headerFlexContainer {
@@ -198,6 +199,7 @@ dialog {
   top: 0;
   right: 0;
   left: auto;
+  width: -moz-fit-content;
   width: fit-content;
   padding: calc(var(--minPadding) * 1.9) calc(var(--minPadding) / 1.1) calc(var(--minPadding) * 1.1) calc(var(--minPadding));
   margin: 0.75rem 2rem;
@@ -266,14 +268,18 @@ dialog.onClose {
   left: -100%;
   z-index: 999;
   background-color: transparent;
-  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+          backdrop-filter: none;
+  transition: background-color 0.3s ease-in, -webkit-backdrop-filter 0.3s ease-in;
   transition: background-color 0.3s ease-in, backdrop-filter 0.3s ease-in;
+  transition: background-color 0.3s ease-in, backdrop-filter 0.3s ease-in, -webkit-backdrop-filter 0.3s ease-in;
 }
 
 #sideNavBackdrop.isActive {
   left: 0;
   background-color: rgba(0, 0, 0, 0.4);
-  backdrop-filter: blur(0.3rem);
+  -webkit-backdrop-filter: blur(0.3rem);
+          backdrop-filter: blur(0.3rem);
 }
 
 #mainPage {
@@ -297,7 +303,8 @@ dialog.onClose {
   color: #fff;
 }
 #mainPage video {
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
   width: 100%;
   max-width: 100%;
   height: 100%;
@@ -326,6 +333,10 @@ dialog.onClose {
 #customerContainer {
   padding: 0 var(--contentWidth);
   position: relative;
+  background-image: url(./media/abstractBackground.webp);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center top;
 }
 #customerContainer #customerContent {
   position: absolute;
@@ -340,6 +351,11 @@ dialog.onClose {
 }
 #customerContainer #customerContent * :not(strong) {
   margin: 0 var(--minPadding);
+}
+#customerContainer #customerContent .custContent a {
+  margin: 0;
+  -webkit-text-decoration: underline dotted #008c15 0.1rem;
+          text-decoration: underline dotted #008c15 0.1rem;
 }
 #customerContainer #customerContent h1 {
   text-align: center;
@@ -385,7 +401,8 @@ dialog.onClose {
   width: 100%;
   height: 100%;
   padding: 0 1rem;
-  object-fit: contain;
+  -o-object-fit: contain;
+     object-fit: contain;
   pointer-events: none;
 }
 
@@ -525,7 +542,8 @@ dialog.onClose {
 #teamChunk img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
   border-radius: 0.5rem;
 }
 #teamChunk #teamContentContainer {
@@ -649,6 +667,11 @@ dialog.onClose {
   transform: scale(0.8) translateX(-8%);
   color: #464545;
 }
+#contactMain section form .inputField input:not(:-moz-placeholder-shown) + label, #contactMain section form .inputField textarea:not(:-moz-placeholder-shown) + label {
+  top: 0;
+  transform: scale(0.8) translateX(-8%);
+  color: #464545;
+}
 #contactMain section form .inputField input:not(:placeholder-shown) + label,
 #contactMain section form .inputField textarea:not(:placeholder-shown) + label {
   top: 0;
@@ -677,7 +700,8 @@ dialog.onClose {
   padding: 0.25rem 0;
 }
 #contactMain #mapElements a {
-  text-decoration: dotted underline #464545;
+  -webkit-text-decoration: dotted underline #464545;
+          text-decoration: dotted underline #464545;
 }
 #contactMain #mapElements #map {
   flex: 1.5;
@@ -768,7 +792,8 @@ dialog.onClose {
   width: 100%;
   height: 100%;
   margin-left: 1rem;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
   min-width: 0;
 }
 .contentList .contentContainer:nth-child(even) {
@@ -1139,6 +1164,4 @@ dialog.onClose {
     overflow: hidden;
     position: relative;
   }
-}
-
-/*# sourceMappingURL=styles.css.map */
+}/*# sourceMappingURL=styles.css.map */

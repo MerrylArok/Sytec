@@ -478,9 +478,14 @@ dialog.onClose {
     padding-top: 2rem;
 }
 
+
 #customerContainer {
     padding: 0 var(--contentWidth);
     position: relative;
+    background-image: url(./media/abstractBackground.webp);
+    background-size:contain;
+    background-repeat:no-repeat;
+    background-position: center top;
     
 
     #customerContent {
@@ -498,6 +503,11 @@ dialog.onClose {
 
         * :not(strong) {
             margin: 0 var(--minPadding);
+        }
+
+        .custContent a{
+            margin:0;
+            text-decoration: underline dotted $lightGreen 0.1rem;
         }
 
         h1 {
