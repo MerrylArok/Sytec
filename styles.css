@@ -303,6 +303,8 @@ dialog.onClose {
   color: #fff;
 }
 #mainPage video {
+  -o-object-position: left;
+     object-position: left;
   -o-object-fit: cover;
      object-fit: cover;
   width: 100%;
@@ -312,6 +314,20 @@ dialog.onClose {
   top: 0;
   left: 0;
   z-index: -1;
+  filter: brightness(30%);
+}
+#mainPage img {
+  -o-object-fit: cover;
+     object-fit: cover;
+  width: 100%;
+  max-width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -2;
+  -o-object-position: left;
+     object-position: left;
   filter: brightness(30%);
 }
 #mainPage #iconScrollDown {
