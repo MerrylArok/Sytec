@@ -81,7 +81,7 @@ p,
 .chunk {
   width: 100%;
   height: 100vh;
-  /* max-height: 100vw; */
+  max-height: 100vw;
 }
 
 .chunkMinHeight {
@@ -825,6 +825,53 @@ dialog.onClose {
   margin-left: 0;
 }
 
+
+/*#gallery*/
+.gallery {
+  background-color: #f4f4f4;
+  padding: 5rem 0;
+}
+
+.gallery h2 {
+  font-size: calc(var(--h2size) * 1.5);
+  border: none;
+  margin-bottom: 2rem;
+}
+
+.gallery-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.gallery-item {
+  margin: 10px;
+  width: 200px; /* Fixing the width of each gallery item */
+  height: 200px; /* Fixing the height of each gallery item */
+  overflow: hidden; /* To ensure images don't overflow the fixed height */
+}
+
+.gallery-item img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover; /* Ensures the entire image is visible within the fixed height and width */
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Media query for tablets */
+@media (min-width: 768px) {
+  .gallery-item {
+    width: calc(33.3333% - 20px); /* Adjusting width for tablets */
+  }
+}
+/* Media query for desktops */
+@media (min-width: 992px) {
+  .gallery-item {
+    width: calc(25% - 20px); /* Adjusting width for desktops */
+  }
+}
 #footer {
   width: 100%;
   flex-shrink: 0;
@@ -974,7 +1021,7 @@ dialog.onClose {
   }
   #servicesChunk #servicesChunkCard #cardFlexContainer .servicesCard {
     margin: 0.625rem;
-    width: calc(50% - 1.26rem);
+    width: calc(50% - 1.25rem);
   }
   #teamContentContainer picture {
     display: none;
@@ -1012,7 +1059,6 @@ dialog.onClose {
     display: flex;
     flex-direction: column;
   }
-  
   #contactMain section {
     max-width: 100%;
     padding: calc(var(--minPadding) * 1.25);
@@ -1181,49 +1227,3 @@ dialog.onClose {
     position: relative;
   }
 }/*# sourceMappingURL=styles.css.map */
-/*#gallery*/
-.gallery {
-  background-color: #f4f4f4;
-  padding: 20px 0;
-}
-
-.gallery h2 {
-  text-align: center;
-  margin-bottom: 20px;
-  color: #333;
-}
-
-.gallery-container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-}
-
-.gallery-item {
-  margin: 10px;
-  width: 200px; /* Fixing the width of each gallery item */
-  height: 200px; /* Fixing the height of each gallery item */
-  overflow: hidden; /* To ensure images don't overflow the fixed height */
-}
-
-.gallery-item img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover; /* Ensures the entire image is visible within the fixed height and width */
-  border-radius: 5px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-/* Media query for tablets */
-@media (min-width: 768px) {
-  .gallery-item {
-    width: calc(33.3333% - 20px); /* Adjusting width for tablets */
-  }
-}
-
-/* Media query for desktops */
-@media (min-width: 992px) {
-  .gallery-item {
-    width: calc(25% - 20px); /* Adjusting width for desktops */
-  }
-}
