@@ -836,6 +836,7 @@ dialog.onClose {
   font-size: calc(var(--h2size) * 1.5);
   border: none;
   margin-bottom: 2rem;
+  text-align: center;
 }
 
 .gallery-container {
@@ -872,6 +873,16 @@ dialog.onClose {
     width: calc(25% - 20px); /* Adjusting width for desktops */
   }
 }
+.aboutUsImage {
+  max-width: var(--textContainerMax);
+  margin: 0 auto;
+}
+.aboutUsImage img {
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
 #footer {
   width: 100%;
   flex-shrink: 0;

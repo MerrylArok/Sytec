@@ -1169,6 +1169,7 @@ dialog.onClose {
     // color: #008c15;
     border: none;
     margin-bottom:2rem;
+    text-align:center;
   }
   
   .gallery-container {
@@ -1206,6 +1207,20 @@ dialog.onClose {
     }
   }
 
+
+  //////////////////////////////////////////////////////////////////////////////////
+  /// ABOUT US
+  /// ///////////////////////////////////////////////////////////////////////////
+  .aboutUsImage{
+    max-width: var(--textContainerMax);
+   margin:0 auto;
+   
+   
+   img{
+    width: 100%;
+    object-fit: cover;
+   }
+  }
 
 /////////////////////////////////////////////////////////////////////////////////////// 
 /// FOOTER STYLES
