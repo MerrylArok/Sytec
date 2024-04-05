@@ -1212,14 +1212,19 @@ dialog.onClose {
   /// ABOUT US
   /// ///////////////////////////////////////////////////////////////////////////
   .aboutUsImage{
-    max-width: var(--textContainerMax);
-   margin:0 auto;
-   
-   
-   img{
-    width: 100%;
+
+    width:var(--textContainerMax);
+    margin:0 auto;
+    
+    img{    
     object-fit: cover;
+    width: 100%;  
    }
+  }
+
+
+  #spotlight .spl-title {
+    color:white;
   }
 
 /////////////////////////////////////////////////////////////////////////////////////// 

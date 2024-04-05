@@ -874,13 +874,17 @@ dialog.onClose {
   }
 }
 .aboutUsImage {
-  max-width: var(--textContainerMax);
+  width: var(--textContainerMax);
   margin: 0 auto;
 }
 .aboutUsImage img {
-  width: 100%;
   -o-object-fit: cover;
      object-fit: cover;
+  width: 100%;
+}
+
+#spotlight .spl-title {
+  color: white;
 }
 
 #footer {
