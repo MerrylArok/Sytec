@@ -126,7 +126,7 @@ body {
   padding: 0rem calc(var(--minPadding) - (100vw - 100%) / 2);
 }
 .header #headerFlexContainer #logo {
-  height: var(--h3size);
+  height: calc(var(--h2size) * 0.9);
   margin: 0 auto;
 }
 .header #headerFlexContainer #headerRight {

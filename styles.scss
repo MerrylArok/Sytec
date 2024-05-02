@@ -186,7 +186,7 @@ body {
 
 
         #logo {
-            height: var(--h3size);
+            height: calc(var(--h2size)*.9);
             margin: 0 auto;
         }
 
