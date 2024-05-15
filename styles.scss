@@ -169,9 +169,8 @@ body {
     padding-left: calc(100vw - 100%);
     max-width: 100%;
     height: var(--headerHeight);
-    // box-shadow: 0px 0px 10px .5px rgba(0, 0, 0, 0.07);
-    background-color: rgba($white, 0.7);
-    backdrop-filter: blur(0.7rem);
+    box-shadow: 0px 0px 10px .5px rgba(0, 0, 0, 0.07);
+    background-color: rgba($white, 1);
     border-bottom: 1px solid rgb(226, 225, 225);
 
 
@@ -477,7 +476,7 @@ dialog.onClose {
         position: absolute;
         left: 50%;
         background: url(./media/line-angle-down-icon.svg) center no-repeat content-box;
-        animation: 2s infinite scrollDown ease-in-out;
+        animation: 1.5s infinite scrollDown ease-in-out;
         width: 3.5rem;
         height: 3.5rem;
         padding: 1rem;
@@ -542,7 +541,7 @@ dialog.onClose {
 
 
         &::after {
-            background: linear-gradient(to right, rgb(255, 255, 255) 15%, rgba(255, 255, 255, 0.7) 40%, rgba(255, 255, 255, 0.7) 60%, rgb(255, 255, 255) 85%);
+            background: linear-gradient(to right, rgb(255, 255, 255) 15%, rgba(255, 255, 255, 0) 25%, rgba(255, 255, 255, 0) 75%, rgb(255, 255, 255) 85%);
             content: " ";
             height: 100%;
             width: 100%;
@@ -1318,7 +1317,7 @@ dialog.onClose {
 @keyframes scrollDown {
     0% {
         bottom: 15%;
-        opacity: 0;
+        opacity: 0.15;
 
     }
 
