@@ -198,24 +198,29 @@ dialog {
   top: 0;
   right: 0;
   left: auto;
-  width: 100%;
-  min-height: 100%;
+  width: 100vw;
+  height: 100vh;
   margin: 0;
   z-index: 1000;
+  background-color: #0b2634;
   animation: 0.3s animateLeft ease-in;
   box-shadow: -0.5rem 0 1rem rgba(17, 17, 26, 0.2);
 }
+dialog .sideNavContents {
+  height: 100%;
+  margin: 10rem 4rem 0 4rem;
+}
 dialog ul,
 dialog li {
-  font-size: calc(var(--h2size) * 0.73);
+  font-size: var(--h2size);
   font-weight: 600;
-  margin: 1.1rem 0;
+  margin: 1.5rem auto;
 }
 dialog ul a,
 dialog li a {
-  color: black;
+  color: #fff;
   display: block;
-  padding: 0.75rem 1.5rem;
+  padding: 0.75rem 2rem;
   border-radius: 0.25rem;
   transition: background-color 0.2s ease-in;
   min-width: 200px;
@@ -224,14 +229,14 @@ dialog ul a:hover,
 dialog ul #closeSideNav:hover,
 dialog li a:hover,
 dialog li #closeSideNav:hover {
-  background-color: rgb(245, 245, 245);
+  background-color: #47a7a2;
 }
 dialog #closeSideNav {
   position: absolute;
   top: 0;
   right: 0;
   left: auto;
-  margin: calc(var(--minPadding) / 2) calc(var(--minPadding) / 2) 0 0;
+  margin: var(--minPadding) var(--minPadding) 0 0;
   background-color: transparent;
   padding: 0.75rem 1rem;
   border-radius: 0.25rem;
@@ -249,7 +254,7 @@ dialog ul {
   list-style: none;
 }
 dialog #nestedList > li {
-  padding-left: calc(var(--minPadding) / 2);
+  padding-left: calc(var(--minPadding));
   color: #464545;
 }
 

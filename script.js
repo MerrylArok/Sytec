@@ -69,17 +69,18 @@ class SideNav extends HTMLElement {
                 <img src="./media/icons/Close.svg" alt="Cancel icon">
             </button>
             <ul>
-            <li><a href="./index.html">Homepage</a></li>               
+            <li><a href="./index.html">HOME</a></li>     
+            <li><a href="./about.html">ABOUT US</a></li>          
                 <li>
-                    <ul id="nestedList"><a href="./index.html#servicesChunk">Services</a>
-                        <li><a href="./design.html"> > Design</a></li>
-                        <li><a href="./manufacture.html"> > Manufacture</a></li>
-                        <li><a href="./deliver.html"> > Deliver</a></li>
+                    <ul id="nestedList"><a href="./index.html#servicesChunk">SERVICES</a>
+                        <li><a href="./design.html">DESIGN</a></li>
+                        <li><a href="./manufacture.html">MANUFACTURE</a></li>
+                        <li><a href="./deliver.html">DELIVER</a></li>
                     </ul>
                 </li>
-                <li><a href="https://ca.indeed.com/cmp/Sytec-Manufacturing-1/jobs" target="_blank">Careers</a></li>
-                <li><a href="./contact.html">Contact Us</a></li>
-                <li><a href="./about.html">About Us</a></li>
+                <li><a href="https://ca.indeed.com/cmp/Sytec-Manufacturing-1/jobs" target="_blank">CAREERS</a></li>
+                <li><a href="./contact.html">CONTACT US</a></li>
+                
             </ul>
             </div>
         </dialog>
