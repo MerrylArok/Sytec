@@ -198,11 +198,9 @@ dialog {
   top: 0;
   right: 0;
   left: auto;
-  width: -moz-fit-content;
-  width: fit-content;
-  padding: calc(var(--minPadding) * 1.9) calc(var(--minPadding) / 1.1) calc(var(--minPadding) * 1.1) calc(var(--minPadding));
-  margin: 0.75rem 2rem;
-  border-radius: 3rem 1rem;
+  width: 100%;
+  min-height: 100%;
+  margin: 0;
   z-index: 1000;
   animation: 0.3s animateLeft ease-in;
   box-shadow: -0.5rem 0 1rem rgba(17, 17, 26, 0.2);
@@ -332,7 +330,7 @@ dialog.onClose {
 #mainPage #iconScrollDown {
   position: absolute;
   left: 50%;
-  background: url(./media/line-angle-down-icon.svg) center no-repeat content-box;
+  background: url(./media/icons/line-angle-down-icon.svg) center no-repeat content-box;
   animation: 1.5s infinite scrollDown ease-in-out;
   width: 3.5rem;
   height: 3.5rem;
@@ -348,7 +346,7 @@ dialog.onClose {
 #customerContainer {
   padding: 0 var(--contentWidth);
   position: relative;
-  background-image: url(./media/abstractBackground.webp);
+  background-image: url(./media/pics/abstractBackground.webp);
   background-size: cover;
   background-repeat: no-repeat;
 }
@@ -472,7 +470,7 @@ dialog.onClose {
 }
 #servicesChunk #servicesChunkCard #cardFlexContainer .servicesCard #learnMoreContainer::after {
   content: "";
-  background: url("./media/arrow-thin-right-icon.svg") no-repeat center;
+  background: url("./media/icons/arrow-thin-right-icon.svg") no-repeat center;
   transform: rotate(-45deg) scale(1.5);
   height: var(--h3size);
   width: var(--h3size);

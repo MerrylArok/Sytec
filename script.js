@@ -38,14 +38,13 @@ class Header extends HTMLElement {
     connectedCallback() {
         let htmlHeader = `<header class="header">
     <nav id="headerFlexContainer">
-    <a title="Homepage" href="./index.html"><img id="logo" src="./media/Sytec.svg" alt="Sytec Logo"></a>
+    <a title="Homepage" href="./index.html"><img id="logo" src="./media/icons/Sytec.svg" alt="Sytec Logo"></a>
 
         <ul id="headerRight" class="lists">
-        <li><a class="desktopNav buttonTransition" href="./index.html">Homepage</a></li>
         <li><a class="desktopNav buttonTransition" href="./design.html">Design</a></li>
         <li><a class="desktopNav buttonTransition" href="./manufacture.html">Manufacture</a></li>
         <li><a class="desktopNav buttonTransition" href="./deliver.html">Deliver</a></li>
-        <li><a class="desktopNav buttonTransition" href="./about.html">About Us</a></li>
+        <li><a class="desktopNav buttonTransition" href="./about.html">About</a></li>
             <li><a id="headerContactButton" class="buttonTransition" href="./contact.html">CONTACT</a></li>
             <li><button id="openSideNav" role="navigation" aria-label="Quick Navi Links">
                     <div id="longBar"></div>
@@ -65,8 +64,9 @@ class SideNav extends HTMLElement {
     connectedCallback() {
         let htmlSideNav = `
         <dialog id="sideNav">
+        <div class="sideNavContents">    
             <button id="closeSideNav">
-                <img src="./media/Close.svg" alt="Cancel icon">
+                <img src="./media/icons/Close.svg" alt="Cancel icon">
             </button>
             <ul>
             <li><a href="./index.html">Homepage</a></li>               
@@ -81,6 +81,7 @@ class SideNav extends HTMLElement {
                 <li><a href="./contact.html">Contact Us</a></li>
                 <li><a href="./about.html">About Us</a></li>
             </ul>
+            </div>
         </dialog>
         
         <div id="sideNavBackdrop" class="closeSideNav"></>`;
@@ -143,8 +144,8 @@ class Footer extends HTMLElement {
 
         <ul id="externalLinks">
             <li><a href="https://ca.linkedin.com/company/sytec-manufacturing-ltd" target="_blank"><img
-                        src="./media/linkedin.png" alt="linkedinIcon"></a></li>
-            <li><a href="https://www.google.com/maps/dir/Current+Location/53.584650741527945,-113.46097094106376" target="_blank"><img src="./media/maps.png" alt="mapsIcon"></a>
+                        src="./media/icons/linkedin.png" alt="linkedinIcon"></a></li>
+            <li><a href="https://www.google.com/maps/dir/Current+Location/53.584650741527945,-113.46097094106376" target="_blank"><img src="./media/icons/maps.png" alt="mapsIcon"></a>
             </li>
         </ul>
     </footer>
