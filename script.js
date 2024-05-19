@@ -69,8 +69,8 @@ class SideNav extends HTMLElement {
                 <img src="./media/icons/Close.svg" alt="Cancel icon">
             </button>
             <ul>
-            <li><a href="./index.html">HOME</a></li>     
-            <li><a href="./about.html">ABOUT US</a></li>          
+            <li><a href="./index.html">HOME</a></li>      
+            <li><a href="./about.html">ABOUT</a></li>          
                 <li>
                     <ul id="nestedList"><a href="./index.html#servicesChunk">SERVICES</a>
                         <li><a href="./design.html">DESIGN</a></li>
@@ -79,13 +79,11 @@ class SideNav extends HTMLElement {
                     </ul>
                 </li>
                 <li><a href="https://ca.indeed.com/cmp/Sytec-Manufacturing-1/jobs" target="_blank">CAREERS</a></li>
-                <li><a href="./contact.html">CONTACT US</a></li>
+                <li><a href="./contact.html">CONTACT</a></li>
                 
             </ul>
             </div>
-        </dialog>
-        
-        <div id="sideNavBackdrop" class="closeSideNav"></>`;
+        </dialog>`;
         this.insertAdjacentHTML("afterbegin", htmlSideNav);
     }
 }
@@ -162,7 +160,7 @@ const openSideNavButton = document.getElementById('openSideNav');
 const closeSideNav = document.getElementById('closeSideNav');
 const sideNav = document.getElementById('sideNav');
 const sideNavBackdrop = document.getElementById('sideNavBackdrop');
-const scrollbarWidth = (window.innerWidth - document.body.clientWidth) + 'px';
+// const scrollbarWidth = (window.innerWidth - document.body.clientWidth) + 'px';
 const ourServiceLink = document.getElementById('nestedList');
 openSideNavButton === null || openSideNavButton === void 0 ? void 0 : openSideNavButton.addEventListener('click', function () {
     try {

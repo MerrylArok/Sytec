@@ -289,42 +289,40 @@ dialog {
     position: fixed;
     top: 0;
     right:0;
-    // background-color: #B03C00;
-    // width: 100vw;
-    // padding: calc(var(--minPadding)*1.9) calc(var(--minPadding)/1.1) calc(var(--minPadding)*1.1) calc(var(--minPadding));
-    // height: 100vh;
-    // margin: 0;
-    // border-radius: 3rem 1rem;
-    z-index: 1000;
-    background-color: #0b2634;
+    max-width: 100vw;    
+    max-height: 100vh;
+
+    width:100vw;
+    height:100vh;
+    background-color: black;
     
     animation: .3s animateLeft ease-in;
-    box-shadow: -0.5rem 0 1rem rgba(17, 17, 26, 0.2);
-
 
     .sideNavContents{
-        height:100%;
-        margin:10rem 4rem 0 2rem;    }
+        padding:13rem 5rem 0 5rem;
+    }
+
+    ul > li{
+        border-bottom:0.5px solid $lightGrey;
+    }
 
     ul,
     li {
         font-size: (var(--h2size));
         font-weight: 600;
-        margin: 1.5rem auto;
+        // margin: 1.5rem auto;
 
         a {
             color: $white;
             display: block;
-            padding: 0.75rem 2rem;
-            border-radius: 0.25rem;
-            transition: background-color 0.2s ease-in;
+            padding: 2.5rem 2rem;
             min-width: 200px;
         }
 
-        a:hover,
-        #closeSideNav:hover {
-            background-color: #47a7a2;
-        }
+    }
+
+    #nestedList > li{
+        border:none;
     }
 
     //Close dialog button
@@ -337,11 +335,9 @@ dialog {
         background-color: transparent;
         padding: 0.75rem 1rem;
         border-radius: 0.25rem;
-        transition: background-color 0.2s ease-in;
-
 
         img {
-            height: calc((var(--headerHeight) - var(--h2size))*.9);
+            height: calc(var(--headerHeight) - var(--h3size));
             margin: none;
         }
     }
@@ -362,31 +358,6 @@ dialog {
 
     }
 
-    // #nestedList {
-    //     // position: relative;
-    // }
-
-    // #nestedList:after {
-    //     position: absolute;
-    //     bottom: 11%;
-    //     content: "";
-    //     border-left: 2px solid $lightGreen;
-    //     margin-left: 1.5rem;
-    //     height: 70%;
-    // }
-
-    // #nestedList>li:after {
-    //     position: absolute;
-    //     transform: translate(-100%, -200%);
-    //     content: "";
-    //     width: 1.1rem;
-    //     height: 10px;
-    //     border-width: 0 0 2px 2px;
-    //     border-color: $lightGreen;
-    //     border-style: solid;
-    //     border-radius: 0 0 0 33%;
-
-    // }
 }
 
 //adding class to dialog for animation before trigerring .close()
@@ -395,28 +366,28 @@ dialog.onClose {
 }
 
 
-//decided to overlay a backdrop div for animations instead of using dialog::backdrop
+//Initially had a backdrop that would blur the area that the dialog didnt conver but decided to make the dialog fullscreen so no need for sideNavBackdrop. Archiving...
+// #sideNavBackdrop {
 
-#sideNavBackdrop {
-    width: 100vw;
-    height: 100vh;
-    position: fixed;
-    top: 0;
-    left: -100%;
-    z-index: 999;
+//     width: 100vw;
+//     height: 100vh;
+//     position: fixed;
+//     top: 0;
+//     left: -100%;
+//     z-index: 999;
 
-    background-color: transparent;
-    backdrop-filter: none;
+//     background-color: transparent;
+//     backdrop-filter: none;
 
-    transition: background-color .3s ease-in, backdrop-filter .3s ease-in;
+//     transition: background-color .3s ease-in, backdrop-filter .3s ease-in;
 
-}
+// }
 
-#sideNavBackdrop.isActive {
-    left: 0;
-    background-color: rgba(0, 0, 0, 0.4);
-    backdrop-filter: blur(0.3rem);
-}
+// #sideNavBackdrop.isActive {
+//     left: 0;
+//     background-color: rgba(0, 0, 0, 0.4);
+//     backdrop-filter: blur(0.3rem);
+// }
 
 
 /////////////////////////////////////////////////////////////////////////////////////// 
