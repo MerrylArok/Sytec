@@ -288,13 +288,12 @@ body {
 dialog {
     position: fixed;
     top: 0;
-    right: 0;
-    left: auto;
+    right:0;
     // background-color: #B03C00;
-    width: 100vw;
+    // width: 100vw;
     // padding: calc(var(--minPadding)*1.9) calc(var(--minPadding)/1.1) calc(var(--minPadding)*1.1) calc(var(--minPadding));
-    height: 100vh;
-    margin: 0;
+    // height: 100vh;
+    // margin: 0;
     // border-radius: 3rem 1rem;
     z-index: 1000;
     background-color: #0b2634;
@@ -305,7 +304,7 @@ dialog {
 
     .sideNavContents{
         height:100%;
-        margin:10rem 4rem 0 4rem;    }
+        margin:10rem 4rem 0 2rem;    }
 
     ul,
     li {
@@ -348,7 +347,7 @@ dialog {
     }
 
     #closeSideNav:hover {
-        background-color: rgb(251, 226, 226);
+        background-color:#47a7a2;
         cursor: pointer;
     }
 

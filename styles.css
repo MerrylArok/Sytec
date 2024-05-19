@@ -197,10 +197,6 @@ dialog {
   position: fixed;
   top: 0;
   right: 0;
-  left: auto;
-  width: 100vw;
-  height: 100vh;
-  margin: 0;
   z-index: 1000;
   background-color: #0b2634;
   animation: 0.3s animateLeft ease-in;
@@ -208,7 +204,7 @@ dialog {
 }
 dialog .sideNavContents {
   height: 100%;
-  margin: 10rem 4rem 0 4rem;
+  margin: 10rem 4rem 0 2rem;
 }
 dialog ul,
 dialog li {
@@ -247,7 +243,7 @@ dialog #closeSideNav img {
   margin: none;
 }
 dialog #closeSideNav:hover {
-  background-color: rgb(251, 226, 226);
+  background-color: #47a7a2;
   cursor: pointer;
 }
 dialog ul {

@@ -87,7 +87,7 @@ class SideNav extends HTMLElement {
                 <img src="./media/icons/Close.svg" alt="Cancel icon">
             </button>
             <ul>
-            <li><a href="./index.html">HOME</a></li>     
+            <li><a href="./index.html">HOME</a></li>      
             <li><a href="./about.html">ABOUT US</a></li>          
                 <li>
                     <ul id="nestedList"><a href="./index.html#servicesChunk">SERVICES</a>
