@@ -299,7 +299,7 @@ dialog {
     animation: .3s animateLeft ease-in;
 
     .sideNavContents{
-        padding:13rem 5rem 0 5rem;
+        padding:10rem 5rem 0 5rem;
     }
 
     ul > li{
@@ -315,7 +315,7 @@ dialog {
         a {
             color: $white;
             display: block;
-            padding: 2.5rem 2rem;
+            padding: 3rem 2rem;
             min-width: 200px;
         }
 
@@ -323,6 +323,7 @@ dialog {
 
     #nestedList > li{
         border:none;
+        
     }
 
     //Close dialog button

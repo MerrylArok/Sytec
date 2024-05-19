@@ -205,7 +205,7 @@ dialog {
   animation: 0.3s animateLeft ease-in;
 }
 dialog .sideNavContents {
-  padding: 13rem 5rem 0 5rem;
+  padding: 10rem 5rem 0 5rem;
 }
 dialog ul > li {
   border-bottom: 0.5px solid #f7f7f7;
@@ -219,7 +219,7 @@ dialog ul a,
 dialog li a {
   color: #fff;
   display: block;
-  padding: 2.5rem 2rem;
+  padding: 3rem 2rem;
   min-width: 200px;
 }
 dialog #nestedList > li {
