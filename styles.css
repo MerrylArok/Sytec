@@ -176,6 +176,7 @@ body {
 .header #headerFlexContainer #headerRight li #openSideNav #midBar,
 .header #headerFlexContainer #headerRight li #openSideNav #shortBar {
   height: 2px;
+  min-height: 2px;
   margin: 0.45rem 0;
   background-color: rgb(37, 37, 37);
   transition: width 0.2s ease-in;
@@ -186,11 +187,11 @@ body {
 }
 .header #headerFlexContainer #headerRight li #openSideNav #midBar {
   width: 70%;
-  animation: 2.5s expandNavBar infinite linear;
+  animation: 2.5s expandNavBar infinite ease-out;
 }
 .header #headerFlexContainer #headerRight li #openSideNav #shortBar {
   width: 50%;
-  animation: 2.5s expandNavBar infinite linear;
+  animation: 2.5s expandNavBar infinite ease-out;
 }
 
 dialog {
