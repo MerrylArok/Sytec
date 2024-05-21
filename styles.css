@@ -1187,7 +1187,6 @@ model-viewer {
   :root {
     --chunkPaddingTopBot: 10rem;
     --helloContentPosition: 25rem;
-    --logoContainerMargin: 0rem;
   }
   .chunkMinHeight {
     min-height: 650px;

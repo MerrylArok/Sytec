@@ -1714,7 +1714,6 @@ model-viewer {
         // --minPadding: 2rem;
         --chunkPaddingTopBot: 10rem;
         --helloContentPosition: 25rem;
-        --logoContainerMargin: 0rem;
     }
 
     .chunkMinHeight {
@@ -1779,41 +1778,3 @@ model-viewer {
     }
 
 }
-
-// @media (hover: none) {
-//     #servicesChunk {
-//         #servicesChunkCard {
-//             #cardFlexContainer {
-//                 .servicesCard {
-//                     >* {
-//                         transition: none;
-//                     }
-
-//                     p {
-//                         height: auto;
-//                         max-height: 500px;
-//                         opacity: 1;
-//                         transition: none;
-//                     }
-
-//                     #learnMoreContainer h3 {
-//                         max-width: 15rem;
-//                         margin-right: 1rem;
-//                         width: auto;
-//                         overflow: hidden;
-//                         opacity: 1;
-//                         transition: none;
-//                     }
-
-//                     #learnMoreContainer::after {
-//                         transform: rotate(0);
-//                         transition: none;
-//                     }
-//                 }
-//             }
-//         }
-//     }
-
-
-
-// }
