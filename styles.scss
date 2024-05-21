@@ -509,6 +509,7 @@ dialog.onClose {
         width:var(--textContainerMax);      
         position: relative; 
         margin: var(--logoContainerMargin) 0;
+        min-height:var(--logoContainerHeight) ;
     }
 
     #logoFlexContainer::after{
@@ -532,7 +533,7 @@ dialog.onClose {
 
     .logoContainer {
         flex: 0 0 var(--customerLogoWidth);
-        height: var(--logoContainerHeight);
+        height: var(--logoContainerHeight);        
         // min-width:8rem;      
         // margin: var(--logoContainerMargin) 0;
     }
@@ -550,10 +551,13 @@ dialog.onClose {
 
 #thirdSection {
     // background-color: #011716;
-    position:relative;
+    position:relative;    
     padding: calc(var(--minPadding)) calc(var(--minPadding));
+    min-height: calc(500px + 3*(var(--contentPadding)));
+
 
     #thirdSectionContainer {
+        
         position:relative;
         z-index:6;
         height: 100%;
@@ -561,7 +565,8 @@ dialog.onClose {
         padding: calc(var(--contentPadding)/3) calc(var(--contentPadding)/1.5);
         background-color: $white;
         border-radius: 1.75rem 3rem;
-        // background-color: #eef5f2;
+      
+        
         display: flex;
         flex-direction: row;
         align-items: center;
@@ -704,13 +709,13 @@ dialog.onClose {
     content:"";
     position:absolute;
     left:0;
-    top:-5%;
+    top:-2%;
     width: 100%;
     z-index:5;
- height:80%;
+ height:70%;
  background: #e5fddf;
  transform-origin: top left;
- transform: skewY(10deg);
+ transform: skewY(5deg);
 }
 
 // #thirdSection::after{
@@ -820,8 +825,8 @@ dialog.onClose {
 /// ////////////////////////////////////////////////////////////////@at-root
 
 #modifiedPageSection {
-    padding-top: var(--minPadding);
-    padding-bottom: calc(var(--minPadding)/1.25);
+    padding-top: calc(var(--minPadding)*1.25);
+    padding-bottom: calc(var(--minPadding));
 }
 
 #contactMain {
@@ -832,9 +837,10 @@ dialog.onClose {
 
     section {
         background-color: $lightGreen;
-        padding: var(--minPadding) calc(var(--minPadding)/1.25);
+        padding: calc(var(--minPadding)/1.5);
         flex: 1;
         max-width: 40%;
+        border-radius: 0.5rem;
 
         h1,
         p {
@@ -859,7 +865,7 @@ dialog.onClose {
                 flex: 1 1 220px;
                 min-height: var(--h1size);
                 position: relative;
-                margin: 0 calc(var(--minPadding)/3) calc(var(--minPadding)/3) 0;
+                margin: 0 0 calc(var(--minPadding)/3) 0;
 
                 .requiredIndicator {
                     position: absolute;
@@ -944,7 +950,7 @@ dialog.onClose {
 
         display: flex;
         flex-direction:column;
-        padding:0 var(--minPadding);
+        padding: 0 0 0 calc(var(--minPadding)/2);
 
         a {
             text-decoration: dotted underline $matteBlack;
@@ -962,6 +968,7 @@ dialog.onClose {
 
             #acknowledgement {
                 margin-top: 1.5rem;
+                font-size: calc(var(--psize)*.6);
             }
         }
 
@@ -1204,10 +1211,11 @@ model-viewer {
 #footer {
     width: 100%;
     flex-shrink: 0;
+    position: relative;
     display: flex;
     flex-direction: row;
     padding: calc(var(--minPadding)/1.25) var(--minPadding);
-    background-color: $lightGrey;
+    background-color: #222222;
     justify-content: center;
     // border-radius: 1.5rem 1.5rem 0 0;
 
@@ -1219,7 +1227,8 @@ model-viewer {
 
     h3 {
         font-weight: bold;
-        color: $darkBlack;
+        color: white;
+        margin-bottom: 0.15rem;
     }
 
     img {
@@ -1230,10 +1239,23 @@ model-viewer {
         display: inline;
         padding: 0 0.8rem;
     }
+
+    #footerTagline{
+        position:absolute;
+        top: 50%;
+        left: 3%;
+        transform: translateY(-50%);
+
+        h2{
+            padding:0.25rem 0;  
+            color:#ffffff27 
+        }
+    }
 }
 
 #footer * {
-    color: $matteBlack;
+    color: #f8f8f8;
+    margin-bottom: 0.05rem;
 }
 
 /////////////////////////////////////////////////////////////////////////////////////////////
@@ -1352,17 +1374,13 @@ model-viewer {
         }
 
         #mapElements {
-            padding: 0;
             flex: 1;
 
             #map {
                 flex: 3;
             }
 
-            #mapAddress {
-                margin: var(--minPadding);
-            }
-        }
+                    }
 
     }
 }
@@ -1424,7 +1442,7 @@ model-viewer {
 
             .servicesCard #learnMoreContainer::after {
                 transform: rotate(0);
-            }
+            }            
 
 
             }
@@ -1497,7 +1515,8 @@ model-viewer {
 
         #mapElements {
             flex: 1;
-            min-height: 100vw;
+            min-height: 70vh;
+            padding: var(--minPadding) 0;
         }
 
 
@@ -1508,7 +1527,7 @@ model-viewer {
 
 }
 
-@media (max-width:750px) {
+@media (max-width:800px) {
 
 
 
@@ -1654,13 +1673,12 @@ model-viewer {
         }
     }
 
-    .pageHeader {
-        display: none;
+    #contactMain{
+        padding: 0 calc(var(--minPadding));
     }
 
     .pageSection {
-
-        padding: calc(var(--minPadding)*3) calc(var(--minPadding)) 0 calc(var(--minPadding));
+        padding: calc(var(--minPadding)*2) calc(var(--minPadding)) 0 calc(var(--minPadding));
     }
 
 

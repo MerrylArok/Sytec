@@ -128,7 +128,7 @@ class Footer extends HTMLElement {
                 <h4>Edmonton, AB T5B 1R9</h4>
             </li>
             <li>
-                <h4>780-484-9898</h4>
+                <h4><a href="tel:+7804849898">780-484-9898</a></h4>
             </li>           
         </ul>
 
@@ -169,6 +169,12 @@ class Footer extends HTMLElement {
             <li><a href="https://www.google.com/maps/dir/Current+Location/53.584650741527945,-113.46097094106376" target="_blank"><img src="./media/icons/maps.png" alt="mapsIcon"></a>
             </li>
         </ul>
+
+        <div id="footerTagline">
+        <h2>Design.</h2>
+        <h2>Manufacture.</h2>
+        <h2>Deliver.</h2>
+        </div>
     </footer>
         `;
 

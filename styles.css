@@ -360,6 +360,7 @@ dialog.onClose {
   width: var(--textContainerMax);
   position: relative;
   margin: var(--logoContainerMargin) 0;
+  min-height: var(--logoContainerHeight);
 }
 #secondSection #logoFlexContainer::after {
   content: "";
@@ -393,6 +394,7 @@ dialog.onClose {
 #thirdSection {
   position: relative;
   padding: calc(var(--minPadding)) calc(var(--minPadding));
+  min-height: calc(500px + 3 * (var(--contentPadding)));
 }
 #thirdSection #thirdSectionContainer {
   position: relative;
@@ -505,13 +507,13 @@ dialog.onClose {
   content: "";
   position: absolute;
   left: 0;
-  top: -5%;
+  top: -2%;
   width: 100%;
   z-index: 5;
-  height: 80%;
+  height: 70%;
   background: #e5fddf;
   transform-origin: top left;
-  transform: skewY(10deg);
+  transform: skewY(5deg);
 }
 
 #fourthSection {
@@ -577,8 +579,8 @@ dialog.onClose {
 }
 
 #modifiedPageSection {
-  padding-top: var(--minPadding);
-  padding-bottom: calc(var(--minPadding) / 1.25);
+  padding-top: calc(var(--minPadding) * 1.25);
+  padding-bottom: calc(var(--minPadding));
 }
 
 #contactMain {
@@ -589,9 +591,10 @@ dialog.onClose {
 }
 #contactMain section {
   background-color: hsl(168, 64%, 24%);
-  padding: var(--minPadding) calc(var(--minPadding) / 1.25);
+  padding: calc(var(--minPadding) / 1.5);
   flex: 1;
   max-width: 40%;
+  border-radius: 0.5rem;
 }
 #contactMain section h1,
 #contactMain section p {
@@ -613,7 +616,7 @@ dialog.onClose {
   flex: 1 1 220px;
   min-height: var(--h1size);
   position: relative;
-  margin: 0 calc(var(--minPadding) / 3) calc(var(--minPadding) / 3) 0;
+  margin: 0 0 calc(var(--minPadding) / 3) 0;
 }
 #contactMain section form .inputField .requiredIndicator {
   position: absolute;
@@ -677,7 +680,7 @@ dialog.onClose {
   flex: 2;
   display: flex;
   flex-direction: column;
-  padding: 0 var(--minPadding);
+  padding: 0 0 0 calc(var(--minPadding) / 2);
 }
 #contactMain #mapElements p {
   color: #18191b;
@@ -697,6 +700,7 @@ dialog.onClose {
 }
 #contactMain #mapElements #mapAddress #acknowledgement {
   margin-top: 1.5rem;
+  font-size: calc(var(--psize) * 0.6);
 }
 
 .pageHeader {
@@ -874,10 +878,11 @@ model-viewer {
 #footer {
   width: 100%;
   flex-shrink: 0;
+  position: relative;
   display: flex;
   flex-direction: row;
   padding: calc(var(--minPadding) / 1.25) var(--minPadding);
-  background-color: #f7f7f7;
+  background-color: #222222;
   justify-content: center;
 }
 #footer ul {
@@ -886,7 +891,8 @@ model-viewer {
 }
 #footer h3 {
   font-weight: bold;
-  color: #18191b;
+  color: white;
+  margin-bottom: 0.15rem;
 }
 #footer img {
   height: 2.75rem;
@@ -895,9 +901,20 @@ model-viewer {
   display: inline;
   padding: 0 0.8rem;
 }
+#footer #footerTagline {
+  position: absolute;
+  top: 50%;
+  left: 3%;
+  transform: translateY(-50%);
+}
+#footer #footerTagline h2 {
+  padding: 0.25rem 0;
+  color: rgba(255, 255, 255, 0.1529411765);
+}
 
 #footer * {
-  color: #464545;
+  color: #f8f8f8;
+  margin-bottom: 0.05rem;
 }
 
 .animateLeft,
@@ -977,14 +994,10 @@ model-viewer {
     max-width: 50%;
   }
   #contactMain #mapElements {
-    padding: 0;
     flex: 1;
   }
   #contactMain #mapElements #map {
     flex: 3;
-  }
-  #contactMain #mapElements #mapAddress {
-    margin: var(--minPadding);
   }
 }
 @media (max-width: 1280px) {
@@ -1075,10 +1088,11 @@ model-viewer {
   }
   #contactMain #mapElements {
     flex: 1;
-    min-height: 100vw;
+    min-height: 70vh;
+    padding: var(--minPadding) 0;
   }
 }
-@media (max-width: 750px) {
+@media (max-width: 800px) {
   :root {
     --serviceCardPadding: 3rem;
   }
@@ -1152,11 +1166,11 @@ model-viewer {
   #fourthSection #teamContentContainer #aboutUsContent #aboutUsContentLinks li h2 {
     color: #fff;
   }
-  .pageHeader {
-    display: none;
+  #contactMain {
+    padding: 0 calc(var(--minPadding));
   }
   .pageSection {
-    padding: calc(var(--minPadding) * 3) calc(var(--minPadding)) 0 calc(var(--minPadding));
+    padding: calc(var(--minPadding) * 2) calc(var(--minPadding)) 0 calc(var(--minPadding));
   }
   .contentList {
     padding: 0;
