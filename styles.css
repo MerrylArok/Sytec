@@ -494,8 +494,8 @@ dialog.onClose {
   background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.8)), url(./media/pics/warehouse.webp) center no-repeat;
   background-size: cover;
 }
-#servicesChunk #servicesChunkCard #cardFlexContainer #paintCard {
-  background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.8)), url(./media/pics/powdercoat.webp) center no-repeat;
+#servicesChunk #servicesChunkCard #cardFlexContainer #deliverCard {
+  background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.8)), url(./media/pics/Delivery\ Truck.webp) center no-repeat;
   background-size: cover;
 }
 
