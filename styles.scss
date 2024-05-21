@@ -122,7 +122,7 @@ p,
 
 .chunkMinHeight {
     //If browser is resized, this ensures that each chunk has a min height to maintain aspect ratio
-    min-height: fit-content;
+    min-height: calc(100vw*7/16);
 }
 
 html,
@@ -393,7 +393,7 @@ dialog.onClose {
 ////////////////////////////////////////////////////////////////@at-root
 
 
-#mainPage {
+#firstSection {
     position: relative;
     display: flex;
     align-items: flex-end;
@@ -464,7 +464,7 @@ dialog.onClose {
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// 
 
 
-#customerContainer {
+#secondSection {
     padding: 0 var(--contentWidth);
     position: relative;
     background-image: url(./media/pics/abstractBackground.webp);
@@ -473,7 +473,7 @@ dialog.onClose {
     
 
     #customerContent {
-        padding-top: 15rem;
+        padding-top: 7rem;
         text-align: left;
         width: 100%;
         max-width: var(--textContainerMax);
@@ -521,7 +521,7 @@ dialog.onClose {
             z-index: 1;
     } 
 
-    .logosRow2 {
+    .logosRow {
         display: flex;
         flex-flow: row nowrap;
         justify-content: space-between;       
@@ -546,12 +546,12 @@ dialog.onClose {
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-#servicesChunk {
+#thirdSection {
     // background-color: #011716;
     position:relative;
-    padding: calc(var(--chunkPaddingTopBot)*1) calc(var(--contentPadding) * 2);
+    padding: 0 calc(var(--contentPadding));
 
-    #servicesChunkCard {
+    #thirdSectionContainer {
         position:relative;
         z-index:6;
         height: 100%;
@@ -701,7 +701,7 @@ dialog.onClose {
 
 }
 
-#servicesChunk::before{
+#thirdSection::before{
     content:"";
     position:absolute;
     left:0;
@@ -714,7 +714,7 @@ dialog.onClose {
  transform: skewY(10deg);
 }
 
-// #servicesChunk::after{
+// #thirdSection::after{
 //     content:"";
 //     position:absolute;
 //     left:0;
@@ -731,7 +731,7 @@ dialog.onClose {
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-#teamChunk {
+#fourthSection {
     display: flex;
     flex-direction: row-reverse;
     justify-content: center;
@@ -1340,7 +1340,7 @@ model-viewer {
 
 @media (max-width:1420px) {
    
-    #servicesChunk {
+    #thirdSection {
         padding: calc(var(--chunkPaddingTopBot)*1.5) calc(var(--contentPadding)/ 2);
     }
 
@@ -1384,13 +1384,11 @@ model-viewer {
         --largePicMargin: 1rem;
     }
 
-    #servicesChunk {
+    #thirdSection {
         
         height: auto;
 
-        #servicesChunkCard {
-
-            // display: inline-flex;
+        #thirdSectionContainer {
             flex-direction: column;
 
             #servicesContent {
@@ -1422,7 +1420,7 @@ model-viewer {
         }
     }
 
-    #teamChunk {
+    #fourthSection {
         height: auto;
         padding: var(--chunkPaddingTopBot) calc(var(--contentPadding)/2);
 
@@ -1528,8 +1526,8 @@ model-viewer {
     }
 
 
-    #servicesChunk {
-        #servicesChunkCard {
+    #thirdSection {
+        #thirdSectionContainer {
 
             #cardFlexContainer {
                 .servicesCard {
@@ -1544,7 +1542,7 @@ model-viewer {
 
     }
 
-    #teamChunk {
+    #fourthSection {
         flex-direction: column;
         padding: var(--chunkPaddingTopBot) var(--minPadding);
 
@@ -1609,17 +1607,17 @@ model-viewer {
         }
     }
 
-    #servicesChunk {
+    #thirdSection {
         padding: 0 0;
         background-color: $lightGrey;
 
-        #servicesChunkCard {
+        #thirdSectionContainer {
             padding: var(--chunkPaddingTopBot) var(--minPadding);
             box-shadow: none;
         }
     }
 
-    #teamChunk {
+    #fourthSection {
 
         #teamContentContainer {
             #aboutUsContent {
@@ -1724,9 +1722,9 @@ model-viewer {
         display: none;
     }
 
-    #servicesChunk {
+    #thirdSection {
 
-        #servicesChunkCard {
+        #thirdSectionContainer {
 
 
             #cardFlexContainer {
@@ -1742,7 +1740,7 @@ model-viewer {
 
 
 
-    #teamChunk {
+    #fourthSection {
 
         #teamPicContainer {
             img {
@@ -1754,7 +1752,7 @@ model-viewer {
 }
 
 @media (max-width:390px) {
-    #teamChunk {
+    #fourthSection {
 
         #teamPicContainer {
             img {
@@ -1764,7 +1762,7 @@ model-viewer {
         }
     }
 
-    #customerContainer {
+    #secondSection {
 
         #logoFlexContainer {
             display: flex;
