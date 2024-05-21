@@ -33,7 +33,7 @@
   padding: 0;
   border: 0;
   font-family: Manrope, sans-serif;
-  color: black;
+  color: #18191b;
   box-sizing: border-box;
   font-size: 13px;
   scroll-behavior: smooth;
@@ -48,7 +48,7 @@
 h1 {
   font-size: var(--h1size);
   margin-bottom: 1.75rem;
-  color: #008c15;
+  color: hsl(168, 64%, 24%);
 }
 
 h2 {
@@ -85,7 +85,8 @@ p,
 }
 
 .chunkMinHeight {
-  min-height: 50vw;
+  min-height: -moz-fit-content;
+  min-height: fit-content;
 }
 
 html,
@@ -160,7 +161,7 @@ body {
 }
 .header #headerFlexContainer #headerRight li .desktopNav:hover {
   background-color: rgba(0, 0, 0, 0.1);
-  color: black;
+  color: #18191b;
   cursor: pointer;
 }
 .header #headerFlexContainer #headerRight li #openSideNav {
@@ -201,7 +202,7 @@ dialog {
   max-height: 100vh;
   width: 100vw;
   height: 100vh;
-  background-color: black;
+  background-color: #18191b;
   animation: 0.3s animateLeft ease-in;
 }
 dialog .sideNavContents {
@@ -221,6 +222,12 @@ dialog li a {
   display: block;
   padding: 3rem 2rem;
   min-width: 200px;
+  border-radius: 0.25rem;
+  transition: background-color 0.15s ease-in;
+}
+dialog ul a:hover,
+dialog li a:hover {
+  background-color: #47a7a2;
 }
 dialog #nestedList > li {
   border: none;
@@ -234,6 +241,7 @@ dialog #closeSideNav {
   background-color: transparent;
   padding: 0.75rem 1rem;
   border-radius: 0.25rem;
+  transition: background-color 0.2s ease-in;
 }
 dialog #closeSideNav img {
   height: calc(var(--headerHeight) - var(--h3size));
@@ -315,10 +323,6 @@ dialog.onClose {
   border-radius: 5rem;
 }
 
-.custContent:last-child {
-  padding-top: 2rem;
-}
-
 #customerContainer {
   padding: 0 var(--contentWidth);
   position: relative;
@@ -327,10 +331,7 @@ dialog.onClose {
   background-repeat: no-repeat;
 }
 #customerContainer #customerContent {
-  position: absolute;
-  top: 25%;
-  left: 0;
-  right: 0;
+  padding-top: 15rem;
   text-align: left;
   width: 100%;
   max-width: var(--textContainerMax);
@@ -342,53 +343,46 @@ dialog.onClose {
 }
 #customerContainer #customerContent .custContent a {
   margin: 0;
-  -webkit-text-decoration: underline dotted #008c15 0.1rem;
-          text-decoration: underline dotted #008c15 0.1rem;
+  -webkit-text-decoration: underline dotted hsl(168, 64%, 24%) 0.1rem;
+          text-decoration: underline dotted hsl(168, 64%, 24%) 0.1rem;
+}
+#customerContainer #customerContent .custContent:last-child {
+  padding-top: 2rem;
 }
 #customerContainer #customerContent h1 {
   text-align: center;
   margin-bottom: 1.4rem;
 }
 #customerContainer #logoFlexContainer {
-  height: 100%;
-  padding: var(--chunkPaddingTopBot) 0;
   overflow: hidden;
+  width: var(--textContainerMax);
   position: relative;
+  margin: var(--logoContainerMargin) auto;
 }
 #customerContainer #logoFlexContainer::after {
-  background: linear-gradient(to right, rgb(255, 255, 255) 15%, rgba(255, 255, 255, 0) 25%, rgba(255, 255, 255, 0) 75%, rgb(255, 255, 255) 85%);
-  content: " ";
-  height: 100%;
-  width: 100%;
+  content: "";
   position: absolute;
-  z-index: 1;
   top: 0;
-  Left: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to right, rgb(255, 255, 255) 5%, rgba(255, 255, 255, 0) 25%, rgba(255, 255, 255, 0) 75%, rgb(255, 255, 255) 95%);
+  pointer-events: none;
+  z-index: 1;
 }
-#customerContainer .logosRow1,
 #customerContainer .logosRow2 {
   display: flex;
   flex-flow: row nowrap;
   justify-content: space-between;
-}
-#customerContainer .logosRow1 {
-  display: none;
-  animation: logoBannerScroll 66s linear infinite;
-}
-#customerContainer .logosRow2 {
-  position: absolute;
-  bottom: 10%;
   animation: logoBannerScroll 55s linear infinite;
 }
 #customerContainer .logoContainer {
   flex: 0 0 var(--customerLogoWidth);
   height: var(--logoContainerHeight);
-  margin: var(--logoContainerMargin) 0;
 }
 #customerContainer img {
   width: 100%;
   height: 100%;
-  padding: 0 1rem;
   -o-object-fit: contain;
      object-fit: contain;
   pointer-events: none;
@@ -416,7 +410,7 @@ dialog.onClose {
   margin-right: 2rem;
 }
 #servicesChunk #servicesChunkCard #servicesContent h1 {
-  color: #008c15;
+  color: hsl(168, 64%, 24%);
 }
 #servicesChunk #servicesChunkCard #cardFlexContainer {
   height: 100%;
@@ -560,17 +554,17 @@ dialog.onClose {
 }
 #teamChunk #teamContentContainer #aboutUsContent #aboutUsContentLinks li {
   width: 100%;
-  border: 0.15rem solid #008c15;
+  border: 0.15rem solid hsl(168, 64%, 24%);
   border-radius: 0.25rem;
   padding: 0.6rem;
   text-align: center;
 }
 #teamChunk #teamContentContainer #aboutUsContent #aboutUsContentLinks li h2 {
-  color: #008c15;
+  color: hsl(168, 64%, 24%);
 }
 #teamChunk #teamContentContainer #aboutUsContent #aboutUsContentLinks li:hover {
   cursor: pointer;
-  background-color: #008c15;
+  background-color: hsl(168, 64%, 24%);
 }
 #teamChunk #teamContentContainer #aboutUsContent #aboutUsContentLinks li:hover h2 {
   color: #fff;
@@ -592,7 +586,7 @@ dialog.onClose {
   flex-direction: row;
 }
 #contactMain section {
-  background-color: #008c15;
+  background-color: hsl(168, 64%, 24%);
   padding: var(--minPadding) calc(var(--minPadding) / 1.25);
   flex: 1;
   max-width: 40%;
@@ -713,7 +707,7 @@ dialog.onClose {
 }
 .pageHeader h1 {
   font-family: NHD;
-  color: rgba(255, 255, 255, 0.725);
+  color: rgba(255, 255, 255, 0.9);
   font-size: var(--businessh1Size);
   margin-bottom: 0rem;
 }
@@ -725,6 +719,16 @@ dialog.onClose {
 #manufacturingHeader {
   background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.5)), url(./media/pics/ManufacturingHeader.webp);
   background-position: bottom;
+}
+
+#deliverHeader {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.5)), url(./media/pics/logisticsShipping.webp);
+  background-position: bottom;
+}
+
+#aboutUsHeader {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.5)), url(./media/pics/aboutUsHeader.png);
+  background-position: top;
 }
 
 #contactHeader {
@@ -742,7 +746,7 @@ dialog.onClose {
   margin: 0 auto;
 }
 .pageSection h2 {
-  border-left: solid 1rem #008c15;
+  border-left: solid 1rem hsl(168, 64%, 24%);
   padding-left: 1.5rem;
   font-weight: 500;
   margin-bottom: 1.75rem;
@@ -769,7 +773,7 @@ dialog.onClose {
 }
 .contentList .contentContainer hgroup h2 {
   font-weight: 800;
-  color: #008c15;
+  color: hsl(168, 64%, 24%);
   margin-bottom: 1rem;
 }
 .contentList .contentContainer hgroup p em {
@@ -963,8 +967,8 @@ model-viewer {
   }
 }
 @media (max-width: 1420px) {
-  .chunkMinHeight {
-    min-height: 850px;
+  #servicesChunk {
+    padding: calc(var(--chunkPaddingTopBot) * 1.5) calc(var(--contentPadding) / 2);
   }
   #contactMain section {
     flex: 1;
@@ -985,9 +989,6 @@ model-viewer {
   :root {
     --logoContainerHeight: 5rem;
   }
-  .chunkMinHeight {
-    min-height: 800px;
-  }
 }
 @media (max-width: 1150px) {
   :root {
@@ -996,7 +997,6 @@ model-viewer {
     --largePicMargin: 1rem;
   }
   #servicesChunk {
-    padding: calc(var(--chunkPaddingTopBot) * 1.5) calc(var(--contentPadding) / 2);
     height: auto;
   }
   #servicesChunk #servicesChunkCard {
@@ -1014,7 +1014,7 @@ model-viewer {
   }
   #servicesChunk #servicesChunkCard #cardFlexContainer .servicesCard {
     margin: 0.625rem;
-    width: calc(50% - 1.25rem);
+    width: calc(50% - 2rem);
   }
   #teamContentContainer picture {
     display: none;
@@ -1130,7 +1130,7 @@ model-viewer {
     box-shadow: none;
   }
   #teamChunk #teamContentContainer #aboutUsContent #aboutUsContentLinks li {
-    background-color: #008c15;
+    background-color: hsl(168, 64%, 24%);
   }
   #teamChunk #teamContentContainer #aboutUsContent #aboutUsContentLinks li h2 {
     color: #fff;
@@ -1197,9 +1197,6 @@ model-viewer {
   }
   #servicesChunk #servicesChunkCard #cardFlexContainer .servicesCard {
     height: 75.1879699248vw;
-  }
-  #customerContainer #customerContent {
-    top: 10%;
   }
   #teamChunk #teamPicContainer img {
     transform: translateX(-30%);
