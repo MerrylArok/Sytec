@@ -477,13 +477,11 @@ dialog.onClose {
     
 
     #customerContent {
-        // padding-top: 5rem;
+        padding-top: var(--headerHeight);
         text-align: left;
         width: 100%;
         max-width: var(--textContainerMax);
-        // margin: 0 auto;
         z-index: 99;
-        // overflow: clip;
 
         * :not(strong) {
             margin: 0 var(--minPadding);
@@ -560,9 +558,9 @@ dialog.onClose {
         z-index:6;
         height: 100%;
         width: 100%;
-        padding: calc(var(--contentPadding)/1.5);
+        padding: calc(var(--contentPadding)/3) calc(var(--contentPadding)/1.5);
         background-color: $white;
-        border-radius: 1.75rem 5rem;
+        border-radius: 1.75rem 3rem;
         // background-color: #eef5f2;
         display: flex;
         flex-direction: row;
@@ -578,7 +576,6 @@ dialog.onClose {
 
             h1 {
                 color: $lightGreen;
-
             }
         }
 
@@ -595,9 +592,9 @@ dialog.onClose {
                 // position: relative;
                 margin: auto;
                 padding: var(--serviceCardPadding);
-                height: calc(50% - 2rem);
+                height: calc(50% - 1.25rem);
                 min-height: 230px;
-                width: calc(50% - 2rem);
+                width: calc(50% - 1.25rem);
 
                 display: flex;
                 flex-direction: column;
@@ -614,8 +611,6 @@ dialog.onClose {
                     align-items: center;
                     height: var(--h3size);
                 }
-
-
 
                 #learnMoreContainer::after {
                     content: "";
@@ -1411,6 +1406,25 @@ model-viewer {
                     margin: .625rem;
                     width: calc(50% - 2rem);
                 }
+
+                
+            .servicesCard p {
+                height: auto;
+                max-height: 500px;
+                opacity: 1;
+            }
+
+            .servicesCard #learnMoreContainer h3 {
+                max-width: 15rem;
+                margin-right: 3rem;
+                width: auto;
+                overflow: hidden;
+                opacity: 1;
+            }
+
+            .servicesCard #learnMoreContainer::after {
+                transform: rotate(0);
+            }
 
 
             }

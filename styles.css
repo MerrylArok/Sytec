@@ -334,6 +334,7 @@ dialog.onClose {
   justify-content: center;
 }
 #secondSection #customerContent {
+  padding-top: var(--headerHeight);
   text-align: left;
   width: 100%;
   max-width: var(--textContainerMax);
@@ -398,9 +399,9 @@ dialog.onClose {
   z-index: 6;
   height: 100%;
   width: 100%;
-  padding: calc(var(--contentPadding) / 1.5);
+  padding: calc(var(--contentPadding) / 3) calc(var(--contentPadding) / 1.5);
   background-color: #fff;
-  border-radius: 1.75rem 5rem;
+  border-radius: 1.75rem 3rem;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -423,9 +424,9 @@ dialog.onClose {
 #thirdSection #thirdSectionContainer #cardFlexContainer .servicesCard {
   margin: auto;
   padding: var(--serviceCardPadding);
-  height: calc(50% - 2rem);
+  height: calc(50% - 1.25rem);
   min-height: 230px;
-  width: calc(50% - 2rem);
+  width: calc(50% - 1.25rem);
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
@@ -1016,6 +1017,21 @@ model-viewer {
   #thirdSection #thirdSectionContainer #cardFlexContainer .servicesCard {
     margin: 0.625rem;
     width: calc(50% - 2rem);
+  }
+  #thirdSection #thirdSectionContainer #cardFlexContainer .servicesCard p {
+    height: auto;
+    max-height: 500px;
+    opacity: 1;
+  }
+  #thirdSection #thirdSectionContainer #cardFlexContainer .servicesCard #learnMoreContainer h3 {
+    max-width: 15rem;
+    margin-right: 3rem;
+    width: auto;
+    overflow: hidden;
+    opacity: 1;
+  }
+  #thirdSection #thirdSectionContainer #cardFlexContainer .servicesCard #learnMoreContainer::after {
+    transform: rotate(0);
   }
   #teamContentContainer picture {
     display: none;
