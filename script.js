@@ -150,8 +150,8 @@ class Footer extends HTMLElement {
 
         <div id="footerTagline">
         <h2>Design.</h2>
-        <h2>Manufacture.</h2>
-        <h2>Deliver.</h2>
+        <h2 id="second">Manufacture.</h2>
+        <h2 id="third">Deliver.</h2>
         </div>
     </footer>
         `;

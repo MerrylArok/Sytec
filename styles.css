@@ -693,6 +693,7 @@ dialog.onClose {
 #contactMain #mapElements #map {
   flex: 1.5;
   border: 1px solid rgba(0, 140, 21, 0.2117647059);
+  min-height: 200px;
 }
 #contactMain #mapElements #mapAddress {
   flex: 1;
@@ -907,9 +908,15 @@ model-viewer {
   left: 3%;
   transform: translateY(-50%);
 }
+#footer #footerTagline #second {
+  margin-left: 1rem;
+}
+#footer #footerTagline #third {
+  margin-left: 3rem;
+}
 #footer #footerTagline h2 {
   padding: 0.25rem 0;
-  color: rgba(255, 255, 255, 0.1529411765);
+  color: rgba(255, 255, 255, 0.3019607843);
 }
 
 #footer * {
@@ -1065,6 +1072,9 @@ model-viewer {
   }
   .pageSection {
     padding: calc(var(--minPadding) * 2.25) var(--minPadding);
+  }
+  #footerTagline {
+    display: none;
   }
 }
 @media (max-width: 900px) {

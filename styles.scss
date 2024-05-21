@@ -960,6 +960,7 @@ dialog.onClose {
         #map {
             flex: 1.5;
             border: 1px solid #008c1536;
+            min-height:200px;
         }
 
         #mapAddress {
@@ -1246,9 +1247,17 @@ model-viewer {
         left: 3%;
         transform: translateY(-50%);
 
+        #second{
+            margin-left: 1rem;
+        }
+
+        #third{
+            margin-left: 3rem;
+        }
+
         h2{
             padding:0.25rem 0;  
-            color:#ffffff27 
+            color:#ffffff4d 
         }
     }
 }
@@ -1481,6 +1490,10 @@ model-viewer {
 
     .pageSection {
         padding: calc(var(--minPadding)*2.25) var(--minPadding);
+    }
+
+    #footerTagline{
+        display: none;
     }
 
 
