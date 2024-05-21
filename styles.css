@@ -323,18 +323,20 @@ dialog.onClose {
 }
 
 #secondSection {
-  padding: 0 var(--contentWidth);
+  padding: var(--contentWidth);
   position: relative;
   background-image: url(./media/pics/abstractBackground.webp);
   background-size: cover;
   background-repeat: no-repeat;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 #secondSection #customerContent {
-  padding-top: 7rem;
   text-align: left;
   width: 100%;
   max-width: var(--textContainerMax);
-  margin: 0 auto;
   z-index: 99;
 }
 #secondSection #customerContent * :not(strong) {
@@ -356,7 +358,7 @@ dialog.onClose {
   overflow: hidden;
   width: var(--textContainerMax);
   position: relative;
-  margin: var(--logoContainerMargin) auto;
+  margin: var(--logoContainerMargin) 0;
 }
 #secondSection #logoFlexContainer::after {
   content: "";
@@ -389,7 +391,7 @@ dialog.onClose {
 
 #thirdSection {
   position: relative;
-  padding: 0 calc(var(--contentPadding));
+  padding: calc(var(--minPadding)) calc(var(--minPadding));
 }
 #thirdSection #thirdSectionContainer {
   position: relative;

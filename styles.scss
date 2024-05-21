@@ -465,19 +465,23 @@ dialog.onClose {
 
 
 #secondSection {
-    padding: 0 var(--contentWidth);
+    padding: var(--contentWidth);
     position: relative;
     background-image: url(./media/pics/abstractBackground.webp);
     background-size:cover;
     background-repeat:no-repeat;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     
 
     #customerContent {
-        padding-top: 7rem;
+        // padding-top: 5rem;
         text-align: left;
         width: 100%;
         max-width: var(--textContainerMax);
-        margin: 0 auto;
+        // margin: 0 auto;
         z-index: 99;
         // overflow: clip;
 
@@ -506,7 +510,7 @@ dialog.onClose {
         overflow: hidden;
         width:var(--textContainerMax);      
         position: relative; 
-        margin: var(--logoContainerMargin) auto;
+        margin: var(--logoContainerMargin) 0;
     }
 
     #logoFlexContainer::after{
@@ -549,7 +553,7 @@ dialog.onClose {
 #thirdSection {
     // background-color: #011716;
     position:relative;
-    padding: 0 calc(var(--contentPadding));
+    padding: calc(var(--minPadding)) calc(var(--minPadding));
 
     #thirdSectionContainer {
         position:relative;
