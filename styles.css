@@ -685,6 +685,7 @@ dialog.onClose {
 #contactMain section form .fullWidth button:hover {
   cursor: pointer;
   background-color: #f0d83f;
+  font-weight: 500;
 }
 #contactMain #mapElements {
   flex: 2;
