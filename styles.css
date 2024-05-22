@@ -588,16 +588,6 @@ dialog.onClose {
   padding-bottom: 0;
 }
 
-#Model {
-  padding-top: calc(var(--minPadding) / 2);
-  padding-bottom: calc(var(--minPadding) / 2);
-}
-#Model h4 {
-  padding: calc(var(--minPadding) / 5);
-  text-align: center;
-  font-weight: 600;
-}
-
 #contactMain {
   padding: 0 calc(var(--minPadding) * 2);
   margin-bottom: var(--minPadding);
@@ -872,11 +862,42 @@ dialog.onClose {
     width: calc(25% - 20px); /* Adjusting width for desktops */
   }
 }
-.aboutUsImage {
+.aboutUsModel {
+  position: relative;
   width: var(--textContainerMax);
-  margin: 0 auto;
+  margin: calc(var(--minPadding)) auto;
+  padding: calc(var(--minPadding) / 2);
+  box-shadow: rgba(0, 0, 0, 0.08) 0px -5px 15px 3px inset;
+  border-radius: 0.35rem;
 }
-.aboutUsImage img {
+.aboutUsModel .modelTitle {
+  position: absolute;
+  bottom: 15%;
+  left: 7%;
+  font-size: calc(var(--h2size) * 0.8);
+  background-color: rgba(0, 0, 0, 0.07);
+  padding: 1rem 3rem;
+  border-radius: 0.25rem;
+  font-weight: 600;
+}
+.aboutUsModel .modelHint {
+  font-size: calc(var(--psize) * 0.75);
+  text-align: center;
+  margin-top: 1rem;
+  font-style: italic;
+}
+.aboutUsModel button {
+  color: white;
+  background-color: hsl(168, 64%, 24%);
+  border-radius: 4px;
+  padding: 2rem;
+  border: none;
+  position: absolute;
+  top: 10%;
+  right: 5%;
+  border-radius: 0.5rem;
+}
+.aboutUsModel img {
   -o-object-fit: cover;
      object-fit: cover;
   width: 100%;

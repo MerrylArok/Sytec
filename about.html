@@ -42,17 +42,40 @@
        
 
         <section class="pageSection animateLeft" id="modifiedPageSection">   
-            <section class="aboutUsImage" id="Model">
-                <model-viewer src="media/3D Models/Cart/0001-0114.draco.gltf" camera-controls ar>
+            <section class="aboutUsModel" id="Model">
+                <model-viewer src="media/3D Models/Cart/Cart.draco.gltf" camera-controls ar shadow-intensity="1.2" exposure="0.6" tone-mapping="neutral" shadow-softness="1" auto-rotate camera-orbit="-37.44deg 68.02deg 4.7m" field-of-view="25deg">
+                    <button slot="ar-button" >
+                        Activate AR
+                    </button>
+                </model-viewer>
+                <h4 class="modelTitle">Multi-Utility Safety Cart</h4>
+                <p class="modelHint">Interact with these 3D models using a mouse or finger gestures. Click <em>"Activate AR"</em> to visualize in real life (mobile only)</p>
+                
+             </section>     
+            
+            <p>This page showcases a few of our products. We design everthing from custom IT Panels to durable Multi-Utility Carts. We design sustainable products that are revision-controlled, and can be retro-fitted/ upgraded as your needs change.  </p>
+        </section>
+
+        <section class="pageSection animateRight" id="modifiedPageSection">
+            <section class="aboutUsModel" id="Model">
+                <model-viewer src="media/3D Models/1 U Panel/1 U Panel.draco.gltf" camera-controls ar shadow-intensity="1.2" exposure="0.5" tone-mapping="neutral" shadow-softness="0.8" auto-rotate camera-orbit="369.9deg 80.07deg 0.7m" field-of-view="19.58deg">
                     <button slot="ar-button" style="background-color: white; border-radius: 4px; border: none; position: absolute; bottom: 16px; right: 16px; ">
                         Activate AR
                     </button>
                 </model-viewer>
-                <h4>Multi-Utility Safety Cart</h4>
-                <h4>Interact with this 3D model using a mouse or finger gestures. Click "Activate AR" to visualize in real life (mobile only).</h4>
-             </section>     
-            
-            <p>This page showcases a few of our products. We design everthing from custom IT Panels to durable Multi-Utility Carts. We focus on sustainability by ensuring that our designs are revision-controlled and can be retro-fitted/ upgraded as your needs change.  </p>
+                <h4 class="modelTitle">1 U Panel</h4>
+            </section>    
+        </section>
+
+        <section class="pageSection animateLeft" id="modifiedPageSection">
+            <section class="aboutUsModel" id="Model">
+                <model-viewer src="media/3D Models/E3R Cabinet/E3RCabinet.draco.gltf" camera-controls ar shadow-intensity="1" exposure="0.6" tone-mapping="neutral" shadow-softness="0.8" camera-orbit="32.36deg 96.57deg 5.62m" field-of-view="24.16deg">
+                    <button slot="ar-button" style="background-color: white; border-radius: 4px; border: none; position: absolute; bottom: 16px; right: 16px; ">
+                        Activate AR
+                    </button>
+                </model-viewer>
+                <h4 class="modelTitle">CSA 3R Rated Enclosure </h4>
+            </section>    
         </section>
 
         
