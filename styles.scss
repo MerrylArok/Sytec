@@ -823,7 +823,11 @@ dialog.onClose {
 
 ////////////////////////////////////////////////////////////////@at-root
 /// CONTACT PAGE ///////////////////////////////@at-root
-/// ////////////////////////////////////////////////////////////////@at-root
+
+#contactUsHeader{
+    padding-top:var(--minPadding);
+    padding-bottom:calc(var(--minPadding)/1.5);
+}
 
 #aboutUsQuote{
     margin-top: var(--minPadding);}

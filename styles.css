@@ -579,6 +579,11 @@ dialog.onClose {
   margin-right: var(--largePicMargin);
 }
 
+#contactUsHeader {
+  padding-top: var(--minPadding);
+  padding-bottom: calc(var(--minPadding) / 1.5);
+}
+
 #aboutUsQuote {
   margin-top: var(--minPadding);
 }
