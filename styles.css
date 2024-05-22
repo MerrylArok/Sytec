@@ -579,9 +579,23 @@ dialog.onClose {
   margin-right: var(--largePicMargin);
 }
 
+#aboutUsQuote {
+  margin-top: var(--minPadding);
+}
+
 #modifiedPageSection {
-  padding-top: calc(var(--minPadding) * 1.25);
-  padding-bottom: calc(var(--minPadding));
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+#Model {
+  padding-top: calc(var(--minPadding) / 2);
+  padding-bottom: calc(var(--minPadding) / 2);
+}
+#Model h4 {
+  padding: calc(var(--minPadding) / 5);
+  text-align: center;
+  font-weight: 600;
 }
 
 #contactMain {
@@ -832,7 +846,7 @@ dialog.onClose {
 
 .gallery-item {
   margin: 10px;
-  width: 200px; /* Fixing the width of each gallery item */
+  width: 400px; /* Fixing the width of each gallery item */
   height: 200px; /* Fixing the height of each gallery item */
   overflow: hidden; /* To ensure images don't overflow the fixed height */
 }
