@@ -1219,14 +1219,16 @@ dialog.onClose {
 
     button{
         color:white;
-        background-color:$lightGreen; 
+        background-color:$lightGreen;
+        font-size: calc(var(--h2size)*.7); 
+        font-weight:600;
         border-radius: 4px; 
-        padding:2rem;
+        padding:1rem 2rem;
         border: none; 
         position: absolute;
-        top: 10%; 
+        top: 5%; 
         right: 5%;
-        border-radius: 0.5rem;
+        border-radius: 1rem;
     }
 
 
@@ -1794,6 +1796,10 @@ model-viewer {
         }
     }
 
+    #modifiedPageSection #Model{
+        transform: translateX(-0.6%);
+     }
+
 
 }
 
@@ -1802,6 +1808,7 @@ model-viewer {
         // --minPadding: 2rem;
         --chunkPaddingTopBot: 10rem;
         --helloContentPosition: 25rem;
+        --commonPageHeaderHeight: 200px;
     }
 
     .chunkMinHeight {
@@ -1839,6 +1846,11 @@ model-viewer {
             }
         }
     }
+
+        #modifiedPageSection #Model{
+            transform: translateX(-1.5%);
+        }
+
 }
 
 @media (max-width:390px) {
@@ -1863,6 +1875,10 @@ model-viewer {
             overflow: hidden;
             position: relative;
         }
+    }
+
+    #modifiedPageSection #Model{
+        transform: translateX(-3.5%);
     }
 
 }
