@@ -927,12 +927,12 @@ model-viewer {
   display: flex;
   flex-direction: row;
   padding: calc(var(--minPadding) / 1.25) var(--minPadding);
-  background-color: #222222;
+  background-color: #1b1b1b;
   justify-content: center;
 }
 #footer ul {
   list-style: none;
-  margin: 0 2rem;
+  margin: auto 2rem;
 }
 #footer h3 {
   font-weight: bold;
@@ -1166,7 +1166,7 @@ model-viewer {
   }
   #fourthSection {
     flex-direction: column;
-    padding: var(--chunkPaddingTopBot) var(--minPadding);
+    padding: 0 var(--minPadding) var(--chunkPaddingTopBot) var(--minPadding);
   }
   #fourthSection #teamContentContainer {
     flex: 0 0 auto;

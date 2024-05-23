@@ -122,46 +122,44 @@ class Footer extends HTMLElement {
                 <h3>Sytec Manufacturing</h3>
             </li>
             <li>
-                <h4>7815- 127th Ave</h4>
-            </li>
-            <li>
-                <h4>Edmonton, AB T5B 1R9</h4>
+                <h4>7815- 127 Ave, Edmonton</h4>
             </li>
             <li>
                 <h4><a href="tel:+7804849898">780-484-9898</a></h4>
-            </li>           
-        </ul>
-
-
-        <ul>
+            </li> 
             <li>
-                <h3>About Us</h3>
+                <h4>Weekdays: 7AM to 4:30PM</h4>
             </li>
-            <li>
-            <h4><a href="./contact.html">Contact</a></h4>
-            </li>            
-            <li>
-                <h4>Team</h4>
-            </li>
-            <li>
-                <h4><a target="_blank" href="https://ca.indeed.com/cmp/Sytec-Manufacturing-1/jobs">Careers</a></h4>
-            </li>
+                      
         </ul>
 
         <ul>
+            
             <li>
-                <h3>Our Services</h3>
+                <h3><a href="./design.html">Design</a></h3>
             </li>
             <li>
-                <h4><a href="./design.html">Design</a></h4>
+                <h3><a href="./manufacture.html">Manufacture</a></h3>
             </li>
             <li>
-                <h4><a href="./manufacture.html">Manufacture</a></h4>
-            </li>
-            <li>
-                <h4><a href="./deliver.html">Deliver</a></h4>
+                <h3><a href="./deliver.html">Deliver</a></h3>
             </li>
         </ul>
+
+        <ul>
+                       
+            <li>
+                <h3><a href="./about.html">About Us</a></h3>
+            </li>
+            <li>
+            <h3><a href="./contact.html">Contact Us</a></h3>
+            </li> 
+            <li>
+                <h3><a target="_blank" href="https://ca.indeed.com/cmp/Sytec-Manufacturing-1/jobs">Careers</a></h3>
+            </li>
+        </ul>
+
+        
 
         <ul id="externalLinks">
             <li><a href="https://ca.linkedin.com/company/sytec-manufacturing-ltd" target="_blank"><img
@@ -171,9 +169,9 @@ class Footer extends HTMLElement {
         </ul>
 
         <div id="footerTagline">
-        <h2>Design.</h2>
-        <h2 id="second">Manufacture.</h2>
-        <h2 id="third">Deliver.</h2>
+        <h2>Design</h2>
+        <h2 id="second">Manufacture</h2>
+        <h2 id="third">Deliver</h2>
         </div>
     </footer>
         `;
