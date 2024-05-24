@@ -496,7 +496,7 @@ dialog.onClose {
   background-size: cover;
 }
 #thirdSection #thirdSectionContainer #cardFlexContainer #productCard {
-  background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.8)), url(./media/pics/warehouse.webp) center no-repeat;
+  background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.8)), url(./media/pics/enclosures.webp) top no-repeat;
   background-size: cover;
 }
 #thirdSection #thirdSectionContainer #cardFlexContainer #deliverCard {
@@ -584,7 +584,7 @@ dialog.onClose {
   padding-bottom: calc(var(--minPadding) / 1.5);
 }
 
-#aboutUsQuote {
+#productsQuote {
   margin-top: var(--minPadding);
 }
 
@@ -749,6 +749,11 @@ dialog.onClose {
   background-position: top;
 }
 
+#productsHeader {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.5)), url(./media/pics/warehouse.webp);
+  background-position: top;
+}
+
 #contactHeader {
   background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.5)), url(./media/pics/sytecBuilding.webp);
   background-position: top;
@@ -868,7 +873,7 @@ dialog.onClose {
     width: calc(25% - 20px); /* Adjusting width for desktops */
   }
 }
-.aboutUsModel {
+.productsModel {
   position: relative;
   width: var(--textContainerMax);
   margin: calc(var(--minPadding)) auto;
@@ -876,7 +881,7 @@ dialog.onClose {
   box-shadow: rgba(0, 0, 0, 0.08) 0px -5px 15px 3px inset;
   border-radius: 0.35rem;
 }
-.aboutUsModel .modelTitle {
+.productsModel .modelTitle {
   position: absolute;
   bottom: 15%;
   left: 7%;
@@ -886,13 +891,13 @@ dialog.onClose {
   border-radius: 0.25rem;
   font-weight: 600;
 }
-.aboutUsModel .modelHint {
+.productsModel .modelHint {
   font-size: calc(var(--psize) * 0.75);
   text-align: center;
   margin-top: 1rem;
   font-style: italic;
 }
-.aboutUsModel button {
+.productsModel button {
   color: white;
   background-color: hsl(168, 64%, 24%);
   font-size: calc(var(--h2size) * 0.7);
@@ -905,7 +910,7 @@ dialog.onClose {
   right: 5%;
   border-radius: 1rem;
 }
-.aboutUsModel img {
+.productsModel img {
   -o-object-fit: cover;
      object-fit: cover;
   width: 100%;

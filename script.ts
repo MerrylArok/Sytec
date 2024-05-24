@@ -59,6 +59,7 @@ class Header extends HTMLElement {
         <li><a class="desktopNav buttonTransition" href="./design.html">Design</a></li>
         <li><a class="desktopNav buttonTransition" href="./manufacture.html">Manufacture</a></li>
         <li><a class="desktopNav buttonTransition" href="./deliver.html">Deliver</a></li>
+        <li><a class="desktopNav buttonTransition" href="./products.html">Products</a></li>
         <li><a class="desktopNav buttonTransition" href="./about.html">About</a></li>
             <li><a id="headerContactButton" class="buttonTransition" href="./contact.html">CONTACT</a></li>
             <li><button id="openSideNav" role="navigation" aria-label="Quick Navi Links">
@@ -88,7 +89,7 @@ class SideNav extends HTMLElement {
             </button>
             <ul>
             <li><a href="./index.html">HOME</a></li>      
-            <li><a href="./about.html">ABOUT</a></li>          
+            <li><a href="./products.html">PRODUCTS</a></li>          
                 <li>
                     <ul id="nestedList"><a href="./index.html#servicesChunk">SERVICES</a>
                         <li><a href="./design.html">DESIGN</a></li>
@@ -96,7 +97,7 @@ class SideNav extends HTMLElement {
                         <li><a href="./deliver.html">DELIVER</a></li>
                     </ul>
                 </li>
-                <li><a href="https://ca.indeed.com/cmp/Sytec-Manufacturing-1/jobs" target="_blank">CAREERS</a></li>
+                <li><a href="./about.html">ABOUT</a></li>
                 <li><a href="./contact.html">CONTACT</a></li>
                 
             </ul>
@@ -149,13 +150,13 @@ class Footer extends HTMLElement {
         <ul>
                        
             <li>
-                <h3><a href="./about.html">About Us</a></h3>
+                <h3><a href="./products.html">Products</a></h3>
             </li>
             <li>
             <h3><a href="./contact.html">Contact Us</a></h3>
             </li> 
             <li>
-                <h3><a target="_blank" href="https://ca.indeed.com/cmp/Sytec-Manufacturing-1/jobs">Careers</a></h3>
+                <h3><a href="about.html">About Us</a></h3>
             </li>
         </ul>
 

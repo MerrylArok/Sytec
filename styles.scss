@@ -692,7 +692,7 @@ dialog.onClose {
             }
 
             #productCard {
-                background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.8)), url(./media/pics/warehouse.webp) center no-repeat;
+                background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.8)), url(./media/pics/enclosures.webp) top no-repeat;
                 background-size: cover;
             }
 
@@ -829,7 +829,7 @@ dialog.onClose {
     padding-bottom:calc(var(--minPadding)/1.5);
 }
 
-#aboutUsQuote{
+#productsQuote{
     margin-top: var(--minPadding);}
 
 #modifiedPageSection {
@@ -1038,6 +1038,11 @@ dialog.onClose {
     background-position: top;
 }
 
+#productsHeader {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.5)), url(./media/pics/warehouse.webp);
+    background-position: top;
+}
+
 
 #contactHeader {
     background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.5)), url(./media/pics/sytecBuilding.webp);
@@ -1193,7 +1198,7 @@ dialog.onClose {
   //////////////////////////////////////////////////////////////////////////////////
   /// ABOUT US
   /// ///////////////////////////////////////////////////////////////////////////
-  .aboutUsModel{
+  .productsModel{
     position: relative;
     width:var(--textContainerMax);
     margin:calc(var(--minPadding)) auto;
