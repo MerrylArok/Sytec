@@ -517,68 +517,6 @@ dialog.onClose {
   transform: skewY(5deg);
 }
 
-#fourthSection {
-  display: flex;
-  flex-direction: row-reverse;
-  justify-content: center;
-  padding: var(--chunkPaddingTopBot) calc(var(--contentPadding) * 2);
-}
-#fourthSection > * {
-  flex: 1;
-}
-#fourthSection img {
-  width: 100%;
-  height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
-  border-radius: 0.5rem;
-}
-#fourthSection #teamContentContainer {
-  display: flex;
-  flex-direction: column;
-  overflow: hidden;
-  height: 100%;
-  margin: auto;
-}
-#fourthSection #teamContentContainer > * {
-  flex: 1;
-}
-#fourthSection #teamContentContainer #aboutUsContent {
-  max-width: var(--textContainerMax);
-  padding: 0 2rem;
-  margin-bottom: 2rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-#fourthSection #teamContentContainer #aboutUsContent #aboutUsContentLinks {
-  padding-top: 2.5rem;
-  list-style-type: none;
-  display: flex;
-  flex-direction: row;
-}
-#fourthSection #teamContentContainer #aboutUsContent #aboutUsContentLinks li {
-  width: 100%;
-  border: 0.15rem solid hsl(168, 64%, 24%);
-  border-radius: 0.25rem;
-  padding: 0.6rem;
-  text-align: center;
-}
-#fourthSection #teamContentContainer #aboutUsContent #aboutUsContentLinks li h2 {
-  color: hsl(168, 64%, 24%);
-}
-#fourthSection #teamContentContainer #aboutUsContent #aboutUsContentLinks li:hover {
-  cursor: pointer;
-  background-color: hsl(168, 64%, 24%);
-}
-#fourthSection #teamContentContainer #aboutUsContent #aboutUsContentLinks li:hover h2 {
-  color: #fff;
-}
-#fourthSection #teamPicContainer {
-  flex: var(--largePicFlex);
-  margin-right: var(--largePicMargin);
-}
-
 #contactUsHeader {
   padding-top: var(--minPadding);
   padding-bottom: calc(var(--minPadding) / 1.5);
@@ -765,8 +703,9 @@ dialog.onClose {
   padding: calc(var(--minPadding) * 1.75) var(--minPadding);
 }
 .pageSection * {
-  max-width: var(--textContainerMax);
+  width: var(--textContainerMax);
   margin: 0 auto;
+  max-width: 100%;
 }
 .pageSection h2 {
   border-left: solid 1rem hsl(168, 64%, 24%);
@@ -873,6 +812,30 @@ dialog.onClose {
     width: calc(25% - 20px); /* Adjusting width for desktops */
   }
 }
+.aboutUsSections {
+  background-color: white;
+  padding: calc(var(--minPadding) / 2) var(--minPadding) 0 var(--minPadding);
+}
+.aboutUsSections * {
+  width: var(--textContainerMax);
+  margin: 0 auto;
+  max-width: 100%;
+}
+.aboutUsSections img {
+  display: block;
+}
+.aboutUsSections .aboutUsSnippet {
+  padding-top: calc(var(--minPadding) / 2);
+  padding-bottom: var(--minPadding);
+}
+.aboutUsSections h2 {
+  border-left: solid 1rem hsl(168, 64%, 24%);
+  padding-left: 1.5rem;
+  margin-top: calc(var(--minPadding) * 0.75);
+  font-weight: 500;
+  margin-bottom: 1.75rem;
+}
+
 .productsModel {
   position: relative;
   width: var(--textContainerMax);
@@ -890,6 +853,8 @@ dialog.onClose {
   padding: 1rem 3rem;
   border-radius: 0.25rem;
   font-weight: 600;
+  max-width: -moz-fit-content;
+  max-width: fit-content;
 }
 .productsModel .modelHint {
   font-size: calc(var(--psize) * 0.75);
@@ -909,6 +874,8 @@ dialog.onClose {
   top: 5%;
   right: 5%;
   border-radius: 1rem;
+  max-width: -moz-fit-content;
+  max-width: fit-content;
 }
 .productsModel img {
   -o-object-fit: cover;
@@ -1102,23 +1069,6 @@ model-viewer {
   #thirdSection #thirdSectionContainer #cardFlexContainer .servicesCard #learnMoreContainer::after {
     transform: rotate(0);
   }
-  #teamContentContainer picture {
-    display: none;
-  }
-  #fourthSection {
-    height: auto;
-    padding: var(--chunkPaddingTopBot) calc(var(--contentPadding) / 2);
-  }
-  #fourthSection #teamContentContainer #aboutUsContent {
-    margin-bottom: 0;
-  }
-  #fourthSection #teamContentContainer #aboutUsContent #aboutUsContentLinks {
-    flex-direction: column;
-  }
-  #fourthSection #teamContentContainer #aboutUsContent #aboutUsContentLinks li {
-    width: 100%;
-    margin: 0.5rem auto;
-  }
   .pageSection {
     padding: calc(var(--minPadding) * 2.25) var(--minPadding);
   }
@@ -1133,22 +1083,9 @@ model-viewer {
   :root {
     --largePicFlex: 1;
     --logoContainerHeight: 6rem;
-    --textContainerMax: 90vw;
+    --textContainerMax: 85vw;
     --commonPageHeaderHeight: 360px;
     --businessh1Size: 8vw;
-  }
-  #contactMain {
-    display: flex;
-    flex-direction: column;
-  }
-  #contactMain section {
-    max-width: 100%;
-    padding: calc(var(--minPadding) * 1.25);
-  }
-  #contactMain #mapElements {
-    flex: 1;
-    min-height: 70vh;
-    padding: var(--minPadding) 0;
   }
 }
 @media (max-width: 800px) {
@@ -1168,32 +1105,6 @@ model-viewer {
     width: 100%;
     margin: 1.75rem auto;
     min-height: 45.4545454545vw;
-  }
-  #fourthSection {
-    flex-direction: column;
-    padding: 0 var(--minPadding) var(--chunkPaddingTopBot) var(--minPadding);
-  }
-  #fourthSection #teamContentContainer {
-    flex: 0 0 auto;
-    margin-bottom: var(--minPadding);
-  }
-  #fourthSection #teamContentContainer #aboutUsContent {
-    padding: 0;
-  }
-  #fourthSection #teamContentContainer #aboutUsContent #aboutUsContentLinks {
-    flex-direction: row;
-  }
-  #fourthSection #teamContentContainer #aboutUsContent #aboutUsContentLinks li {
-    width: 48%;
-  }
-  #fourthSection #teamPicContainer {
-    flex: 1 1 auto;
-    margin: 0;
-    overflow: hidden;
-  }
-  #fourthSection #teamPicContainer img {
-    max-height: 500px;
-    width: auto;
   }
 }
 @media (max-width: 600px) {
@@ -1218,15 +1129,6 @@ model-viewer {
   #thirdSection #thirdSectionContainer {
     padding: var(--chunkPaddingTopBot) var(--minPadding);
     box-shadow: none;
-  }
-  #fourthSection #teamContentContainer #aboutUsContent #aboutUsContentLinks li {
-    background-color: hsl(168, 64%, 24%);
-  }
-  #fourthSection #teamContentContainer #aboutUsContent #aboutUsContentLinks li h2 {
-    color: #fff;
-  }
-  #contactMain {
-    padding: 0 calc(var(--minPadding));
   }
   .pageSection {
     padding: calc(var(--minPadding) * 2) calc(var(--minPadding)) 0 calc(var(--minPadding));
@@ -1272,11 +1174,22 @@ model-viewer {
     padding: 0;
     margin-bottom: 0.5rem;
   }
-  #modifiedPageSection #Model {
-    transform: translateX(-0.6%);
-  }
 }
 @media (max-width: 450px) {
+  #contactMain {
+    padding: 0 calc(var(--minPadding));
+    display: flex;
+    flex-direction: column;
+  }
+  #contactMain section {
+    max-width: 100%;
+    padding: calc(var(--minPadding) * 1.25);
+  }
+  #contactMain #mapElements {
+    flex: 1;
+    min-height: 70vh;
+    padding: var(--minPadding) 0;
+  }
   :root {
     --chunkPaddingTopBot: 10rem;
     --helloContentPosition: 25rem;
@@ -1291,28 +1204,7 @@ model-viewer {
   #thirdSection #thirdSectionContainer #cardFlexContainer .servicesCard {
     height: 75.1879699248vw;
   }
-  #fourthSection #teamPicContainer img {
-    transform: translateX(-30%);
-  }
-  #modifiedPageSection #Model {
-    transform: translateX(-1.5%);
-  }
-}
-@media (max-width: 390px) {
-  #fourthSection #teamPicContainer img {
-    max-height: 375px;
-    transform: translateX(-30%);
-  }
-  #secondSection #logoFlexContainer {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    height: 100%;
-    padding: 4rem 0;
-    overflow: hidden;
-    position: relative;
-  }
-  #modifiedPageSection #Model {
-    transform: translateX(-3.5%);
+  #contactMain {
+    padding: 0 calc(var(--minPadding) / 2);
   }
 }/*# sourceMappingURL=styles.css.map */

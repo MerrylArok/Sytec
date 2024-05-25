@@ -130,6 +130,7 @@ body {
     height: 100%;
     position: relative;
     scroll-behavior: smooth;
+    
 }
 
 //to make chunk's vh units consistent across mobile
@@ -736,90 +737,90 @@ dialog.onClose {
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-#fourthSection {
-    display: flex;
-    flex-direction: row-reverse;
-    justify-content: center;
-    padding: var(--chunkPaddingTopBot) calc(var(--contentPadding)*2);
-    // background-color: $lightGreen;
+// #fourthSection {
+//     display: flex;
+//     flex-direction: row-reverse;
+//     justify-content: center;
+//     padding: var(--chunkPaddingTopBot) calc(var(--contentPadding)*2);
+//     // background-color: $lightGreen;
 
 
-    >* {
-        flex: 1;
-    }
-
-
-
-    img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        border-radius: .5rem;
-    }
-
-    #teamContentContainer {
-        display: flex;
-        flex-direction: column;
-        // justify-content: center;
-        overflow: hidden;
-        height: 100%;
-        margin: auto;
-
-        >* {
-            flex: 1;
-        }
-
-        #aboutUsContent {
-            max-width: var(--textContainerMax);
-            padding: 0 2rem;
-            margin-bottom: 2rem;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-
-            #aboutUsContentLinks {
-                padding-top: 2.5rem;
-                list-style-type: none;
-                display: flex;
-                flex-direction: row;
-
-                li {
-                    width: 100%;
-                    border: 0.15rem solid $lightGreen;
-                    border-radius: .25rem;
-                    // margin: 0 1rem;
-                    padding: .6rem;
-                    text-align: center;
-
-                    h2 {
-                        color: $lightGreen;
-                    }
-
-                }
-
-                li:hover {
-                    cursor: pointer;
-                    background-color: $lightGreen;
-
-                    h2 {
-                        color: $white;
-                    }
-                }
-
-            }
-        }
-
-
-    }
-
-    #teamPicContainer {
-        flex: var(--largePicFlex);
-        margin-right: var(--largePicMargin);
-    }
+//     >* {
+//         flex: 1;
+//     }
 
 
 
-}
+//     img {
+//         width: 100%;
+//         height: 100%;
+//         object-fit: cover;
+//         border-radius: .5rem;
+//     }
+
+//     #teamContentContainer {
+//         display: flex;
+//         flex-direction: column;
+//         // justify-content: center;
+//         overflow: hidden;
+//         height: 100%;
+//         margin: auto;
+
+//         >* {
+//             flex: 1;
+//         }
+
+//         #aboutUsContent {
+//             max-width: var(--textContainerMax);
+//             padding: 0 2rem;
+//             margin-bottom: 2rem;
+//             display: flex;
+//             flex-direction: column;
+//             justify-content: center;
+
+//             #aboutUsContentLinks {
+//                 padding-top: 2.5rem;
+//                 list-style-type: none;
+//                 display: flex;
+//                 flex-direction: row;
+
+//                 li {
+//                     width: 100%;
+//                     border: 0.15rem solid $lightGreen;
+//                     border-radius: .25rem;
+//                     // margin: 0 1rem;
+//                     padding: .6rem;
+//                     text-align: center;
+
+//                     h2 {
+//                         color: $lightGreen;
+//                     }
+
+//                 }
+
+//                 li:hover {
+//                     cursor: pointer;
+//                     background-color: $lightGreen;
+
+//                     h2 {
+//                         color: $white;
+//                     }
+//                 }
+
+//             }
+//         }
+
+
+//     }
+
+//     #teamPicContainer {
+//         flex: var(--largePicFlex);
+//         margin-right: var(--largePicMargin);
+//     }
+
+
+
+// }
 
 ////////////////////////////////////////////////////////////////@at-root
 /// CONTACT PAGE ///////////////////////////////@at-root
@@ -1056,8 +1057,9 @@ dialog.onClose {
 
 
     * {
-        max-width: var(--textContainerMax);
+        width: var(--textContainerMax);
         margin: 0 auto;
+        max-width: 100%;
     }
 
 
@@ -1196,18 +1198,55 @@ dialog.onClose {
 
 
   //////////////////////////////////////////////////////////////////////////////////
-  /// ABOUT US
+  /// ABOUT US & PRODUCTS
   /// ///////////////////////////////////////////////////////////////////////////
+  .aboutUsSections{     
+
+    background-color: white;
+    padding: calc(var(--minPadding)/2) var(--minPadding) 0 var(--minPadding);
+
+
+* {
+    width: var(--textContainerMax);
+    margin: 0 auto;
+    max-width: 100%;
+}
+
+img{
+    display: block; 
+    
+}
+
+.aboutUsSnippet{
+    padding-top: calc(var(--minPadding)/2);
+    padding-bottom: var(--minPadding);
+}
+
+
+h2 {
+    border-left: solid 1rem $lightGreen;
+    padding-left: 1.5rem;
+    margin-top: calc(var(--minPadding)*.75);
+    font-weight: 500;
+    margin-bottom: 1.75rem;
+}
+
+
+   
+}
+
+
+
+  
   .productsModel{
     position: relative;
     width:var(--textContainerMax);
     margin:calc(var(--minPadding)) auto;
     padding:calc(var(--minPadding)/2);
-      box-shadow: rgba(0, 0, 0, 0.08) 0px -5px 15px 3px inset;
+    box-shadow: rgba(0, 0, 0, 0.08) 0px -5px 15px 3px inset;
     border-radius: 0.35rem;
 
     
-
     .modelTitle{
         position:absolute;
         bottom:15%;
@@ -1217,6 +1256,7 @@ dialog.onClose {
         padding:1rem 3rem;
         border-radius: 0.25rem;;
         font-weight:600;
+        max-width: fit-content;
     }
     
 
@@ -1239,6 +1279,7 @@ dialog.onClose {
         top: 5%; 
         right: 5%;
         border-radius: 1rem;
+        max-width: fit-content;
     }
 
 
@@ -1512,34 +1553,36 @@ model-viewer {
     }
 
 
-    #teamContentContainer {
-        picture {
-            display: none;
-        }
-    }
+    // #teamContentContainer {
+    //     picture {
+    //         display: none;
+    //     }
+    // }
 
-    #fourthSection {
-        height: auto;
-        padding: var(--chunkPaddingTopBot) calc(var(--contentPadding)/2);
+   
 
-        #teamContentContainer {
-            #aboutUsContent {
+    // #fourthSection {
+    //     height: auto;
+    //     padding: var(--chunkPaddingTopBot) calc(var(--contentPadding)/2);
 
-                margin-bottom: 0;
+    //     #teamContentContainer {
+    //         #aboutUsContent {
 
-                #aboutUsContentLinks {
-                    flex-direction: column;
+    //             margin-bottom: 0;
 
-                    li {
-                        width: 100%;
-                        margin: .5rem auto;
-                    }
-                }
-            }
-        }
+    //             #aboutUsContentLinks {
+    //                 flex-direction: column;
+
+    //                 li {
+    //                     width: 100%;
+    //                     margin: .5rem auto;
+    //                 }
+    //             }
+    //         }
+    //     }
 
 
-    }
+    // }
 
     .pageSection {
         padding: calc(var(--minPadding)*2.25) var(--minPadding);
@@ -1562,32 +1605,13 @@ model-viewer {
     :root {
         --largePicFlex: 1;
         --logoContainerHeight: 6rem;
-        --textContainerMax: 90vw;
+        --textContainerMax: 85vw;
         --commonPageHeaderHeight: 360px;
         --businessh1Size: 8vw;
     }
 
 
-    #contactMain {
-        // padding-top: var(--headerHeight);
-        display: flex;
-        flex-direction: column;
-
-        section {
-            max-width: 100%;
-            padding: calc(var(--minPadding)*1.25);
-        }
-
-
-        #mapElements {
-            flex: 1;
-            min-height: 70vh;
-            padding: var(--minPadding) 0;
-        }
-
-
-    }
-
+    
 
 
 
@@ -1645,43 +1669,43 @@ model-viewer {
 
     }
 
-    #fourthSection {
-        flex-direction: column;
-        padding: 0  var(--minPadding) var(--chunkPaddingTopBot) var(--minPadding);
+    // #fourthSection {
+    //     flex-direction: column;
+    //     padding: 0  var(--minPadding) var(--chunkPaddingTopBot) var(--minPadding);
 
-        #teamContentContainer {
-            flex: 0 0 auto;
-            margin-bottom: var(--minPadding);
+    //     #teamContentContainer {
+    //         flex: 0 0 auto;
+    //         margin-bottom: var(--minPadding);
 
-            #aboutUsContent {
+    //         #aboutUsContent {
 
-                padding: 0;
+    //             padding: 0;
 
-                #aboutUsContentLinks {
-                    flex-direction: row;
+    //             #aboutUsContentLinks {
+    //                 flex-direction: row;
 
-                    li {
-                        width: 48%;
-                        // margin:0.5rem 1%;
-                    }
-                }
-            }
-        }
+    //                 li {
+    //                     width: 48%;
+    //                     // margin:0.5rem 1%;
+    //                 }
+    //             }
+    //         }
+    //     }
 
-        #teamPicContainer {
-            flex: 1 1 auto;
-            margin: 0;
-            overflow: hidden;
+    //     #teamPicContainer {
+    //         flex: 1 1 auto;
+    //         margin: 0;
+    //         overflow: hidden;
 
-            img {
-                //with width@100%, the image was not occupying the full div area. im scaling the image by 2x and then translating it left to have the guy in focus
+    //         img {
+    //             //with width@100%, the image was not occupying the full div area. im scaling the image by 2x and then translating it left to have the guy in focus
 
-                max-height: 500px;
-                width: auto;
-                //    transform: translateX(-30%);
-            }
-        }
-    }
+    //             max-height: 500px;
+    //             width: auto;
+    //             //    transform: translateX(-30%);
+    //         }
+    //     }
+    // }
 }
 
 @media (max-width:600px) {
@@ -1720,28 +1744,25 @@ model-viewer {
         }
     }
 
-    #fourthSection {
+    // #fourthSection {
 
-        #teamContentContainer {
-            #aboutUsContent {
+    //     #teamContentContainer {
+    //         #aboutUsContent {
 
-                #aboutUsContentLinks {
+    //             #aboutUsContentLinks {
 
-                    li {
-                        background-color: $lightGreen;
+    //                 li {
+    //                     background-color: $lightGreen;
 
-                        h2 {
-                            color: $white;
-                        }
-                    }
-                }
-            }
-        }
-    }
-
-    #contactMain{
-        padding: 0 calc(var(--minPadding));
-    }
+    //                     h2 {
+    //                         color: $white;
+    //                     }
+    //                 }
+    //             }
+    //         }
+    //     }
+    // }
+   
 
     .pageSection {
         padding: calc(var(--minPadding)*2) calc(var(--minPadding)) 0 calc(var(--minPadding));
@@ -1804,16 +1825,35 @@ model-viewer {
                 margin-bottom: .5rem;
             }
         }
-    }
-
-    #modifiedPageSection #Model{
-        transform: translateX(-0.6%);
-     }
+    }  
 
 
 }
 
 @media (max-width:450px) {
+
+    #contactMain {
+
+        padding: 0 calc(var(--minPadding));
+        // padding-top: var(--headerHeight);
+        display: flex;
+        flex-direction: column;
+
+        section {
+            max-width: 100%;
+            padding: calc(var(--minPadding)*1.25);
+        }
+
+
+        #mapElements {
+            flex: 1;
+            min-height: 70vh;
+            padding: var(--minPadding) 0;
+        }
+
+
+    }
+  
     :root {
         // --minPadding: 2rem;
         --chunkPaddingTopBot: 10rem;
@@ -1845,50 +1885,53 @@ model-viewer {
 
     }
 
-
-
-    #fourthSection {
-
-        #teamPicContainer {
-            img {
-                // max-height: 375px;
-                transform: translateX(-30%);
-            }
-        }
+    
+    #contactMain{
+        padding: 0 calc(var(--minPadding)/2);
     }
 
-        #modifiedPageSection #Model{
-            transform: translateX(-1.5%);
-        }
+
+
+    // #fourthSection {
+
+    //     #teamPicContainer {
+    //         img {
+    //             // max-height: 375px;
+    //             transform: translateX(-30%);
+    //         }
+    //     }
+    // }
+
+    //     #modifiedPageSection #Model{
+    //         transform: translateX(-1.5%);
+    //     }
+ 
 
 }
 
 @media (max-width:390px) {
-    #fourthSection {
+    // #fourthSection {
 
-        #teamPicContainer {
-            img {
-                max-height: 375px;
-                transform: translateX(-30%);
-            }
-        }
-    }
+    //     #teamPicContainer {
+    //         img {
+    //             max-height: 375px;
+    //             transform: translateX(-30%);
+    //         }
+    //     }
+    // }
 
-    #secondSection {
+    // #secondSection {
 
-        #logoFlexContainer {
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            height: 100%;
-            padding: 4rem 0;
-            overflow: hidden;
-            position: relative;
-        }
-    }
+    //     #logoFlexContainer {
+    //         display: flex;
+    //         flex-direction: column;
+    //         justify-content: space-between;
+    //         height: 100%;
+    //         padding: 4rem 0;
+    //         overflow: hidden;
+    //         position: relative;
+    //     }
+    // }
 
-    #modifiedPageSection #Model{
-        transform: translateX(-3.5%);
-    }
 
 }
