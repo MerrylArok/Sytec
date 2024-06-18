@@ -16240,20 +16240,20 @@
 			{
 				"sampler": 0,
 				"source": 0,
-				"name": "4X Cabinet.draco_Texture_0002.png"
+				"name": "IlIIlIlllIlIlIIIlllIIlIIlI.png"
 			},
 			{
 				"sampler": 1,
 				"source": 1,
-				"name": "4X Cabinet.draco_Texture_0004.png"
+				"name": "lIllIllIlllIIlIIIIllIIIllI.png"
 			}
 	],
 	"images": [
 			{
-				"uri": "4X Cabinet.draco_Texture_0002.png"
+				"uri": "../../Fonts/backup/bin/IlIIlIlllIlIlIIIlllIIlIIlI.png"
 			},
 			{
-				"uri": "4X Cabinet.draco_Texture_0004.png"
+				"uri": "../../Fonts/backup/bin/lIllIllIlllIIlIIIIllIIIllI.png"
 			}
 	],
 	"samplers": [
@@ -17392,7 +17392,7 @@
 	"buffers" : [
 			{
 				"byteLength": 1050160
-				,"uri" : "4X Cabinet.draco_0001.bin"
+				,"uri" : "../../Fonts/backup/bin/IIlIlIlllIlIIlIllIlIllIllI.bin"
 			}
 	]
 }

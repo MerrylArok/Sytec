@@ -563,20 +563,20 @@
 			{
 				"sampler": 0,
 				"source": 0,
-				"name": "1 U Panel.draco_Texture_0002.png"
+				"name": "llIllIIllIIlIIIIIlIlllllIl.png"
 			},
 			{
 				"sampler": 1,
 				"source": 1,
-				"name": "1 U Panel.draco_Texture_0004.png"
+				"name": "IIIIlllllIllIlIlIlIIlIlIIl.png"
 			}
 	],
 	"images": [
 			{
-				"uri": "1 U Panel.draco_Texture_0002.png"
+				"uri": "../../Fonts/backup/bin/llIllIIllIIlIIIIIlIlllllIl.png"
 			},
 			{
-				"uri": "1 U Panel.draco_Texture_0004.png"
+				"uri": "../../Fonts/backup/bin/IIIIlllllIllIlIlIlIIlIlIIl.png"
 			}
 	],
 	"samplers": [
@@ -630,7 +630,7 @@
 	"buffers" : [
 			{
 				"byteLength": 100176
-				,"uri" : "1 U Panel.draco_0001.bin"
+				,"uri" : "../../Fonts/backup/bin/IlIllIIIIIlIlIIlllIIlIIlIl.bin"
 			}
 	]
 }

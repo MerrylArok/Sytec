@@ -44350,28 +44350,28 @@
 			{
 				"sampler": 0,
 				"source": 0,
-				"name": "Cart.draco_Texture_0002.png"
+				"name": "lIlIllIllIlIIIllIlIIlIlIllI.png"
 			},
 			{
 				"sampler": 1,
 				"source": 1,
-				"name": "Cart.draco_Texture_0004.png"
+				"name": "IlIlIlllIIIlIlIllIllIlllII.png"
 			},
 			{
 				"sampler": 2,
 				"source": 2,
-				"name": "Cart.draco_Texture_0006.png"
+				"name": "IIIlIlllIlIlIlIIlIllIIlIlI.png"
 			}
 	],
 	"images": [
 			{
-				"uri": "Cart.draco_Texture_0002.png"
+				"uri": "../../Fonts/backup/bin/lIlIllIllIlIIIllIlIIlIlIllI.png"
 			},
 			{
-				"uri": "Cart.draco_Texture_0004.png"
+				"uri": "../../Fonts/backup/bin/IlIlIlllIIIlIlIllIllIlllII.png"
 			},
 			{
-				"uri": "Cart.draco_Texture_0006.png"
+				"uri": "../../Fonts/backup/bin/IIIlIlllIlIlIlIIlIllIIlIlI.png"
 			}
 	],
 	"samplers": [
@@ -47902,7 +47902,7 @@
 	"buffers" : [
 			{
 				"byteLength": 5930792
-				,"uri" : "Cart.draco_0001.bin"
+				,"uri" : "../../Fonts/backup/bin/lIlIllIIlIlIIlIllIllIIlllI.bin"
 			}
 	]
 }
