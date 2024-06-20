@@ -9,47 +9,257 @@
         content="Sytec Manufacturing is a leading custom metal manufacturer specializing in sheet metal and pipe design, manufacturing, and delivery.">
     <meta name="keywords"
         content="Sytec, manufacturing, CSA, Canada, Edmonton, custom, engineering, design, metal, fabricator, fabrication, manufacturing, powder paint, enclosure, energy">
-    <title>About Us - Sytec Manufacturing</title>
-    <link rel="icon" type="image/x-icon" href="./media/android-chrome-512x512.png">
-    <link rel="stylesheet" href="styles.css">
-
+    <title>Sytec Manufacturing - Custom Metal Fabricator</title>
+    <link rel="icon" type="image/x-icon" href="./media/icons/favicon.png">
+    <link rel="stylesheet" href="landingpageStyles.css">
+    <script type="module" src="./model-viewer.min.js"></script>
 </head>
 
 <body>
-    <header-component></header-component>
-    <sidenav-component></sidenav-component>
+    <landingpage-header-component></landingpage-header-component>
 
-    <main class="forceFooterDown aboutUsPage">
+    <main class="forceFooterDown">
 
-        <hgroup class="pageHeader" id="aboutUsHeader">
-            <h1>ABOUT US</h1>
-        </hgroup>
+        <section class="fullscreenView">
+            <div class="heroScreen">
+                <div class="heroText">
+                    <h1>Custom parts right to your doorstep. <em>Hassle-Free.</em></h1>
+                    <p>We take care of it all - Design, sourcing, logistics, manufacturing, paperwork and delivery.</p>
+                </div>                
 
-        <section class="aboutUsSections animateRight">
-            <h2>
-                2 decades of sheet metal fabrication excellence - bringing your solutions to life.
-            </h2>
-
-            <p> Founded in 1998, we have deep expertise in advanced metal product design & sheet metal manufacturing, from prototyping designs to rapid production. Our foundation is built on promoting a culture of respect, empowerment, and a strong sense of ownership. </p>
+                <section class="heroModel">
+                    <model-viewer src="media/3D Models/IllllIIIIIllIlIlllllIlllll.gltf" auto-rotate shadow-intensity="1" exposure="0.6" tone-mapping="neutral" shadow-softness="0.8" camera-orbit="32.36deg 76.57deg 7m" field-of-view="24.16deg" alt="A 3D model of a CSA Rated 3R Enclosure">
+                     </model-viewer>
+                 </section>  
+            </div>            
         </section>
 
-        <section class="aboutUsSections animateLeft">
-           <p>Our team benefits from the diverse perspectives and rich experiences each team member brings. We are dedicated to nurturing our workforce with a safe, cross-functional work environment that enhances career development and encourages collaboration to drive continuous improvements.    
-            </p>
-        </section>          
+        <section class="textfullScreenView">
+            <p>With over 2 decades of expertise designing, manufacturing & delivering custom-tailored solutions, we leverage our advanced technologies for rapid prototyping and on-demand production runs. We are your friendly, responsive & collaborative sheet metal fabricator, offering competitive prices for both low-volume and high-volume runs, with a global reach.</p>
+        </section>
+
+        <section class="contactUs" id="contactUs">
+            
+            <div class="contactUsElements">
+                
+                <div class="groupedContactUsElements"><p>We want to help! Call us, or fill out this form. We will get back within 1 business day.</p>
+                    
+                    <a href="tel:1-780-484-9898"> <img src="./media/icons/phoneIcon.svg" alt="phoneIcon"> +1-(780)484-9898</a> 
+                
+                    <!-- <p>We are open Mondays through Fridays from 7:00AM to 4:30PM (excluding statutory holidays)  </p> -->
+                </div>
+                <h1>Contact Us</h1>
+                   
+            </div>
+
+            <form action="https://formsubmit.co/1538ae3425c4b56946c742487ba27d6a" method="POST">
+                <!-- <p> We look forward to speaking with you! Give us a call, or fill out the form below for an email response within 2 business days.</p> -->
+                <span class="inputField">
+                    <input type="text" name="name" placeholder=" " required>
+                    <label for="name">Name</label>
+                    <label class="requiredIndicator" for="name">*</label>
+                </span>
+
+                <span class="inputField">
+                    <input type="email" name="email" placeholder=" " required>
+                    <label for="email">Email</label>
+                    <label class="requiredIndicator" for="email">*</label>
+                </span>
+
+                <input type="hidden" name="_template" value="table">
+
+                <input type="text" name="_honey" style="display:none">
+
+                <input type="hidden" name="_autoresponse"
+                    value="Thank you for contacting us! We will get back to you soon.">
+
+                <span class="inputField" id="phoneNumberInput">
+                    <input type="tel" name="phone" placeholder=" ">
+                    <label for="phone">Phone</label>
+                </span>
+                <span class="inputField">
+                    <input type="text" name="company" placeholder=" ">
+                    <label for="company">Company</label>
+                </span>
+                <span class="inputField fullWidth">
+                    <textarea name="message" id="message" rows="5" placeholder=" " required></textarea>
+                    <label for="message">Message</label>
+                    <label class="requiredIndicator" for="message">*</label>
+                </span>
+
+                <span class="inputField button"><button type="submit">Send Message</button></span>
+
+            </form>
+        </section>
+
+        <section class="textfullScreenView logoTextContainer">
+            <p> We supply certified <b>CSA</b>, <b>UL</b> and <b>IP</b> rated products. Our custom solutions are specialized to specific industry demands - such as oil and gas, telecommunications, electrical grid and power distribution, solar etc. </p>
+            <div class="logoContainer">
+                
+                <div class="logo" aria-hidden="true"><img src="./media/logos/CSA-logo-large.jpg" alt="Logo of Canadian Standards Association (CSA)"></div>
+                    <div class="logo" aria-hidden="true"><img src="./media/logos/NEMA.png" alt="Logo of National Electrical Manufacturers Association (NEMA)"></div>                    
+                    <div class="logo"><img src="./media/logos/RoHS.png" alt="Logo of Restriction of Hazardous Substances (RoHS) "></div>
+                    <div class="logo" aria-hidden="true"><img src="./media/logos/IEC-IP rating.png" alt="Logo of International Electrotechnical Commission (IEC)"></div>
+                    <div class="logo" aria-hidden="true"><img src="./media/logos/UL.jpg" alt="Logo of Underwriters Laboratories (UL)"></div>
+            </div>
+        </section>
+
+        <section class="landingPageProducts">
+            <h2>Featured Products</h2>
+            <p>If you can think of a design - Stainless Steel, Carbon Steel or Aluminum, we can make it.</p>
+            <br>
+
+            <p>Check out some select designs from our portfolio. Use your mouse/ finger gestures to zoom in, rotate and see more details. To see this a life-sized version of the model, use your phone to scan QR code and then click the "Activate AR" button above the model.</p>
+
+            <div class="modelContainer">
+                <div class="modelTextContainer">
+                    <h3>CSA 3R Rated Enclosure</h3>
+                    <ul>
+                        <li>85" x 40" x 24" </li>
+                        <li>12 ga. RoHS - Satin Coat material </li>
+                        <li>Inner Swing Door with cut-outs</li>
+                        <li>Weld Studs - To mount Backpan</li>
+                        <li>Floor Stand with Mounting Holes</li>
+                        <li>Vent Hood with Perf</li>
+                        <li>Door Positioner to prevent sag</li>
+                        <li>Poron Gasket</li>
+                        <li>Durable Powder Coat Whatever</li>
+                    </ul>
+                </div>
+
+                <div class="theModel">                    
+                        <model-viewer src="media/3D Models/IllllIIIIIllIlIlllllIlllll.gltf" auto-rotate shadow-intensity="1" exposure="0.6" tone-mapping="neutral" shadow-softness="0.8" camera-orbit="32.36deg 76.57deg 7m" field-of-view="24.16deg" alt="A 3D model of a CSA Rated 3R Enclosure">
+                         </model-viewer>                     
+                </div>
+
+            </div>
+
+            <div class="modelContainer">
+                <div class="theModel">                    
+                    <model-viewer src="media/3D Models/lIlIlIIlIllIlIIlIllIlIlllI.gltf" auto-rotate shadow-intensity="1" exposure="0.6" tone-mapping="neutral" shadow-softness="0.8" camera-orbit="32.36deg 76.57deg 7m" field-of-view="24.16deg" alt="A 3D model of a CSA Rated 3R Enclosure">
+                     </model-viewer>                     
+            </div>
+
+                <div class="modelTextContainer">
+                    <h3>Utility Cart</h3>
+                    <ul>
+                        <li>85" x 40" x 24" </li>
+                        <li>12 ga. RoHS - Satin Coat material </li>
+                        <li>Inner Swing Door with cut-outs</li>
+                        <li>Weld Studs - To mount Backpan</li>
+                        <li>Floor Stand with Mounting Holes</li>
+                        <li>Vent Hood with Perf</li>
+                        <li>Door Positioner to prevent sag</li>
+                        <li>Poron Gasket</li>
+                        <li>Durable Powder Coat Whatever</li>
+                    </ul>
+                </div>               
+
+            </div>
+
+            <div class="modelContainer">
+                <div class="modelTextContainer">
+                    <h3>IT Rack</h3>
+                    <ul>
+                        <li>85" x 40" x 24" </li>
+                        <li>12 ga. RoHS - Satin Coat material </li>
+                        <li>Inner Swing Door with cut-outs</li>
+                        <li>Weld Studs - To mount Backpan</li>
+                        <li>Floor Stand with Mounting Holes</li>
+                        <li>Vent Hood with Perf</li>
+                        <li>Door Positioner to prevent sag</li>
+                        <li>Poron Gasket</li>
+                        <li>Durable Powder Coat Whatever</li>
+                    </ul>
+                </div>
+
+                <div class="theModel">                    
+                        <model-viewer src="media/3D Models/lIlIIlIlIlIllllIIIllIIIllI.gltf" auto-rotate shadow-intensity="1" exposure="0.6" tone-mapping="neutral" shadow-softness="0.8" camera-orbit="32.36deg 76.57deg 7m" field-of-view="24.16deg" alt="A 3D model of a CSA Rated 3R Enclosure">
+                         </model-viewer>                     
+                </div>
+
+            </div>
+
+            <div class="modelContainer">
+                <div class="theModel">                    
+                    <model-viewer src="media/3D Models/lIllIIlIlIllIIlIllIlIllIlI.gltf" auto-rotate shadow-intensity="1" exposure="0.6" tone-mapping="neutral" shadow-softness="0.8" camera-orbit="32.36deg 76.57deg 7m" field-of-view="24.16deg" alt="A 3D model of a CSA Rated 3R Enclosure">
+                     </model-viewer>                     
+            </div>
+            
+                <div class="modelTextContainer">
+                    <h3>CSA 4X Rated Enclosure</h3>
+                    <ul>
+                        <li>85" x 40" x 24" </li>
+                        <li>12 ga. RoHS - Satin Coat material </li>
+                        <li>Inner Swing Door with cut-outs</li>
+                        <li>Weld Studs - To mount Backpan</li>
+                        <li>Wall Mount</li>
+                        <li>Vent Hood with Perf</li>
+                        <li>Door Positioner to prevent sag</li>
+                        <li>Poron Gasket</li>
+                        <li>Durable Powder Coat Whatever</li>
+                    </ul>
+                </div>               
+
+            </div>
+
+            <div class="modelContainer">
+                <div class="modelTextContainer">
+                    <h3>CSA 3R Rated Enclosure</h3>
+                    <ul>
+                        <li>85" x 40" x 24" </li>
+                        <li>12 ga. RoHS - Satin Coat material </li>
+                        <li>Inner Swing Door with cut-outs</li>
+                        <li>Weld Studs - To mount Backpan</li>
+                        <li>Floor Stand with Mounting Holes</li>
+                        <li>Vent Hood with Perf</li>
+                        <li>Door Positioner to prevent sag</li>
+                        <li>Poron Gasket</li>
+                        <li>Durable Powder Coat Whatever</li>
+                    </ul>
+                </div>
+
+                <div class="theModel">                    
+                        <model-viewer src="media/3D Models/IllllIIIIIllIlIlllllIlllll.gltf" auto-rotate shadow-intensity="1" exposure="0.6" tone-mapping="neutral" shadow-softness="0.8" camera-orbit="32.36deg 76.57deg 7m" field-of-view="24.16deg" alt="A 3D model of a CSA Rated 3R Enclosure">
+                         </model-viewer>                     
+                </div>
+
+            </div>
+
+            <div class="modelContainer">
+                <div class="theModel">                    
+                    <model-viewer src="media/3D Models/IllllIIIIIllIlIlllllIlllll.gltf" auto-rotate shadow-intensity="1" exposure="0.6" tone-mapping="neutral" shadow-softness="0.8" camera-orbit="32.36deg 76.57deg 7m" field-of-view="24.16deg" alt="A 3D model of a CSA Rated 3R Enclosure">
+                     </model-viewer>                     
+            </div>
+            
+                <div class="modelTextContainer">
+                    <h3>CSA 3R Rated Enclosure</h3>
+                    <ul>
+                        <li>85" x 40" x 24" </li>
+                        <li>12 ga. RoHS - Satin Coat material </li>
+                        <li>Inner Swing Door with cut-outs</li>
+                        <li>Weld Studs - To mount Backpan</li>
+                        <li>Floor Stand with Mounting Holes</li>
+                        <li>Vent Hood with Perf</li>
+                        <li>Door Positioner to prevent sag</li>
+                        <li>Poron Gasket</li>
+                        <li>Durable Powder Coat Whatever</li>
+                    </ul>
+                </div>               
+
+            </div>
     
-
-        <section class="aboutUsSections animateLeft">
-            <img src="./media/pics/careers.webp" alt="Poster of a shop worker with the text - Join our team in the foreground">
-            <p class="aboutUsSnippet">We're on the lookout for motivated talent eager to dive into a culture centered on empowerment and inclusivity. Enjoy competitive salaries, comprehensive benefits, and the chance to advance your career through cross-departmental training. Be part of a diverse team that values your growth and contribution!</p>
+    
+    
+            
         </section>
-
 
     </main>
 
-    <footer-component></footer-component>
+    <landingpage-footer-component></landingpage-footer-component>
 
-    <script src="./script.js"></script>
+    
+    <script src="./landingPageScript.js"></script> 
 
 
 

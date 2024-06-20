@@ -1,13 +1,9 @@
-// @font-face {
-//     font-family: "Inter";
-//     src: url("./Fonts/Inter.ttf");
-// }
 
 @use 'sass:math';
 
 @font-face {
     font-family: "NHD";
-    src: url("./Fonts/NHGD/NeueHaasDisplayMediumItalic.ttf");
+    src: url("./Fonts/NeueHaasDisplayMediumItalic.ttf");
 }
 
 @font-face {
@@ -17,14 +13,12 @@
 
 $lightGreen :hsl(168, 64%, 24%);
 // $lightGreen: #008c15;
-$yellow: #ffe066;
-$yellowHover: #f0d83f;
-$complimentaryColor: #B03C00;
+$complimentaryColor: #ff9f06;
+$complimentaryDarkColor:#f49a0ad0;
 $matteBlack: #464545;
 $darkBlack: #18191b;
 $white: #fff;
 $lightGrey: #f7f7f7;
-
 
 
 :root {
@@ -196,15 +190,16 @@ body {
                 }
 
                 #headerContactButton {
-                    color: $complimentaryColor;
+                    color: #fff;
                     border: 1px $complimentaryColor solid;
+                    background-color: $complimentaryColor;
                     border-radius: .3rem;
                     margin-left: 2rem;
+                    transition: box-shadow .25s ease-in-out;
                 }
 
                 #headerContactButton:hover {
-                    background-color: $complimentaryColor;
-                    color: $white;
+                    box-shadow: 0 0 7px 0 $complimentaryDarkColor;
                     cursor: pointer;
                 }
 
@@ -882,7 +877,7 @@ dialog.onClose {
                     left: auto;
                     right: 1rem;
                     top: 1rem;
-                    color: $complimentaryColor;
+                    color: rgb(225, 9, 9);
                 }
 
                 input,
@@ -934,13 +929,16 @@ dialog.onClose {
 
                 button {
                     padding: 1.25rem;
-                    background-color: $yellow;
+                    background-color: $complimentaryColor;
+                    color: $white;
+                    font-weight: 500;
+                    transition: box-shadow .25s ease-in-out;
                 }
 
+                
                 button:hover {
                     cursor: pointer;
-                    background-color: $yellowHover;
-                    font-weight:500;
+                    box-shadow: 0 0 10px 0 $complimentaryDarkColor;                    
                 }
             }
         }
@@ -1036,7 +1034,7 @@ dialog.onClose {
 }
 
 #aboutUsHeader {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.5)), url(./media/pics/aboutUsHeader.png);
+    background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.5)), url(./media/pics/aboutUsHeader.webp);
     background-position: top;
 }
 
@@ -1300,6 +1298,8 @@ model-viewer {
   height: 400px;
 }
 
+
+
 /////////////////////////////////////////////////////////////////////////////////////// 
 /// FOOTER STYLES
 ////////////////////////////////////////////////////////////////@at-root
@@ -1375,6 +1375,50 @@ model-viewer {
     transition-duration: .2s;
     transition-timing-function: ease-in-out;
 }
+
+//////////////////////////////////////////////////////////////////////////////////////////////
+/// LANDING PAGE STYLES
+
+.fullscreenView{
+    height: 80vh;
+    width:100%;
+    margin-top: var(--headerHeight);
+    border:2rem solid white; 
+}
+
+.heroScreen{
+    border-radius: 1rem;
+    background: no-repeat center url("./media/pics/landingPageAssets/heroGreenBackgroud.webp");
+    width: 100%;
+    height: 100%;
+    padding: 5rem;  
+
+    display: flex;
+    flex-direction: row; 
+    align-items: center;  
+
+    .heroText{
+        h1, p{color:white;}
+        flex:1;
+    }
+
+    .heroModel{
+        flex:1;
+    }
+    
+}
+
+.heroModel{
+    position: relative;
+    width:100%;
+    height:100%; 
+    
+    model-viewer{
+        height:100%;
+        width:100%;
+    }
+  
+  }
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 ///KEYFRAME ANIMATIONS GO HERE//////

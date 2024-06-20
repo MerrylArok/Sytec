@@ -1,6 +1,6 @@
 @font-face {
   font-family: "NHD";
-  src: url("./Fonts/NHGD/NeueHaasDisplayMediumItalic.ttf");
+  src: url("./Fonts/NeueHaasDisplayMediumItalic.ttf");
 }
 @font-face {
   font-family: "Manrope";
@@ -145,14 +145,15 @@ body {
   border-radius: 0.3rem;
 }
 .header #headerFlexContainer #headerRight li #headerContactButton {
-  color: #B03C00;
-  border: 1px #B03C00 solid;
+  color: #fff;
+  border: 1px #ff9f06 solid;
+  background-color: #ff9f06;
   border-radius: 0.3rem;
   margin-left: 2rem;
+  transition: box-shadow 0.25s ease-in-out;
 }
 .header #headerFlexContainer #headerRight li #headerContactButton:hover {
-  background-color: #B03C00;
-  color: #fff;
+  box-shadow: 0 0 7px 0 rgba(244, 154, 10, 0.8156862745);
   cursor: pointer;
 }
 .header #headerFlexContainer #headerRight li .desktopNav {
@@ -572,7 +573,7 @@ dialog.onClose {
   left: auto;
   right: 1rem;
   top: 1rem;
-  color: #B03C00;
+  color: rgb(225, 9, 9);
 }
 #contactMain section form .inputField input,
 #contactMain section form .inputField textarea,
@@ -619,12 +620,14 @@ dialog.onClose {
 }
 #contactMain section form .fullWidth button {
   padding: 1.25rem;
-  background-color: #ffe066;
+  background-color: #ff9f06;
+  color: #fff;
+  font-weight: 500;
+  transition: box-shadow 0.25s ease-in-out;
 }
 #contactMain section form .fullWidth button:hover {
   cursor: pointer;
-  background-color: #f0d83f;
-  font-weight: 500;
+  box-shadow: 0 0 10px 0 rgba(244, 154, 10, 0.8156862745);
 }
 #contactMain #mapElements {
   flex: 2;
@@ -684,7 +687,7 @@ dialog.onClose {
 }
 
 #aboutUsHeader {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.5)), url(./media/pics/aboutUsHeader.png);
+  background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.5)), url(./media/pics/aboutUsHeader.webp);
   background-position: top;
 }
 
@@ -950,6 +953,43 @@ model-viewer {
   transition-property: background-color, color;
   transition-duration: 0.2s;
   transition-timing-function: ease-in-out;
+}
+
+.fullscreenView {
+  height: 80vh;
+  width: 100%;
+  margin-top: var(--headerHeight);
+  border: 2rem solid white;
+}
+
+.heroScreen {
+  border-radius: 1rem;
+  background: no-repeat center url("./media/pics/landingPageAssets/heroGreenBackgroud.webp");
+  width: 100%;
+  height: 100%;
+  padding: 5rem;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.heroScreen .heroText {
+  flex: 1;
+}
+.heroScreen .heroText h1, .heroScreen .heroText p {
+  color: white;
+}
+.heroScreen .heroModel {
+  flex: 1;
+}
+
+.heroModel {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+.heroModel model-viewer {
+  height: 100%;
+  width: 100%;
 }
 
 @keyframes animateLeft {
