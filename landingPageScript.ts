@@ -1,6 +1,5 @@
 "use strict";
 
-
 // Header class is a reusable WebComponent injected as a custom html element called header-component
 //Adding <header-component></header-component> to any html file will inject the following html through addAdjacentHTML method. Initially injected via innerHTML, updated to remove cross site scripting vulnerabilities
 class LandingPageHeader extends HTMLElement {

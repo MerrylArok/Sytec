@@ -398,10 +398,12 @@ body {
     }
 }
 
+
+
 .contactUs{
     background: url("./media/pics/landingPageAssets/grainyYellowTinge.webp");
     max-width: 80vw;
-    margin:auto;
+    margin:auto auto 5rem auto;
     padding: 6rem 6rem 5rem 6rem; 
     border-radius: 1rem;
     display: flex;
@@ -538,7 +540,6 @@ body {
             }
 
         }
-
         .button {     
                   
 
@@ -556,6 +557,7 @@ body {
                 box-shadow: 0 0 10px 0 $complimentaryDarkColor;                    
             }
         }
+        
     }
   }
 
@@ -582,7 +584,7 @@ body {
         flex-direction: row;
         height:500px;
       
-        padding:2.5rem 5rem;
+        padding:2.5rem 5rem 2.5rem 3rem;
         // border-radius: 1rem;
         border: 1px solid grey;
 
@@ -590,8 +592,8 @@ body {
             flex:0.3;
             display: flex;
             flex-direction: column;
-            justify-content: center;
-            
+            justify-content: center;    
+            padding-left:2rem;       
            
 
             h3{
@@ -620,6 +622,40 @@ body {
             model-viewer{width: 100%;
                 height: 100%;}
             
+        }
+    }
+
+    .specialText{
+        margin: 10rem auto;
+        text-align: center;
+       
+        h2{ 
+            text-decoration: none;
+            
+            .specialText{
+                font-size: calc(var(--h1size)*0.8);
+                color: $complimentaryColor;
+                              ;
+            }
+        }
+
+        a {
+            color: #fff;     
+            font-size: var(--h2size);
+            border: 1px $complimentaryColor solid;
+            background-color: $complimentaryColor;
+            border-radius: .3rem;            
+            transition: box-shadow .25s ease-out;
+            padding:1rem 2rem;
+            margin-top: 2rem;  
+            display: block;
+            max-width: fit-content;
+            margin: auto;
+        }
+
+        a:hover {
+            box-shadow: 0 0 7px 0 $complimentaryDarkColor;
+            cursor: pointer;
         }
     }
     

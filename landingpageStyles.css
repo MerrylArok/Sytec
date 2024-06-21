@@ -312,7 +312,7 @@ body {
 .contactUs {
   background: url("./media/pics/landingPageAssets/grainyYellowTinge.webp");
   max-width: 80vw;
-  margin: auto;
+  margin: auto auto 5rem auto;
   padding: 6rem 6rem 5rem 6rem;
   border-radius: 1rem;
   display: flex;
@@ -460,7 +460,7 @@ body {
   display: flex;
   flex-direction: row;
   height: 500px;
-  padding: 2.5rem 5rem;
+  padding: 2.5rem 5rem 2.5rem 3rem;
   border: 1px solid grey;
 }
 .landingPageProducts .modelContainer .modelTextContainer {
@@ -468,6 +468,7 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  padding-left: 2rem;
 }
 .landingPageProducts .modelContainer .modelTextContainer h3 {
   font-family: Darker, serif;
@@ -491,6 +492,35 @@ body {
 .landingPageProducts .modelContainer .theModel model-viewer {
   width: 100%;
   height: 100%;
+}
+.landingPageProducts .specialText {
+  margin: 10rem auto;
+  text-align: center;
+}
+.landingPageProducts .specialText h2 {
+  text-decoration: none;
+}
+.landingPageProducts .specialText h2 .specialText {
+  font-size: calc(var(--h1size) * 0.8);
+  color: #ff9f06;
+}
+.landingPageProducts .specialText a {
+  color: #fff;
+  font-size: var(--h2size);
+  border: 1px #ff9f06 solid;
+  background-color: #ff9f06;
+  border-radius: 0.3rem;
+  transition: box-shadow 0.25s ease-out;
+  padding: 1rem 2rem;
+  margin-top: 2rem;
+  display: block;
+  max-width: -moz-fit-content;
+  max-width: fit-content;
+  margin: auto;
+}
+.landingPageProducts .specialText a:hover {
+  box-shadow: 0 0 7px 0 rgba(244, 154, 10, 0.8156862745);
+  cursor: pointer;
 }
 
 @keyframes animateLeft {
