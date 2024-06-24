@@ -3,13 +3,12 @@
 // Header class is a reusable WebComponent injected as a custom html element called header-component
 //Adding <header-component></header-component> to any html file will inject the following html through addAdjacentHTML method. Initially injected via innerHTML, updated to remove cross site scripting vulnerabilities
 class LandingPageHeader extends HTMLElement {
+  constructor() {
+    super();
+  }
 
-    constructor() {
-        super();
-    }
-
-    connectedCallback() {
-        let htmlHeader = `<header class="header">
+  connectedCallback() {
+    let htmlHeader = `<header class="header">
     <nav id="headerFlexContainer">
     <a title="Homepage" href="./index.html"><img id="logo" src="./media/icons/Sytec.svg" alt="Sytec Logo"></a>
 
@@ -20,17 +19,17 @@ class LandingPageHeader extends HTMLElement {
     </nav>
 </header>`;
 
-        this.insertAdjacentHTML('afterbegin', htmlHeader);
-    }
+    this.insertAdjacentHTML("afterbegin", htmlHeader);
+  }
 }
 
 class LandingPageFooter extends HTMLElement {
-    constructor() {
-        super();
-    }
+  constructor() {
+    super();
+  }
 
-    connectedCallback() {
-        let htmlFooter = `
+  connectedCallback() {
+    let htmlFooter = `
         <footer id="footer">
         <ul>
             <li>
@@ -91,41 +90,58 @@ class LandingPageFooter extends HTMLElement {
     </footer>
         `;
 
-        this.insertAdjacentHTML("afterbegin", htmlFooter);
-
-    }
+    this.insertAdjacentHTML("afterbegin", htmlFooter);
+  }
 }
 
+customElements.define("landingpage-footer-component", LandingPageFooter);
+customElements.define("landingpage-header-component", LandingPageHeader);
 
-customElements.define('landingpage-footer-component', LandingPageFooter);
-customElements.define('landingpage-header-component', LandingPageHeader);
+document.addEventListener("DOMContentLoaded", () => {
+  const accordianButtons = document.querySelectorAll(".accordianTitleBlock");
 
-document.addEventListener('DOMContentLoaded', ()=>{
-    const accordianButtons = document.querySelectorAll('.accordianTitleBlock');
+  accordianButtons.forEach((button) => {
+    button.addEventListener("click", toggleAccordian);
+  });
 
+  function toggleAccordian(event: Event) {
+    const button = event.currentTarget as HTMLButtonElement;
+    const expandedBlock = button.nextElementSibling as HTMLElement;
 
-    accordianButtons.forEach(button => {
-        button.addEventListener('click', toggleAccordian);
+    document.querySelectorAll(".expandedAccordianBlock").forEach((block) => {
+      block.classList.remove("active");
+      (block.previousElementSibling as HTMLButtonElement)?.classList.remove(
+        "active"
+      );
     });
 
-    function toggleAccordian(event:Event){
-        const button=event.currentTarget as HTMLButtonElement;
-        const expandedBlock = button.nextElementSibling as HTMLElement;
-
-        document.querySelectorAll('.expandedAccordianBlock').forEach(block => {
-            block.classList.remove('active');
-            (block.previousElementSibling as HTMLButtonElement)?.classList.remove('active');
-        });
-       
-
-        if (!expandedBlock.classList.contains('active')) {
-            expandedBlock.classList.add('active');
-            button.classList.add('active');
-        }
+    if (!expandedBlock.classList.contains("active")) {
+      expandedBlock.classList.add("active");
+      button.classList.add("active");
     }
+  }
+});
 
-    
+var Flickity:any;
+document.addEventListener('DOMContentLoaded', () => {
+  var flkty = new Flickity('.carousel', {
+      cellAlign: 'center',
+      contain: true,
+      pageDots: true,
+      wrapAround: true
+  });
 
+  // Add initial setup for the first cell
+  const updateSelectedClass = () => {
+      document.querySelectorAll('.carousel-cell').forEach(cell => {
+          cell.classList.remove('is-selected');
+      });
+      document.querySelector('.carousel-cell.is-selected').classList.add('is-selected');
+  };
 
-   
-})
+  flkty.on('select', updateSelectedClass);
+
+  // Initial setup to ensure the first cell is active
+  updateSelectedClass();
+});
+

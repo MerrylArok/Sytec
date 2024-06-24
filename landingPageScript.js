@@ -16,7 +16,7 @@ class LandingPageHeader extends HTMLElement {
         </ul>
     </nav>
 </header>`;
-        this.insertAdjacentHTML('afterbegin', htmlHeader);
+        this.insertAdjacentHTML("afterbegin", htmlHeader);
     }
 }
 class LandingPageFooter extends HTMLElement {
@@ -87,24 +87,43 @@ class LandingPageFooter extends HTMLElement {
         this.insertAdjacentHTML("afterbegin", htmlFooter);
     }
 }
-customElements.define('landingpage-footer-component', LandingPageFooter);
-customElements.define('landingpage-header-component', LandingPageHeader);
-document.addEventListener('DOMContentLoaded', () => {
-    const accordianButtons = document.querySelectorAll('.accordianTitleBlock');
-    accordianButtons.forEach(button => {
-        button.addEventListener('click', toggleAccordian);
+customElements.define("landingpage-footer-component", LandingPageFooter);
+customElements.define("landingpage-header-component", LandingPageHeader);
+document.addEventListener("DOMContentLoaded", () => {
+    const accordianButtons = document.querySelectorAll(".accordianTitleBlock");
+    accordianButtons.forEach((button) => {
+        button.addEventListener("click", toggleAccordian);
     });
     function toggleAccordian(event) {
         const button = event.currentTarget;
         const expandedBlock = button.nextElementSibling;
-        document.querySelectorAll('.expandedAccordianBlock').forEach(block => {
+        document.querySelectorAll(".expandedAccordianBlock").forEach((block) => {
             var _a;
-            block.classList.remove('active');
-            (_a = block.previousElementSibling) === null || _a === void 0 ? void 0 : _a.classList.remove('active');
+            block.classList.remove("active");
+            (_a = block.previousElementSibling) === null || _a === void 0 ? void 0 : _a.classList.remove("active");
         });
-        if (!expandedBlock.classList.contains('active')) {
-            expandedBlock.classList.add('active');
-            button.classList.add('active');
+        if (!expandedBlock.classList.contains("active")) {
+            expandedBlock.classList.add("active");
+            button.classList.add("active");
         }
     }
+});
+var Flickity;
+document.addEventListener('DOMContentLoaded', () => {
+    var flkty = new Flickity('.carousel', {
+        cellAlign: 'center',
+        contain: true,
+        pageDots: true,
+        wrapAround: true
+    });
+    // Add initial setup for the first cell
+    const updateSelectedClass = () => {
+        document.querySelectorAll('.carousel-cell').forEach(cell => {
+            cell.classList.remove('is-selected');
+        });
+        document.querySelector('.carousel-cell.is-selected').classList.add('is-selected');
+    };
+    flkty.on('select', updateSelectedClass);
+    // Initial setup to ensure the first cell is active
+    updateSelectedClass();
 });
