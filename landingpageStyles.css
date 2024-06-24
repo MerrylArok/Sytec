@@ -598,7 +598,6 @@ body {
   border: 1px solid rgb(227, 227, 227);
   padding: 0.5rem 1rem;
   margin: auto 1rem;
-  max-width: 500px;
 }
 .accordianBlock .accordianItem .expandedAccordianBlock .first {
   border-bottom: none;
