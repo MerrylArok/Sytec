@@ -100,3 +100,32 @@ class LandingPageFooter extends HTMLElement {
 customElements.define('landingpage-footer-component', LandingPageFooter);
 customElements.define('landingpage-header-component', LandingPageHeader);
 
+document.addEventListener('DOMContentLoaded', ()=>{
+    const accordianButtons = document.querySelectorAll('.accordianTitleBlock');
+
+
+    accordianButtons.forEach(button => {
+        button.addEventListener('click', toggleAccordian);
+    });
+
+    function toggleAccordian(event:Event){
+        const button=event.currentTarget as HTMLButtonElement;
+        const expandedBlock = button.nextElementSibling as HTMLElement;
+
+        document.querySelectorAll('.expandedAccordianBlock').forEach(block => {
+            block.classList.remove('active');
+            (block.previousElementSibling as HTMLButtonElement)?.classList.remove('active');
+        });
+       
+
+        if (!expandedBlock.classList.contains('active')) {
+            expandedBlock.classList.add('active');
+            button.classList.add('active');
+        }
+    }
+
+    
+
+
+   
+})

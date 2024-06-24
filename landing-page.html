@@ -1,270 +1,647 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description"
-        content="Sytec Manufacturing is a leading custom metal manufacturer specializing in sheet metal and pipe design, manufacturing, and delivery.">
-    <meta name="keywords"
-        content="Sytec, manufacturing, CSA, Canada, Edmonton, custom, engineering, design, metal, fabricator, fabrication, manufacturing, powder paint, enclosure, energy">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Sytec Manufacturing is a leading custom metal manufacturer specializing in sheet metal and pipe design, manufacturing, and delivery."
+    />
+    <meta
+      name="keywords"
+      content="Sytec, manufacturing, CSA, Canada, Edmonton, custom, engineering, design, metal, fabricator, fabrication, manufacturing, powder paint, enclosure, energy"
+    />
     <title>Sytec Manufacturing - Custom Metal Fabricator</title>
-    <link rel="icon" type="image/x-icon" href="./media/icons/favicon.png">
-    <link rel="stylesheet" href="landingpageStyles.css">
+    <link rel="icon" type="image/x-icon" href="./media/icons/favicon.png" />
+    <link rel="stylesheet" href="landingpageStyles.css" />
     <script type="module" src="./model-viewer.min.js"></script>
     <script src="./landingPageScript.js"></script>
-</head>
+  </head>
 
-<body>
+  <body>
     <landingpage-header-component></landingpage-header-component>
 
     <main class="forceFooterDown">
+      <section class="fullscreenView">
+        <div class="heroScreen">
+          <div class="heroText">
+            <h1>Custom parts right to your doorstep. <em>Hassle-Free.</em></h1>
+            <p>?? We take care of it all - Design, manufacture, and deliver.</p>
+          </div>
 
-        <section class="fullscreenView">
-            <div class="heroScreen">
-                <div class="heroText">
-                    <h1>Custom parts right to your doorstep. <em>Hassle-Free.</em></h1>
-                    <p>?? We take care of it all - Design, manufacture, and deliver.</p>
-                </div>                
+          <section class="heroModel">
+            <model-viewer
+              src="media/3D Models/IllllIIIIIllIlIlllllIlllll.gltf"
+              auto-rotate
+              shadow-intensity="1"
+              exposure="0.6"
+              tone-mapping="neutral"
+              shadow-softness="0.8"
+              camera-orbit="32.36deg 76.57deg 7m"
+              field-of-view="24.16deg"
+              alt="A 3D model of a CSA Rated 3R Enclosure"
+            >
+            </model-viewer>
+          </section>
+        </div>
+      </section>
 
-                <section class="heroModel">
-                    <model-viewer src="media/3D Models/IllllIIIIIllIlIlllllIlllll.gltf" auto-rotate shadow-intensity="1" exposure="0.6" tone-mapping="neutral" shadow-softness="0.8" camera-orbit="32.36deg 76.57deg 7m" field-of-view="24.16deg" alt="A 3D model of a CSA Rated 3R Enclosure">
-                     </model-viewer>
-                 </section>  
-            </div>            
-        </section>
+      <section class="textfullScreenView logoTextContainer">
+        <p>
+          We supply certified <b>CSA</b>, <b>UL</b> and <b>IP</b> rated
+          products. Our custom industrial and commercial solutions are
+          specialized to various industry demands such as - oil & gas, IT,
+          telecommunications, electrical grid & power distribution, solar,
+          instrumentation & controls.
+        </p>
+        <div class="logoContainer">
+          <div class="logo" aria-hidden="true">
+            <img
+              src="./media/logos/CSA-logo-large.jpg"
+              alt="Logo of Canadian Standards Association (CSA)"
+            />
+          </div>
+          <div class="logo" aria-hidden="true">
+            <img
+              src="./media/logos/NEMA.png"
+              alt="Logo of National Electrical Manufacturers Association (NEMA)"
+            />
+          </div>
+          <div class="logo">
+            <img
+              src="./media/logos/RoHS.png"
+              alt="Logo of Restriction of Hazardous Substances (RoHS) "
+            />
+          </div>
+          <div class="logo" aria-hidden="true">
+            <img
+              src="./media/logos/IEC-IP rating.png"
+              alt="Logo of International Electrotechnical Commission (IEC)"
+            />
+          </div>
+          <div class="logo" aria-hidden="true">
+            <img
+              src="./media/logos/UL.jpg"
+              alt="Logo of Underwriters Laboratories (UL)"
+            />
+          </div>
+        </div>
+      </section>
 
-        <section class="textfullScreenView logoTextContainer">
-            <p> We supply certified <b>CSA</b>, <b>UL</b> and <b>IP</b> rated products. Our custom industrial and commercial solutions are specialized to various industry demands such as - oil & gas, IT, telecommunications, electrical grid & power distribution, solar, instrumentation & controls. </p>
-            <div class="logoContainer">
-                
-                <div class="logo" aria-hidden="true"><img src="./media/logos/CSA-logo-large.jpg" alt="Logo of Canadian Standards Association (CSA)"></div>
-                    <div class="logo" aria-hidden="true"><img src="./media/logos/NEMA.png" alt="Logo of National Electrical Manufacturers Association (NEMA)"></div>                    
-                    <div class="logo"><img src="./media/logos/RoHS.png" alt="Logo of Restriction of Hazardous Substances (RoHS) "></div>
-                    <div class="logo" aria-hidden="true"><img src="./media/logos/IEC-IP rating.png" alt="Logo of International Electrotechnical Commission (IEC)"></div>
-                    <div class="logo" aria-hidden="true"><img src="./media/logos/UL.jpg" alt="Logo of Underwriters Laboratories (UL)"></div>
+      <section class="landingPageProducts">
+        <h2>Featured Products</h2>
+        <p>If you can think it - we can make it.</p>
+        <br />
+
+        <p>
+          Any of our sample designs below can be customized to meet your
+          specific needs.
+        </p>
+        <br />
+        <p>
+          Use your mouse / fingers to rotate the models below, zoom in and see
+          more details. To see this a life-sized version of the model, use your
+          phone to scan QR code and then click the "Activate AR" button above
+          the model.
+        </p>
+
+        <div class="modelContainer">
+          <div class="modelTextContainer">
+            <h3>CSA / UL Rated Enclosure</h3>
+            <ul>
+              <!-- <li>60"H x 42" W x 18" D</li> -->
+              <li>RoHS material</li>
+              <li>Inner Swing Door with cut-outs</li>
+              <li>Removable Backpan</li>
+              <li>Floor Stand</li>
+              <li>Vent Hood with Perf</li>
+              <li>Three-point Latch system</li>
+              <li>Weld-on Bullet Hinge</li>
+              <li>UL1332 - Powder Coat Finish</li>
+            </ul>
+          </div>
+
+          <div class="theModel">
+            <model-viewer
+              src="media/3D Models/IllllIIIIIllIlIlllllIlllll.gltf"
+              auto-rotate
+              camera-controls
+              ar
+              gesture-hints
+              shadow-intensity="1"
+              exposure="0.6"
+              tone-mapping="neutral"
+              shadow-softness="0.8"
+              camera-orbit="32.36deg 76.57deg 7m"
+              field-of-view="24.16deg"
+              alt="A 3D model of a CSA Rated 3R Enclosure"
+            >
+            </model-viewer>
+          </div>
+        </div>
+
+        <div class="modelContainer">
+          <div class="theModel">
+            <model-viewer
+              src="media/3D Models/lIlIlIIlIllIlIIlIllIlIlllI.gltf"
+              auto-rotate
+              camera-controls
+              interaction-prompt="none"
+              ar
+              shadow-intensity="1"
+              exposure="0.6"
+              tone-mapping="neutral"
+              shadow-softness="0.8"
+              camera-orbit="32.36deg 76.57deg 7m"
+              field-of-view="24.16deg"
+              alt="A 3D model of a CSA Rated 3R Enclosure"
+            >
+            </model-viewer>
+          </div>
+
+          <div class="modelTextContainer">
+            <h3>Utility Cart</h3>
+            <ul>
+              <li>85" x 40" x 24"</li>
+              <li>Laser Cut Tubing</li>
+              <li>Manual/ Tow attachments</li>
+              <li>Various load capacities</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="specialText">
+          <h2>
+            You could be eligible for upto
+            <span class="specialText">36%</span> off! Find out how.
+          </h2>
+          <a href="#contactUs">Contact Sales</a>
+        </div>
+
+        <div class="modelContainer">
+          <div class="modelTextContainer">
+            <h3>Cable Management Racks</h3>
+            <ul>
+              <li>19in EIA products ranging from 1U blanking panels</li>
+              <li>Hybrid powder coat to enhance chemical resistance</li>
+              <li>Multiple design options</li>
+              <li>Ready to install</li>
+            </ul>
+          </div>
+
+          <div class="theModel">
+            <model-viewer
+              src="media/3D Models/lIlIIlIlIlIllllIIIllIIIllI.gltf"
+              auto-rotate
+              camera-controls
+              ar
+              interaction-prompt="none"
+              shadow-intensity="1"
+              exposure="0.6"
+              tone-mapping="neutral"
+              shadow-softness="0.8"
+              camera-orbit="32.36deg 76.57deg 7m"
+              field-of-view="24.16deg"
+              alt="A 3D model of a CSA Rated 3R Enclosure"
+            >
+            </model-viewer>
+          </div>
+        </div>
+
+        <div class="modelContainer">
+          <div class="theModel">
+            <model-viewer
+              src="media/3D Models/newmodels/1995/0000-1995.draco.gltf"
+              auto-rotate
+              camera-controls
+              ar
+              interaction-prompt="none"
+              shadow-intensity="1"
+              exposure="0.6"
+              tone-mapping="neutral"
+              shadow-softness="0.8"
+              camera-orbit="32.36deg 76.57deg 7m"
+              field-of-view="24.16deg"
+              alt="A 3D model of a CSA Rated 3R Enclosure"
+            >
+            </model-viewer>
+          </div>
+
+          <div class="modelTextContainer">
+            <h3>CSA / UL Window Door Kit</h3>
+            <ul>
+              <li>Viewing Window - Lexan / Safety Glass</li>
+              <li>Stainless Steel Piano Hinge</li>
+              <li>Padlock Latch</li>
+              <li>Easy field install</li>
+              <li>Expedited options available</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="modelContainer">
+          <div class="modelTextContainer">
+            <h3>CSA 3R Rated Enclosure</h3>
+            <ul>
+              <li>85" x 40" x 24"</li>
+              <li>12 ga. RoHS - Satin Coat material</li>
+              <li>Inner Swing Door with cut-outs</li>
+              <li>Weld Studs - To mount Backpan</li>
+              <li>Floor Stand with Mounting Holes</li>
+              <li>Vent Hood with Perf</li>
+              <li>Door Positioner to prevent sag</li>
+              <li>Poron Gasket</li>
+              <li>Durable Powder Coat Whatever</li>
+            </ul>
+          </div>
+
+          <div class="theModel">
+            <model-viewer
+              src="media/3D Models/newmodels/ENR231818-1/ENR231818-1.draco.gltf"
+              auto-rotate
+              camera-controls
+              interaction-prompt="none"
+              ar
+              shadow-intensity="1"
+              exposure="0.6"
+              tone-mapping="neutral"
+              shadow-softness="0.8"
+              camera-orbit="32.36deg 76.57deg 7m"
+              field-of-view="24.16deg"
+              alt="A 3D model of a CSA Rated 3R Enclosure"
+            >
+            </model-viewer>
+          </div>
+        </div>
+
+        <div class="modelContainer">
+          <div class="theModel">
+            <model-viewer
+              src="media/3D Models/IllllIIIIIllIlIlllllIlllll.gltf"
+              auto-rotate
+              camera-controls
+              ar
+              interaction-prompt="none"
+              shadow-intensity="1"
+              exposure="0.6"
+              tone-mapping="neutral"
+              shadow-softness="0.8"
+              camera-orbit="32.36deg 76.57deg 7m"
+              field-of-view="24.16deg"
+              alt="A 3D model of a CSA Rated 3R Enclosure"
+            >
+            </model-viewer>
+          </div>
+
+          <div class="modelTextContainer">
+            <h3>CSA 3R Rated Enclosure</h3>
+            <ul>
+              <li>85" x 40" x 24"</li>
+              <li>12 ga. RoHS - Satin Coat material</li>
+              <li>Inner Swing Door with cut-outs</li>
+              <li>Weld Studs - To mount Backpan</li>
+              <li>Floor Stand with Mounting Holes</li>
+              <li>Vent Hood with Perf</li>
+              <li>Door Positioner to prevent sag</li>
+              <li>Poron Gasket</li>
+              <li>Durable Powder Coat Whatever</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section class="accordianBlock">
+        <h2>Materials we work with:</h2>
+
+        <div class="accordianItem">
+          <div class="accordianWrapper">
+            <button class="accordianTitleBlock active">
+              <h3>Carbon Steel</h3>
+              <svg
+                id="accordianArrow"
+                width="100%"
+                height="100%"
+                viewBox="0 0 125 60"
+              >
+                <path
+                  d="M11.68,1.95C8.95-0.7,4.6-0.64,1.95,2.08c-2.65,2.72-2.59,7.08,0.13,9.73l54.79,53.13l4.8-4.93l-4.8,4.95 c2.74,2.65,7.1,2.58,9.75-0.15c0.08-0.08,0.15-0.16,0.22-0.24l53.95-52.76c2.73-2.65,2.79-7.01,0.14-9.73 c-2.65-2.72-7.01-2.79-9.73-0.13L61.65,50.41L11.68,1.95L11.68,1.95z"
+                  id="svgPath"
+                />
+              </svg>
+            </button>
+
+            <div class="expandedAccordianBlock active">
+              <p>Most commonly used - offers strength and durability.</p>
+              <div class="first expandedBorder">
+                <h4>Variants</h4>
+                <p>Cold-Rolled (CRS), Hot Rolled Pickled and Oiled (HRPO)</p>
+              </div>
+              <div class="expandedBorder">
+                <h4>Finishes</h4>
+                <p>
+                  Raw, Pad-sanded, Powder Coat - Textured / Smooth / Metallic,
+                  Silk Screen, Hot-Dipped Galvanized
+                </p>
+              </div>
             </div>
-        </section>
+          </div>
 
+          <div class="accordianWrapper">
+            <button class="accordianTitleBlock">
+              <h3>Stainless Steel</h3>
+              <svg
+                id="accordianArrow"
+                width="100%"
+                height="100%"
+                viewBox="0 0 125 60"
+              >
+                <path
+                  d="M11.68,1.95C8.95-0.7,4.6-0.64,1.95,2.08c-2.65,2.72-2.59,7.08,0.13,9.73l54.79,53.13l4.8-4.93l-4.8,4.95 c2.74,2.65,7.1,2.58,9.75-0.15c0.08-0.08,0.15-0.16,0.22-0.24l53.95-52.76c2.73-2.65,2.79-7.01,0.14-9.73 c-2.65-2.72-7.01-2.79-9.73-0.13L61.65,50.41L11.68,1.95L11.68,1.95z"
+                  id="svgPath"
+                />
+              </svg>
+            </button>
 
-
-        
-       
-
-        <section class="landingPageProducts">
-            <h2>Featured Products</h2>
-            <p>If you can think it -  we can make it. </p>
-            <br>
-
-            <p>Any of our sample designs below can be customized to meet your specific needs. </p>
-            <br>
-            <p>Use your mouse / fingers to rotate the models below, zoom in and see more details. To see this a life-sized version of the model, use your phone to scan QR code and then click the "Activate AR" button above the model.</p>
-
-            <div class="modelContainer">
-                <div class="modelTextContainer">
-                    <h3>CSA / UL Rated Enclosure</h3>
-                    <ul>
-                        <!-- <li>60"H x 42" W x 18" D</li> -->
-                        <li> RoHS  material </li>
-                        <li>Inner Swing Door with cut-outs</li>
-                        <li> Removable Backpan</li>
-                        <li>Floor Stand</li>
-                        <li>Vent Hood with Perf</li>
-                        <li>Three-point Latch system</li>
-                        <li>Weld-on Bullet Hinge</li>
-                        <li>UL1332 - Powder Coat Finish</li>
-                    </ul>
-                </div>
-
-                <div class="theModel">                    
-                        <model-viewer src="media/3D Models/IllllIIIIIllIlIlllllIlllll.gltf" auto-rotate camera-controls ar gesture-hints shadow-intensity="1" exposure="0.6" tone-mapping="neutral" shadow-softness="0.8" camera-orbit="32.36deg 76.57deg 7m" field-of-view="24.16deg" alt="A 3D model of a CSA Rated 3R Enclosure">
-                         </model-viewer>                     
-                </div>
-
+            <div class="expandedAccordianBlock">
+              <p>
+                Durable, excellent corrosion resistance and a superior finish.
+              </p>
+              <div class="first expandedBorder">
+                <h4>Variants</h4>
+                <p>304, 316</p>
+              </div>
+              <div class="expandedBorder">
+                <h4>Finishes</h4>
+                <p>
+                  Smooth (2B), Brushed (#4), Pad Sand, Powder Coat, Silk Screen
+                </p>
+              </div>
             </div>
+          </div>
 
-            <div class="modelContainer">
-                <div class="theModel">                    
-                    <model-viewer src="media/3D Models/lIlIlIIlIllIlIIlIllIlIlllI.gltf" auto-rotate camera-controls interaction-prompt="none" ar shadow-intensity="1" exposure="0.6" tone-mapping="neutral" shadow-softness="0.8" camera-orbit="32.36deg 76.57deg 7m" field-of-view="24.16deg" alt="A 3D model of a CSA Rated 3R Enclosure">
-                     </model-viewer>                     
+          <div class="accordianWrapper">
+            <button class="accordianTitleBlock">
+              <h3>Special Steels</h3>
+              <svg
+                id="accordianArrow"
+                width="100%"
+                height="100%"
+                viewBox="0 0 125 60"
+              >
+                <path
+                  d="M11.68,1.95C8.95-0.7,4.6-0.64,1.95,2.08c-2.65,2.72-2.59,7.08,0.13,9.73l54.79,53.13l4.8-4.93l-4.8,4.95 c2.74,2.65,7.1,2.58,9.75-0.15c0.08-0.08,0.15-0.16,0.22-0.24l53.95-52.76c2.73-2.65,2.79-7.01,0.14-9.73 c-2.65-2.72-7.01-2.79-9.73-0.13L61.65,50.41L11.68,1.95L11.68,1.95z"
+                  id="svgPath"
+                />
+              </svg>
+            </button>
+
+            <div class="expandedAccordianBlock">
+              <p>
+                Offers additional protection against environmental conditions.
+              </p>
+              <div class="first expandedBorder">
+                <h4>Variants</h4>
+                <p>Galvannealed (Satin Coat), Galvanized</p>
+              </div>
+              <div class="expandedBorder">
+                <h4>Finishes</h4>
+                <p>Raw, Powder Coat</p>
+              </div>
             </div>
+          </div>
 
-                <div class="modelTextContainer">
-                    <h3>Utility Cart</h3>
-                    <ul>
-                        <li>85" x 40" x 24" </li>
-                        <li> Laser Cut Tubing </li>
-                        <li>Manual/ Tow attachments</li>
-                        <li>Various load capacities</li>
-                      
-                    </ul>
-                </div>               
+          <div class="accordianWrapper">
+            <button class="accordianTitleBlock">
+              <h3>Aluminum</h3>
+              <svg
+                id="accordianArrow"
+                width="100%"
+                height="100%"
+                viewBox="0 0 125 60"
+              >
+                <path
+                  d="M11.68,1.95C8.95-0.7,4.6-0.64,1.95,2.08c-2.65,2.72-2.59,7.08,0.13,9.73l54.79,53.13l4.8-4.93l-4.8,4.95 c2.74,2.65,7.1,2.58,9.75-0.15c0.08-0.08,0.15-0.16,0.22-0.24l53.95-52.76c2.73-2.65,2.79-7.01,0.14-9.73 c-2.65-2.72-7.01-2.79-9.73-0.13L61.65,50.41L11.68,1.95L11.68,1.95z"
+                  id="svgPath"
+                />
+              </svg>
+            </button>
 
+            <div class="expandedAccordianBlock">
+              <p>Lightweight and corrosion-resistant.</p>
+              <div class="first expandedBorder">
+                <h4>Variants</h4>
+                <p>5052</p>
+              </div>
+              <div class="expandedBorder">
+                <h4>Finishes</h4>
+                <p>Raw, Pad Sand, Anodized, Powder Coat</p>
+              </div>
             </div>
+          </div>
 
-            <div class="specialText">
-                <h2>You could be eligible for upto  <span class="specialText">36%</span> off! Find out how.</h2>
-                <a href="#contactUs">Contact Sales</a>
+          <div class="accordianWrapper">
+            <button class="accordianTitleBlock">
+              <h3>Perforated Metals</h3>
+              <svg
+                id="accordianArrow"
+                width="100%"
+                height="100%"
+                viewBox="0 0 125 60"
+              >
+                <path
+                  d="M11.68,1.95C8.95-0.7,4.6-0.64,1.95,2.08c-2.65,2.72-2.59,7.08,0.13,9.73l54.79,53.13l4.8-4.93l-4.8,4.95 c2.74,2.65,7.1,2.58,9.75-0.15c0.08-0.08,0.15-0.16,0.22-0.24l53.95-52.76c2.73-2.65,2.79-7.01,0.14-9.73 c-2.65-2.72-7.01-2.79-9.73-0.13L61.65,50.41L11.68,1.95L11.68,1.95z"
+                  id="svgPath"
+                />
+              </svg>
+            </button>
+
+            <div class="expandedAccordianBlock">
+              <p>
+                Enhanced ventilation and air-flow - used in systems for heat
+                exchange.
+              </p>
+              <div class="first expandedBorder">
+                <h4>Variants</h4>
+                <p>Steel, Stainless Steel, Aluminum</p>
+              </div>
+              <div class="expandedBorder">
+                <h4>Finishes</h4>
+                <p>Raw, Anodized, Powder Coat</p>
+              </div>
             </div>
+          </div>
 
-            <div class="modelContainer">
-                <div class="modelTextContainer">
-                    <h3>Cable Management Racks</h3>
-                    <ul>
-                        <li> 19in EIA products ranging from 1U blanking panels </li>
-                        <li> Hybrid powder coat to enhance chemical resistance </li>
-                        <li>Multiple design options</li>
-                        <li> Ready to install </li>
-                        
-                        
-                    </ul>
-                </div>
+          <div class="accordianWrapper">
+            <button class="accordianTitleBlock">
+              <h3>Copper</h3>
+              <svg
+                id="accordianArrow"
+                width="100%"
+                height="100%"
+                viewBox="0 0 125 60"
+              >
+                <path
+                  d="M11.68,1.95C8.95-0.7,4.6-0.64,1.95,2.08c-2.65,2.72-2.59,7.08,0.13,9.73l54.79,53.13l4.8-4.93l-4.8,4.95 c2.74,2.65,7.1,2.58,9.75-0.15c0.08-0.08,0.15-0.16,0.22-0.24l53.95-52.76c2.73-2.65,2.79-7.01,0.14-9.73 c-2.65-2.72-7.01-2.79-9.73-0.13L61.65,50.41L11.68,1.95L11.68,1.95z"
+                  id="svgPath"
+                />
+              </svg>
+            </button>
 
-                <div class="theModel">                    
-                        <model-viewer src="media/3D Models/lIlIIlIlIlIllllIIIllIIIllI.gltf" auto-rotate camera-controls ar interaction-prompt="none" shadow-intensity="1" exposure="0.6" tone-mapping="neutral" shadow-softness="0.8" camera-orbit="32.36deg 76.57deg 7m" field-of-view="24.16deg" alt="A 3D model of a CSA Rated 3R Enclosure">
-                         </model-viewer>                     
-                </div>
-
+            <div class="expandedAccordianBlock">
+              <p>
+                Excellent electrical and thermal conductivity - typically used
+                for electrical wiring and heat exchange systems.
+              </p>
+              <!-- <div class="first expandedBorder">
+                    <h4>Variants</h4>
+                    <p>Steel, Stainless Steel, Aluminum</p>
+                </div> -->
+              <div class="expandedBorder">
+                <h4>Finishes</h4>
+                <p>Raw, Tin-Plated, Nickel-Plated</p>
+              </div>
             </div>
+          </div>
 
-            <div class="modelContainer">
-                <div class="theModel">                    
-                    <model-viewer src="media/3D Models/newmodels/1995/0000-1995.draco.gltf" auto-rotate camera-controls ar interaction-prompt="none" shadow-intensity="1" exposure="0.6" tone-mapping="neutral" shadow-softness="0.8" camera-orbit="32.36deg 76.57deg 7m" field-of-view="24.16deg" alt="A 3D model of a CSA Rated 3R Enclosure">
-                     </model-viewer>                     
+          <div class="accordianWrapper">
+            <button class="accordianTitleBlock">
+              <h3>Brass</h3>
+              <svg
+                id="accordianArrow"
+                width="100%"
+                height="100%"
+                viewBox="0 0 125 60"
+              >
+                <path
+                  d="M11.68,1.95C8.95-0.7,4.6-0.64,1.95,2.08c-2.65,2.72-2.59,7.08,0.13,9.73l54.79,53.13l4.8-4.93l-4.8,4.95 c2.74,2.65,7.1,2.58,9.75-0.15c0.08-0.08,0.15-0.16,0.22-0.24l53.95-52.76c2.73-2.65,2.79-7.01,0.14-9.73 c-2.65-2.72-7.01-2.79-9.73-0.13L61.65,50.41L11.68,1.95L11.68,1.95z"
+                  id="svgPath"
+                />
+              </svg>
+            </button>
+
+            <div class="expandedAccordianBlock">
+              <p>
+                Highly durable and corrosion resistant - used in fittings and
+                valves.
+              </p>
+              <!-- <div class="first expandedBorder">
+                <h4>Variants</h4>
+                <p>Steel, Stainless Steel, Aluminum</p>
+            </div> -->
+              <div class="expandedBorder">
+                <h4>Finishes</h4>
+                <p>Raw, Nickel-Plating, Chrome-Plating</p>
+              </div>
             </div>
-            
-                <div class="modelTextContainer">
-                    <h3>CSA / UL Window Door Kit</h3>
-                    <ul>
-                        <li>Viewing Window - Lexan / Safety Glass</li>
-                        <li>Stainless Steel Piano Hinge</li>
-                        <li>Padlock Latch</li>
-                        <li>Easy field install</li>
-                        <li>Expedited options available</li>
-                    </ul>
-                </div>               
+          </div>
 
-            </div>
+          <!-- <div class="accordianWrapper">
+        <button class="accordianTitleBlock">
+            <h3>Tin</h3>
+             <svg id="accordianArrow"  width="100%" height="100%" viewBox="0 0 125 60"><path
+                d="M11.68,1.95C8.95-0.7,4.6-0.64,1.95,2.08c-2.65,2.72-2.59,7.08,0.13,9.73l54.79,53.13l4.8-4.93l-4.8,4.95 c2.74,2.65,7.1,2.58,9.75-0.15c0.08-0.08,0.15-0.16,0.22-0.24l53.95-52.76c2.73-2.65,2.79-7.01,0.14-9.73 c-2.65-2.72-7.01-2.79-9.73-0.13L61.65,50.41L11.68,1.95L11.68,1.95z"
+                id="svgPath" /></svg>                    
+        </button>
 
-            <div class="modelContainer">
-                <div class="modelTextContainer">
-                    <h3>CSA 3R Rated Enclosure</h3>
-                    <ul>
-                        <li>85" x 40" x 24" </li>
-                        <li>12 ga. RoHS - Satin Coat material </li>
-                        <li>Inner Swing Door with cut-outs</li>
-                        <li>Weld Studs - To mount Backpan</li>
-                        <li>Floor Stand with Mounting Holes</li>
-                        <li>Vent Hood with Perf</li>
-                        <li>Door Positioner to prevent sag</li>
-                        <li>Poron Gasket</li>
-                        <li>Durable Powder Coat Whatever</li>
-                    </ul>
-                </div>
+         <div class="expandedAccordianBlock">
+             <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Veritatis autem beatae consequatur excepturi quasi temporibus! Ab totam, quibusdam delectus dignissimos dolorem inventore </p>
+             <div class="first expandedBorder">
+            <h4>Variants</h4>
+            <p>Steel, Stainless Steel, Aluminum</p>
+        </div>
+        <div class="expandedBorder">
+            <h4>Finishes</h4>
+            <p>Raw, Nickel-Plating</p>
+        </div>
+    </div>
+</div> -->
+        </div>
+      </section>
 
-                <div class="theModel">                    
-                        <model-viewer src="media/3D Models/newmodels/ENR231818-1/ENR231818-1.draco.gltf" auto-rotate camera-controls interaction-prompt="none" ar shadow-intensity="1" exposure="0.6" tone-mapping="neutral" shadow-softness="0.8" camera-orbit="32.36deg 76.57deg 7m" field-of-view="24.16deg" alt="A 3D model of a CSA Rated 3R Enclosure">
-                         </model-viewer>                     
-                </div>
+      <section class="textfullScreenView">
+        <p>
+          With over 2 decades of expertise designing, manufacturing & delivering
+          custom-tailored solutions, we leverage our advanced technologies for
+          rapid prototyping and on-demand production runs. We are your friendly,
+          responsive & collaborative sheet metal fabricator, offering
+          competitive prices for both low-volume and high-volume runs, with a
+          global reach.
+        </p>
+      </section>
 
-            </div>
+      <section class="contactUs" id="contactUs">
+        <div class="contactUsElements">
+          <div class="groupedContactUsElements">
+            <p>
+              We want to help! Call us, or fill out this form. We will get back
+              within 1 business day.
+            </p>
 
-            <div class="modelContainer">
-                <div class="theModel">                    
-                    <model-viewer src="media/3D Models/IllllIIIIIllIlIlllllIlllll.gltf" auto-rotate camera-controls ar interaction-prompt="none" shadow-intensity="1" exposure="0.6" tone-mapping="neutral" shadow-softness="0.8" camera-orbit="32.36deg 76.57deg 7m" field-of-view="24.16deg" alt="A 3D model of a CSA Rated 3R Enclosure">
-                     </model-viewer>                     
-            </div>
-            
-                <div class="modelTextContainer">
-                    <h3>CSA 3R Rated Enclosure</h3>
-                    <ul>
-                        <li>85" x 40" x 24" </li>
-                        <li>12 ga. RoHS - Satin Coat material </li>
-                        <li>Inner Swing Door with cut-outs</li>
-                        <li>Weld Studs - To mount Backpan</li>
-                        <li>Floor Stand with Mounting Holes</li>
-                        <li>Vent Hood with Perf</li>
-                        <li>Door Positioner to prevent sag</li>
-                        <li>Poron Gasket</li>
-                        <li>Durable Powder Coat Whatever</li>
-                    </ul>
-                </div>               
-            </div>         
-    </section>
+            <a href="tel:1-780-484-9898">
+              <img src="./media/icons/phoneIcon.svg" alt="phoneIcon" />
+              +1-(780)484-9898</a
+            >
 
-   
-        
-        <section class="textfullScreenView">
-            <p>With over 2 decades of expertise designing, manufacturing & delivering custom-tailored solutions, we leverage our advanced technologies for rapid prototyping and on-demand production runs. We are your friendly, responsive & collaborative sheet metal fabricator, offering competitive prices for both low-volume and high-volume runs, with a global reach.</p>
-        </section>
+            <!-- <p>We are open Mondays through Fridays from 7:00AM to 4:30PM (excluding statutory holidays)  </p> -->
+          </div>
+          <h1>Contact Us</h1>
+        </div>
 
-        
+        <form
+          action="https://formsubmit.co/1538ae3425c4b56946c742487ba27d6a"
+          method="POST"
+        >
+          <!-- <p> We look forward to speaking with you! Give us a call, or fill out the form below for an email response within 2 business days.</p> -->
+          <span class="inputField">
+            <input type="text" name="name" placeholder=" " required />
+            <label for="name">Name</label>
+            <label class="requiredIndicator" for="name">*</label>
+          </span>
 
-        
-        <section class="contactUs" id="contactUs">
-            
-            <div class="contactUsElements">
-                
-                <div class="groupedContactUsElements"><p>We want to help! Call us, or fill out this form. We will get back within 1 business day.</p>
-                    
-                    <a href="tel:1-780-484-9898"> <img src="./media/icons/phoneIcon.svg" alt="phoneIcon"> +1-(780)484-9898</a> 
-                
-                    <!-- <p>We are open Mondays through Fridays from 7:00AM to 4:30PM (excluding statutory holidays)  </p> -->
-                </div>
-                <h1>Contact Us</h1>
-                   
-            </div>
+          <span class="inputField">
+            <input type="email" name="email" placeholder=" " required />
+            <label for="email">Email</label>
+            <label class="requiredIndicator" for="email">*</label>
+          </span>
 
-            <form action="https://formsubmit.co/1538ae3425c4b56946c742487ba27d6a" method="POST">
-                <!-- <p> We look forward to speaking with you! Give us a call, or fill out the form below for an email response within 2 business days.</p> -->
-                <span class="inputField">
-                    <input type="text" name="name" placeholder=" " required>
-                    <label for="name">Name</label>
-                    <label class="requiredIndicator" for="name">*</label>
-                </span>
+          <input type="hidden" name="_template" value="table" />
 
-                <span class="inputField">
-                    <input type="email" name="email" placeholder=" " required>
-                    <label for="email">Email</label>
-                    <label class="requiredIndicator" for="email">*</label>
-                </span>
+          <input type="text" name="_honey" style="display: none" />
 
-                <input type="hidden" name="_template" value="table">
+          <input
+            type="hidden"
+            name="_autoresponse"
+            value="Thank you for contacting us! We will get back to you soon."
+          />
 
-                <input type="text" name="_honey" style="display:none">
+          <span class="inputField" id="phoneNumberInput">
+            <input type="tel" name="phone" placeholder=" " />
+            <label for="phone">Phone</label>
+          </span>
+          <span class="inputField">
+            <input type="text" name="company" placeholder=" " />
+            <label for="company">Company</label>
+          </span>
+          <span class="inputField fullWidth">
+            <textarea
+              name="message"
+              id="message"
+              rows="5"
+              placeholder=" "
+              required
+            ></textarea>
+            <label for="message">Message</label>
+            <label class="requiredIndicator" for="message">*</label>
+          </span>
 
-                <input type="hidden" name="_autoresponse"
-                    value="Thank you for contacting us! We will get back to you soon.">
-
-                <span class="inputField" id="phoneNumberInput">
-                    <input type="tel" name="phone" placeholder=" ">
-                    <label for="phone">Phone</label>
-                </span>
-                <span class="inputField">
-                    <input type="text" name="company" placeholder=" ">
-                    <label for="company">Company</label>
-                </span>
-                <span class="inputField fullWidth">
-                    <textarea name="message" id="message" rows="5" placeholder=" " required></textarea>
-                    <label for="message">Message</label>
-                    <label class="requiredIndicator" for="message">*</label>
-                </span>
-
-                <span class="inputField button"><button type="submit">Send Message</button></span>
-
-            </form>
-        </section>
-
-
+          <span class="inputField button"
+            ><button type="submit">Send Message</button></span
+          >
+        </form>
+      </section>
     </main>
 
     <landingpage-footer-component></landingpage-footer-component>
-
-   
-
-
-
-</body>
-
+  </body>
 </html>

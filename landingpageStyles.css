@@ -240,7 +240,9 @@ body {
 .heroScreen .heroText {
   flex: 1;
 }
-.heroScreen .heroText h1, .heroScreen .heroText em, .heroScreen .heroText p {
+.heroScreen .heroText h1,
+.heroScreen .heroText em,
+.heroScreen .heroText p {
   color: white;
 }
 .heroScreen .heroText em {
@@ -385,7 +387,8 @@ body {
   top: 1rem;
   color: hsl(168, 64%, 24%);
 }
-.contactUs form .inputField input, .contactUs form .inputField textarea {
+.contactUs form .inputField input,
+.contactUs form .inputField textarea {
   background-color: rgba(255, 255, 255, 0.6745098039);
 }
 .contactUs form .inputField input,
@@ -521,6 +524,96 @@ body {
 .landingPageProducts .specialText a:hover {
   box-shadow: 0 0 7px 0 rgba(244, 154, 10, 0.8156862745);
   cursor: pointer;
+}
+
+.accordianBlock {
+  box-shadow: rgba(0, 0, 0, 0.08) 0px 4px 12px;
+  border-radius: 0.5rem;
+  max-width: 80vw;
+  margin: 5rem auto;
+}
+.accordianBlock h2 {
+  font-family: Darker, sans-serif;
+  font-weight: 500;
+  font-size: calc(var(--h1size) * 0.8);
+  margin: 10rem 0 1rem 0;
+  padding-top: 5rem;
+  text-align: center;
+}
+.accordianBlock .accordianWrapper {
+  border-bottom: 1px solid rgb(241, 241, 241);
+}
+.accordianBlock .accordianItem {
+  padding: 2rem 5rem 5rem 5rem;
+}
+.accordianBlock .accordianItem .accordianTitleBlock {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  cursor: pointer;
+  padding: 0.5rem 1rem;
+  border-radius: 0 0 0.5rem 0.5rem;
+  background-color: white;
+  transition: background-color 0.25s ease-out;
+}
+.accordianBlock .accordianItem .accordianTitleBlock h3 {
+  font-family: Darker, sans-serif;
+  font-size: 2rem;
+  font-weight: 500;
+  transition: color 0.25s ease-out;
+  height: 100%;
+}
+.accordianBlock .accordianItem .accordianTitleBlock svg {
+  height: 2.5rem;
+  width: 2.5rem;
+  padding: 5px;
+  border-radius: 5px;
+  fill: rgba(183, 183, 183, 0.7490196078);
+  transition: transform 0.25s ease-out, fill 0.25s ease-out;
+}
+.accordianBlock .accordianItem .accordianTitleBlock.active {
+  background-color: rgba(238, 238, 238, 0.4549019608);
+}
+.accordianBlock .accordianItem .accordianTitleBlock.active h3 {
+  color: hsl(168, 64%, 24%);
+}
+.accordianBlock .accordianItem .accordianTitleBlock.active svg {
+  transform: rotate(180deg);
+  fill: hsl(168, 64%, 24%);
+}
+.accordianBlock .accordianItem .expandedAccordianBlock > p {
+  margin: 1rem 0;
+}
+.accordianBlock .accordianItem .expandedAccordianBlock {
+  padding: 0 1rem;
+  margin: 0.5rem 0;
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  transition: opacity 0.25s ease-in;
+}
+.accordianBlock .accordianItem .expandedAccordianBlock .expandedBorder {
+  border: 1px solid rgb(227, 227, 227);
+  padding: 0.5rem 1rem;
+  margin: auto 1rem;
+  max-width: 500px;
+}
+.accordianBlock .accordianItem .expandedAccordianBlock .first {
+  border-bottom: none;
+}
+.accordianBlock .accordianItem .expandedAccordianBlock .expandedBorder:last-child {
+  margin-bottom: 2rem;
+}
+.accordianBlock .accordianItem .expandedAccordianBlock h4 {
+  font-size: calc(var(--psize) * 1.1);
+  font-weight: 400;
+}
+.accordianBlock .accordianItem .expandedAccordianBlock.active {
+  opacity: 100;
+  max-height: -moz-fit-content;
+  max-height: fit-content;
 }
 
 @keyframes animateLeft {

@@ -89,3 +89,22 @@ class LandingPageFooter extends HTMLElement {
 }
 customElements.define('landingpage-footer-component', LandingPageFooter);
 customElements.define('landingpage-header-component', LandingPageHeader);
+document.addEventListener('DOMContentLoaded', () => {
+    const accordianButtons = document.querySelectorAll('.accordianTitleBlock');
+    accordianButtons.forEach(button => {
+        button.addEventListener('click', toggleAccordian);
+    });
+    function toggleAccordian(event) {
+        const button = event.currentTarget;
+        const expandedBlock = button.nextElementSibling;
+        document.querySelectorAll('.expandedAccordianBlock').forEach(block => {
+            var _a;
+            block.classList.remove('active');
+            (_a = block.previousElementSibling) === null || _a === void 0 ? void 0 : _a.classList.remove('active');
+        });
+        if (!expandedBlock.classList.contains('active')) {
+            expandedBlock.classList.add('active');
+            button.classList.add('active');
+        }
+    }
+});
