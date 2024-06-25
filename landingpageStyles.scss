@@ -352,12 +352,12 @@ body {
 }
 
 .textfullScreenView {
-    height: 75vh;
+     margin:15rem auto 5rem auto;
     max-width: 70vw;
     display: flex;
     align-items: center;
     justify-content: center;
-    margin: auto;
+    
     line-height: 1.25;
 
     p {
@@ -672,6 +672,104 @@ body {
 
 }
 
+////Swiper styles
+
+
+.swiper {
+    width: 100%;
+    height: 40vh;
+    margin-right: 0;
+    align-items: center;
+  }
+  
+  .swiper-wrapper {
+    display: flex;
+    align-items: center;
+    // counter-reset: list-slider;
+  }
+
+ 
+  
+  .swiper-slide {
+    position: relative;
+    height: 85%;
+    display: flex;
+    flex-direction: column;
+    // counter-increment: list-slider;
+    // opacity: 1;  
+    opacity: 0.5;
+    scale: 0.75;  
+    filter: grayscale(1);
+    transition: opacity .25s ease-out, scale .25s ease-out;
+       
+  }
+  
+  .title {
+    opacity: 0;
+    margin-bottom:1rem;
+    font-family: Darker,sans-serif;
+    font-size: calc(var(--h2size)*1.35);
+    font-weight: 500;
+    text-align: center;  
+    transition: transform 500ms ease;
+    transition-delay: 100ms;
+    transform: translateY(-25%);
+    color:$lightGreen;
+  }
+  
+  .description {
+    opacity: 0;
+    text-align: center;
+    margin-top:1rem;
+    // color: var(--color-light);
+    transform: translateY(25%);
+    transition: transform 500ms ease;
+    transition-delay: 200ms;
+  }
+
+  .swiper-slide-active{
+    opacity: 1;
+    scale: 1; 
+    filter: grayscale(0.25);
+    .title,
+        .description {
+          opacity: 1;
+          transform: translateY(0);
+        }  
+        
+    .imageContainer{
+        box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+    }
+}
+  
+  
+  .imageContainer {
+    width: 100%;
+    height: 100%;  
+    overflow: hidden;
+    border-radius: 0.5rem;
+    
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+  
+  .swiper-pagination-bullet {
+    width: 2rem;
+    height: 0.25rem;
+    background-color: black;
+    border-radius: 0;
+  }
+
+  .swiper-button-next,.swiper-button-prev{
+color:black;
+
+  }
+  
+  /////////////////////////
+
 .accordianBlock {
 
     box-shadow: rgba(0, 0, 0, 0.08) 0px 4px 12px;
@@ -796,13 +894,7 @@ body {
 }
 
 
-////Swiper styles
 
-
-  
-  
-  
-  
   
   
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
