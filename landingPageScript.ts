@@ -122,26 +122,3 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 });
 
-var Flickity:any;
-document.addEventListener('DOMContentLoaded', () => {
-  var flkty = new Flickity('.carousel', {
-      cellAlign: 'center',
-      contain: true,
-      pageDots: true,
-      wrapAround: true
-  });
-
-  // Add initial setup for the first cell
-  const updateSelectedClass = () => {
-      document.querySelectorAll('.carousel-cell').forEach(cell => {
-          cell.classList.remove('is-selected');
-      });
-      document.querySelector('.carousel-cell.is-selected').classList.add('is-selected');
-  };
-
-  flkty.on('select', updateSelectedClass);
-
-  // Initial setup to ensure the first cell is active
-  updateSelectedClass();
-});
-
