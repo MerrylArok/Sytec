@@ -267,7 +267,7 @@ body {
 }
 
 .textfullScreenView {
-  margin: 10rem auto 10rem auto;
+  margin: 15rem auto 17rem auto;
   max-width: 70vw;
   display: flex;
   align-items: center;
@@ -466,10 +466,11 @@ body {
 .landingPageProducts h2 {
   font-family: Darker, serif;
   margin-bottom: 1.5rem;
+  text-align: center;
   font-weight: 600;
   font-size: var(--h1size);
-  -webkit-text-decoration: underline double #ff9f06;
-          text-decoration: underline double #ff9f06;
+  -webkit-text-decoration: underline #ff9f06;
+          text-decoration: underline #ff9f06;
 }
 .landingPageProducts p {
   font-size: calc(var(--psize) * 1.2);
