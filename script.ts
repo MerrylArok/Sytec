@@ -126,7 +126,7 @@ class Footer extends HTMLElement {
                 <h4>7815- 127 Ave, Edmonton</h4>
             </li>
             <li>
-                <h4><a href="tel:+7804849898">780-484-9898</a></h4>
+                <h4><a href="tel:+7804849898">(780)484-9898</a></h4>
             </li> 
             <li>
                 <h4>Weekdays: 7AM to 4:30PM</h4>
