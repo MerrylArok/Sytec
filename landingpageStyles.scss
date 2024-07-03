@@ -124,10 +124,19 @@ body {
     background-color: $white;
     display: flex;
     flex-direction: column;
+    // max-width: 1200px;
+    // margin: auto;
 }
 
 .forceFooterDown {
     flex: 1 1 auto;
+}
+
+.landingpageContentWrapper{
+    flex: 1 1 auto;
+    width: 100%;
+    max-width: 3840px;
+    margin: 0 auto;
 }
 
 /////////////////////////////////////////////////////////////////////////////////////// 
