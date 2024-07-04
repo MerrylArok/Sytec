@@ -287,7 +287,8 @@ body {
 }
 .textfullScreenView .logo {
   height: 60px;
-  width: 150px;
+  flex: 1 1 150px; /* Adjusts the flex-basis and allows flexibility */
+  max-width: 150px;
 }
 .textfullScreenView .logo img {
   height: 100%;
@@ -313,8 +314,10 @@ body {
   width: 100%;
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
   justify-content: space-evenly;
   padding-top: 5rem;
+  row-gap: 3rem;
 }
 
 .carouseltextContainer {
@@ -486,8 +489,7 @@ body {
   margin: 2rem auto;
   display: flex;
   flex-direction: row;
-  height: 500px;
-  padding: 2.5rem 5rem 2.5rem 3rem;
+  padding: 2.5rem 4rem;
   border: 1px solid grey;
 }
 .landingPageProducts .modelContainer .modelTextContainer {
@@ -495,7 +497,6 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding-left: 2rem;
 }
 .landingPageProducts .modelContainer .modelTextContainer h3 {
   font-family: Darker, serif;
@@ -514,11 +515,15 @@ body {
 }
 .landingPageProducts .modelContainer .theModel {
   flex: 0.7;
-  padding-left: 3rem;
+  height: 500px;
+  padding: 2rem;
 }
 .landingPageProducts .modelContainer .theModel model-viewer {
   width: 100%;
   height: 100%;
+}
+.landingPageProducts .modelContainerReverse {
+  flex-direction: row-reverse;
 }
 .landingPageProducts .specialText {
   margin: 10rem auto;
@@ -766,25 +771,41 @@ body {
     opacity: 1;
   }
 }
-@keyframes logoBannerScroll {
-  0% {
-    transform: translateX(0);
-  }
-  100% {
-    transform: translateX(calc((var(--customerLogoWidth)) * -7));
-  }
-}
-@keyframes logoBannerScrollReverse {
-  0% {
-    transform: translateX(calc((var(--customerLogoWidth)) * -7));
-  }
-  100% {
-    transform: translateX(0);
-  }
-}
 @keyframes expandNavBar {
   30%, 70% {
     width: 100%;
+  }
+}
+@media (max-width: 950px) {
+  #footerTagline {
+    display: none;
+  }
+  .logo {
+    flex: 1 1 50px;
+    height: 40px;
+  }
+  .landingPageProducts .modelContainer {
+    flex-direction: column-reverse;
+    padding: 2.5rem 1rem;
+  }
+  .landingPageProducts .modelContainer .modelTextContainer {
+    flex: 1;
+    padding-left: 0;
+    margin: auto;
+  }
+  .landingPageProducts .modelContainer .modelTextContainer h3 {
+    text-align: center;
+    margin-top: 2rem;
+  }
+  .landingPageProducts .modelContainer .theModel {
+    flex: 1;
+    padding: 0;
+  }
+  .landingPageProducts .modelContainer .theModel model-viewer {
+    height: 55vh;
+  }
+  .landingPageProducts .modelContainerReverse {
+    flex-direction: column-reverse;
   }
 }
 @media (max-width: 600px) {
