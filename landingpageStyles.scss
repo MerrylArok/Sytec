@@ -675,7 +675,7 @@ img{
 
                 button{
                     color: white;
-                    background-color: $lightGreen;
+                    background-color: #16635485;
                     font-size: calc(var(--psize));
                     font-weight: 600;
                     border-radius: 4px;
@@ -1049,11 +1049,11 @@ to {
 
     .landingPageProducts .modelContainer{
         flex-direction: column-reverse;
-        padding:2.5rem;
+        padding:1rem;
 
         .modelTextContainer {
             flex: 1;
-            padding-left: 0;
+            padding: 1rem;
             margin: auto;
 
             h3{
