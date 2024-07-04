@@ -526,15 +526,15 @@ body {
 .landingPageProducts .modelContainer .theModel model-viewer button {
   color: white;
   background-color: hsl(168, 64%, 24%);
-  font-size: calc(var(--h2size) * 0.7);
+  font-size: calc(var(--psize));
   font-weight: 600;
   border-radius: 4px;
   padding: 1rem 2rem;
   border: none;
   position: absolute;
-  top: 5%;
-  right: 5%;
-  border-radius: 1rem;
+  bottom: 0%;
+  left: 50%;
+  transform: translateX(-50%);
   max-width: -moz-fit-content;
   max-width: fit-content;
 }
