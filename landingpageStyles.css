@@ -519,7 +519,11 @@ body {
   padding: 2rem;
   position: relative;
 }
-.landingPageProducts .modelContainer .theModel button {
+.landingPageProducts .modelContainer .theModel model-viewer {
+  width: 100%;
+  height: 100%;
+}
+.landingPageProducts .modelContainer .theModel model-viewer button {
   color: white;
   background-color: hsl(168, 64%, 24%);
   font-size: calc(var(--h2size) * 0.7);
@@ -533,10 +537,6 @@ body {
   border-radius: 1rem;
   max-width: -moz-fit-content;
   max-width: fit-content;
-}
-.landingPageProducts .modelContainer .theModel model-viewer {
-  width: 100%;
-  height: 100%;
 }
 .landingPageProducts .modelContainerReverse {
   flex-direction: row-reverse;
