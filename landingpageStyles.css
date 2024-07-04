@@ -535,8 +535,8 @@ body {
   bottom: 0%;
   left: 50%;
   transform: translateX(-50%);
-  max-width: -moz-fit-content;
-  max-width: fit-content;
+  border-radius: 1rem;
+  width: 100%;
 }
 .landingPageProducts .modelContainerReverse {
   flex-direction: row-reverse;
