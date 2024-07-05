@@ -817,6 +817,7 @@ body {
     flex-direction: column;
     justify-content: flex-end;
     background: linear-gradient(to top, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0) 30%);
+    border-radius: 1.5rem;
   }
   .heroScreen .heroText h1 {
     margin-bottom: 1rem;
@@ -829,6 +830,12 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
+  }
+  .textfullScreenView {
+    margin: 7rem auto 10rem auto;
+  }
+  .carouseltextContainer {
+    margin: 15rem auto 2rem auto;
   }
   #footerTagline {
     display: none;
