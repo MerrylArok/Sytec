@@ -928,6 +928,12 @@ body {
     line-height: 3rem;
     margin-bottom: 2rem;
   }
+  .textfullScreenView {
+    width: 87vw;
+  }
+  .landingPageProducts {
+    width: 90vw;
+  }
   .landingPageProducts p {
     font-size: var(--psize);
   }
@@ -961,10 +967,11 @@ body {
     margin: 0;
   }
   .accordianBlock {
-    padding: 2.5rem 0;
+    width: 95vw;
+    padding: 2.5rem 0 1.5rem 0;
   }
   .accordianBlock h2 {
-    margin-bottom: 0;
+    margin-bottom: 1rem;
   }
   .accordianBlock .accordianItem {
     padding: 1rem;
@@ -973,8 +980,9 @@ body {
     margin: auto 0;
   }
   .contactUs {
+    width: 95vw;
     margin: 5rem auto;
-    padding: 5rem 2rem 3rem 2rem;
+    padding: 3rem 2rem;
   }
   .contactUs .contactUsElements {
     margin-bottom: 2rem;
