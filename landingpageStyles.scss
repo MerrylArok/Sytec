@@ -1200,6 +1200,10 @@ body {
 
 @media (max-width:600px) {
 
+    .header #headerFlexContainer{
+        padding:0rem 1.5rem;
+    }
+
     :root {
         --h1size: 3rem;
         --h2size: 1.65rem;
@@ -1211,19 +1215,26 @@ body {
 
     .heroScreen {
 
-
         .heroText {
-            padding-bottom: 7rem;
+            padding-bottom: 5rem;
 
             h1 {
                 line-height: 3rem;
                 margin-bottom: 2rem;
             }
         }
+
+        
     }
 
     .textfullScreenView{
-        width:87vw;
+        width:80vw;
+        margin: 5rem auto 7rem auto;
+
+        .logo{
+            flex: 1 1 90px;
+            height: 40px; 
+        }
     } 
 
     .landingPageProducts{
@@ -1288,6 +1299,10 @@ body {
 
         .accordianItem {
             padding: 1rem;
+
+            .accordianTitleBlock{
+                padding:1rem;
+            }
         }
 
        

@@ -914,6 +914,9 @@ body {
   }
 }
 @media (max-width: 600px) {
+  .header #headerFlexContainer {
+    padding: 0rem 1.5rem;
+  }
   :root {
     --h1size: 3rem;
     --h2size: 1.65rem;
@@ -922,14 +925,19 @@ body {
     height: 70vh;
   }
   .heroScreen .heroText {
-    padding-bottom: 7rem;
+    padding-bottom: 5rem;
   }
   .heroScreen .heroText h1 {
     line-height: 3rem;
     margin-bottom: 2rem;
   }
   .textfullScreenView {
-    width: 87vw;
+    width: 80vw;
+    margin: 5rem auto 7rem auto;
+  }
+  .textfullScreenView .logo {
+    flex: 1 1 90px;
+    height: 40px;
   }
   .landingPageProducts {
     width: 90vw;
@@ -974,6 +982,9 @@ body {
     margin-bottom: 1rem;
   }
   .accordianBlock .accordianItem {
+    padding: 1rem;
+  }
+  .accordianBlock .accordianItem .accordianTitleBlock {
     padding: 1rem;
   }
   .accordianBlock .accordianItem .expandedAccordianBlock .expandedBorder {
