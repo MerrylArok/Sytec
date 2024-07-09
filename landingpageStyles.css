@@ -809,10 +809,25 @@ body {
     width: 100%;
   }
 }
+@media (max-width: 1440px) {
+  .contactUs {
+    flex-direction: column;
+  }
+  .contactUs form {
+    padding: 0 3rem;
+  }
+  .contactUs .contactUsElements {
+    flex-direction: column-reverse;
+    margin-bottom: 3.5rem;
+  }
+  .contactUs .contactUsElements h1 {
+    margin-bottom: 2rem;
+  }
+}
 @media (max-width: 950px) {
   :root {
     --h1size: 3.5rem;
-    --h2size:2rem;
+    --h2size: 2rem;
   }
   .heroScreen {
     flex-direction: column;
@@ -881,12 +896,6 @@ body {
   }
   .landingPageProducts .modelContainerReverse {
     flex-direction: column-reverse;
-  }
-  .contactUs {
-    flex-direction: column;
-  }
-  .contactUs form {
-    padding: none;
   }
 }
 @media (max-width: 600px) {
