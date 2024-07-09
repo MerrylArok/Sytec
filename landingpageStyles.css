@@ -656,7 +656,17 @@ body {
 
 .swiper-button-next,
 .swiper-button-prev {
-  color: black;
+  color: white;
+  padding: 3rem 2.5rem;
+  background-color: hsl(168, 64%, 24%);
+  border-radius: 5px;
+  margin: auto 2rem;
+  transition: background-color 0.1s ease-out;
+}
+
+.swiper-button-next:hover,
+.swiper-button-prev:hover {
+  background-color: #05876d;
 }
 
 .accordianBlock {
@@ -712,6 +722,7 @@ body {
 }
 .accordianBlock .accordianItem .accordianTitleBlock.active h3 {
   color: hsl(168, 64%, 24%);
+  font-weight: 600;
 }
 .accordianBlock .accordianItem .accordianTitleBlock.active svg {
   transform: rotate(90deg);
