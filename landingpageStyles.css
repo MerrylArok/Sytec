@@ -868,7 +868,7 @@ body {
     top: 0;
     left: 0;
     width: 100%;
-    height: 100%;
+    height: 80%;
   }
   .textfullScreenView {
     margin: 7rem auto 10rem auto;
@@ -928,6 +928,9 @@ body {
     line-height: 3rem;
     margin-bottom: 2rem;
   }
+  .landingPageProducts p {
+    font-size: var(--psize);
+  }
   .landingPageProducts .modelContainer .theModel {
     flex: 1;
     padding: 0;
@@ -968,6 +971,16 @@ body {
   }
   .accordianBlock .accordianItem .expandedAccordianBlock .expandedBorder {
     margin: auto 0;
+  }
+  .contactUs {
+    margin: 5rem auto;
+    padding: 5rem 2rem 3rem 2rem;
+  }
+  .contactUs .contactUsElements {
+    margin-bottom: 2rem;
+  }
+  .contactUs form {
+    padding: 0;
   }
   #footer ul:first-child {
     display: none;

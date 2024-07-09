@@ -1132,7 +1132,7 @@ body {
             top: 0;
             left: 0;
             width: 100%;
-            height: 100%;
+            height: 80%;
         }
     }
 
@@ -1222,6 +1222,12 @@ body {
         }
     }
 
+    .landingPageProducts{
+        p {
+            font-size: var(--psize);
+        }
+    }
+
 
     .landingPageProducts .modelContainer {
 
@@ -1283,6 +1289,19 @@ body {
 
     .accordianBlock .accordianItem .expandedAccordianBlock .expandedBorder {
         margin: auto 0;
+    }
+
+    .contactUs{
+        margin:5rem auto;
+        padding:5rem 2rem 3rem 2rem;
+
+        .contactUsElements {
+            margin-bottom: 2rem;
+        }
+
+        form{
+            padding:0;
+        }
     }
 
 
