@@ -228,6 +228,7 @@ body {
 
 .fullscreenView {
   height: 80vh;
+  min-height: 500px;
   width: 100%;
   margin-top: var(--headerHeight);
   border: 2rem solid white;
@@ -461,11 +462,17 @@ body {
   color: #464545;
 }
 .contactUs form .button button {
-  padding: 1.25rem;
+  padding: 1rem;
   background-color: #ff9f06;
   color: #fff;
   font-weight: 500;
+  font-size: calc(var(--psize) * 1.25);
   transition: box-shadow 0.2s ease-in-out;
+  margin-top: 1rem;
+}
+.contactUs form .button button img {
+  height: calc(var(--psize) * 1.25);
+  margin-right: 0.5rem;
 }
 .contactUs form .button button:hover {
   cursor: pointer;
@@ -577,8 +584,9 @@ body {
 
 .swiper {
   width: 100%;
-  height: 60vh;
-  margin-right: 0;
+  height: 70vh;
+  min-height: 400px;
+  margin-top: 2rem;
   align-items: center;
 }
 
@@ -674,13 +682,13 @@ body {
   border-radius: 0.5rem;
   width: 80vw;
   max-width: 1600px;
-  margin: 5rem auto;
+  margin: 7rem auto 3rem auto;
 }
 .accordianBlock h2 {
   font-family: Darker, sans-serif;
   font-weight: 500;
   font-size: calc(var(--h1size) * 0.8);
-  margin: 10rem 0 1rem 0;
+  margin-bottom: 1rem;
   padding-top: 5rem;
   text-align: center;
 }
@@ -896,6 +904,12 @@ body {
   }
   .landingPageProducts .modelContainerReverse {
     flex-direction: column-reverse;
+  }
+  .accordianBlock {
+    margin: 7rem auto 0 auto;
+  }
+  .accordianBlock .accordianItem {
+    padding: 2rem 3rem 5rem 3rem;
   }
 }
 @media (max-width: 600px) {

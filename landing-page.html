@@ -897,54 +897,46 @@
         </div>
 
         <form
-          action="https://formsubmit.co/1538ae3425c4b56946c742487ba27d6a"
-          method="POST"
-        >
-          <!-- <p> We look forward to speaking with you! Give us a call, or fill out the form below for an email response within 2 business days.</p> -->
-          <span class="inputField">
-            <input type="text" name="name" placeholder=" " required />
-            <label for="name">Name</label>
-            <label class="requiredIndicator" for="name">*</label>
-          </span>
+        action="https://api.web3forms.com/submit" method="POST">
+         
+        <!-- Key below is for sales@sytec-mfg.com    -->
+        <input type="hidden" name="access_key" value="68a29838-60fd-42f9-998a-03158bdc376f">
+        
+        
+        <span class="inputField">
+          <input type="text" name="name" placeholder=" " required>
+          <label for="name">Name</label>
+          <label class="requiredIndicator" for="name">*</label>
+      </span>
 
-          <span class="inputField">
-            <input type="email" name="email" placeholder=" " required />
-            <label for="email">Email</label>
-            <label class="requiredIndicator" for="email">*</label>
-          </span>
+      <span class="inputField">
+          <input type="email" name="email" placeholder=" " required>
+          <label for="email">Email</label>
+          <label class="requiredIndicator" for="email">*</label>
+      </span>
 
-          <input type="hidden" name="_template" value="table" />
+         
+      <input type="checkbox" name="botcheck" class="hidden" style="display: none;">    
+      <input type="hidden" name="subject" value="New website Inquiry">
+      <input type="hidden" name="from_name" value="Sytec-mfg.com">
+      <input type="hidden" name="redirect" value="https://www.sytec-mfg.com/thankyou.html">
 
-          <input type="text" name="_honey" style="display: none" />
-
-          <input
-            type="hidden"
-            name="_autoresponse"
-            value="Thank you for contacting us! We will get back to you soon."
-          />
-
-          <span class="inputField" id="phoneNumberInput">
-            <input type="tel" name="phone" placeholder=" " />
-            <label for="phone">Phone</label>
-          </span>
-          <span class="inputField">
-            <input type="text" name="company" placeholder=" " />
-            <label for="company">Company</label>
-          </span>
-          <span class="inputField fullWidth">
-            <textarea
-              name="message"
-              id="message"
-              rows="5"
-              placeholder=" "
-              required
-            ></textarea>
-            <label for="message">Message</label>
-            <label class="requiredIndicator" for="message">*</label>
-          </span>
-
+      <span class="inputField" id="phoneNumberInput">
+          <input type="tel" name="phone" placeholder=" ">
+          <label for="phone">Phone</label>
+      </span>
+      <span class="inputField">
+          <input type="text" name="company" placeholder=" ">
+          <label for="company">Company</label>
+      </span>
+      <span class="inputField fullWidth">
+          <textarea name="message" id="message" rows="5" placeholder=" " required></textarea>
+          <label for="message">Message</label>
+          <label class="requiredIndicator" for="message">*</label>
+      </span>
+      
           <span class="inputField button"
-            ><button type="submit">Send Message</button></span
+            > <button type="submit">Send Message</button></span
           >
         </form>
       </section>

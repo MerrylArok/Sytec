@@ -301,6 +301,7 @@ body {
 
 .fullscreenView {
     height: 80vh;
+    min-height:500px;
     width: 100%;
     margin-top: var(--headerHeight);
     border: 2rem solid white;
@@ -588,13 +589,21 @@ body {
 
         .button {
 
+           
 
             button {
-                padding: 1.25rem;
+                padding: 1rem;
                 background-color: $complimentaryColor;
                 color: $white;
                 font-weight: 500;
+                font-size: calc(var(--psize)*1.25);
                 transition: box-shadow .2s ease-in-out;
+                margin-top: 1rem;
+
+                img{
+                    height: calc(var(--psize)*1.25);
+                    margin-right:0.5rem;
+                }
             }
 
 
@@ -743,8 +752,9 @@ body {
 
 .swiper {
     width: 100%;
-    height: 60vh;
-    margin-right: 0;
+    height: 70vh;
+    min-height:400px;
+    margin-top: 2rem;
     align-items: center;
 }
 
@@ -852,19 +862,21 @@ body {
 
     box-shadow: rgba(0, 0, 0, 0.08) 0px 4px 12px;
     border-radius: 0.5rem;
+    width: 80vw;
+    max-width:1600px;
+    margin:7rem auto 3rem auto;
+   
 
     h2 {
         font-family: Darker, sans-serif;
         font-weight: 500;
         font-size: calc(var(--h1size)*.8);
-        margin: 10rem 0 1rem 0;
+        margin-bottom:1rem;
         padding-top: 5rem;
         text-align: center;
     }
 
-    width: 80vw;
-    max-width:1600px;
-    margin:5rem auto;
+    
 
     .accordianWrapper {
         border-bottom: 1px solid rgb(241, 241, 241);
@@ -1063,16 +1075,16 @@ body {
             padding: 0 3rem;
         }
 
-        .contactUsElements{
+        .contactUsElements {
             flex-direction: column-reverse;
             margin-bottom: 3.5rem;
 
-            h1{
-                margin-bottom:2rem;
+            h1 {
+                margin-bottom: 2rem;
             }
         }
 
-        
+
     }
 }
 
@@ -1085,7 +1097,6 @@ body {
 
     .heroScreen {
 
-
         flex-direction: column;
         position: relative;
 
@@ -1095,7 +1106,7 @@ body {
             position: absolute;
             margin: auto;
             width: 100%;
-            height: 100%;
+            height: 100%;            
             top: 0%;
             left: 0%;
             padding: 0 3rem 5rem 3rem;
@@ -1172,7 +1183,16 @@ body {
 
     .landingPageProducts .modelContainerReverse {
         flex-direction: column-reverse;
-    }   
+    }
+
+    .accordianBlock {
+
+        margin:7rem auto 0 auto;
+        
+        .accordianItem {
+            padding: 2rem 3rem 5rem 3rem;
+        }
+    }
 
 
 }
