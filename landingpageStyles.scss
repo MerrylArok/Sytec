@@ -361,8 +361,9 @@ body {
 }
 
 .textfullScreenView {
-    margin: 15rem auto 17rem auto;
-    max-width: 70vw;
+    margin: 20rem auto;
+    width: 80vw;    
+    max-width:1600px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -443,8 +444,9 @@ body {
 
 .contactUs {
     background: url("./media/pics/landingPageAssets/grainyYellowTinge.webp");
-    max-width: 80vw;
-    margin: auto auto 5rem auto;
+    width: 80vw;
+    max-width:1600px;
+    margin: 13rem auto;
     padding: 6rem 6rem 5rem 6rem;
     border-radius: 1rem;
     display: flex;
@@ -606,7 +608,8 @@ body {
 }
 
 .landingPageProducts {
-    max-width: 80vw;
+    width: 80vw;
+    max-width:1600px;
 
     margin: auto;
 
@@ -849,7 +852,8 @@ body {
         text-align: center;
     }
 
-    max-width: 80vw;
+    width: 80vw;
+    max-width:1600px;
     margin:5rem auto;
 
     .accordianWrapper {
@@ -1135,6 +1139,14 @@ body {
 
     .landingPageProducts .modelContainerReverse {
         flex-direction: column-reverse;
+    }
+
+    .contactUs{
+        flex-direction: column;
+
+        form{
+            padding:none;
+        }
     }
 
 
