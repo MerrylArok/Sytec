@@ -115,6 +115,7 @@ body {
     height: 100%;
     position: relative;
     scroll-behavior: smooth;
+    scroll-padding-top:6rem;
 
 }
 
@@ -1229,7 +1230,7 @@ body {
 
     .textfullScreenView{
         width:80vw;
-        margin: 5rem auto 7rem auto;
+        margin: 10rem auto 10rem auto;
 
         .logo{
             flex: 1 1 90px;
