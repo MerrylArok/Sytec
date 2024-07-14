@@ -231,7 +231,7 @@ body {
   height: 80vh;
   min-height: 500px;
   width: 100%;
-  margin-top: var(--headerHeight);
+  margin-top: calc(var(--headerHeight) * 1.25);
   border: 2rem solid white;
 }
 
@@ -259,7 +259,7 @@ body {
   font-family: Darker, serif;
 }
 .heroScreen .heroText p {
-  font-size: calc(var(--h1size) * 0.45);
+  font-size: calc(var(--h1size) * 0.5);
 }
 .heroScreen .heroModel {
   flex: 1;
@@ -497,6 +497,12 @@ body {
 .landingPageProducts p {
   font-size: calc(var(--psize) * 1.2);
 }
+.landingPageProducts .textHint {
+  padding: 2rem 5rem;
+}
+.landingPageProducts .textHint b {
+  font-size: calc(var(--psize) * 1.2);
+}
 .landingPageProducts .modelContainer {
   margin: 2rem auto;
   display: flex;
@@ -531,9 +537,34 @@ body {
   padding: 2rem;
   position: relative;
 }
+.landingPageProducts .modelContainer .theModel .imgRight {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  height: 150px;
+  width: 150px;
+  z-index: 9;
+  border-radius: 5px;
+}
+.landingPageProducts .modelContainer .theModel .imgLeft {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 150px;
+  width: 150px;
+  z-index: 9;
+  border-radius: 5px;
+}
 .landingPageProducts .modelContainer .theModel model-viewer {
   width: 100%;
   height: 100%;
+}
+.landingPageProducts .modelContainer .theModel model-viewer img {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  height: 250px;
+  width: 250px;
 }
 .landingPageProducts .modelContainer .theModel model-viewer button {
   color: white;
@@ -852,11 +883,11 @@ body {
     height: 100%;
     top: 0%;
     left: 0%;
-    padding: 0 3rem 5rem 3rem;
+    padding: 6rem 3rem;
     display: flex;
     flex-direction: column;
-    justify-content: flex-end;
-    background: linear-gradient(to top, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0) 30%);
+    justify-content: flex-start;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0) 75%);
     border-radius: 1.5rem;
   }
   .heroScreen .heroText h1 {
@@ -866,10 +897,10 @@ body {
     position: relative;
     z-index: 1;
     position: absolute;
-    top: 0;
+    bottom: 0;
     left: 0;
     width: 100%;
-    height: 80%;
+    height: 75%;
   }
   .textfullScreenView {
     margin: 7rem auto 10rem auto;
@@ -901,6 +932,9 @@ body {
     flex: 1;
     padding: 0;
   }
+  .landingPageProducts .modelContainer .theModel img {
+    display: none;
+  }
   .landingPageProducts .modelContainer .theModel model-viewer {
     height: 55vh;
   }
@@ -919,14 +953,11 @@ body {
     padding: 0rem 1.5rem;
   }
   :root {
-    --h1size: 3rem;
+    --h1size: 2.65rem;
     --h2size: 1.65rem;
   }
   .fullscreenView {
     height: 70vh;
-  }
-  .heroScreen .heroText {
-    padding-bottom: 5rem;
   }
   .heroScreen .heroText h1 {
     line-height: 3rem;
@@ -934,7 +965,7 @@ body {
   }
   .textfullScreenView {
     width: 80vw;
-    margin: 7rem auto 10rem auto;
+    margin: 4rem auto 10rem auto;
   }
   .textfullScreenView .logo {
     flex: 1 1 90px;
@@ -945,6 +976,9 @@ body {
   }
   .landingPageProducts p {
     font-size: var(--psize);
+  }
+  .landingPageProducts .textHint {
+    display: none;
   }
   .landingPageProducts .modelContainer .theModel {
     flex: 1;
