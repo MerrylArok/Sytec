@@ -932,8 +932,11 @@ body {
     flex: 1;
     padding: 0;
   }
-  .landingPageProducts .modelContainer .theModel img {
-    display: none;
+  .landingPageProducts .modelContainer .theModel .imgLeft, .landingPageProducts .modelContainer .theModel .imgRight {
+    top: 0;
+    right: 0;
+    left: auto;
+    bottom: auto;
   }
   .landingPageProducts .modelContainer .theModel model-viewer {
     height: 55vh;
@@ -983,6 +986,9 @@ body {
   .landingPageProducts .modelContainer .theModel {
     flex: 1;
     padding: 0;
+  }
+  .landingPageProducts .modelContainer .theModel img {
+    display: none;
   }
   .landingPageProducts .modelContainer .theModel model-viewer {
     height: 40vh;

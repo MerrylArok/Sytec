@@ -115,7 +115,7 @@ body {
     height: 100%;
     position: relative;
     scroll-behavior: smooth;
-    scroll-padding-top:6rem;
+    scroll-padding-top: 6rem;
 
 }
 
@@ -636,10 +636,10 @@ body {
         font-size: calc(var(--psize)*1.2);
     }
 
-    .textHint{
-        padding:2rem 5rem;
-        
-        b{
+    .textHint {
+        padding: 2rem 5rem;
+
+        b {
             font-size: calc(var(--psize)*1.2);
         }
 
@@ -688,35 +688,35 @@ body {
             padding: 2rem;
             position: relative;
 
-            .imgRight{
-                position:absolute;
-                bottom:0;
-                right:0;
-                height:150px;
-                width:150px;
+            .imgRight {
+                position: absolute;
+                bottom: 0;
+                right: 0;
+                height: 150px;
+                width: 150px;
                 z-index: 9;
-                border-radius:5px;
+                border-radius: 5px;
             }
 
-            .imgLeft{
-                position:absolute;
-                bottom:0;
-                left:0;
-                height:150px;
-                width:150px;
+            .imgLeft {
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                height: 150px;
+                width: 150px;
                 z-index: 9;
-                border-radius:5px;
+                border-radius: 5px;
             }
 
             model-viewer {
                 width: 100%;
                 height: 100%;
 
-                img{
+                img {
                     position: absolute;
-                    bottom:0;
-                    right:0;
-                    height:250px;
+                    bottom: 0;
+                    right: 0;
+                    height: 250px;
                     width: 250px;
                 }
 
@@ -908,7 +908,7 @@ body {
         font-weight: 500;
         font-size: calc(var(--h1size)*.8);
         margin-bottom: 1rem;
-        
+
         text-align: center;
     }
 
@@ -1208,10 +1208,14 @@ body {
             flex: 1;
             padding: 0;
             // width: 100%;
-
-            img{
-                display: none;
+            .imgLeft, .imgRight {
+                top:0;                
+                right: 0;
+                left:auto;
+                bottom: auto;
             }
+
+
 
             model-viewer {
                 // width: 100%;
@@ -1239,8 +1243,8 @@ body {
 
 @media (max-width:600px) {
 
-    .header #headerFlexContainer{
-        padding:0rem 1.5rem;
+    .header #headerFlexContainer {
+        padding: 0rem 1.5rem;
     }
 
     :root {
@@ -1263,27 +1267,28 @@ body {
             }
         }
 
-        
+
     }
 
-    .textfullScreenView{
-        width:80vw;
+    .textfullScreenView {
+        width: 80vw;
         margin: 4rem auto 10rem auto;
 
-        .logo{
+        .logo {
             flex: 1 1 90px;
-            height: 40px; 
+            height: 40px;
         }
-    } 
+    }
 
-    .landingPageProducts{
+    .landingPageProducts {
 
         width: 90vw;
+
         p {
             font-size: var(--psize);
         }
 
-        .textHint{
+        .textHint {
             display: none;
         }
     }
@@ -1291,13 +1296,15 @@ body {
 
     .landingPageProducts .modelContainer {
 
-        
-
 
         .theModel {
             flex: 1;
             padding: 0;
-            // width: 100%;            
+
+            // width: 100%;    
+            img {
+                display: none;
+            }
 
             model-viewer {
                 // width: 100%;
@@ -1338,36 +1345,36 @@ body {
         width: 95vw;
         padding: 2.5rem 0 1.5rem 0;
 
-        h2 {            
+        h2 {
             margin-bottom: 1rem;
         }
 
         .accordianItem {
             padding: 1rem;
 
-            .accordianTitleBlock{
-                padding:1rem;
+            .accordianTitleBlock {
+                padding: 1rem;
             }
         }
 
-       
+
     }
 
     .accordianBlock .accordianItem .expandedAccordianBlock .expandedBorder {
         margin: auto 0;
     }
 
-    .contactUs{
-        width:95vw;
-        margin:5rem auto;
-        padding:3rem 2rem;
+    .contactUs {
+        width: 95vw;
+        margin: 5rem auto;
+        padding: 3rem 2rem;
 
         .contactUsElements {
             margin-bottom: 2rem;
         }
 
-        form{
-            padding:0;
+        form {
+            padding: 0;
         }
     }
 
