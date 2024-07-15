@@ -6154,12 +6154,12 @@
 			{
 				"sampler": 0,
 				"source": 0,
-				"name": "0000-1995.draco_Texture_0001.png"
+				"name": "IlIIlIlIIlllIllIIlIlIlllll.png"
 			}
 	],
 	"images": [
 			{
-				"uri": "0000-1995.draco_Texture_0001.png"
+				"uri": "../../Fonts/backup/bin/IlIIlIlIIlllIllIIlIlIlllll.png"
 			}
 	],
 	"samplers": [
@@ -6596,7 +6596,7 @@
 	"buffers" : [
 			{
 				"byteLength": 671452
-				,"uri" : "0000-1995.draco_0001.bin"
+				,"uri" : "../../Fonts/backup/bin/llIIIIllIlllIlIIIIIlIlIIII.bin"
 			}
 	]
 }

@@ -17890,12 +17890,12 @@
 			{
 				"sampler": 0,
 				"source": 0,
-				"name": "ENR231818-1.draco_Texture_0002.png"
+				"name": "IIlIIllllllIlllIIIIIlIllII.png"
 			}
 	],
 	"images": [
 			{
-				"uri": "ENR231818-1.draco_Texture_0002.png"
+				"uri": "../../Fonts/backup/bin/IIlIIllllllIlllIIIIIlIllII.png"
 			}
 	],
 	"samplers": [
@@ -19312,7 +19312,7 @@
 	"buffers" : [
 			{
 				"byteLength": 2676044
-				,"uri" : "ENR231818-1.draco_0001.bin"
+				,"uri" : "../../Fonts/backup/bin/IlIIIllIIlllIIIllIIIlllIll.bin"
 			}
 	]
 }
