@@ -328,17 +328,18 @@ body {
   margin: 15rem auto 2rem auto;
   position: relative;
 }
-.carouseltextContainer img {
+.carouseltextContainer .spin {
   height: 15rem;
   width: 15rem;
   opacity: 0.1;
   position: absolute;
   top: -75px;
-  left: -70px;
+  left: -80px;
+  background-image: url(./media/Icons/Spinner.png);
+  background-size: cover;
   transform: translate(-45%, -45%);
-}
-.carouseltextContainer .spin {
   animation: spin 30s linear infinite;
+  z-index: -5;
 }
 
 .contactUs {
