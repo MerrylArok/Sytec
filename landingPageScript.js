@@ -31,7 +31,7 @@ class LandingPageFooter extends HTMLElement {
                 <h3>Sytec Manufacturing</h3>
             </li>
             <li>
-                <h4>7815- 127 Ave, Edmonton</h4>
+                <h4>7815- 127 Ave NW, Edmonton</h4>
             </li>
             <li>
                 <h4><a href="tel:+7804849898">780-484-9898</a></h4>
